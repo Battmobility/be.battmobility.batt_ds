@@ -75,7 +75,10 @@ class ThemeScopeWidgetState extends State<ThemeScopeWidget> {
       setState(() {
         _themeMode = themeMode;
       });
-    } on Exception catch (_) {}
+    } on Exception catch (_) {
+      _themeMode = ThemeMode.system;
+      print("Failed to change theme mode.");
+    }
   }
 
   @override
