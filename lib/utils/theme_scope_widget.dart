@@ -14,24 +14,37 @@ const _kThemeMode = 'themeMode';
 
 /// {@endtemplate}
 class ThemeScopeWidget extends StatefulWidget {
+  // Overridden thememode
+  final ThemeMode? themeModeOverride;
+
   /// {@macro theme_scope_widget}
   const ThemeScopeWidget({
     super.key,
     required this.child,
-    required this.preferences,
+    this.preferences,
+    this.themeModeOverride,
   });
 
   /// The child widget
   final Widget child;
 
   /// The shared preferences
-  final SharedPreferences preferences;
+  final SharedPreferences? preferences;
 
   /// Initialize the [ThemeScopeWidget] with the given [child] widget
   static Future<ThemeScopeWidget> initialize(Widget child) async {
     final preferences = await SharedPreferences.getInstance();
     return ThemeScopeWidget(
       preferences: preferences,
+      child: child,
+    );
+  }
+
+  static ThemeScopeWidget initializeSynchronously(
+      Widget child, ThemeMode themeModeOverride) {
+    return ThemeScopeWidget(
+      preferences: null,
+      themeModeOverride: themeModeOverride,
       child: child,
     );
   }
@@ -57,7 +70,7 @@ class ThemeScopeWidgetState extends State<ThemeScopeWidget> {
 
     try {
       final index = ThemeMode.values.indexOf(themeMode);
-      await widget.preferences.setInt(_kThemeMode, index);
+      await widget.preferences?.setInt(_kThemeMode, index);
 
       setState(() {
         _themeMode = themeMode;
@@ -70,7 +83,7 @@ class ThemeScopeWidgetState extends State<ThemeScopeWidget> {
     super.didChangeDependencies();
 
     try {
-      final themeModeIndex = widget.preferences.getInt(_kThemeMode) ?? 0;
+      final themeModeIndex = widget.preferences?.getInt(_kThemeMode) ?? 0;
       final themeMode = ThemeMode.values[themeModeIndex];
 
       _themeMode = themeMode;
@@ -91,7 +104,7 @@ class ThemeScopeWidgetState extends State<ThemeScopeWidget> {
     };
 
     return ThemeScope(
-      themeMode: _themeMode!,
+      themeMode: _themeMode ?? widget.themeModeOverride ?? ThemeMode.light,
       appTheme: appTheme,
       child: widget.child,
     );
