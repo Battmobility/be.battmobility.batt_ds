@@ -1,6 +1,7 @@
 library batt_ds;
 
 import 'package:batt_ds/theme/app_theme.dart';
+import 'package:batt_ds/theme/typography_theme.dart';
 import 'package:flutter/material.dart';
 export 'atoms/atoms.dart';
 export 'organisms/organisms.dart';
@@ -50,7 +51,7 @@ ThemeData darkTheme(BuildContext context) {
   final theme = AppTheme.dark();
   return ThemeData(
     colorScheme: ColorScheme.dark(
-        primary: theme.themeColorDark,
+        primary: theme.themeColorPrimary,
         primaryContainer: theme.themeColorPrimaryContainer,
         secondary: theme.themeColorSecondary,
         shadow: theme.shadowColorDark,
@@ -63,7 +64,15 @@ ThemeData darkTheme(BuildContext context) {
     appBarTheme: theme.appBarThemeDark,
     navigationBarTheme: theme.navigationBarThemeDark,
     cardTheme: CardTheme(color: theme.themeColorDark),
+    checkboxTheme: CheckboxThemeData(
+        side: BorderSide(color: theme.themeColorPrimary),
+        fillColor: WidgetStatePropertyAll(theme.themeColorDark),
+        checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
     textTheme: theme.textThemeDark,
+    textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+            textStyle:
+                WidgetStatePropertyAll(AppTypographyDark().mediumLabel))),
     textSelectionTheme: theme.textSelectionThemeDark,
     inputDecorationTheme: theme.inputDecorationThemeDark,
     sliderTheme: SliderThemeData(
