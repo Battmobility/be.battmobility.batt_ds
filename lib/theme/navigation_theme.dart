@@ -15,14 +15,14 @@ class AppNavigationTheme extends ThemeExtension<AppNavigationTheme> {
   factory AppNavigationTheme.light() {
     return AppNavigationTheme(
       backgroundColor: AppColors.primaryColors[300]!,
-      indicatorColor: AppColors.accent[900]!,
+      indicatorColor: AppColors.grey[900]!,
     );
   }
 
   factory AppNavigationTheme.dark() {
     return AppNavigationTheme(
       backgroundColor: AppColors.primaryColors[900]!,
-      indicatorColor: AppColors.accent[100]!,
+      indicatorColor: AppColors.grey[100]!,
     );
   }
 

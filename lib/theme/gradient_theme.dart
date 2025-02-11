@@ -5,9 +5,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   const GradientTheme({
     required this.cardBackgroundGradient,
     required this.heroGradient,
+    required this.inputBorderGradient,
+    required this.canvasBackgroundGradient,
   });
 
-  /// {@macro app_button_theme}
   factory GradientTheme.light() {
     return GradientTheme(
       cardBackgroundGradient: LinearGradient(
@@ -26,6 +27,18 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         ],
         center: const Alignment(-0.65, 0),
         radius: 3.0,
+      ),
+      inputBorderGradient: const LinearGradient(
+        colors: [
+          AppColors.defaultBlue,
+          AppColors.defaultOrange,
+          AppColors.defaultBlue
+        ],
+        transform: GradientRotation(-0.79),
+      ),
+      canvasBackgroundGradient: const LinearGradient(
+        colors: [AppColors.background, AppColors.defaultBlue],
+        transform: GradientRotation(-0.79),
       ),
     );
   }
@@ -49,6 +62,18 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         center: const Alignment(-0.65, 0),
         radius: 3.0,
       ),
+      inputBorderGradient: const LinearGradient(
+        colors: [
+          AppColors.defaultBlue,
+          AppColors.defaultOrange,
+          AppColors.defaultBlue
+        ],
+        transform: GradientRotation(-0.79),
+      ),
+      canvasBackgroundGradient: const LinearGradient(
+        colors: [AppColors.backgroundDark, AppColors.defaultBlue],
+        transform: GradientRotation(-0.79),
+      ),
     );
   }
 
@@ -58,15 +83,26 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   /// The gradient for hero headers.
   final Gradient heroGradient;
 
+// The gradient for input borders
+  final Gradient inputBorderGradient;
+
+  // The background gradient
+  final Gradient canvasBackgroundGradient;
+
   @override
   ThemeExtension<GradientTheme> copyWith({
     Gradient? cardBackgroundGradient,
     Gradient? heroGradient,
+    Gradient? inputBorderGradient,
+    Gradient? canvasBackgroundGradient,
   }) {
     return GradientTheme(
       cardBackgroundGradient:
           cardBackgroundGradient ?? this.cardBackgroundGradient,
       heroGradient: heroGradient ?? this.heroGradient,
+      inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
+      canvasBackgroundGradient:
+          canvasBackgroundGradient ?? this.canvasBackgroundGradient,
     );
   }
 
@@ -83,6 +119,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       cardBackgroundGradient: Gradient.lerp(
           cardBackgroundGradient, other.cardBackgroundGradient, t)!,
       heroGradient: Gradient.lerp(heroGradient, other.heroGradient, t)!,
+      inputBorderGradient:
+          Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
+      canvasBackgroundGradient: Gradient.lerp(
+          canvasBackgroundGradient, other.canvasBackgroundGradient, t)!,
     );
   }
 }

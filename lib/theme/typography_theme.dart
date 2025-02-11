@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   /// {@macro app_typography}
   AppTypographyTheme({
+    required this.largeHeadline,
+    required this.mediumHeadline,
+    required this.smallHeadline,
     required this.largeLabel,
     required this.mediumLabel,
     required this.smallLabel,
@@ -89,6 +92,15 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   // Hero title
   final TextStyle heroTitle;
 
+  // Large headline
+  final TextStyle largeHeadline;
+
+  // Medium headline
+  final TextStyle mediumHeadline;
+
+  // Small headline
+  final TextStyle smallHeadline;
+
   // Large title
   final TextStyle largeTitle;
 
@@ -156,8 +168,14 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     TextStyle? smallLabel,
     TextStyle? dateTimeStyle,
     TextStyle? actionSliderStyle,
+    TextStyle? largeHeadline,
+    TextStyle? mediumHeadline,
+    TextStyle? smallHeadline,
   }) {
     return AppTypographyTheme(
+      largeHeadline: largeHeadline ?? this.largeHeadline,
+      mediumHeadline: mediumHeadline ?? this.mediumHeadline,
+      smallHeadline: smallHeadline ?? this.smallHeadline,
       licensePlate: licensePlate ?? this.licensePlate,
       button2XLarge: button2XLarge ?? this.button2XLarge,
       buttonXLarge: buttonXLarge ?? this.buttonXLarge,
@@ -201,6 +219,9 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     }
 
     return AppTypographyTheme(
+      largeHeadline: TextStyle.lerp(largeHeadline, other.largeHeadline, t)!,
+      mediumHeadline: TextStyle.lerp(mediumHeadline, other.mediumHeadline, t)!,
+      smallHeadline: TextStyle.lerp(smallHeadline, other.smallHeadline, t)!,
       licensePlate: TextStyle.lerp(licensePlate, other.licensePlate, t)!,
       button2XLarge: TextStyle.lerp(button2XLarge, other.button2XLarge, t)!,
       buttonXLarge: TextStyle.lerp(buttonXLarge, other.buttonXLarge, t)!,
@@ -244,6 +265,21 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
 class AppTypography extends AppTypographyTheme {
   /// {@macro app_typography}
   AppTypography({
+    super.largeHeadline = const TextStyle(
+        fontSize: 26,
+        height: 32 / 24,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColor),
+    super.mediumHeadline = const TextStyle(
+        fontSize: 20,
+        height: 24 / 20,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColor),
+    super.smallHeadline = const TextStyle(
+        fontSize: 16,
+        height: 24 / 16,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColor),
     super.licensePlate = const TextStyle(
         fontSize: 14,
         height: 24 / 16,
@@ -343,19 +379,19 @@ class AppTypography extends AppTypographyTheme {
         fontWeight: FontWeight.w800,
         color: AppColors.heroTextColor),
     super.largeTitle = const TextStyle(
-        fontSize: 24,
+        fontSize: 26,
         height: 32 / 24,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColor),
     super.mediumTitle = const TextStyle(
         fontSize: 20,
         height: 24 / 20,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColor),
     super.smallTitle = const TextStyle(
         fontSize: 16,
         height: 24 / 16,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColor),
     super.inputPlaceholder = const TextStyle(
         fontSize: 12,
@@ -396,6 +432,21 @@ class AppTypography extends AppTypographyTheme {
 class AppTypographyDark extends AppTypographyTheme {
   /// {@macro app_typography}
   AppTypographyDark({
+    super.largeHeadline = const TextStyle(
+        fontSize: 26,
+        height: 32 / 24,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColorDark),
+    super.mediumHeadline = const TextStyle(
+        fontSize: 20,
+        height: 24 / 20,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColorDark),
+    super.smallHeadline = const TextStyle(
+        fontSize: 16,
+        height: 24 / 16,
+        fontWeight: FontWeight.w300,
+        color: AppColors.textColorDark),
     super.licensePlate = const TextStyle(
         fontSize: 14,
         height: 24 / 16,
@@ -495,35 +546,35 @@ class AppTypographyDark extends AppTypographyTheme {
         fontWeight: FontWeight.w800,
         color: AppColors.heroTextColorDark),
     super.largeTitle = const TextStyle(
-        fontSize: 24,
+        fontSize: 26,
         height: 32 / 24,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColorDark),
     super.mediumTitle = const TextStyle(
         fontSize: 20,
         height: 24 / 20,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColorDark),
     super.smallTitle = const TextStyle(
         fontSize: 16,
         height: 24 / 16,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
         color: AppColors.textColorDark),
     super.inputPlaceholder = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w400,
-        color: AppColors.primaryTextColorLight),
+        color: AppColors.textColorDark),
     super.inputHint = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w300,
-        color: AppColors.primaryTextColorLight),
+        color: AppColors.textColorDark),
     super.inputLabel = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w300,
-        color: AppColors.primaryTextColorLight),
+        color: AppColors.textColorDark),
     super.navigationBarLabelStyle = const TextStyle(
         fontSize: 18,
         height: 24 / 24,

@@ -1,4 +1,5 @@
-import 'package:batt_ds/atoms/app_colors.dart';
+import 'package:batt_ds/atoms/atoms.dart';
+import 'package:batt_ds/molecules/borders/gradient_border.dart';
 import 'package:batt_ds/theme/chip_theme.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:batt_ds/theme/navigation_theme.dart';
@@ -125,7 +126,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   final NavigationBarThemeData navigationBarThemeLight = NavigationBarThemeData(
     backgroundColor: AppColors.primaryColors[800]!,
-    indicatorColor: AppColors.accent[50]!,
+    indicatorColor: AppColors.grey[50]!,
     labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
         fontSize: 18,
         height: 24 / 24,
@@ -135,7 +136,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   final NavigationBarThemeData navigationBarThemeDark = NavigationBarThemeData(
     backgroundColor: AppColors.primaryColors[800]!,
-    indicatorColor: AppColors.accent[50]!,
+    indicatorColor: AppColors.grey[50]!,
     labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
         fontSize: 18,
         height: 24 / 24,
@@ -156,9 +157,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
     labelLarge: AppTypography().largeLabel,
     labelMedium: AppTypography().mediumLabel,
     labelSmall: AppTypography().smallLabel,
-    headlineLarge: AppTypography().largeTitle,
-    headlineMedium: AppTypography().mediumTitle,
-    headlineSmall: AppTypography().smallTitle,
+    headlineLarge: AppTypography().largeHeadline,
+    headlineMedium: AppTypography().mediumHeadline,
+    headlineSmall: AppTypography().smallHeadline,
   );
 
   final TextTheme textThemeDark = TextTheme(
@@ -174,9 +175,83 @@ class AppTheme extends ThemeExtension<AppTheme> {
     labelLarge: AppTypographyDark().largeLabel,
     labelMedium: AppTypographyDark().mediumLabel,
     labelSmall: AppTypographyDark().smallLabel,
-    headlineLarge: AppTypographyDark().largeTitle,
-    headlineMedium: AppTypographyDark().mediumTitle,
-    headlineSmall: AppTypographyDark().smallTitle,
+    headlineLarge: AppTypographyDark().largeHeadline,
+    headlineMedium: AppTypographyDark().mediumHeadline,
+    headlineSmall: AppTypographyDark().smallHeadline,
+  );
+
+  final InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
+    labelStyle:
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.black),
+    hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.black),
+    filled: true,
+    fillColor: AppColors.defaultBlue.withAlpha(6),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultBlue),
+    ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultBlue),
+    ),
+    focusedBorder: GradientOutlineInputBorder(
+      gradient: GradientTheme.light().inputBorderGradient,
+      width: 2,
+    ),
+    errorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultOrange, width: 1),
+    ),
+    focusedErrorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultOrange, width: 2),
+    ),
+    errorStyle: AppTypographyDark()
+        .mediumLabel
+        .copyWith(color: AppColors.defaultOrange),
+  );
+
+  final InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
+    labelStyle:
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.white),
+    hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.white),
+    filled: true,
+    fillColor: AppColors.defaultBlue.withAlpha(6),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultBlue),
+    ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultBlue),
+    ),
+    focusedBorder: GradientOutlineInputBorder(
+      gradient: GradientTheme.dark().inputBorderGradient,
+      width: 2,
+    ),
+    errorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultOrange, width: 1),
+    ),
+    focusedErrorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.defaultOrange, width: 2),
+    ),
+    errorStyle: AppTypographyDark()
+        .mediumLabel
+        .copyWith(color: AppColors.defaultOrange),
+  );
+
+  final TextSelectionThemeData textSelectionThemeLight = TextSelectionThemeData(
+    cursorColor: AppColors.primaryColors[500],
+    selectionColor: AppColors.primaryColors[500],
+    selectionHandleColor: AppColors.primaryColors[800],
+  );
+
+  final TextSelectionThemeData textSelectionThemeDark = TextSelectionThemeData(
+    cursorColor: AppColors.primaryColors[500],
+    selectionColor: AppColors.primaryColors[500],
+    selectionHandleColor: AppColors.primaryColors[800],
   );
 
   @override

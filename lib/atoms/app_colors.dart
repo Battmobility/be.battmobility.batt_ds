@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
+  static const Color defaultBlue = Color(_primaryValue);
   static const int _primaryValue = 0xFF00AEED;
 
   static MaterialColor get primaryColors {
@@ -14,7 +15,7 @@ class AppColors {
         200: Color(0xFF78D6F1),
         300: Color(0xFF38C7ED),
         400: Color(0xFF00BAED),
-        500: Color(0xFF00AEED),
+        500: Color(_primaryValue),
         600: Color(0xFF00A0DF),
         700: Color(0xFF008DCC),
         800: Color(0xFF007CBA),
@@ -23,6 +24,7 @@ class AppColors {
     );
   }
 
+  static const int _secondaryValue = 0xFFE39A1D;
   static const int _secondaryValueMiles = 0xFFA75616;
 
   static MaterialColor get secondaryColors =>
@@ -32,12 +34,15 @@ class AppColors {
         200: Color(0xFFF4E193),
         300: Color(0xFFEFCD5A),
         400: Color(0xFFEBB934),
-        500: Color(0xFFE39A1D),
+        500: Color(_secondaryValue),
         600: Color(0xFFD47D17),
         700: Color(_secondaryValueMiles),
         800: Color(0xFF884218),
         900: Color(0xFF703717),
       });
+
+  static const defaultGrey = Color(_greyValue);
+  static const int _greyValue = 0xFF626478;
 
   static MaterialColor get grey => const MaterialColor(
         _greyValue,
@@ -55,7 +60,9 @@ class AppColors {
           950: Color(0xFF121214),
         },
       );
-  static const int _greyValue = 0xFF626478;
+
+  static const defaultGreen = Color(_greenValue);
+  static const int _greenValue = 0xFF5bc8af;
 
   static MaterialColor get green => const MaterialColor(
         _greenValue,
@@ -73,7 +80,8 @@ class AppColors {
         },
       );
 
-  static const int _greenValue = 0xFF5bc8af;
+  static const defaultOrange = Color(_orangeValue);
+  static const int _orangeValue = 0xFFEF7225;
 
   static MaterialColor get orange => const MaterialColor(
         _orangeValue,
@@ -90,7 +98,9 @@ class AppColors {
           900: Color(0xFF762C18),
         },
       );
-  static const int _orangeValue = 0xFFEF7225;
+
+  static const defaultRed = Color(_redValue);
+  static const int _redValue = 0xFFFF5C74;
 
   static MaterialColor get red => const MaterialColor(
         _redValue,
@@ -107,7 +117,9 @@ class AppColors {
           900: Color(0xFF840B2E),
         },
       );
-  static const int _redValue = 0xFFFF5C74;
+
+  static const defaultPurple = Color(0xFFB030B0);
+  static const int _purpleValue = 0xFFB030B0;
 
   static MaterialColor get purple => const MaterialColor(
         _purpleValue,
@@ -124,38 +136,18 @@ class AppColors {
           900: Color(0xFF3c103c),
         },
       );
-  static const int _purpleValue = 0xFFB030B0;
 
-  static const MaterialColor accent = MaterialColor(
-    _accentValue,
-    <int, Color>{
-      50: Color(0xFFFAFAFA),
-      100: Color(0xFFF5F5F5),
-      200: Color(0xffEEEEEE),
-      300: Color(0xFFE0E0E0),
-      400: Color(0xFFBDBDBD),
-      500: Color(_accentValue),
-      600: Color(0xFF757575),
-      700: Color(0xFF616161),
-      800: Color(0xFF424242),
-      900: Color(0xFF212121),
-    },
-  );
-  static const int _accentValue = 0xFF9E9E9E;
+  static const Color iconColor = Color(_primaryValue);
 
-  static Color button = const Color(0xFF241866);
-
-  static Color iconColor = const Color(_primaryValue);
-
-  static Color white = const Color(0xffffffff);
-  static Color black = const Color(0xff000000);
-  static Color brown = const Color(0xffb5935e);
+  static const Color white = Color(0xffffffff);
+  static const Color black = Color(0xff000004);
+  static const Color brown = Color(0xffb5935e);
 
   static const Color shadow = Color(0xFF999999);
   static const Color shadowDark = Color(0xff000000);
 
   static const Color background = Color(0xFFFFFFFF);
-  static const Color backgroundDark = Color(0xFF555555);
+  static const Color backgroundDark = Color(0xff000004);
   static const Color backgroundModal = Color(0xDDFFFFFF);
   static const Color cardBackground = Color(0xB3FFFFFF);
   static Color cardListBackground = const Color(0xFFF2F2F3);
@@ -165,7 +157,7 @@ class AppColors {
   static const Color navigationBarLabel = Color(0xFFFFFFFF);
   static const Color navigationBarIcon = Color(0xFFFFFFFF);
 
-  static const Color divider = Color(_accentValue);
+  static const Color divider = Color(_greyValue);
 
   static const Color borderColor = Color.fromRGBO(0, 0, 0, 0.12);
 
@@ -272,7 +264,7 @@ class AppColors {
   static Color availableLeftBackground = Colors.green[700]!;
   static Color availableRightLabel = Colors.green[900]!;
 
-  static Color unavailableRightBackground = accent[200]!;
-  static Color unavailableLeftBackground = accent[900]!;
-  static Color unavailableRightLabel = accent[900]!;
+  static Color unavailableRightBackground = grey[200]!;
+  static Color unavailableLeftBackground = grey[900]!;
+  static Color unavailableRightLabel = grey[900]!;
 }

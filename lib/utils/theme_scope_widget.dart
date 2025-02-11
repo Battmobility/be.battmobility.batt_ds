@@ -77,6 +77,7 @@ class ThemeScopeWidgetState extends State<ThemeScopeWidget> {
       });
     } on Exception catch (_) {
       _themeMode = ThemeMode.system;
+      // ignore: avoid_print
       print("Failed to change theme mode.");
     }
   }
