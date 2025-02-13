@@ -66,7 +66,7 @@ ThemeData darkTheme(BuildContext context) {
     cardTheme: CardTheme(color: theme.themeColorDark),
     checkboxTheme: CheckboxThemeData(
         side: BorderSide(color: theme.themeColorPrimary),
-        fillColor: WidgetStatePropertyAll(theme.themeColorDark),
+        fillColor: WidgetStatePropertyAll(theme.themeColorPrimary),
         checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
     textTheme: theme.textThemeDark,
     textButtonTheme: TextButtonThemeData(
