@@ -65,7 +65,10 @@ ThemeData darkTheme(BuildContext context) {
     extensions: [theme],
     appBarTheme: theme.appBarThemeDark,
     navigationBarTheme: theme.navigationBarThemeDark,
-    cardTheme: CardTheme(color: theme.themeColorDark),
+    cardTheme: CardTheme(
+      color: theme.themeColorDark,
+      shadowColor: theme.themeColorLight,
+    ),
     checkboxTheme: CheckboxThemeData(
         side: BorderSide(color: theme.themeColorPrimary),
         fillColor: WidgetStatePropertyAll(theme.themeColorPrimary),
