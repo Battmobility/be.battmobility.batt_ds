@@ -108,7 +108,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.secondaryColors[500]!),
+        color: AppColors.secondaryColors[500]!,
+        fontFamily: "LexendDeca",
+        package: "batt_ds"),
   );
 
   final AppBarTheme appBarThemeDark = AppBarTheme(
@@ -121,17 +123,22 @@ class AppTheme extends ThemeExtension<AppTheme> {
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryColors[50]!),
+        color: AppColors.primaryColors[50]!,
+        fontFamily: "LexendDeca",
+        package: "batt_ds"),
   );
 
   final NavigationBarThemeData navigationBarThemeLight = NavigationBarThemeData(
     backgroundColor: AppColors.primaryColors[800]!,
     indicatorColor: AppColors.grey[50]!,
     labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
-        fontSize: 18,
-        height: 24 / 24,
-        fontWeight: FontWeight.w600,
-        color: AppColors.primaryColors[50]!)),
+      fontSize: 18,
+      height: 24 / 24,
+      fontWeight: FontWeight.w600,
+      color: AppColors.primaryColors[50]!,
+      fontFamily: "LexendDeca",
+      package: "batt_ds",
+    )),
   );
 
   final NavigationBarThemeData navigationBarThemeDark = NavigationBarThemeData(
@@ -141,7 +148,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
         fontSize: 18,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryColors[50]!)),
+        color: AppColors.primaryColors[50]!,
+        fontFamily: "LexendDeca",
+        package: "batt_ds")),
   );
 
   final TextTheme textThemeLight = TextTheme(
