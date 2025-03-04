@@ -1,11 +1,14 @@
-import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
-import 'outlined_text_button.dart';
+import '../batt_text_button.dart';
 
-class OrangeOutlinedBattButton extends OutlinedTextButton {
-  const OrangeOutlinedBattButton({
+/// {@template primary_text_button}
+/// A custom primary text button widget that adapts to the platform.
+/// {@endtemplate}
+class DefaultSolidTextButton extends BattTextButton {
+  /// {@macro primary_text_button}
+  const DefaultSolidTextButton({
     super.key,
     required super.label,
     super.leading,
@@ -16,31 +19,27 @@ class OrangeOutlinedBattButton extends OutlinedTextButton {
   });
 
   @override
-  BorderSide defaultBorder(BuildContext context) =>
-      BorderSide(color: AppColors.orange);
-
-  @override
   Color backgroundColor(BuildContext context) {
-    return context.buttonTheme.secondaryDefault;
+    return context.buttonTheme.primaryDefault;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.orange.withAlpha(122);
+    return context.buttonTheme.primaryDisabled;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.orange[800]!;
+    return context.buttonTheme.primaryFocused;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.orange[600]!;
+    return context.buttonTheme.primaryHover;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.orange;
+    return context.buttonTheme.primaryText;
   }
 }

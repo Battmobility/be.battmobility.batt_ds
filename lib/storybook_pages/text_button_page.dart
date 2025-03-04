@@ -37,22 +37,22 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -62,28 +62,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XXLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Large with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Regular with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -95,28 +95,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XXLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Large with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Regular with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -128,7 +128,7 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XXLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
@@ -137,7 +137,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "XLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
@@ -146,7 +146,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Large with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
@@ -155,7 +155,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            SolidTextButton(
+                            DefaultSolidTextButton(
                               label: "Regular with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -484,22 +484,22 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -509,28 +509,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XXLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Large with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Regular with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -542,28 +542,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XXLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Large with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Regular with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -575,7 +575,7 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XXLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
@@ -584,7 +584,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "XLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
@@ -593,7 +593,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Large with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
@@ -602,7 +602,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OutlinedTextButton(
+                            DefaultOutlinedTextButton(
                               label: "Regular with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -633,22 +633,22 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -659,28 +659,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XXLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Large with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Regular with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -692,28 +692,28 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XXLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Large with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Regular with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -725,7 +725,7 @@ class TextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XXLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
@@ -734,7 +734,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "XLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
@@ -743,7 +743,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Large with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
@@ -752,7 +752,7 @@ class TextButtonPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            OrangeOutlinedBattButton(
+                            OrangeOutlinedTextButton(
                               label: "Regular with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,

@@ -6,9 +6,9 @@ import '../batt_text_button.dart';
 /// {@template primary_text_button}
 /// A custom primary text button widget that adapts to the platform.
 /// {@endtemplate}
-class SolidTextButton extends BattTextButton {
+class DefaultOutlinedTextButton extends BattTextButton {
   /// {@macro primary_text_button}
-  const SolidTextButton({
+  const DefaultOutlinedTextButton({
     super.key,
     required super.label,
     super.leading,
@@ -19,27 +19,31 @@ class SolidTextButton extends BattTextButton {
   });
 
   @override
+  BorderSide defaultBorder(BuildContext context) =>
+      BorderSide(color: textColor(context));
+
+  @override
   Color backgroundColor(BuildContext context) {
-    return context.buttonTheme.primaryDefault;
+    return context.buttonTheme.secondaryDefault;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return context.buttonTheme.primaryDisabled;
+    return context.buttonTheme.secondaryDisabled;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.primaryFocused;
+    return context.buttonTheme.secondaryFocused;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return context.buttonTheme.primaryHover;
+    return context.buttonTheme.secondaryHover;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.primaryText;
+    return context.buttonTheme.secondaryText;
   }
 }

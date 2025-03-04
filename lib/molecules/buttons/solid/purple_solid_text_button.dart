@@ -3,7 +3,7 @@ import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
-class PurpleSolidTextButton extends SolidTextButton {
+class PurpleSolidTextButton extends DefaultSolidTextButton {
   /// {@macro primary_text_button}
   const PurpleSolidTextButton({
     super.key,
