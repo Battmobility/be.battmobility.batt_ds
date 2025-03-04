@@ -1,9 +1,9 @@
-import 'package:batt_ds/molecules/buttons/buttons.dart';
+import 'package:batt_ds/molecules/buttons/batt_text_button.dart';
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
-class OrangeSolidTextButton extends DefaultSolidTextButton {
+class OrangeSolidTextButton extends BattTextButton {
   /// {@macro primary_text_button}
   const OrangeSolidTextButton({
     super.key,
