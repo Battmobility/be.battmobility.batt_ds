@@ -102,7 +102,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     shadowColor: Colors.transparent,
     scrolledUnderElevation: 0,
     elevation: 0,
-    iconTheme: const IconThemeData(color: AppColors.secondaryButtonTextColor),
+    iconTheme: const IconThemeData(color: AppColors.defaultOrange),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,
@@ -117,7 +117,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     color: AppColors.primaryColors[800]!,
     elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle.dark,
-    iconTheme: const IconThemeData(color: AppColors.secondaryButtonTextColor),
+    iconTheme: const IconThemeData(color: AppColors.defaultOrange),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,

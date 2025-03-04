@@ -38,7 +38,7 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       borderError: AppColors.orange,
       borderSuccess: AppColors.success,
       borderDisabled: AppColors.grey[300]!,
-      defaultColor: AppColors.grey[900]!,
+      defaultColor: AppColors.grey[50]!,
       disabledColor: AppColors.grey[300]!,
     );
   }
