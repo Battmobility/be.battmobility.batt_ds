@@ -26,7 +26,7 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
   /// {@macro app_input_theme}
   factory AppInputTheme.light() {
     return AppInputTheme(
-      defaultText: AppColors.primaryColors[50]!,
+      defaultText: AppColors.primaryColors[900]!,
       focusedOnBrand: AppColors.primaryColors[500]!,
       focusedTextDefault: AppColors.primaryColors[50]!,
       errorTextDefault: AppColors.orange,

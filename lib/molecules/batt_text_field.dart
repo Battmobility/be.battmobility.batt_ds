@@ -130,7 +130,7 @@ class BattTextField extends StatelessWidget {
           );
         },
       ),
-      cursorColor: context.inputTheme.focusedTextDefault,
+      cursorColor: context.inputTheme.defaultText,
       cursorHeight: 16,
       decoration: InputDecoration(
         labelText: labelText,

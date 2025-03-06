@@ -21,7 +21,7 @@ class OrangeOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return context.buttonTheme.secondaryDefault;
+    return Colors.transparent;
   }
 
   @override
