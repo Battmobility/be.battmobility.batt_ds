@@ -1,5 +1,4 @@
 import 'package:batt_ds/atoms/app_colors.dart';
-import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'default_outlined_text_button.dart';

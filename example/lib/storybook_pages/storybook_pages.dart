@@ -1,5 +1,5 @@
-import 'package:batt_ds/storybook_pages/snackbar_page.dart';
-import 'package:batt_ds/storybook_pages/text_button_page.dart';
+import 'snackbar_page.dart';
+import 'text_button_page.dart';
 import 'package:batt_ds/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
