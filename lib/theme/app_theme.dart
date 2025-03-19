@@ -1,5 +1,5 @@
 import 'package:batt_ds/atoms/atoms.dart';
-import 'package:batt_ds/molecules/borders/gradient_border.dart';
+import 'package:batt_ds/molecules/borders/gradient_input_border.dart';
 import 'package:batt_ds/theme/chip_theme.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:batt_ds/theme/navigation_theme.dart';
