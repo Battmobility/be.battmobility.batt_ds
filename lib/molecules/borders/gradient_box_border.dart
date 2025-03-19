@@ -1,74 +1,50 @@
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomGradientBoxDecoration extends BoxDecoration {
-  final double borderWidth;
-
-  const CustomGradientBoxDecoration({
+class GradientBorderDecoration extends BoxDecoration {
+  GradientBorderDecoration({
     required Gradient gradient,
-    required this.borderWidth,
-    BorderRadiusGeometry? borderRadius,
-    BoxShape shape = BoxShape.rectangle,
-    BoxBorder? border,
-    List<BoxShadow>? boxShadow,
+    required double borderWidth,
+    BorderRadius? borderRadius,
   }) : super(
-          gradient: gradient,
+          border: _buildGradientBorder(gradient, borderWidth),
           borderRadius: borderRadius,
-          shape: shape,
-          border: border,
-          boxShadow: boxShadow,
         );
 
-  factory CustomGradientBoxDecoration.standard() {
-    return CustomGradientBoxDecoration(
+  factory GradientBorderDecoration.standard() {
+    return GradientBorderDecoration(
       gradient: GradientTheme.light().inputBorderGradient,
       borderWidth: 2.0,
     );
   }
 
-  @override
-  CustomGradientBoxDecoration copyWith({
-    BlendMode? backgroundBlendMode,
-    BoxBorder? border,
-    BorderRadiusGeometry? borderRadius,
-    List<BoxShadow>? boxShadow,
-    Color? color,
-    Gradient? gradient,
-    DecorationImage? image,
-    BoxShape? shape,
-    double? borderWidth,
-  }) {
-    return CustomGradientBoxDecoration(
-      gradient: gradient ?? this.gradient!,
-      borderWidth: borderWidth ?? this.borderWidth,
-      borderRadius: borderRadius ?? this.borderRadius,
-      shape: shape ?? this.shape,
-      border: border ?? this.border,
-      boxShadow: boxShadow ?? this.boxShadow,
+  static Border _buildGradientBorder(Gradient gradient, double width) {
+    if (gradient is LinearGradient) {
+      return Border.all(
+        width: width,
+        color: _getGradientMainColor(gradient),
+      );
+    }
+
+    return Border(
+      top: _buildGradientBorderSide(gradient, width),
+      right: _buildGradientBorderSide(gradient, width),
+      bottom: _buildGradientBorderSide(gradient, width),
+      left: _buildGradientBorderSide(gradient, width),
     );
   }
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    return other is CustomGradientBoxDecoration &&
-        other.gradient == gradient &&
-        other.borderWidth == borderWidth &&
-        other.borderRadius == borderRadius &&
-        other.shape == shape &&
-        other.border == border &&
-        other.boxShadow == boxShadow;
+  static BorderSide _buildGradientBorderSide(Gradient gradient, double width) {
+    return BorderSide(
+      width: width,
+      color: _getGradientMainColor(gradient),
+    );
   }
 
-  @override
-  int get hashCode {
-    return Object.hash(
-      gradient,
-      borderWidth,
-      borderRadius,
-      shape,
-      border,
-      boxShadow,
-    );
+  static Color _getGradientMainColor(Gradient gradient) {
+    if (gradient.colors.isEmpty) {
+      return Colors.transparent;
+    }
+    return gradient.colors.first;
   }
 }
