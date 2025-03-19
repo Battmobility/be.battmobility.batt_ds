@@ -91,34 +91,36 @@ class BattIconTextButton extends StatelessWidget {
               size: iconSize,
               color: iconColor(context),
             ),
-            Text(label,
-                overflow: TextOverflow.clip,
-                textAlign: TextAlign.center,
-                textScaler: const TextScaler.linear(1.0),
-                maxLines: 1,
-                style: switch (buttonSize) {
-                  BattButtonSize.small ||
-                  BattButtonSize.xSmall =>
-                    context.typographyTheme.buttonSmall.copyWith(
-                        color: textColor(context),
-                        overflow: TextOverflow.ellipsis),
-                  BattButtonSize.medium => context.typographyTheme.buttonMedium
-                      .copyWith(
+            FittedBox(
+              child: Text(label,
+                  overflow: TextOverflow.clip,
+                  textAlign: TextAlign.center,
+                  textScaler: const TextScaler.linear(1.0),
+                  maxLines: 1,
+                  style: switch (buttonSize) {
+                    BattButtonSize.small ||
+                    BattButtonSize.xSmall =>
+                      context.typographyTheme.buttonSmall.copyWith(
                           color: textColor(context),
                           overflow: TextOverflow.ellipsis),
-                  BattButtonSize.large => context.typographyTheme.buttonLarge
-                      .copyWith(
+                    BattButtonSize.medium =>
+                      context.typographyTheme.buttonMedium.copyWith(
                           color: textColor(context),
                           overflow: TextOverflow.ellipsis),
-                  BattButtonSize.xLarge => context.typographyTheme.buttonXLarge
-                      .copyWith(
+                    BattButtonSize.large => context.typographyTheme.buttonLarge
+                        .copyWith(
+                            color: textColor(context),
+                            overflow: TextOverflow.ellipsis),
+                    BattButtonSize.xLarge =>
+                      context.typographyTheme.buttonXLarge.copyWith(
                           color: textColor(context),
                           overflow: TextOverflow.ellipsis),
-                  BattButtonSize.xxLarge =>
-                    context.typographyTheme.button2XLarge.copyWith(
-                        color: textColor(context),
-                        overflow: TextOverflow.ellipsis),
-                }),
+                    BattButtonSize.xxLarge =>
+                      context.typographyTheme.button2XLarge.copyWith(
+                          color: textColor(context),
+                          overflow: TextOverflow.ellipsis),
+                  }),
+            ),
           ],
         ),
       ),
