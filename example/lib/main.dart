@@ -1,4 +1,5 @@
 import 'package:batt_ds/theme/app_theme.dart';
+import 'package:example/storybook_pages/borders_page.dart';
 import 'package:example/storybook_pages/chip_page.dart';
 import 'package:example/storybook_pages/icon_text_button_page.dart';
 import 'package:example/storybook_pages/license_plate_page.dart';
@@ -84,13 +85,26 @@ Storybook get storybook {
       },
       name: 'Snackbars');
 
+  final bordersStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const BordersPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Borders');
+
   return Storybook(
     stories: [
       buttonStory,
       iconTextButtonStory,
       chipStory,
       licensePlateStory,
-      snackBarStory
+      snackBarStory,
+      bordersStory
     ],
     plugins: initializePlugins(enableThemeMode: true, enableCodeView: true),
   );

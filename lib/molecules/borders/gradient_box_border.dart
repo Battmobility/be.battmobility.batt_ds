@@ -1,4 +1,7 @@
+import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
+import 'package:flutter/material.dart';
+
 import 'package:flutter/material.dart';
 
 class GradientBorderDecoration extends BoxDecoration {
@@ -6,45 +9,92 @@ class GradientBorderDecoration extends BoxDecoration {
     required Gradient gradient,
     required double borderWidth,
     BorderRadius? borderRadius,
+    Color? color,
+    DecorationImage? image,
+    BoxShape shape = BoxShape.rectangle,
+    List<BoxShadow>? boxShadow,
   }) : super(
-          border: _buildGradientBorder(gradient, borderWidth),
+          border: GradientBorder(
+            gradient: gradient,
+            width: borderWidth,
+          ),
           borderRadius: borderRadius,
+          color: color,
+          image: image,
+          shape: shape,
+          boxShadow: boxShadow,
         );
 
   factory GradientBorderDecoration.standard() {
     return GradientBorderDecoration(
-      gradient: GradientTheme.light().inputBorderGradient,
-      borderWidth: 2.0,
-    );
+        gradient: GradientTheme.dark().inputBorderGradient,
+        borderWidth: 2.0,
+        borderRadius: const BorderRadius.all(CornerRadii.s));
   }
+}
 
-  static Border _buildGradientBorder(Gradient gradient, double width) {
-    if (gradient is LinearGradient) {
-      return Border.all(
-        width: width,
-        color: _getGradientMainColor(gradient),
-      );
+class GradientBorder extends Border {
+  final Gradient gradient;
+
+  GradientBorder({
+    required this.gradient,
+    required double width,
+  }) : super(
+          top: GradientBorderSide(gradient: gradient, width: width),
+          right: GradientBorderSide(gradient: gradient, width: width),
+          bottom: GradientBorderSide(gradient: gradient, width: width),
+          left: GradientBorderSide(gradient: gradient, width: width),
+        );
+
+  @override
+  void paint(
+    Canvas canvas,
+    Rect rect, {
+    TextDirection? textDirection,
+    BoxShape shape = BoxShape.rectangle,
+    BorderRadius? borderRadius,
+  }) {
+    Path path;
+    if (shape == BoxShape.circle) {
+      path = Path()..addOval(rect);
+    } else if (borderRadius != null) {
+      path = Path()..addRRect(borderRadius.toRRect(rect));
+    } else {
+      path = Path()..addRect(rect);
     }
 
-    return Border(
-      top: _buildGradientBorderSide(gradient, width),
-      right: _buildGradientBorderSide(gradient, width),
-      bottom: _buildGradientBorderSide(gradient, width),
-      left: _buildGradientBorderSide(gradient, width),
-    );
-  }
+    final Paint paint = Paint()
+      ..shader = gradient.createShader(rect)
+      ..strokeWidth = top.width
+      ..style = PaintingStyle.stroke;
 
-  static BorderSide _buildGradientBorderSide(Gradient gradient, double width) {
-    return BorderSide(
-      width: width,
-      color: _getGradientMainColor(gradient),
-    );
+    canvas.drawPath(path, paint);
   }
+}
 
-  static Color _getGradientMainColor(Gradient gradient) {
-    if (gradient.colors.isEmpty) {
-      return Colors.transparent;
-    }
-    return gradient.colors.first;
+class GradientBorderSide extends BorderSide {
+  final Gradient gradient;
+
+  const GradientBorderSide({
+    required this.gradient,
+    required double width,
+  }) : super(
+          width: width,
+          style: BorderStyle.solid,
+        );
+
+  @override
+  void paint(
+    Canvas canvas,
+    Path path, {
+    double strokeAlign = BorderSide.strokeAlignCenter,
+    TextDirection? textDirection,
+  }) {
+    final Paint paint = Paint()
+      ..shader = gradient.createShader(path.getBounds())
+      ..strokeWidth = width
+      ..style = PaintingStyle.stroke;
+
+    canvas.drawPath(path, paint);
   }
 }

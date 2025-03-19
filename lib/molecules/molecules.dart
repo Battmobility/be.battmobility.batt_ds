@@ -1,4 +1,5 @@
 export 'batt_text_field.dart';
+export 'borders/gradient_box_border.dart';
 export 'buttons/buttons.dart';
 export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';
