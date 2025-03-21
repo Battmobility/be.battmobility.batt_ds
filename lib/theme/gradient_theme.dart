@@ -16,7 +16,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.topCenter,
         stops: const [0, 1],
         colors: [
-          AppColors.grey[200]!,
+          AppColors.grey[50]!,
           AppColors.grey[100]!,
         ],
       ),
@@ -50,8 +50,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.topCenter,
         stops: const [0, 1],
         colors: [
-          AppColors.grey[400]!,
-          AppColors.grey[200]!,
+          AppColors.grey[950]!,
+          AppColors.grey[900]!,
         ],
       ),
       heroGradient: RadialGradient(
