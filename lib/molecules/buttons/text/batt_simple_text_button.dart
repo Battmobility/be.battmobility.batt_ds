@@ -105,8 +105,9 @@ abstract class BattSimpleTextButton extends BattTextButton {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
                 style: switch (buttonSize) {
-                  BattButtonSize.small || BattButtonSize.xSmall => context
-                      .typographyTheme.buttonSmall
+                  BattButtonSize.xSmall => context.typographyTheme.buttonXSmall
+                      .copyWith(color: textColor(context)),
+                  BattButtonSize.small => context.typographyTheme.buttonSmall
                       .copyWith(color: textColor(context)),
                   BattButtonSize.medium => context.typographyTheme.buttonMedium
                       .copyWith(color: textColor(context)),

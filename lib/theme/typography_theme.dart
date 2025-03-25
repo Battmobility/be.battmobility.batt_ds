@@ -30,6 +30,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     required this.buttonLarge,
     required this.buttonMedium,
     required this.buttonSmall,
+    required this.buttonXSmall,
     required this.chipSmall,
     required this.chipMedium,
     required this.chipLarge,
@@ -67,6 +68,9 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
 
   /// Button Small
   final TextStyle buttonSmall;
+
+  /// Button XSmall
+  final TextStyle buttonXSmall;
 
   // Default text
   final TextStyle largeText;
@@ -145,6 +149,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     TextStyle? buttonLarge,
     TextStyle? buttonMedium,
     TextStyle? buttonSmall,
+    TextStyle? buttonXSmall,
     TextStyle? chipSmall,
     TextStyle? chipMedium,
     TextStyle? chipLarge,
@@ -182,6 +187,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       buttonLarge: buttonLarge ?? this.buttonLarge,
       buttonMedium: buttonMedium ?? this.buttonMedium,
       buttonSmall: buttonSmall ?? this.buttonSmall,
+      buttonXSmall: buttonXSmall ?? this.buttonXSmall,
       chipLarge: chipLarge ?? this.chipLarge,
       chipMedium: chipMedium ?? this.chipMedium,
       chipSmall: chipSmall ?? this.chipSmall,
@@ -228,6 +234,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       buttonLarge: TextStyle.lerp(buttonLarge, other.buttonLarge, t)!,
       buttonMedium: TextStyle.lerp(buttonMedium, other.buttonMedium, t)!,
       buttonSmall: TextStyle.lerp(buttonSmall, other.buttonSmall, t)!,
+      buttonXSmall: TextStyle.lerp(buttonXSmall, other.buttonXSmall, t)!,
       chipSmall: TextStyle.lerp(chipSmall, other.chipSmall, t)!,
       chipMedium: TextStyle.lerp(chipMedium, other.chipMedium, t)!,
       chipLarge: TextStyle.lerp(chipLarge, other.chipLarge, t)!,
@@ -321,7 +328,14 @@ class AppTypography extends AppTypographyTheme {
         fontFamily: "LexendDeca",
         package: "batt_ds"),
     super.buttonSmall = const TextStyle(
-        fontSize: 8,
+        fontSize: 12,
+        height: 20 / 14,
+        fontWeight: FontWeight.w500,
+        color: AppColors.primaryButtonTextColor,
+        fontFamily: "LexendDeca",
+        package: "batt_ds"),
+    super.buttonXSmall = const TextStyle(
+        fontSize: 10,
         height: 20 / 14,
         fontWeight: FontWeight.w500,
         color: AppColors.primaryButtonTextColor,
@@ -553,6 +567,13 @@ class AppTypographyDark extends AppTypographyTheme {
         package: "batt_ds"),
     super.buttonSmall = const TextStyle(
         fontSize: 12,
+        height: 20 / 14,
+        fontWeight: FontWeight.w500,
+        color: AppColors.primaryButtonTextColor,
+        fontFamily: "LexendDeca",
+        package: "batt_ds"),
+    super.buttonXSmall = const TextStyle(
+        fontSize: 10,
         height: 20 / 14,
         fontWeight: FontWeight.w500,
         color: AppColors.primaryButtonTextColor,
