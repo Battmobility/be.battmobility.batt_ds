@@ -1,5 +1,5 @@
 import 'snackbar_page.dart';
-import 'text_button_page.dart';
+import 'rounded_button_page.dart';
 import 'package:batt_ds/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
@@ -23,17 +23,30 @@ Storybook get storybook {
         );
       },
       name: 'Chips');
+
   final buttonStory = Story(
       builder: (context) {
         return MaterialApp(
-          home: const TextButtonPage(),
+          home: const RoundedButtonPage(),
           theme: ThemeData(
             extensions: [AppTheme.light()],
             fontFamily: "SF Pro Text",
           ),
         );
       },
-      name: 'Buttons');
+      name: 'Rounded Buttons');
+
+  final simpleButtonStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const RoundedButtonPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Simple Buttons');
 
   final iconTextButtonStory = Story(
       builder: (context) {
@@ -73,6 +86,7 @@ Storybook get storybook {
 
   return Storybook(
     stories: [
+      simpleButtonStory,
       buttonStory,
       iconTextButtonStory,
       chipStory,

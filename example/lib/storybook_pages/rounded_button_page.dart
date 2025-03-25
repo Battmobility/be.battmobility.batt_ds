@@ -1,8 +1,8 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
 
-class TextButtonPage extends StatelessWidget {
-  const TextButtonPage({super.key});
+class RoundedButtonPage extends StatelessWidget {
+  const RoundedButtonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class TextButtonPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'Buttons',
+                    'Rounded buttons',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -204,9 +204,9 @@ class TextButtonPage extends StatelessWidget {
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
                             DefaultSolidTextButton(
-                              label: "Small with both",
+                              label: "Regular with both",
                               onPressed: () => {},
-                              buttonSize: BattButtonSize.small,
+                              buttonSize: BattButtonSize.medium,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                               trailing: (color) =>
@@ -215,7 +215,7 @@ class TextButtonPage extends StatelessWidget {
                             DefaultSolidTextButton(
                               label: "XSmall with both",
                               onPressed: () => {},
-                              buttonSize: BattButtonSize.xSmall,
+                              buttonSize: BattButtonSize.medium,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                               trailing: (color) =>
@@ -560,16 +560,6 @@ class TextButtonPage extends StatelessWidget {
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
-                            ),
-                            DefaultOutlinedTextButton(
-                              label: "Small button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.small,
-                            ),
-                            DefaultOutlinedTextButton(
-                              label: "XSmall button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.xSmall,
                             ),
                           ]),
                       Wrap(

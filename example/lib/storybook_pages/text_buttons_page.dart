@@ -1,8 +1,8 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
 
-class IconTextButtonPage extends StatelessWidget {
-  const IconTextButtonPage({super.key});
+class TextButtonPage extends StatelessWidget {
+  const TextButtonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class IconTextButtonPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'Icon text buttons',
+                    'Simple buttons',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -37,39 +37,33 @@ class IconTextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "XXLarge button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "XLarge button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "Large button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "Regular button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
                             ),
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "Small button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.small,
                             ),
-                            BattIconTextButton(
+                            DefaultSimpleTextButton(
                               label: "XSmall button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,
                             ),
@@ -83,7 +77,7 @@ class IconTextButtonPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'Grey',
+                    'Orange',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -95,39 +89,85 @@ class IconTextButtonPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "XXLarge button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "XLarge button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "Large button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "Regular button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
                             ),
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "Small button",
-                              icon: Icons.car_crash,
                               onPressed: () => {},
                               buttonSize: BattButtonSize.small,
                             ),
-                            GreyIconTextButton(
+                            OrangeSimpleTextButton(
                               label: "XSmall button",
-                              icon: Icons.car_crash,
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                            ),
+                          ]),
+                    ]
+                        .map((e) => Padding(
+                              padding: AppPaddings.small.vertical,
+                              child: e,
+                            ))
+                        .toList()),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Purple',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            PurpleSimpleTextButton(
+                              label: "XXLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                            ),
+                            PurpleSimpleTextButton(
+                              label: "XLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                            ),
+                            PurpleSimpleTextButton(
+                              label: "Large button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                            ),
+                            PurpleSimpleTextButton(
+                              label: "Regular button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                            ),
+                            PurpleSimpleTextButton(
+                              label: "Small button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                            ),
+                            PurpleSimpleTextButton(
+                              label: "XSmall button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,
                             ),

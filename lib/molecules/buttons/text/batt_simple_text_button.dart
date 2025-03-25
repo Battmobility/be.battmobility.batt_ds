@@ -71,20 +71,8 @@ abstract class BattSimpleTextButton extends BattTextButton {
         foregroundColor: inputTextColor,
         fixedSize: WidgetStateProperty.all(
           switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const Size(double.infinity, 40),
-            BattButtonSize.medium => const Size(double.infinity, 40),
-            BattButtonSize.large => const Size(double.infinity, 44),
-            BattButtonSize.xLarge => const Size(double.infinity, 52),
-            BattButtonSize.xxLarge => const Size(double.infinity, 56),
-          },
-        ),
-        maximumSize: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const Size(double.infinity, 40),
+            BattButtonSize.small => const Size(double.infinity, 32),
+            BattButtonSize.xSmall => const Size(double.infinity, 36),
             BattButtonSize.medium => const Size(double.infinity, 40),
             BattButtonSize.large => const Size(double.infinity, 44),
             BattButtonSize.xLarge => const Size(double.infinity, 52),

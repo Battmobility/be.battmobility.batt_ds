@@ -3,7 +3,8 @@ import 'package:example/storybook_pages/borders_page.dart';
 import 'package:example/storybook_pages/chip_page.dart';
 import 'package:example/storybook_pages/icon_text_button_page.dart';
 import 'package:example/storybook_pages/license_plate_page.dart';
-import 'package:example/storybook_pages/text_button_page.dart';
+import 'package:example/storybook_pages/rounded_button_page.dart';
+import 'package:example/storybook_pages/text_buttons_page.dart';
 import 'package:flutter/material.dart';
 import 'package:batt_ds/batt_ds.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
@@ -40,7 +41,7 @@ Storybook get storybook {
   final buttonStory = Story(
       builder: (context) {
         return MaterialApp(
-          home: const TextButtonPage(),
+          home: const RoundedButtonPage(),
           theme: ThemeData(
             extensions: [AppTheme.light()],
             fontFamily: "SF Pro Text",
@@ -48,6 +49,18 @@ Storybook get storybook {
         );
       },
       name: 'Buttons');
+
+  final textButtonStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const TextButtonPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Text buttons');
 
   final iconTextButtonStory = Story(
       builder: (context) {
@@ -100,6 +113,7 @@ Storybook get storybook {
   return Storybook(
     stories: [
       buttonStory,
+      textButtonStory,
       iconTextButtonStory,
       chipStory,
       licensePlateStory,
