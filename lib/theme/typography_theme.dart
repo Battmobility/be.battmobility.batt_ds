@@ -475,9 +475,8 @@ class AppTypography extends AppTypographyTheme {
         fontFamily: "LexendDeca",
         package: "batt_ds"),
     super.dateTimeStyle = const TextStyle(
-        fontSize: 16,
+        fontSize: 14,
         height: 24 / 24,
-        fontWeight: FontWeight.w400,
         color: AppColors.primaryTextColorLight,
         fontFeatures: [FontFeature.tabularFigures()],
         fontFamily: "LexendDeca",
@@ -712,9 +711,8 @@ class AppTypographyDark extends AppTypographyTheme {
       package: "batt_ds",
     ),
     super.dateTimeStyle = const TextStyle(
-      fontSize: 16,
+      fontSize: 14,
       height: 24 / 24,
-      fontWeight: FontWeight.w400,
       color: AppColors.textColorDark,
       fontFeatures: [FontFeature.tabularFigures()],
       fontFamily: "LexendDeca",
