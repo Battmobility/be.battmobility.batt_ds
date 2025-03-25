@@ -81,7 +81,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final ThemeExtension<GradientTheme> gradientTheme;
 
   final themeColorLight = AppColors.white;
-  final themeColorDark = AppColors.grey[950]!;
+  final themeColorDark = AppColors.grey[900]!;
 
   final shadowColorLight = AppColors.shadow;
   final shadowColorDark = AppColors.shadowDark;
