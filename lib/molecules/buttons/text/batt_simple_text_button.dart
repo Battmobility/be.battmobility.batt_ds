@@ -73,7 +73,7 @@ abstract class BattSimpleTextButton extends BattTextButton {
           switch (buttonSize) {
             BattButtonSize.small ||
             BattButtonSize.xSmall =>
-              const Size(double.infinity, 36),
+              const Size(double.infinity, 40),
             BattButtonSize.medium => const Size(double.infinity, 40),
             BattButtonSize.large => const Size(double.infinity, 44),
             BattButtonSize.xLarge => const Size(double.infinity, 52),
@@ -84,7 +84,7 @@ abstract class BattSimpleTextButton extends BattTextButton {
           switch (buttonSize) {
             BattButtonSize.small ||
             BattButtonSize.xSmall =>
-              const Size(double.infinity, 36),
+              const Size(double.infinity, 40),
             BattButtonSize.medium => const Size(double.infinity, 40),
             BattButtonSize.large => const Size(double.infinity, 44),
             BattButtonSize.xLarge => const Size(double.infinity, 52),

@@ -80,9 +80,8 @@ abstract class BattTextButton extends StatelessWidget {
   BorderSide disabledBorder(BuildContext context) => BorderSide.none;
 
   BorderRadius get borderRadius => switch (buttonSize) {
-        BattButtonSize.xSmall ||
-        BattButtonSize.small =>
-          const BorderRadius.all(CornerRadii.xl),
+        BattButtonSize.xSmall => const BorderRadius.all(CornerRadii.l),
+        BattButtonSize.small => const BorderRadius.all(CornerRadii.xl),
         BattButtonSize.medium => const BorderRadius.all(CornerRadii.xxl),
         BattButtonSize.large ||
         BattButtonSize.xLarge =>
@@ -108,158 +107,168 @@ abstract class BattTextButton extends StatelessWidget {
       },
     );
 
-    return ElevatedButton(
-      focusNode: focusNode,
-      style: ButtonStyle(
-        elevation: WidgetStateProperty.all(0),
-        splashFactory: NoSplash.splashFactory,
-        overlayColor: WidgetStateProperty.resolveWith(
-          (states) {
-            if (states.contains(WidgetState.disabled)) {
-              return disabledColor(context);
-            }
+    double calculateButtonHeight(BattButtonSize buttonSize) {
+      return switch (buttonSize) {
+        BattButtonSize.xSmall => 32,
+        BattButtonSize.small => 36,
+        BattButtonSize.medium => 40,
+        BattButtonSize.large => 44,
+        BattButtonSize.xLarge => 52,
+        BattButtonSize.xxLarge => 56,
+      };
+    }
 
-            if (states.contains(WidgetState.hovered)) {
-              return hoverColor(context);
-            }
+    final fullHeight = calculateButtonHeight(buttonSize);
 
-            if (states.contains(WidgetState.focused)) {
-              return focusColor(context);
-            }
+    return SizedBox(
+      height: fullHeight,
+      child: ElevatedButton(
+        focusNode: focusNode,
+        style: ButtonStyle(
+          elevation: WidgetStateProperty.all(0),
+          splashFactory: NoSplash.splashFactory,
+          overlayColor: WidgetStateProperty.resolveWith(
+            (states) {
+              if (states.contains(WidgetState.disabled)) {
+                return disabledColor(context);
+              }
 
-            if (states.contains(WidgetState.pressed)) {
-              return focusColor(context);
-            }
+              if (states.contains(WidgetState.hovered)) {
+                return hoverColor(context);
+              }
 
-            return backgroundColor(context);
-          },
+              if (states.contains(WidgetState.focused)) {
+                return focusColor(context);
+              }
+
+              if (states.contains(WidgetState.pressed)) {
+                return focusColor(context);
+              }
+
+              return backgroundColor(context);
+            },
+          ),
+          shape: WidgetStateProperty.resolveWith(
+            (states) {
+              const shape = StadiumBorder();
+
+              if (states.contains(WidgetState.disabled)) {
+                return shape.copyWith(side: disabledBorder(context));
+              }
+
+              if (states.contains(WidgetState.focused)) {
+                return shape.copyWith(side: focusedBorder(context));
+              }
+
+              if (states.contains(WidgetState.hovered)) {
+                return shape.copyWith(side: hoverBorder(context));
+              }
+
+              if (states.contains(WidgetState.pressed)) {
+                return shape.copyWith(side: focusedBorder(context));
+              }
+
+              return shape.copyWith(side: defaultBorder(context));
+            },
+          ),
+          backgroundColor: WidgetStateProperty.resolveWith(
+            (states) {
+              if (states.contains(WidgetState.disabled)) {
+                return disabledColor(context);
+              }
+
+              if (states.contains(WidgetState.hovered)) {
+                return hoverColor(context);
+              }
+
+              if (states.contains(WidgetState.focused)) {
+                return focusColor(context);
+              }
+
+              if (states.contains(WidgetState.pressed)) {
+                return focusColor(context);
+              }
+
+              return backgroundColor(context);
+            },
+          ),
+          foregroundColor: inputTextColor,
+          fixedSize: WidgetStateProperty.all(
+            switch (buttonSize) {
+              BattButtonSize.small => const Size(double.infinity, 32),
+              BattButtonSize.xSmall => const Size(double.infinity, 36),
+              BattButtonSize.medium => const Size(double.infinity, 40),
+              BattButtonSize.large => const Size(double.infinity, 44),
+              BattButtonSize.xLarge => const Size(double.infinity, 52),
+              BattButtonSize.xxLarge => const Size(double.infinity, 56),
+            },
+          ),
+          padding: WidgetStateProperty.all(
+            switch (buttonSize) {
+              BattButtonSize.small => const EdgeInsets.symmetric(horizontal: 6),
+              BattButtonSize.xSmall =>
+                const EdgeInsets.symmetric(horizontal: 8),
+              BattButtonSize.medium =>
+                const EdgeInsets.symmetric(horizontal: 16),
+              BattButtonSize.large =>
+                const EdgeInsets.symmetric(horizontal: 18),
+              BattButtonSize.xLarge =>
+                const EdgeInsets.symmetric(horizontal: 22),
+              BattButtonSize.xxLarge =>
+                const EdgeInsets.symmetric(horizontal: 26),
+            },
+          ),
         ),
-        shape: WidgetStateProperty.resolveWith(
-          (states) {
-            const shape = StadiumBorder();
-
-            if (states.contains(WidgetState.disabled)) {
-              return shape.copyWith(side: disabledBorder(context));
-            }
-
-            if (states.contains(WidgetState.focused)) {
-              return shape.copyWith(side: focusedBorder(context));
-            }
-
-            if (states.contains(WidgetState.hovered)) {
-              return shape.copyWith(side: hoverBorder(context));
-            }
-
-            if (states.contains(WidgetState.pressed)) {
-              return shape.copyWith(side: focusedBorder(context));
-            }
-
-            return shape.copyWith(side: defaultBorder(context));
-          },
-        ),
-        backgroundColor: WidgetStateProperty.resolveWith(
-          (states) {
-            if (states.contains(WidgetState.disabled)) {
-              return disabledColor(context);
-            }
-
-            if (states.contains(WidgetState.hovered)) {
-              return hoverColor(context);
-            }
-
-            if (states.contains(WidgetState.focused)) {
-              return focusColor(context);
-            }
-
-            if (states.contains(WidgetState.pressed)) {
-              return focusColor(context);
-            }
-
-            return backgroundColor(context);
-          },
-        ),
-        foregroundColor: inputTextColor,
-        fixedSize: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const Size(double.infinity, 36),
-            BattButtonSize.medium => const Size(double.infinity, 40),
-            BattButtonSize.large => const Size(double.infinity, 44),
-            BattButtonSize.xLarge => const Size(double.infinity, 52),
-            BattButtonSize.xxLarge => const Size(double.infinity, 56),
-          },
-        ),
-        maximumSize: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const Size(double.infinity, 36),
-            BattButtonSize.medium => const Size(double.infinity, 40),
-            BattButtonSize.large => const Size(double.infinity, 44),
-            BattButtonSize.xLarge => const Size(double.infinity, 52),
-            BattButtonSize.xxLarge => const Size(double.infinity, 56),
-          },
-        ),
-        padding: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const EdgeInsets.symmetric(horizontal: 8),
-            BattButtonSize.medium => const EdgeInsets.symmetric(horizontal: 16),
-            BattButtonSize.large => const EdgeInsets.symmetric(horizontal: 18),
-            BattButtonSize.xLarge => const EdgeInsets.symmetric(horizontal: 22),
-            BattButtonSize.xxLarge =>
-              const EdgeInsets.symmetric(horizontal: 26),
-          },
-        ),
-      ),
-      onPressed: onPressed,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (leading != null) ...[
-            leading!(
-              onPressed != null
-                  ? textColor(context)
-                  : disabledTextColor(context),
-            ),
-            SizedBox(width: betweenSpace),
-          ],
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacings.xxs),
-              child: Text(
-                label,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: switch (buttonSize) {
-                  BattButtonSize.small || BattButtonSize.xSmall => context
-                      .typographyTheme.buttonSmall
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.medium => context.typographyTheme.buttonMedium
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.large => context.typographyTheme.buttonLarge
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.xLarge => context.typographyTheme.buttonXLarge
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.xxLarge => context
-                      .typographyTheme.button2XLarge
-                      .copyWith(color: textColor(context)),
-                },
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (leading != null) ...[
+              leading!(
+                onPressed != null
+                    ? textColor(context)
+                    : disabledTextColor(context),
+              ),
+              SizedBox(width: betweenSpace),
+            ],
+            Flexible(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: AppSpacings.xxs),
+                child: Text(
+                  label,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: switch (buttonSize) {
+                    BattButtonSize.small || BattButtonSize.xSmall => context
+                        .typographyTheme.buttonSmall
+                        .copyWith(color: textColor(context)),
+                    BattButtonSize.medium => context
+                        .typographyTheme.buttonMedium
+                        .copyWith(color: textColor(context)),
+                    BattButtonSize.large => context.typographyTheme.buttonLarge
+                        .copyWith(color: textColor(context)),
+                    BattButtonSize.xLarge => context
+                        .typographyTheme.buttonXLarge
+                        .copyWith(color: textColor(context)),
+                    BattButtonSize.xxLarge => context
+                        .typographyTheme.button2XLarge
+                        .copyWith(color: textColor(context)),
+                  },
+                ),
               ),
             ),
-          ),
-          if (trailing != null) ...[
-            SizedBox(width: betweenSpace),
-            trailing!(
-              onPressed != null
-                  ? textColor(context)
-                  : disabledTextColor(context),
-            ),
+            if (trailing != null) ...[
+              SizedBox(width: betweenSpace),
+              trailing!(
+                onPressed != null
+                    ? textColor(context)
+                    : disabledTextColor(context),
+              ),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

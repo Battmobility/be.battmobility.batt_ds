@@ -39,6 +39,8 @@ ThemeData lightTheme(BuildContext context) {
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: theme.themeColorPrimary,
     ),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+        style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
@@ -89,6 +91,8 @@ ThemeData darkTheme(BuildContext context) {
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: theme.themeColorPrimary,
     ),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+        style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),

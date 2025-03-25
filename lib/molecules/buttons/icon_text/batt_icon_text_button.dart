@@ -18,9 +18,8 @@ class BattIconTextButton extends StatelessWidget {
   final BattButtonSize buttonSize;
 
   BorderRadius get borderRadius => switch (buttonSize) {
-        BattButtonSize.xSmall ||
-        BattButtonSize.small =>
-          const BorderRadius.all(CornerRadii.xl),
+        BattButtonSize.xSmall => const BorderRadius.all(CornerRadii.l),
+        BattButtonSize.small => const BorderRadius.all(CornerRadii.xl),
         BattButtonSize.medium => const BorderRadius.all(CornerRadii.xxl),
         BattButtonSize.large ||
         BattButtonSize.xLarge =>
@@ -29,7 +28,8 @@ class BattIconTextButton extends StatelessWidget {
       };
 
   double get iconSize => switch (buttonSize) {
-        BattButtonSize.xSmall || BattButtonSize.small => AppSpacings.lg,
+        BattButtonSize.xSmall => AppSpacings.md,
+        BattButtonSize.small => AppSpacings.lg,
         BattButtonSize.medium => AppSpacings.xl,
         BattButtonSize.large || BattButtonSize.xLarge => AppSpacings.xxl,
         BattButtonSize.xxLarge => AppSpacings.xxxl,
@@ -74,54 +74,70 @@ class BattIconTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-      ),
-      onPressed: onPressed,
-      child: IntrinsicWidth(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              size: iconSize,
-              color: iconColor(context),
-            ),
-            FittedBox(
-              child: Text(label,
-                  overflow: TextOverflow.clip,
-                  textAlign: TextAlign.center,
-                  textScaler: const TextScaler.linear(1.0),
-                  maxLines: 1,
-                  style: switch (buttonSize) {
-                    BattButtonSize.small ||
-                    BattButtonSize.xSmall =>
-                      context.typographyTheme.buttonSmall.copyWith(
-                          color: textColor(context),
-                          overflow: TextOverflow.ellipsis),
-                    BattButtonSize.medium =>
-                      context.typographyTheme.buttonMedium.copyWith(
-                          color: textColor(context),
-                          overflow: TextOverflow.ellipsis),
-                    BattButtonSize.large => context.typographyTheme.buttonLarge
-                        .copyWith(
+    double calculateButtonHeight(BattButtonSize buttonSize) {
+      return switch (buttonSize) {
+        BattButtonSize.xSmall => 36,
+        BattButtonSize.small => 40,
+        BattButtonSize.medium => 44,
+        BattButtonSize.large => 56,
+        BattButtonSize.xLarge => 68,
+        BattButtonSize.xxLarge => 86,
+      };
+    }
+
+    final fullHeight = calculateButtonHeight(buttonSize);
+
+    return SizedBox(
+      height: fullHeight,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+        ),
+        onPressed: onPressed,
+        child: IntrinsicWidth(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                size: iconSize,
+                color: iconColor(context),
+              ),
+              FittedBox(
+                child: Text(label,
+                    overflow: TextOverflow.clip,
+                    textAlign: TextAlign.center,
+                    textScaler: const TextScaler.linear(1.0),
+                    maxLines: 1,
+                    style: switch (buttonSize) {
+                      BattButtonSize.small ||
+                      BattButtonSize.xSmall =>
+                        context.typographyTheme.buttonSmall.copyWith(
                             color: textColor(context),
                             overflow: TextOverflow.ellipsis),
-                    BattButtonSize.xLarge =>
-                      context.typographyTheme.buttonXLarge.copyWith(
-                          color: textColor(context),
-                          overflow: TextOverflow.ellipsis),
-                    BattButtonSize.xxLarge =>
-                      context.typographyTheme.button2XLarge.copyWith(
-                          color: textColor(context),
-                          overflow: TextOverflow.ellipsis),
-                  }),
-            ),
-          ],
+                      BattButtonSize.medium =>
+                        context.typographyTheme.buttonMedium.copyWith(
+                            color: textColor(context),
+                            overflow: TextOverflow.ellipsis),
+                      BattButtonSize.large =>
+                        context.typographyTheme.buttonLarge.copyWith(
+                            color: textColor(context),
+                            overflow: TextOverflow.ellipsis),
+                      BattButtonSize.xLarge =>
+                        context.typographyTheme.buttonXLarge.copyWith(
+                            color: textColor(context),
+                            overflow: TextOverflow.ellipsis),
+                      BattButtonSize.xxLarge =>
+                        context.typographyTheme.button2XLarge.copyWith(
+                            color: textColor(context),
+                            overflow: TextOverflow.ellipsis),
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );
