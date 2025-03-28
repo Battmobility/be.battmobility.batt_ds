@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class PriceWidget extends StatelessWidget {
   final String label;
   final String value;
+  final bool bold;
 
   const PriceWidget({
     super.key,
     required this.label,
     required this.value,
+    this.bold = false,
   });
 
   @override
@@ -36,7 +38,8 @@ class PriceWidget extends StatelessWidget {
             const SizedBox(height: AppSpacings.sm),
             Text(
               value,
-              style: Theme.of(context).textTheme.bodyMedium!,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: bold ? FontWeight.bold : FontWeight.normal),
             ),
           ],
         ),
