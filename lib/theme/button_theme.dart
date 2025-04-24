@@ -22,12 +22,12 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
         primaryDefault: AppColors.primaryButtonBackgroundColor,
-        primaryHover: AppColors.white,
+        primaryHover: AppColors.primaryColors[700]!,
         primaryFocused: AppColors.background,
         primaryDisabled: AppColors.grey[300]!,
         secondaryText: AppColors.secondaryButtonTextColor,
         secondaryDefault: Colors.transparent,
-        secondaryHover: AppColors.white,
+        secondaryHover: AppColors.secondaryButtonBackgroundColor,
         secondaryFocused: AppColors.background,
         secondaryDisabled: AppColors.grey[300]!,
         iconButtonColor: AppColors.iconColor);
@@ -37,12 +37,12 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
         primaryDefault: AppColors.primaryButtonBackgroundColor,
-        primaryHover: AppColors.grey[100]!,
+        primaryHover: AppColors.primaryColors[700]!,
         primaryFocused: AppColors.backgroundDark,
         primaryDisabled: AppColors.grey[300]!,
         secondaryText: AppColors.secondaryButtonTextColor,
         secondaryDefault: Colors.transparent,
-        secondaryHover: AppColors.grey[100]!,
+        secondaryHover: AppColors.secondaryButtonBackgroundColor,
         secondaryFocused: AppColors.backgroundDark,
         secondaryDisabled: AppColors.grey[300]!,
         iconButtonColor: AppColors.iconColor);

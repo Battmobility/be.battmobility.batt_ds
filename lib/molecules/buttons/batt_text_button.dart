@@ -74,7 +74,10 @@ abstract class BattTextButton extends StatelessWidget {
   BorderSide focusedBorder(BuildContext context) => BorderSide.none;
 
   /// The hover border for the text button.
-  BorderSide hoverBorder(BuildContext context) => BorderSide.none;
+  BorderSide hoverBorder(BuildContext context) => BorderSide(
+        width: 2,
+        color: textColor(context),
+      );
 
   /// The disabled border for the text button.
   BorderSide disabledBorder(BuildContext context) => BorderSide.none;

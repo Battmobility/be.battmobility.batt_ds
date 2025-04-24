@@ -23,7 +23,7 @@ abstract class BattSimpleTextButton extends BattTextButton {
 
   @override
   Color hoverColor(BuildContext context) {
-    return Colors.transparent;
+    return context.buttonTheme.primaryHover;
   }
 
   @override
