@@ -1,3 +1,4 @@
+import 'package:batt_ds/batt_ds.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class DefaultSolidTextButton extends BattTextButton {
 
   @override
   Color hoverColor(BuildContext context) {
-    return context.buttonTheme.primaryHover;
+    return AppColors.primaryColors[600]!;
   }
 
   @override
