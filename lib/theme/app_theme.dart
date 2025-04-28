@@ -190,6 +190,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
+    prefixIconColor: AppColors.primaryTextColor,
+    suffixIconColor: AppColors.primaryTextColor,
     labelStyle:
         AppTypographyDark().mediumLabel.copyWith(color: AppColors.black),
     hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.black),
@@ -221,6 +223,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
+    prefixIconColor: AppColors.grey[200],
+    suffixIconColor: AppColors.grey[200],
     labelStyle:
         AppTypographyDark().mediumLabel.copyWith(color: AppColors.white),
     hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.white),

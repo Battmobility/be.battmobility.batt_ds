@@ -2,6 +2,7 @@ import 'package:batt_ds/theme/app_theme.dart';
 import 'package:example/storybook_pages/borders_page.dart';
 import 'package:example/storybook_pages/chip_page.dart';
 import 'package:example/storybook_pages/icon_text_button_page.dart';
+import 'package:example/storybook_pages/inputs_page.dart';
 import 'package:example/storybook_pages/license_plate_page.dart';
 import 'package:example/storybook_pages/rounded_button_page.dart';
 import 'package:example/storybook_pages/text_buttons_page.dart';
@@ -110,6 +111,18 @@ Storybook get storybook {
       },
       name: 'Borders');
 
+  final inputsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const InputsPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Inputs');
+
   return Storybook(
     stories: [
       buttonStory,
@@ -118,7 +131,8 @@ Storybook get storybook {
       chipStory,
       licensePlateStory,
       snackBarStory,
-      bordersStory
+      bordersStory,
+      inputsStory
     ],
     plugins: initializePlugins(enableThemeMode: true, enableCodeView: true),
   );

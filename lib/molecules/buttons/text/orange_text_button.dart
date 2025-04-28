@@ -28,7 +28,7 @@ class OrangeSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color hoverColor(BuildContext context) {
-    return context.buttonTheme.secondaryHover;
+    return AppColors.orange[600]!;
   }
 
   @override

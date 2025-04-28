@@ -14,6 +14,7 @@ class SnackbarPage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: AppSpacings.sm,
               children: [
                 Padding(
                   padding: AppPaddings.small.vertical,
