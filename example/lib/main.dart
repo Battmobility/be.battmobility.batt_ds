@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:batt_ds/batt_ds.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
 
+import 'storybook_pages/map_markers_page.dart';
 import 'storybook_pages/snackbar_page.dart';
 
 Future<void> main() async {
@@ -75,6 +76,18 @@ Storybook get storybook {
       },
       name: 'Icon text buttons');
 
+  final mapMarkersStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const MapMarkersPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Map markers');
+
   final licensePlateStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -129,6 +142,7 @@ Storybook get storybook {
       textButtonStory,
       iconTextButtonStory,
       chipStory,
+      mapMarkersStory,
       licensePlateStory,
       snackBarStory,
       bordersStory,
