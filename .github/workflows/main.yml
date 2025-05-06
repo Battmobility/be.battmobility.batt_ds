@@ -1,0 +1,58 @@
+name: docker ci
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    env:
+      IMAGENAME: batt_ds
+      REGISTRY: battmobility.azurecr.io
+      DIRECTORY: BattMobility
+      USERNAME: github
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker build
+        uses: mr-smithers-excellent/docker-build-push@v5
+        id: build
+        with:
+          image: ${{ env.IMAGENAME }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ env.USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+          buildArgs: GITHUB_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#      - name: Checkout deployment repo
+#        uses: actions/checkout@v2
+#        with:
+#          repository: Battmobility/be.battmobiel.deployment
+#          path: infrastructure
+#          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#      - name: Update staging environment
+#        if: ${{ github.ref == 'refs/heads/main' }}
+#        uses: fjogeleit/yaml-update-action@v0.7.0
+#        with:
+#          valueFile: 'battmobiel-staging-deployment/values.yaml'
+#          propertyPath: 'mobos.image.tag'
+#          value: ${{ steps.build.outputs.tags }}
+#          repository: Battmobility/be.battmobiel.deployment
+#          branch: master
+#          createPR: false
+#          message: 'CD: deploy staging ${{ env.IMAGENAME }} version ${{ steps.build.outputs.tags }}'
+#          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#          workDir: infrastructure
+#      - name: Update prod environment
+#        if: ${{ github.ref == 'refs/heads/main' }}
+#        uses: fjogeleit/yaml-update-action@v0.7.0
+#        with:
+#          valueFile: 'battmobiel-production-deployment/values.yaml'
+#          propertyPath: 'mobos.image.tag'
+#          value: ${{ steps.build.outputs.tags }}
+#          repository: Battmobility/be.battmobiel.deployment
+#          branch: master
+#          createPR: false
+#          message: 'CD: deploy production ${{ env.IMAGENAME }} version ${{ steps.build.outputs.tags }}'
+#          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#          workDir: infrastructure
