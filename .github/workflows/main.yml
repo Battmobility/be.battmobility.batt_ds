@@ -34,7 +34,7 @@ jobs:
       - name: Build Flutter Web
         run:  |
           cd example
-          flutter build web --release --web-renderer html --base-href /be.battmobility.batt_ds/
+          flutter build web --release 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
