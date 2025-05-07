@@ -2,27 +2,20 @@ import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class GradientBorderDecoration extends BoxDecoration {
   GradientBorderDecoration({
     required Gradient gradient,
     required double borderWidth,
-    BorderRadius? borderRadius,
-    Color? color,
-    DecorationImage? image,
-    BoxShape shape = BoxShape.rectangle,
-    List<BoxShadow>? boxShadow,
+    BorderRadius? super.borderRadius,
+    super.color,
+    super.image,
+    super.shape,
+    super.boxShadow,
   }) : super(
           border: GradientBorder(
             gradient: gradient,
             width: borderWidth,
           ),
-          borderRadius: borderRadius,
-          color: color,
-          image: image,
-          shape: shape,
-          boxShadow: boxShadow,
         );
 
   factory GradientBorderDecoration.standard() {
@@ -77,13 +70,11 @@ class GradientBorderSide extends BorderSide {
 
   const GradientBorderSide({
     required this.gradient,
-    required double width,
+    required super.width,
   }) : super(
-          width: width,
           style: BorderStyle.solid,
         );
 
-  @override
   void paint(
     Canvas canvas,
     Path path, {

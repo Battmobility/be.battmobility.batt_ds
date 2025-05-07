@@ -1,8 +1,8 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
 
-class TextButtonPage extends StatelessWidget {
-  const TextButtonPage({super.key});
+class TextButtonsPage extends StatelessWidget {
+  const TextButtonsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

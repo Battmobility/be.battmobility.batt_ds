@@ -7,3 +7,4 @@ export 'map_markers/map_marker.dart';
 export 'chips/chips.dart';
 export 'properties/property_widget.dart';
 export 'properties/price_widget.dart';
+export 'battery/battery_icon.dart';

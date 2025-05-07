@@ -1,17 +1,20 @@
 import 'package:batt_ds/theme/app_theme.dart';
-import 'package:example/storybook_pages/borders_page.dart';
-import 'package:example/storybook_pages/chip_page.dart';
-import 'package:example/storybook_pages/icon_text_button_page.dart';
-import 'package:example/storybook_pages/inputs_page.dart';
-import 'package:example/storybook_pages/license_plate_page.dart';
-import 'package:example/storybook_pages/rounded_button_page.dart';
-import 'package:example/storybook_pages/text_buttons_page.dart';
+import 'package:example/storybook_pages/molecules/battery_icon_page.dart';
+import 'package:example/storybook_pages/molecules/borders_page.dart';
+import 'package:example/storybook_pages/molecules/chip_page.dart';
+import 'package:example/storybook_pages/molecules/icon_text_button_page.dart';
+import 'package:example/storybook_pages/molecules/inputs_page.dart';
+import 'package:example/storybook_pages/molecules/license_plate_page.dart';
+import 'package:example/storybook_pages/molecules/outlined_buttons_page.dart';
+import 'package:example/storybook_pages/molecules/solid_button_page.dart';
+import 'package:example/storybook_pages/molecules/text_buttons_page.dart';
+import 'package:example/storybook_pages/organisms/vehicle_card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:batt_ds/batt_ds.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
 
-import 'storybook_pages/map_markers_page.dart';
-import 'storybook_pages/snackbar_page.dart';
+import 'storybook_pages/molecules/map_markers_page.dart';
+import 'storybook_pages/organisms/snackbar_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +32,7 @@ class StorybookApp extends StatelessWidget {
 }
 
 Storybook get storybook {
+  // Molecules
   final chipStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -39,30 +43,42 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'Chips');
-  final buttonStory = Story(
+      name: 'Molecules/Chips');
+  final solidButtonsStory = Story(
       builder: (context) {
         return MaterialApp(
-          home: const RoundedButtonPage(),
+          home: const SolidButtonsPage(),
           theme: ThemeData(
             extensions: [AppTheme.light()],
             fontFamily: "SF Pro Text",
           ),
         );
       },
-      name: 'Buttons');
+      name: 'Molecules/Solid buttons');
 
-  final textButtonStory = Story(
+  final simpleButtonsStory = Story(
       builder: (context) {
         return MaterialApp(
-          home: const TextButtonPage(),
+          home: const TextButtonsPage(),
           theme: ThemeData(
             extensions: [AppTheme.light()],
             fontFamily: "SF Pro Text",
           ),
         );
       },
-      name: 'Text buttons');
+      name: 'Molecules/Simple buttons');
+
+  final outlinedButtonsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const OutlinedButtonsPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Molecules/Outlined buttons');
 
   final iconTextButtonStory = Story(
       builder: (context) {
@@ -74,7 +90,7 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'Icon text buttons');
+      name: 'Molecules/Icon text buttons');
 
   final mapMarkersStory = Story(
       builder: (context) {
@@ -86,7 +102,7 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'Map markers');
+      name: 'Molecules/Map markers');
 
   final licensePlateStory = Story(
       builder: (context) {
@@ -98,19 +114,7 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'License plates');
-
-  final snackBarStory = Story(
-      builder: (context) {
-        return MaterialApp(
-          home: const SnackbarPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
-        );
-      },
-      name: 'Snackbars');
+      name: 'Molecules/License plates');
 
   final bordersStory = Story(
       builder: (context) {
@@ -122,7 +126,19 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'Borders');
+      name: 'Molecules/Borders');
+
+  final batteryIconsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const BatteryIconsPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Molecules/Battery Icons');
 
   final inputsStory = Story(
       builder: (context) {
@@ -134,19 +150,47 @@ Storybook get storybook {
           ),
         );
       },
-      name: 'Inputs');
+      name: 'Molecules/Inputs');
+
+  // Organisms
+  final snackBarStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const SnackbarPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Organisms/Snackbars');
+
+  final vehiclecardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const VehicleCardsPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Organisms/Vehicle cards');
 
   return Storybook(
     stories: [
-      buttonStory,
-      textButtonStory,
+      solidButtonsStory,
+      outlinedButtonsStory,
+      simpleButtonsStory,
       iconTextButtonStory,
       chipStory,
       mapMarkersStory,
       licensePlateStory,
-      snackBarStory,
       bordersStory,
-      inputsStory
+      inputsStory,
+      batteryIconsStory,
+      snackBarStory,
+      vehiclecardsStory,
     ],
     plugins: initializePlugins(enableThemeMode: true, enableCodeView: true),
   );
