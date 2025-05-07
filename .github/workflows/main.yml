@@ -1,0 +1,43 @@
+name: Build and Deploy Flutter Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Flutter Web
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Flutter
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Enable web support
+        run: flutter config --enable-web
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          cd example
+          flutter pub get
+
+      # Build the Flutter web project
+      - name: Build Flutter Web
+        run:  |
+          cd example
+          flutter build web --release --base-href "/be.battmobility.batt_ds/"
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: example/build/web
