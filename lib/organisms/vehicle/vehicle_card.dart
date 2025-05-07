@@ -68,7 +68,6 @@ final class VehicleCard extends StatelessWidget {
                         },
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
-                          // Show a loading indicator while the image loads
                           return Center(
                             child: CircularProgressIndicator(
                               value: loadingProgress.expectedTotalBytes != null
@@ -148,8 +147,8 @@ final class VehicleCard extends StatelessWidget {
                                     child: Text(
                                       '${walkingDistance.toString()}KM',
                                       style:
-                                          theme.textTheme.bodySmall?.copyWith(
-                                        fontWeight: FontWeight.w200,
+                                          theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w600,
                                         color: AppColors.green[400],
                                       ),
                                       overflow: TextOverflow.ellipsis,
@@ -166,8 +165,9 @@ final class VehicleCard extends StatelessWidget {
                       ),
                       Text(
                         '€ ${price.toStringAsFixed(1).replaceAll('.', ',')}',
-                        style: theme.textTheme.bodySmall?.copyWith(
+                        style: theme.textTheme.bodyLarge?.copyWith(
                           fontWeight: FontWeight.bold,
+                          color: AppColors.chipColorEnabledPrimary,
                         ),
                       ),
                     ],

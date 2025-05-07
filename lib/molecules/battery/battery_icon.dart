@@ -17,7 +17,7 @@ final class BatteryIcon extends StatelessWidget {
         Text(
           '${chargePercentage.toInt()}%',
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: _iconColor(chargePercentage),
               ),
           overflow: TextOverflow.ellipsis,
