@@ -56,6 +56,16 @@ class LocationCardsPage extends StatelessWidget {
                               showEdit: true,
                             ),
                           ),
+                          SizedBox(
+                            width: constraints.maxWidth * 0.5,
+                            height: constraints.maxWidth * 0.125,
+                            child: LocationCard(
+                              description: "Afzetlocatie",
+                              address:
+                                  "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
+                              showEdit: true,
+                            ),
+                          ),
                         ]),
                   ),
                   Padding(
@@ -90,6 +100,16 @@ class LocationCardsPage extends StatelessWidget {
                               showEdit: false,
                             ),
                           ),
+                          SizedBox(
+                            width: constraints.maxWidth * 0.5,
+                            height: constraints.maxWidth * 0.125,
+                            child: LocationCard(
+                              description: "Afzetlocatie",
+                              address:
+                                  "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
+                              showEdit: true,
+                            ),
+                          )
                         ]),
                   ),
                 ],
