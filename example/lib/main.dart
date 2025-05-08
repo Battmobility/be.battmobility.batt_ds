@@ -8,6 +8,7 @@ import 'package:example/storybook_pages/molecules/license_plate_page.dart';
 import 'package:example/storybook_pages/molecules/outlined_buttons_page.dart';
 import 'package:example/storybook_pages/molecules/solid_button_page.dart';
 import 'package:example/storybook_pages/molecules/text_buttons_page.dart';
+import 'package:example/storybook_pages/organisms/location_card_page.dart';
 import 'package:example/storybook_pages/organisms/vehicle_card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:batt_ds/batt_ds.dart';
@@ -165,7 +166,7 @@ Storybook get storybook {
       },
       name: 'Organisms/Snackbars');
 
-  final vehiclecardsStory = Story(
+  final vehicleCardsStory = Story(
       builder: (context) {
         return MaterialApp(
           home: const VehicleCardsPage(),
@@ -176,6 +177,18 @@ Storybook get storybook {
         );
       },
       name: 'Organisms/Vehicle cards');
+
+  final locationCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const LocationCardsPage(),
+          theme: ThemeData(
+            extensions: [AppTheme.light()],
+            fontFamily: "SF Pro Text",
+          ),
+        );
+      },
+      name: 'Organisms/Location cards');
 
   return Storybook(
     stories: [
@@ -190,7 +203,8 @@ Storybook get storybook {
       inputsStory,
       batteryIconsStory,
       snackBarStory,
-      vehiclecardsStory,
+      vehicleCardsStory,
+      locationCardsStory
     ],
     plugins: initializePlugins(enableThemeMode: true, enableCodeView: true),
   );

@@ -174,7 +174,7 @@ class BattTextField extends StatelessWidget {
         fillColor: enabled
             ? context.inputTheme.defaultColor
             : context.inputTheme.disabledColor,
-        border: MaterialStateOutlineInputBorder.resolveWith(
+        border: WidgetStateInputBorder.resolveWith(
           (states) {
             late final Color borderColor;
 

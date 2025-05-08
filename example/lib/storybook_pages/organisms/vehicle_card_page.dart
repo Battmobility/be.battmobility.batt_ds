@@ -43,9 +43,9 @@ class VehicleCardsPage extends StatelessWidget {
                             child: VehicleCard(
                               name: "Polestar 2",
                               chargePercentage: 75,
-                              price: 12,
+                              price: "€ 18",
                               tag: "Eerste prijs",
-                              walkingDistance: 2,
+                              walkingDistance: "20",
                               walkingDuration: "10 min",
                               displayPriority: DisplayPriority.charge,
                               imageUrl:
@@ -58,9 +58,9 @@ class VehicleCardsPage extends StatelessWidget {
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               chargePercentage: 100,
-                              price: 100,
+                              price: "€ 1.000",
                               tag: "Een lange tag",
-                              walkingDistance: 200,
+                              walkingDistance: "200m.",
                               walkingDuration: "2h",
                               displayPriority: DisplayPriority.charge,
                               imageUrl:
@@ -88,9 +88,9 @@ class VehicleCardsPage extends StatelessWidget {
                             child: VehicleCard(
                               name: "Polestar 2",
                               chargePercentage: 75,
-                              price: 12,
+                              price: "€12",
                               tag: "Eerste prijs",
-                              walkingDistance: 2,
+                              walkingDistance: "2km.",
                               walkingDuration: "10 min",
                               displayPriority: DisplayPriority.range,
                               imageUrl:
@@ -103,9 +103,9 @@ class VehicleCardsPage extends StatelessWidget {
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               chargePercentage: 100,
-                              price: 100,
+                              price: "€1.000",
                               tag: "Een lange tag",
-                              walkingDistance: 200,
+                              walkingDistance: "200m.",
                               walkingDuration: "2h",
                               displayPriority: DisplayPriority.range,
                               imageUrl:
