@@ -51,20 +51,24 @@ final class LocationCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          description,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
+                        FittedBox(
+                          child: Text(
+                            description,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          overflow: TextOverflow.ellipsis,
                         ),
                         Flexible(
-                          child: Text(
-                            address,
-                            style: theme.textTheme.titleMedium!
-                                .copyWith(color: AppColors.grey[600]),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
+                          child: FittedBox(
+                            child: Text(
+                              address,
+                              style: theme.textTheme.titleMedium!
+                                  .copyWith(color: AppColors.grey[600]),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                            ),
                           ),
                         )
                       ],
