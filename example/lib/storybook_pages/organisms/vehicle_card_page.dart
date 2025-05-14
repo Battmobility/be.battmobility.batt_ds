@@ -47,7 +47,8 @@ class VehicleCardsPage extends StatelessWidget {
                               tag: "Eerste prijs",
                               walkingDistance: "20",
                               walkingDuration: "10 min",
-                              displayPriority: DisplayPriority.charge,
+                              displayPriority:
+                                  VehiclePropertyDisplayPriority.charge,
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),
@@ -62,7 +63,8 @@ class VehicleCardsPage extends StatelessWidget {
                               tag: "Een lange tag",
                               walkingDistance: "200m.",
                               walkingDuration: "2h",
-                              displayPriority: DisplayPriority.charge,
+                              displayPriority:
+                                  VehiclePropertyDisplayPriority.charge,
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),
@@ -92,7 +94,8 @@ class VehicleCardsPage extends StatelessWidget {
                               tag: "Eerste prijs",
                               walkingDistance: "2km.",
                               walkingDuration: "10 min",
-                              displayPriority: DisplayPriority.range,
+                              displayPriority:
+                                  VehiclePropertyDisplayPriority.range,
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),
@@ -107,7 +110,8 @@ class VehicleCardsPage extends StatelessWidget {
                               tag: "Een lange tag",
                               walkingDistance: "200m.",
                               walkingDuration: "2h",
-                              displayPriority: DisplayPriority.range,
+                              displayPriority:
+                                  VehiclePropertyDisplayPriority.range,
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),

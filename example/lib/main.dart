@@ -1,5 +1,6 @@
 import 'package:batt_ds/theme/app_theme.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/borders_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
@@ -175,6 +176,14 @@ Storybook get storybook {
       },
       name: 'Organisms/Location cards');
 
+  final bookingCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const BookingCardsPage(),
+        );
+      },
+      name: 'Organisms/Booking cards');
+
   return Storybook(
     stories: [
       introStory,
@@ -190,7 +199,8 @@ Storybook get storybook {
       batteryIconsStory,
       snackBarStory,
       vehicleCardsStory,
-      locationCardsStory
+      locationCardsStory,
+      bookingCardsStory
     ],
     initialStory: "Home",
     plugins: initializePlugins(

@@ -67,7 +67,8 @@ class IntroPage extends StatelessWidget {
                             tag: "Eerste prijs",
                             walkingDistance: "20",
                             walkingDuration: "10 min",
-                            displayPriority: DisplayPriority.charge,
+                            displayPriority:
+                                VehiclePropertyDisplayPriority.charge,
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -94,6 +95,20 @@ class IntroPage extends StatelessWidget {
                           padding: AppPaddings.small.vertical,
                           child: const LicensePlate("2-ABC-323",
                               size: LicensePlateSize.medium),
+                        ),
+                        SizedBox(
+                          width: 200,
+                          height: 80,
+                          child: BookingCard(
+                            vehicleName: "Polestar 4",
+                            bookingPeriodStart:
+                                DateTime.now().subtract(Duration(days: 2)),
+                            bookingPeriodEnd:
+                                DateTime.now().subtract(Duration(hours: 5)),
+                            price: "€ 105",
+                            imageUrl:
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                          ),
                         ),
                         MapMarker(
                           progress: 0.66,

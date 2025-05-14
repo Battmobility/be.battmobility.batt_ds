@@ -1,7 +1,7 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
 
-enum DisplayPriority { charge, range }
+enum VehiclePropertyDisplayPriority { charge, range }
 
 final class VehicleCard extends StatelessWidget {
   final String name;
@@ -11,7 +11,7 @@ final class VehicleCard extends StatelessWidget {
   final String tag;
   final String price;
   final String imageUrl;
-  final DisplayPriority displayPriority;
+  final VehiclePropertyDisplayPriority displayPriority;
 
   const VehicleCard({
     super.key,
@@ -22,14 +22,14 @@ final class VehicleCard extends StatelessWidget {
     required this.tag,
     required this.price,
     required this.imageUrl,
-    this.displayPriority = DisplayPriority.charge,
+    this.displayPriority = VehiclePropertyDisplayPriority.charge,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: AppPaddings.large.all,
+      padding: AppPaddings.medium.all,
       decoration: BoxDecoration(
         color: Theme.of(context).canvasColor,
         borderRadius: BorderRadius.circular(CornerRadii.m.x),
@@ -41,148 +41,144 @@ final class VehicleCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
-        padding: AppPaddings.xsmall.all,
-        child: Row(
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.grey[100],
-                  borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                ),
-                child: imageUrl.isNotEmpty
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                        child: Image(
-                          image: NetworkImage(imageUrl),
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            // Show a placeholder when image fails to load
-                            return Center(
-                              child: Icon(
-                                Icons.electric_car,
-                                size: 32,
-                                color: AppColors.grey[400],
-                              ),
-                            );
-                          },
-                          loadingBuilder: (context, child, loadingProgress) {
-                            if (loadingProgress == null) return child;
-                            return Center(
-                              child: CircularProgressIndicator(
-                                value: loadingProgress.expectedTotalBytes !=
-                                        null
-                                    ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                    : null,
-                              ),
-                            );
-                          },
-                        ),
-                      )
-                    : Center(
-                        child: Icon(
-                          Icons.electric_car,
-                          size: 32,
-                          color: AppColors.grey[400],
-                        ),
-                      ),
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.grey[100],
+                borderRadius: BorderRadius.circular(CornerRadii.s.x),
               ),
-            ),
-            const SizedBox(width: AppSpacings.lg),
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          child: FittedBox(
-                            child: Text(
-                              name,
-                              style: theme.textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
+              child: imageUrl.isNotEmpty
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(CornerRadii.s.x),
+                      child: Image(
+                        image: NetworkImage(imageUrl),
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          // Show a placeholder when image fails to load
+                          return Center(
+                            child: Icon(
+                              Icons.electric_car,
+                              size: 32,
+                              color: AppColors.grey[400],
                             ),
-                          ),
-                        ),
-                        Container(
-                          padding: AppPaddings.small.all
-                              .add(AppPaddings.small.horizontal),
-                          decoration: BoxDecoration(
-                            color: AppColors.chipColorEnabledPrimary,
-                            borderRadius:
-                                BorderRadius.circular(CornerRadii.s.x),
-                          ),
+                          );
+                        },
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes!
+                                  : null,
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  : Center(
+                      child: Icon(
+                        Icons.electric_car,
+                        size: 32,
+                        color: AppColors.grey[400],
+                      ),
+                    ),
+            ),
+          ),
+          const SizedBox(width: AppSpacings.lg),
+          Expanded(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: FittedBox(
                           child: Text(
-                            tag,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              color: AppColors.white,
+                            name,
+                            style: theme.textTheme.titleLarge?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              if (displayPriority == DisplayPriority.charge)
-                                BatteryIcon(chargePercentage: chargePercentage)
-                              else
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      Icons.route,
-                                      color: AppColors.green,
-                                      size: AppSpacings.lg,
-                                    ),
-                                    const SizedBox(width: AppSpacings.xs),
-                                    Flexible(
-                                      child: Text(
-                                        walkingDistance,
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.green[400],
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              const SizedBox(width: AppSpacings.sm),
-                              Flexible(
-                                child: _walkingInfo(theme),
-                              ),
-                            ],
-                          ),
+                      ),
+                      Container(
+                        padding: AppPaddings.small.all
+                            .add(AppPaddings.small.horizontal),
+                        decoration: BoxDecoration(
+                          color: AppColors.chipColorEnabledPrimary,
+                          borderRadius: BorderRadius.circular(CornerRadii.s.x),
                         ),
-                        Text(
-                          price,
-                          style: theme.textTheme.bodyLarge?.copyWith(
+                        child: Text(
+                          tag,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            color: AppColors.white,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.chipColorEnabledPrimary,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Row(
+                          children: [
+                            if (displayPriority ==
+                                VehiclePropertyDisplayPriority.charge)
+                              BatteryIcon(chargePercentage: chargePercentage)
+                            else
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.route,
+                                    color: AppColors.green,
+                                    size: AppSpacings.lg,
+                                  ),
+                                  const SizedBox(width: AppSpacings.xs),
+                                  Flexible(
+                                    child: Text(
+                                      walkingDistance,
+                                      style:
+                                          theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.green[400],
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            const SizedBox(width: AppSpacings.sm),
+                            Flexible(
+                              child: _walkingInfo(theme),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        price,
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.chipColorEnabledPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
