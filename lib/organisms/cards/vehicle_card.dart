@@ -30,138 +30,142 @@ final class VehicleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      padding: AppPaddings.medium.all,
-      decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
-        borderRadius: BorderRadius.circular(CornerRadii.m.x),
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).shadowColor,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.grey[100],
-                borderRadius: BorderRadius.circular(CornerRadii.s.x),
-              ),
-              child: (imageUrl ?? "").isNotEmpty
-                  ? ClipRRect(
-                      borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                      child: Image(
-                        image: NetworkImage(imageUrl!),
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          // Show a placeholder when image fails to load
-                          return const Center(child: carIcon);
-                        },
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                      loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          );
-                        },
-                      ),
-                    )
-                  : const Center(child: carIcon),
+    return AspectRatio(
+      aspectRatio: 3.8 / 1,
+      child: Container(
+        padding: AppPaddings.medium.all,
+        decoration: BoxDecoration(
+          color: Theme.of(context).canvasColor,
+          borderRadius: BorderRadius.circular(CornerRadii.m.x),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.grey[100]!,
+              blurRadius: 4,
+              offset: const Offset(0, 2),
             ),
-          ),
-          const SizedBox(width: AppSpacings.lg),
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: Text(
-                            name,
-                            style: theme.textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
+          ],
+        ),
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColors.grey[100],
+                  borderRadius: BorderRadius.circular(CornerRadii.s.x),
+                ),
+                child: (imageUrl ?? "").isNotEmpty
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(CornerRadii.s.x),
+                        child: Image(
+                          image: NetworkImage(imageUrl!),
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            // Show a placeholder when image fails to load
+                            return const Center(child: carIcon);
+                          },
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            );
+                          },
+                        ),
+                      )
+                    : const Center(child: carIcon),
+              ),
+            ),
+            const SizedBox(width: AppSpacings.lg),
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: FittedBox(
+                            child: Text(
+                              name,
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: AppSpacings.sm,
-                      ),
-                      if (tag != null)
-                        Container(
-                          padding: AppPaddings.small.all
-                              .add(AppPaddings.small.horizontal),
-                          decoration: BoxDecoration(
-                            color: AppColors.grey[700],
-                            borderRadius:
-                                BorderRadius.circular(CornerRadii.s.x),
-                          ),
-                          child: Text(
-                            tag!,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.bold,
+                        const SizedBox(
+                          width: AppSpacings.sm,
+                        ),
+                        if (tag != null)
+                          Container(
+                            padding: AppPaddings.small.all
+                                .add(AppPaddings.small.horizontal),
+                            decoration: BoxDecoration(
+                              color: AppColors.grey[700],
+                              borderRadius:
+                                  BorderRadius.circular(CornerRadii.s.x),
+                            ),
+                            child: Text(
+                              tag!,
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              _rangeInfo(theme),
+                              _walkingInfo(theme),
+                            ],
+                          ),
                         ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(
-                        child: Row(
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            _rangeInfo(theme),
-                            _walkingInfo(theme),
+                            if (price != null)
+                              Text(
+                                price!,
+                                style: theme.textTheme.bodyLarge?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey[700],
+                                ),
+                              ),
+                            if (price2 != null)
+                              Text(
+                                price2!,
+                                style: theme.textTheme.bodyLarge?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey[700],
+                                ),
+                              ),
                           ],
                         ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          if (price != null)
-                            Text(
-                              price!,
-                              style: theme.textTheme.bodyLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.grey[700],
-                              ),
-                            ),
-                          if (price2 != null)
-                            Text(
-                              price2!,
-                              style: theme.textTheme.bodyLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.grey[700],
-                              ),
-                            ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

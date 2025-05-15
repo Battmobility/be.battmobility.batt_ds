@@ -39,7 +39,6 @@ class VehicleCardsPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Polestar 2",
                               range: "500 km",
@@ -54,7 +53,6 @@ class VehicleCardsPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               chargePercentage: 100,
@@ -84,7 +82,6 @@ class VehicleCardsPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Polestar 2",
                               chargePercentage: 75,
@@ -98,7 +95,6 @@ class VehicleCardsPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               range: "50 km",
@@ -128,7 +124,6 @@ class VehicleCardsPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Polestar 2",
                               price: "€12",
@@ -141,7 +136,6 @@ class VehicleCardsPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Polestar 2",
                               price: "€12",
@@ -152,7 +146,6 @@ class VehicleCardsPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               chargePercentage: 100,
@@ -166,7 +159,6 @@ class VehicleCardsPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.15,
                             child: VehicleCard(
                               name: "Een auto met een lange naam",
                               range: "500 km",

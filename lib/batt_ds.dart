@@ -3,6 +3,8 @@ library batt_ds;
 import 'package:batt_ds/theme/app_theme.dart';
 import 'package:batt_ds/theme/typography_theme.dart';
 import 'package:flutter/material.dart';
+
+import 'atoms/app_colors.dart';
 export 'atoms/atoms.dart';
 export 'molecules/molecules.dart';
 export 'organisms/organisms.dart';
@@ -22,7 +24,7 @@ ThemeData lightTheme(BuildContext context) {
         errorContainer: theme.themeColorError,
         onErrorContainer: theme.themeColorLight,
         surface: theme.themeColorLight,
-        onSurface: theme.themeColorDark,
+        onSurface: AppColors.grey[700]!,
         surfaceDim: theme.themeColorSecondaryContainer,
         surfaceContainerLowest: theme.themeColorSecondaryContainerLowest),
     brightness: Brightness.light,
@@ -48,7 +50,7 @@ ThemeData lightTheme(BuildContext context) {
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     scaffoldBackgroundColor: theme.themeColorLight,
     dividerColor: theme.themeColorPrimary,
-    canvasColor: theme.themeColorLight,
+    canvasColor: theme.themeColorSuccess,
   );
 }
 
@@ -64,7 +66,7 @@ ThemeData darkTheme(BuildContext context) {
         errorContainer: theme.themeColorError,
         onErrorContainer: theme.themeColorLight,
         surface: theme.themeColorDark,
-        onSurface: theme.themeColorLight,
+        onSurface: AppColors.grey[300]!,
         surfaceDim: theme.themeColorDark,
         surfaceContainerLowest: theme.themeColorSecondaryContainerLowest),
     brightness: Brightness.dark,

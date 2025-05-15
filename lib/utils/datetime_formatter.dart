@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 final class DatesFormatter {
-  static RichText formatDates(DateTime start, DateTime end, TextTheme theme) {
+  static RichText formatDates(
+      DateTime start, DateTime end, TextTheme theme, Color color) {
     if (start.isBefore(DateTime.now()) && end.isBefore(DateTime.now())) {
       return RichText(
         text: TextSpan(children: [
           TextSpan(
               text: DateFormat('d MMM yyyy ').format(start),
-              style: theme.bodyMedium),
+              style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
               text: " - ",
-              style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+              style: theme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
               text: DateFormat('d MMM yyy').format(end),
-              style: theme.bodyMedium)
+              style: theme.bodyMedium!.copyWith(color: color))
         ]),
       );
     }
@@ -24,14 +26,18 @@ final class DatesFormatter {
         text: TextSpan(children: [
           TextSpan(
               text: DateFormat('d MMM ').format(start),
-              style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+              style: theme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
-              text: DateFormat('hh:yy').format(start), style: theme.bodyMedium),
+              text: DateFormat('hh:yy').format(start),
+              style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
               text: " - ",
-              style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+              style: theme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
-              text: DateFormat('hh:yy').format(end), style: theme.bodyMedium)
+              text: DateFormat('hh:yy').format(end),
+              style: theme.bodyMedium!.copyWith(color: color))
         ]),
       );
     }
@@ -39,16 +45,22 @@ final class DatesFormatter {
       text: TextSpan(children: [
         TextSpan(
             text: DateFormat('d MMM ').format(start),
-            style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+            style: theme.bodyMedium!
+                .copyWith(fontWeight: FontWeight.bold, color: color)),
         TextSpan(
-            text: DateFormat('hh:yy').format(start), style: theme.bodyMedium),
+            text: DateFormat('hh:yy').format(start),
+            style: theme.bodyMedium!.copyWith(color: color)),
         TextSpan(
             text: " - ",
-            style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+            style: theme.bodyMedium!
+                .copyWith(fontWeight: FontWeight.bold, color: color)),
         TextSpan(
             text: DateFormat('d MMM ').format(end),
-            style: theme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
-        TextSpan(text: DateFormat('hh:yy').format(end), style: theme.bodyMedium)
+            style: theme.bodyMedium!
+                .copyWith(fontWeight: FontWeight.bold, color: color)),
+        TextSpan(
+            text: DateFormat('hh:yy').format(end),
+            style: theme.bodyMedium!.copyWith(color: color))
       ]),
     );
   }

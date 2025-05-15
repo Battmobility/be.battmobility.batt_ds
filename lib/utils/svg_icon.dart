@@ -10,8 +10,6 @@ final class SvgIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Attempting to load asset: assets/icons/$assetName");
-
     return SvgPicture.asset(
       "packages/batt_ds/assets/icons/$assetName",
       width: size?.width,
