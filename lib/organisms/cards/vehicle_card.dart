@@ -1,28 +1,30 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/utils/svg_icon.dart';
 import 'package:flutter/material.dart';
-
-enum VehiclePropertyDisplayPriority { charge, range }
 
 final class VehicleCard extends StatelessWidget {
   final String name;
-  final double chargePercentage;
-  final String walkingDuration;
-  final String walkingDistance;
-  final String tag;
-  final String price;
-  final String imageUrl;
-  final VehiclePropertyDisplayPriority displayPriority;
+  final double? chargePercentage;
+  final String? range;
+
+  final String? walkingDuration;
+  final String? walkingDistance;
+  final String? tag;
+  final String? price;
+  final String? price2;
+  final String? imageUrl;
 
   const VehicleCard({
     super.key,
     required this.name,
-    required this.chargePercentage,
-    required this.walkingDuration,
-    required this.walkingDistance,
-    required this.tag,
-    required this.price,
-    required this.imageUrl,
-    this.displayPriority = VehiclePropertyDisplayPriority.charge,
+    this.chargePercentage,
+    this.range,
+    this.walkingDuration,
+    this.walkingDistance,
+    this.tag,
+    this.price,
+    this.price2,
+    this.imageUrl,
   });
 
   @override
@@ -50,21 +52,15 @@ final class VehicleCard extends StatelessWidget {
                 color: AppColors.grey[100],
                 borderRadius: BorderRadius.circular(CornerRadii.s.x),
               ),
-              child: imageUrl.isNotEmpty
+              child: (imageUrl ?? "").isNotEmpty
                   ? ClipRRect(
                       borderRadius: BorderRadius.circular(CornerRadii.s.x),
                       child: Image(
-                        image: NetworkImage(imageUrl),
+                        image: NetworkImage(imageUrl!),
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           // Show a placeholder when image fails to load
-                          return Center(
-                            child: Icon(
-                              Icons.electric_car,
-                              size: 32,
-                              color: AppColors.grey[400],
-                            ),
-                          );
+                          return const Center(child: carIcon);
                         },
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
@@ -79,13 +75,7 @@ final class VehicleCard extends StatelessWidget {
                         },
                       ),
                     )
-                  : Center(
-                      child: Icon(
-                        Icons.electric_car,
-                        size: 32,
-                        color: AppColors.grey[400],
-                      ),
-                    ),
+                  : const Center(child: carIcon),
             ),
           ),
           const SizedBox(width: AppSpacings.lg),
@@ -109,68 +99,61 @@ final class VehicleCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: AppPaddings.small.all
-                            .add(AppPaddings.small.horizontal),
-                        decoration: BoxDecoration(
-                          color: AppColors.chipColorEnabledPrimary,
-                          borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                        ),
-                        child: Text(
-                          tag,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.bold,
+                      const SizedBox(
+                        width: AppSpacings.sm,
+                      ),
+                      if (tag != null)
+                        Container(
+                          padding: AppPaddings.small.all
+                              .add(AppPaddings.small.horizontal),
+                          decoration: BoxDecoration(
+                            color: AppColors.grey[700],
+                            borderRadius:
+                                BorderRadius.circular(CornerRadii.s.x),
+                          ),
+                          child: Text(
+                            tag!,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Expanded(
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            if (displayPriority ==
-                                VehiclePropertyDisplayPriority.charge)
-                              BatteryIcon(chargePercentage: chargePercentage)
-                            else
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.route,
-                                    color: AppColors.green,
-                                    size: AppSpacings.lg,
-                                  ),
-                                  const SizedBox(width: AppSpacings.xs),
-                                  Flexible(
-                                    child: Text(
-                                      walkingDistance,
-                                      style:
-                                          theme.textTheme.bodyMedium?.copyWith(
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.green[400],
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            const SizedBox(width: AppSpacings.sm),
-                            Flexible(
-                              child: _walkingInfo(theme),
-                            ),
+                            _rangeInfo(theme),
+                            _walkingInfo(theme),
                           ],
                         ),
                       ),
-                      Text(
-                        price,
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.chipColorEnabledPrimary,
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          if (price != null)
+                            Text(
+                              price!,
+                              style: theme.textTheme.bodyLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey[700],
+                              ),
+                            ),
+                          if (price2 != null)
+                            Text(
+                              price2!,
+                              style: theme.textTheme.bodyLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.grey[700],
+                              ),
+                            ),
+                        ],
                       ),
                     ],
                   ),
@@ -183,38 +166,68 @@ final class VehicleCard extends StatelessWidget {
     );
   }
 
-  Widget _walkingInfo(ThemeData theme) {
+  Widget _rangeInfo(ThemeData theme) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(
-          Icons.directions_walk,
-          color: AppColors.grey[400],
-          size: AppSpacings.lg,
-        ),
-        const SizedBox(width: AppSpacings.xs),
-        Flexible(
-          child: Text(
-            walkingDuration,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: AppColors.grey[400],
-            ),
-            overflow: TextOverflow.ellipsis,
+        if (range != null)
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              rangeIcon.colored(AppColors.green[400]!),
+              const SizedBox(width: AppSpacings.xs),
+              Flexible(
+                child: Text(
+                  range!,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.green[400],
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ),
-        ),
+        if (chargePercentage != null && range == null) // never show both
+          BatteryIcon(chargePercentage: chargePercentage!),
         const SizedBox(width: AppSpacings.xs),
-        Flexible(
-          child: Text(
-            walkingDistance,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w200,
-              color: AppColors.grey[400],
-            ),
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
       ],
+    );
+  }
+
+  Widget _walkingInfo(ThemeData theme) {
+    return Flexible(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (walkingDuration != null) walkIcon.colored(AppColors.grey[400]!),
+          if (walkingDuration != null) const SizedBox(width: AppSpacings.xs),
+          if (walkingDuration != null)
+            Flexible(
+              child: Text(
+                walkingDuration!,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.grey[400],
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          if (walkingDuration != null)
+            const SizedBox(
+                width: AppSpacings.xs), // No spacing if no element before
+          if (walkingDistance != null)
+            Flexible(
+              child: Text(
+                walkingDistance!,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w200,
+                  color: AppColors.grey[400],
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

@@ -67,8 +67,6 @@ class IntroPage extends StatelessWidget {
                             tag: "Eerste prijs",
                             walkingDistance: "20",
                             walkingDuration: "10 min",
-                            displayPriority:
-                                VehiclePropertyDisplayPriority.charge,
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
