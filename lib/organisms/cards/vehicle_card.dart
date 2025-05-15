@@ -39,7 +39,7 @@ final class VehicleCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(CornerRadii.m.x),
           boxShadow: [
             BoxShadow(
-              color: AppColors.grey[100]!,
+              color: Theme.of(context).colorScheme.shadow,
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -116,9 +116,8 @@ final class VehicleCard extends StatelessWidget {
                             ),
                             child: Text(
                               tag!,
-                              style: theme.textTheme.titleMedium?.copyWith(
+                              style: theme.textTheme.bodySmall?.copyWith(
                                 color: AppColors.white,
-                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),

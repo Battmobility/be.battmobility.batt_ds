@@ -50,7 +50,7 @@ ThemeData lightTheme(BuildContext context) {
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     scaffoldBackgroundColor: theme.themeColorLight,
     dividerColor: theme.themeColorPrimary,
-    canvasColor: theme.themeColorSuccess,
+    canvasColor: theme.themeColorLight,
   );
 }
 
@@ -61,7 +61,7 @@ ThemeData darkTheme(BuildContext context) {
         primary: theme.themeColorPrimary,
         primaryContainer: theme.themeColorPrimaryContainer,
         secondary: theme.themeColorSecondary,
-        shadow: theme.shadowColorDark,
+        shadow: theme.shadowColorLight,
         error: theme.themeColorError,
         errorContainer: theme.themeColorError,
         onErrorContainer: theme.themeColorLight,

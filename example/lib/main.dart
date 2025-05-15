@@ -39,10 +39,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const IntroPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Home');
@@ -51,10 +49,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const ChipPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Chips');
@@ -63,10 +59,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const SolidButtonsPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Solid buttons');
@@ -75,10 +69,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const TextButtonsPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Simple buttons');
@@ -87,10 +79,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const OutlinedButtonsPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Outlined buttons');
@@ -99,10 +89,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const IconTextButtonPage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Icon text buttons');
@@ -111,6 +99,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const MapMarkersPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Map markers');
@@ -119,10 +109,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const LicensePlatePage(),
-          theme: ThemeData(
-            extensions: [AppTheme.light()],
-            fontFamily: "SF Pro Text",
-          ),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/License plates');
@@ -131,6 +119,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const BordersPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Borders');
@@ -139,6 +129,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const BatteryIconsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Battery Icons');
@@ -147,6 +139,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const InputsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Molecules/Inputs');
@@ -156,6 +150,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const SnackbarPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Organisms/Snackbars');
@@ -164,6 +160,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const VehicleCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Organisms/Vehicle cards');
@@ -172,6 +170,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const LocationCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Organisms/Location cards');
@@ -180,6 +180,8 @@ Storybook get storybook {
       builder: (context) {
         return MaterialApp(
           home: const BookingCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
         );
       },
       name: 'Organisms/Booking cards');

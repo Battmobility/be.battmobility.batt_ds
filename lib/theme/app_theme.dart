@@ -84,7 +84,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final themeColorDark = AppColors.grey[900]!;
 
   final shadowColorLight = AppColors.shadow;
-  final shadowColorDark = AppColors.shadow;
+  final shadowColorDark = AppColors.black;
 
   final themeColorPrimary = AppColors.primaryColors[600]!;
   final themeColorPrimaryContainer = AppColors.grey[100]!;
