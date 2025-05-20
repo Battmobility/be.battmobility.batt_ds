@@ -1,9 +1,9 @@
-import 'package:batt_ds/theme/app_theme.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/borders_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
+import 'storybook_pages/molecules/flow_page.dart';
 import 'storybook_pages/molecules/icon_text_button_page.dart';
 import 'storybook_pages/molecules/inputs_page.dart';
 import 'storybook_pages/molecules/license_plate_page.dart';
@@ -64,6 +64,16 @@ Storybook get storybook {
         );
       },
       name: 'Molecules/Solid buttons');
+
+  final flowStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const FlowPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Molecules/Flow');
 
   final simpleButtonsStory = Story(
       builder: (context) {
@@ -188,6 +198,7 @@ Storybook get storybook {
 
   return Storybook(
     stories: [
+      flowStory,
       introStory,
       solidButtonsStory,
       outlinedButtonsStory,

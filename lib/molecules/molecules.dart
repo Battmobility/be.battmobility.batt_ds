@@ -1,6 +1,8 @@
 export 'batt_text_field.dart';
 export 'borders/gradient_box_border.dart';
 export 'buttons/buttons.dart';
+export 'flow/flow_widget.dart';
+export 'flow/flow_progress_indicator.dart';
 export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';
 export 'map_markers/map_marker.dart';
