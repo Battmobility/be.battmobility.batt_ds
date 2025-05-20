@@ -80,18 +80,18 @@ class AppTheme extends ThemeExtension<AppTheme> {
   /// [GradientTheme] instance provides configuration of lock/unlock sliders
   final ThemeExtension<GradientTheme> gradientTheme;
 
-  final themeColorLight = AppColors.white;
-  final themeColorDark = AppColors.grey[900]!;
+  final themeColorLight = AppColors.offWhite;
+  final themeColorDark = AppColors.graphiteDrive;
 
   final shadowColorLight = AppColors.shadow;
   final shadowColorDark = AppColors.black;
 
-  final themeColorPrimary = AppColors.primaryColors[600]!;
-  final themeColorPrimaryContainer = AppColors.grey[100]!;
+  final themeColorPrimary = AppColors.futureBlue;
+  final themeColorPrimaryContainer = AppColors.urbanMist;
   final themeColorPrimaryContainerLowest = AppColors.grey[500]!;
 
-  final themeColorSecondary = AppColors.secondaryColors[500]!;
-  final themeColorSecondaryContainer = AppColors.grey[200]!;
+  final themeColorSecondary = AppColors.greenShift;
+  final themeColorSecondaryContainer = AppColors.pathClay;
   final themeColorSecondaryContainerLowest = AppColors.grey[400]!;
 
   final themeColorSuccess = AppColors.green[800]!;

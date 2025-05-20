@@ -13,16 +13,16 @@ class AppNavigationTheme extends ThemeExtension<AppNavigationTheme> {
   });
 
   factory AppNavigationTheme.light() {
-    return AppNavigationTheme(
-      backgroundColor: AppColors.primaryColors[300]!,
-      indicatorColor: AppColors.grey[900]!,
+    return const AppNavigationTheme(
+      backgroundColor: AppColors.offWhite,
+      indicatorColor: AppColors.graphiteDrive,
     );
   }
 
   factory AppNavigationTheme.dark() {
-    return AppNavigationTheme(
-      backgroundColor: AppColors.primaryColors[900]!,
-      indicatorColor: AppColors.grey[100]!,
+    return const AppNavigationTheme(
+      backgroundColor: AppColors.graphiteDrive,
+      indicatorColor: AppColors.offWhite,
     );
   }
 

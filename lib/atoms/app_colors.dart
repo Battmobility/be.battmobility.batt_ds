@@ -3,6 +3,19 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
+  static const Color graphiteDrive = Color(0xFF4F4F4F);
+  static const Color urbanMist = Color(0xFFD8D8D8);
+  static const Color futureBlue = Color(0xFF3D73F0);
+  static const Color skySurge = Color(0xFF87B7FF);
+  static const Color airFlow = Color(0xFFBDE3FF);
+  static const Color greenShift = Color(0xFF97D7A0);
+  static const Color ecoHorizon = Color(0xFFD1E8D1);
+  static const Color softGrove = Color(0xFFDFF4E1);
+  static const Color transitSand = Color(0xFFEACAA4);
+  static const Color pathClay = Color(0xFFF0E1CE);
+  static const Color cloudBase = Color(0xFFF7F0E6);
+  static const Color offWhite = Color(0xFFF6F9FD);
+
   static const Color defaultBlue = Color(_primaryValue);
   static const int _primaryValue = 0xFF00AEED;
 

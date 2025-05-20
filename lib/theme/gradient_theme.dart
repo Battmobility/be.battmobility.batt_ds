@@ -29,11 +29,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         radius: 3.0,
       ),
       inputBorderGradient: const LinearGradient(
-        colors: [
-          AppColors.defaultBlue,
-          AppColors.defaultOrange,
-          AppColors.defaultBlue
-        ],
+        colors: [AppColors.softGrove, AppColors.ecoHorizon, AppColors.skySurge],
         transform: GradientRotation(-0.79),
       ),
       canvasBackgroundGradient: const LinearGradient(
@@ -54,19 +50,19 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           AppColors.grey[900]!,
         ],
       ),
-      heroGradient: RadialGradient(
+      heroGradient: const RadialGradient(
         colors: [
-          AppColors.orange[500]!,
-          AppColors.primaryColors[500]!,
+          AppColors.futureBlue,
+          AppColors.greenShift,
         ],
-        center: const Alignment(-0.65, 0),
+        center: Alignment(-0.65, 0),
         radius: 3.0,
       ),
       inputBorderGradient: const LinearGradient(
         colors: [
-          AppColors.defaultBlue,
-          AppColors.defaultOrange,
-          AppColors.defaultBlue
+          AppColors.futureBlue,
+          AppColors.skySurge,
+          AppColors.ecoHorizon
         ],
         transform: GradientRotation(-0.79),
       ),

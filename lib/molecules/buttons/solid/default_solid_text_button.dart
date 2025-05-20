@@ -35,7 +35,7 @@ class DefaultSolidTextButton extends BattTextButton {
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.primaryColors[600]!;
+    return AppColors.skySurge;
   }
 
   @override

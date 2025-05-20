@@ -21,31 +21,31 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
   factory AppButtonTheme.light() {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.primaryButtonBackgroundColor,
+        primaryDefault: AppColors.futureBlue,
         primaryHover: AppColors.primaryColors[700]!,
         primaryFocused: AppColors.background,
-        primaryDisabled: AppColors.grey[300]!,
-        secondaryText: AppColors.secondaryButtonTextColor,
+        primaryDisabled: AppColors.urbanMist,
+        secondaryText: AppColors.skySurge,
         secondaryDefault: Colors.transparent,
-        secondaryHover: AppColors.secondaryButtonBackgroundColor,
-        secondaryFocused: AppColors.background,
-        secondaryDisabled: AppColors.grey[300]!,
-        iconButtonColor: AppColors.iconColor);
+        secondaryHover: AppColors.urbanMist,
+        secondaryFocused: AppColors.offWhite,
+        secondaryDisabled: AppColors.urbanMist,
+        iconButtonColor: AppColors.skySurge);
   }
 
   factory AppButtonTheme.dark() {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.primaryButtonBackgroundColor,
+        primaryDefault: AppColors.futureBlue,
         primaryHover: AppColors.primaryColors[700]!,
-        primaryFocused: AppColors.backgroundDark,
-        primaryDisabled: AppColors.grey[300]!,
-        secondaryText: AppColors.secondaryButtonTextColor,
+        primaryFocused: AppColors.graphiteDrive,
+        primaryDisabled: AppColors.urbanMist,
+        secondaryText: AppColors.skySurge,
         secondaryDefault: Colors.transparent,
-        secondaryHover: AppColors.secondaryButtonBackgroundColor,
-        secondaryFocused: AppColors.backgroundDark,
-        secondaryDisabled: AppColors.grey[300]!,
-        iconButtonColor: AppColors.iconColor);
+        secondaryHover: AppColors.urbanMist,
+        secondaryFocused: AppColors.graphiteDrive,
+        secondaryDisabled: AppColors.urbanMist,
+        iconButtonColor: AppColors.skySurge);
   }
 
   /// The color of the primary text.
