@@ -31,7 +31,7 @@ ThemeData lightTheme(BuildContext context) {
     extensions: [theme],
     appBarTheme: theme.appBarThemeLight,
     navigationBarTheme: theme.navigationBarThemeLight,
-    cardTheme: CardTheme(color: theme.themeColorLight),
+    cardTheme: CardThemeData(color: theme.themeColorLight),
     textTheme: theme.textThemeLight,
     textSelectionTheme: theme.textSelectionThemeLight,
     inputDecorationTheme: theme.inputDecorationThemeLight,
@@ -73,7 +73,7 @@ ThemeData darkTheme(BuildContext context) {
     extensions: [theme],
     appBarTheme: theme.appBarThemeDark,
     navigationBarTheme: theme.navigationBarThemeDark,
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: theme.themeColorDark,
       shadowColor: theme.themeColorLight,
     ),
