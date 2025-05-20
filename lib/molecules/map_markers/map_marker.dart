@@ -5,7 +5,7 @@ enum MapMarkerState { standard, active, disabled, error }
 
 final class MapMarker extends StatelessWidget {
   final MapMarkerState state;
-  final IconData icon;
+  final Widget? icon;
   final double progress;
   final Widget? accessory;
   final double size;
@@ -13,7 +13,7 @@ final class MapMarker extends StatelessWidget {
   const MapMarker({
     super.key,
     this.state = MapMarkerState.standard,
-    this.icon = Icons.car_rental_outlined,
+    this.icon,
     this.progress = 0.0,
     this.accessory,
     this.size = 48,
@@ -46,13 +46,14 @@ final class MapMarker extends StatelessWidget {
                   color: _getProgressColor(state),
                 ),
               ),
-              Icon(
-                icon,
-                color: _getIconColor(state),
-                size: size / 1.75,
-                weight: 0.5,
-                grade: 0.5,
-              ),
+              icon ??
+                  Icon(
+                    Icons.car_rental,
+                    color: _getIconColor(state),
+                    size: size / 1.75,
+                    weight: 0.5,
+                    grade: 0.5,
+                  ),
             ],
           ),
         ),
