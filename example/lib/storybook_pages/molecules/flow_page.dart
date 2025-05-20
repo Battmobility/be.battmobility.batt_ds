@@ -33,25 +33,22 @@ class FlowPage extends StatelessWidget {
                   padding: AppPaddings.small.vertical,
                   child: LayoutBuilder(builder: (context, constraints) {
                     return Wrap(
-                        spacing: AppSpacings.sm,
+                        spacing: AppSpacings.md,
                         runSpacing: AppSpacings.md,
+                        crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: FlowProgressIndicator()),
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: FlowProgressIndicator()),
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: FlowProgressIndicator()),
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: FlowProgressIndicator()),
+                          FlowProgressIndicator(
+                            size: IndicatorSize.large,
+                          ),
+                          FlowProgressIndicator(
+                            size: IndicatorSize.medium,
+                          ),
+                          FlowProgressIndicator(
+                            size: IndicatorSize.small,
+                          ),
+                          FlowProgressIndicator(
+                            size: IndicatorSize.xsmall,
+                          ),
                         ]);
                   }),
                 ),
