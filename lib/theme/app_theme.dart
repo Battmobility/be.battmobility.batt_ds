@@ -97,33 +97,33 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final themeColorSuccess = AppColors.green[800]!;
   final themeColorError = AppColors.red[800]!;
 
-  final AppBarTheme appBarThemeLight = AppBarTheme(
+  final AppBarTheme appBarThemeLight = const AppBarTheme(
     foregroundColor: Colors.transparent,
     shadowColor: Colors.transparent,
     scrolledUnderElevation: 0,
     elevation: 0,
-    iconTheme: const IconThemeData(color: AppColors.defaultOrange),
+    iconTheme: IconThemeData(color: AppColors.transitSand),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.secondaryColors[500]!,
+        color: AppColors.ctaBrightGreen,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
   );
 
-  final AppBarTheme appBarThemeDark = AppBarTheme(
-    color: AppColors.primaryColors[800]!,
+  final AppBarTheme appBarThemeDark = const AppBarTheme(
+    foregroundColor: Colors.transparent,
     elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle.dark,
-    iconTheme: const IconThemeData(color: AppColors.defaultOrange),
+    iconTheme: IconThemeData(color: AppColors.transitSand),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryColors[50]!,
+        color: AppColors.transitSand,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
   );
