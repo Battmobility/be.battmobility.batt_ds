@@ -23,9 +23,9 @@ final class BattChipPrimary extends BattChip {
       case BattChipState.disabled:
         return context.chipTheme.disabledColor;
       case BattChipState.active:
-        return AppColors.primaryColors[700]!;
+        return AppColors.skySurge;
       case BattChipState.enabled:
-        return AppColors.primaryColors[700]!;
+        return AppColors.futureBlue;
     }
   }
 
@@ -36,7 +36,7 @@ final class BattChipPrimary extends BattChip {
       case BattChipState.disabled:
         return context.chipTheme.disabledBackgroundColor;
       case BattChipState.active:
-        return AppColors.primaryColors[200]!;
+        return AppColors.skySurge;
       case BattChipState.enabled:
         return context.chipTheme.enabledBackgroundColor;
     }

@@ -16,6 +16,10 @@ class AppColors {
   static const Color cloudBase = Color(0xFFF7F0E6);
   static const Color offWhite = Color(0xFFF6F9FD);
 
+  static const Color ctaBrightGreen = Color(0xFF4FB84F);
+  static const Color ctaGreen = Color(0xFF6DD19A);
+  static const Color ctaSand = Color(0xFFE6B985);
+
   static const Color defaultBlue = Color(_primaryValue);
   static const int _primaryValue = 0xFF00AEED;
 
@@ -206,52 +210,7 @@ class AppColors {
   static const Color accentTextColor = Color(0xFF000000);
   static const Color accentIconColor = Color.fromARGB(255, 101, 26, 26);
 
-  static const Color calendarEventTypeBooking = Color(0xFFAAAAAA);
-  static const Color calendarEventTypeAvailable = Color(0xFF759D48);
-  static const Color calendarEventTypeOther = Color(0xFF78D6F1);
-
-  static const Color availabilityCalendarAppointment = Color(0xFFCCCCCC);
-  static const Color availabilityCalendarWholeDay = Color(0xFFAAAAAA);
-
-  static const Color allowed = success;
-  static const Color notAllowed = error;
-
-  static const Color chipColorEnabledPrimary = Color(0xFF005D9A);
-  static const Color chipColorEnabledSecondary = Color(0xFFFFFFFF);
-  static const Color chipColorDisabledPrimary = Color(0xFF000004);
-  static const Color chipColorDisabledSecondary = Color(0xFFCCCCCC);
-  static const Color chipColorActivePrimary = Color(0xFF005D9A);
-  static const Color chipColorActiveSecondary = Color(0xFF38C7ED);
-
-  static const Color actionSliderBackgroundColor = Color(0xFF005D9A);
-  static const Color actionSliderBackgroundColorSecondary = Color(0xFF256f5e);
-  static const Color actionSliderBackgroundColorTertiary = Color(0xFF933319);
-
-  static const Color actionSliderToggleColor = Color(0xFF38C7ED);
-  static const Color actionSliderToggleColorSecondary = Color(_greenValue);
-  static const Color actionSliderToggleColorTertiary = Color(_orangeValue);
-
-  static const Color actionSliderTextColor = Color(0xFFFFFFFF);
-
   static const Color checkBoxColor = Color(_orangeValue);
-
-  static const Color info = Color(0xFF40A4BE);
-  static const Color infobackground = Color(0xFFADE6F6);
-  static const Color infoText = Color(0xFF005D9A);
-  static const Color success = Color(0xFF5bc8af);
-  static const Color successBackground = Color(0xFFDFECCC);
-  static const Color successText = Color(0xFF006622);
-  static const Color error = Color(0xFFB00020);
-  static const Color errorBackground = Color(0xFFFFDDDD);
-  static const Color errorText = Color(0xFFB00020);
-  static const Color warning = Color(0xFFEF7225);
-  static const Color warningBackground = Color(0xFFEFE8A6);
-  static const Color warningText = Color(0xFF933319);
-
-  static const Color greenInfo = Color(0xFF62893D);
-
-  static const Color flashyBlue = Color(0xB32700FF);
-  static const Color flashyYellow = Color(0xFFFFE000);
 
   // License plate
   static const Color licensePlateBelgiumTextColor = Color(0xFF861a22);

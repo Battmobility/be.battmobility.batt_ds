@@ -38,7 +38,7 @@ final class BattChipRed extends BattChip {
       case BattChipState.active:
         return AppColors.red[200]!;
       case BattChipState.enabled:
-        return AppColors.chipColorEnabledSecondary;
+        return AppColors.ctaSand;
     }
   }
 }

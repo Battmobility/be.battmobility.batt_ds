@@ -14,12 +14,6 @@ final class FlowWidget extends StatefulWidget {
 class FlowWidgetState extends State<FlowWidget> {
   static const _backgroundColor = AppColors.offWhite;
 
-  static const _colors = [
-    AppColors.skySurge,
-    AppColors.airFlow,
-    AppColors.softGrove
-  ];
-
   static const _gradients = [
     [AppColors.airFlow, AppColors.skySurge, AppColors.airFlow],
     [AppColors.softGrove, AppColors.ecoHorizon, AppColors.softGrove],

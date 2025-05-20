@@ -24,14 +24,14 @@ class SnackbarTheme extends ThemeExtension<SnackbarTheme> {
 
   factory SnackbarTheme.standard() {
     return const SnackbarTheme(
-      infoBackgroundColor: AppColors.infobackground,
-      successBackgroundColor: AppColors.successBackground,
-      warningBackgroundColor: AppColors.warningBackground,
-      errorBackgroundColor: AppColors.errorBackground,
-      infoTextColor: AppColors.infoText,
-      successTextColor: AppColors.successText,
-      warningTextColor: AppColors.warningText,
-      errorTextColor: AppColors.errorText,
+      infoBackgroundColor: AppColors.ecoHorizon,
+      successBackgroundColor: AppColors.greenShift,
+      warningBackgroundColor: AppColors.ctaSand,
+      errorBackgroundColor: AppColors.ctaSand,
+      infoTextColor: AppColors.graphiteDrive,
+      successTextColor: AppColors.graphiteDrive,
+      warningTextColor: AppColors.graphiteDrive,
+      errorTextColor: AppColors.graphiteDrive,
     );
   }
 

@@ -16,7 +16,7 @@ class OrangeOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   BorderSide defaultBorder(BuildContext context) =>
-      BorderSide(color: AppColors.orange);
+      const BorderSide(color: AppColors.ctaSand);
 
   @override
   Color backgroundColor(BuildContext context) {
@@ -30,16 +30,16 @@ class OrangeOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.orange[800]!;
+    return AppColors.transitSand;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.orange[600]!;
+    return AppColors.transitSand;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.orange;
+    return AppColors.ctaSand;
   }
 }

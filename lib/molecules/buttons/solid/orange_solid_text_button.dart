@@ -1,6 +1,5 @@
 import 'package:batt_ds/molecules/buttons/batt_text_button.dart';
 import 'package:batt_ds/atoms/atoms.dart';
-import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
 class OrangeSolidTextButton extends BattTextButton {
@@ -17,26 +16,26 @@ class OrangeSolidTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return AppColors.orange;
+    return AppColors.ctaSand;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.orange.withAlpha(122);
+    return AppColors.transitSand.withAlpha(122);
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.orange[800]!;
+    return AppColors.transitSand;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.orange[600]!;
+    return AppColors.transitSand;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.primaryText;
+    return AppColors.offWhite;
   }
 }

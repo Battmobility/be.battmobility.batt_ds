@@ -23,9 +23,9 @@ final class BattChipOrange extends BattChip {
       case BattChipState.disabled:
         return context.chipTheme.disabledColor;
       case BattChipState.active:
-        return AppColors.orange[700]!;
+        return AppColors.ctaSand;
       case BattChipState.enabled:
-        return AppColors.orange[700]!;
+        return AppColors.ctaSand;
     }
   }
 
@@ -36,7 +36,7 @@ final class BattChipOrange extends BattChip {
       case BattChipState.disabled:
         return context.chipTheme.disabledBackgroundColor;
       case BattChipState.active:
-        return AppColors.orange[200]!;
+        return AppColors.transitSand;
       case BattChipState.enabled:
         return context.chipTheme.enabledBackgroundColor;
     }

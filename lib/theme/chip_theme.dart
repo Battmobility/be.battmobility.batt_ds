@@ -31,12 +31,12 @@ class AppChipTheme extends ThemeExtension<AppChipTheme> {
 
   factory AppChipTheme.standard() {
     return const AppChipTheme(
-      enabledColor: AppColors.chipColorEnabledPrimary,
-      disabledColor: AppColors.chipColorDisabledPrimary,
-      activeColor: AppColors.chipColorActivePrimary,
-      enabledBackgroundColor: AppColors.chipColorEnabledSecondary,
-      disabledBackgroundColor: AppColors.chipColorDisabledSecondary,
-      activeBackgroundColor: AppColors.chipColorActiveSecondary,
+      enabledColor: AppColors.skySurge,
+      disabledColor: AppColors.urbanMist,
+      activeColor: AppColors.futureBlue,
+      enabledBackgroundColor: AppColors.airFlow,
+      disabledBackgroundColor: AppColors.cloudBase,
+      activeBackgroundColor: AppColors.skySurge,
     );
   }
   @override

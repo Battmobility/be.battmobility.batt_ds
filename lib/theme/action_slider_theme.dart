@@ -34,18 +34,18 @@ class ActionSliderTheme extends ThemeExtension<ActionSliderTheme> {
 
   factory ActionSliderTheme.standard() {
     return const ActionSliderTheme(
-        defaultBackgroundColor: AppColors.actionSliderBackgroundColor,
-        unlockedBackgroundColor: AppColors.actionSliderBackgroundColorSecondary,
-        lockedBackgroundColor: AppColors.actionSliderBackgroundColorTertiary,
-        errorBackgroundColor: AppColors.actionSliderBackgroundColorTertiary,
-        defaultTextColor: AppColors.actionSliderTextColor,
-        lockedTextColor: AppColors.actionSliderTextColor,
-        unlockedTextColor: AppColors.actionSliderTextColor,
-        errorTextColor: AppColors.actionSliderTextColor,
-        defaultToggleColor: AppColors.actionSliderToggleColor,
-        lockedToggleColor: AppColors.actionSliderToggleColorTertiary,
-        unlockedToggleColor: AppColors.actionSliderToggleColorSecondary,
-        errorToggleColor: AppColors.actionSliderToggleColorTertiary);
+        defaultBackgroundColor: AppColors.skySurge,
+        unlockedBackgroundColor: AppColors.greenShift,
+        lockedBackgroundColor: AppColors.transitSand,
+        errorBackgroundColor: AppColors.ctaSand,
+        defaultTextColor: AppColors.graphiteDrive,
+        lockedTextColor: AppColors.graphiteDrive,
+        unlockedTextColor: AppColors.graphiteDrive,
+        errorTextColor: AppColors.graphiteDrive,
+        defaultToggleColor: AppColors.futureBlue,
+        lockedToggleColor: AppColors.futureBlue,
+        unlockedToggleColor: AppColors.softGrove,
+        errorToggleColor: AppColors.pathClay);
   }
 
   @override
