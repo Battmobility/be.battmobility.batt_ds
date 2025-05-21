@@ -15,6 +15,7 @@ class AppColors {
   static const Color pathClay = Color(0xFFF0E1CE);
   static const Color cloudBase = Color(0xFFF7F0E6);
   static const Color offWhite = Color(0xFFF6F9FD);
+  static const Color rusticClay = Color(0xFFC45D4E);
 
   static const Color ctaBrightGreen = Color(0xFF4FB84F);
   static const Color ctaGreen = Color(0xFF6DD19A);

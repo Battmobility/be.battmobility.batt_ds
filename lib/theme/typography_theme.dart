@@ -387,14 +387,14 @@ class AppTypography extends AppTypographyTheme {
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w400,
-        color: AppColors.ctaSand,
+        color: AppColors.rusticClay,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
     super.successText = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w400,
-        color: AppColors.ctaSand,
+        color: AppColors.ctaGreen,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
     super.warningText = const TextStyle(
@@ -642,7 +642,7 @@ class AppTypographyDark extends AppTypographyTheme {
         fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w400,
-        color: AppColors.ctaSand,
+        color: AppColors.rusticClay,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
     super.successText = const TextStyle(

@@ -27,7 +27,7 @@ class SnackbarTheme extends ThemeExtension<SnackbarTheme> {
       infoBackgroundColor: AppColors.ecoHorizon,
       successBackgroundColor: AppColors.greenShift,
       warningBackgroundColor: AppColors.ctaSand,
-      errorBackgroundColor: AppColors.ctaSand,
+      errorBackgroundColor: AppColors.rusticClay,
       infoTextColor: AppColors.graphiteDrive,
       successTextColor: AppColors.graphiteDrive,
       warningTextColor: AppColors.graphiteDrive,

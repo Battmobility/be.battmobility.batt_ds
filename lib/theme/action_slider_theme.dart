@@ -37,7 +37,7 @@ class ActionSliderTheme extends ThemeExtension<ActionSliderTheme> {
         defaultBackgroundColor: AppColors.skySurge,
         unlockedBackgroundColor: AppColors.greenShift,
         lockedBackgroundColor: AppColors.transitSand,
-        errorBackgroundColor: AppColors.ctaSand,
+        errorBackgroundColor: AppColors.rusticClay,
         defaultTextColor: AppColors.graphiteDrive,
         lockedTextColor: AppColors.graphiteDrive,
         unlockedTextColor: AppColors.graphiteDrive,
@@ -45,7 +45,7 @@ class ActionSliderTheme extends ThemeExtension<ActionSliderTheme> {
         defaultToggleColor: AppColors.futureBlue,
         lockedToggleColor: AppColors.futureBlue,
         unlockedToggleColor: AppColors.softGrove,
-        errorToggleColor: AppColors.pathClay);
+        errorToggleColor: AppColors.rusticClay);
   }
 
   @override

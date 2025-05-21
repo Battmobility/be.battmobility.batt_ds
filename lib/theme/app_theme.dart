@@ -94,8 +94,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final themeColorSecondaryContainer = AppColors.pathClay;
   final themeColorSecondaryContainerLowest = AppColors.grey[400]!;
 
-  final themeColorSuccess = AppColors.green[800]!;
-  final themeColorError = AppColors.red[800]!;
+  final themeColorSuccess = AppColors.ctaGreen;
+  final themeColorError = AppColors.rusticClay;
 
   final AppBarTheme appBarThemeLight = const AppBarTheme(
     foregroundColor: Colors.transparent,
@@ -148,7 +148,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    type: BottomNavigationBarType.shifting,
+    type: BottomNavigationBarType.fixed,
     showSelectedLabels: true,
     showUnselectedLabels: true,
   );
@@ -173,7 +173,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    type: BottomNavigationBarType.shifting,
+    type: BottomNavigationBarType.fixed,
     showSelectedLabels: true,
     showUnselectedLabels: true,
   );
@@ -320,10 +320,10 @@ class AppTheme extends ThemeExtension<AppTheme> {
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.ctaSand, width: 2),
+      borderSide: BorderSide(color: AppColors.rusticClay, width: 2),
     ),
     errorStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.ctaSand),
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.rusticClay),
   );
 
   final InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
@@ -353,10 +353,10 @@ class AppTheme extends ThemeExtension<AppTheme> {
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.ctaSand, width: 2),
+      borderSide: BorderSide(color: AppColors.rusticClay, width: 2),
     ),
     errorStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.ctaSand),
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.rusticClay),
   );
 
   TextSelectionThemeData textSelectionThemeLight = const TextSelectionThemeData(
