@@ -9,65 +9,32 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.canvasBackgroundGradient,
   });
 
-  factory GradientTheme.light() {
-    return GradientTheme(
+  factory GradientTheme.standard() {
+    return const GradientTheme(
       cardBackgroundGradient: LinearGradient(
         begin: Alignment.bottomLeft,
         end: Alignment.topCenter,
-        stops: const [0, 1],
+        stops: [0, 1],
         colors: [
-          AppColors.grey[50]!,
-          AppColors.grey[100]!,
+          AppColors.offWhite,
+          AppColors.urbanMist,
         ],
       ),
       heroGradient: RadialGradient(
-        colors: [
-          AppColors.orange[500]!,
-          AppColors.primaryColors[500]!,
-        ],
-        center: const Alignment(-0.65, 0),
-        radius: 3.0,
+        colors: [AppColors.softGrove, AppColors.futureBlue],
+        center: Alignment(-0.6, 0),
+        radius: 2.0,
       ),
-      inputBorderGradient: const LinearGradient(
-        colors: [AppColors.softGrove, AppColors.ecoHorizon, AppColors.skySurge],
-        transform: GradientRotation(-0.79),
-      ),
-      canvasBackgroundGradient: const LinearGradient(
-        colors: [AppColors.background, AppColors.defaultBlue],
-        transform: GradientRotation(-0.79),
-      ),
-    );
-  }
-
-  factory GradientTheme.dark() {
-    return GradientTheme(
-      cardBackgroundGradient: LinearGradient(
-        begin: Alignment.bottomLeft,
-        end: Alignment.topCenter,
-        stops: const [0, 1],
-        colors: [
-          AppColors.grey[950]!,
-          AppColors.grey[900]!,
-        ],
-      ),
-      heroGradient: const RadialGradient(
+      inputBorderGradient: LinearGradient(
         colors: [
           AppColors.futureBlue,
-          AppColors.greenShift,
-        ],
-        center: Alignment(-0.65, 0),
-        radius: 3.0,
-      ),
-      inputBorderGradient: const LinearGradient(
-        colors: [
-          AppColors.futureBlue,
-          AppColors.skySurge,
-          AppColors.ecoHorizon
+          AppColors.ecoHorizon,
+          AppColors.futureBlue
         ],
         transform: GradientRotation(-0.79),
       ),
-      canvasBackgroundGradient: const LinearGradient(
-        colors: [AppColors.backgroundDark, AppColors.defaultBlue],
+      canvasBackgroundGradient: LinearGradient(
+        colors: [AppColors.background, AppColors.skySurge],
         transform: GradientRotation(-0.79),
       ),
     );

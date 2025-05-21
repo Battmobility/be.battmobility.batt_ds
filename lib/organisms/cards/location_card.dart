@@ -35,7 +35,7 @@ final class LocationCard extends StatelessWidget {
                   child: Icon(
                     Icons.location_pin,
                     size: 24,
-                    color: AppColors.grey[600],
+                    color: theme.colorScheme.onSurface,
                   ),
                 ),
               ],
@@ -65,7 +65,7 @@ final class LocationCard extends StatelessWidget {
                             child: Text(
                               address,
                               style: theme.textTheme.titleMedium!
-                                  .copyWith(color: AppColors.grey[600]),
+                                  .copyWith(color: theme.colorScheme.onSurface),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                             ),
@@ -81,7 +81,7 @@ final class LocationCard extends StatelessWidget {
                       child: Icon(
                         Icons.mode_edit,
                         size: 24,
-                        color: AppColors.grey[600],
+                        color: theme.colorScheme.onSurface,
                       ),
                     )),
                 ],

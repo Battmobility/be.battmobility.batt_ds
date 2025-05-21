@@ -20,7 +20,6 @@ class AppColors {
   static const Color ctaGreen = Color(0xFF6DD19A);
   static const Color ctaSand = Color(0xFFE6B985);
 
-  static const Color defaultBlue = Color(_primaryValue);
   static const int _primaryValue = 0xFF00AEED;
 
   static MaterialColor get primaryColors {
@@ -97,7 +96,6 @@ class AppColors {
         },
       );
 
-  static const defaultOrange = Color(_orangeValue);
   static const int _orangeValue = 0xFFEF7225;
 
   static MaterialColor get orange => const MaterialColor(
@@ -182,7 +180,7 @@ class AppColors {
   static const Color upcomingBookingCardBorder = Color(0xFFB6D7E2);
 
   static const Color textColor = Color(0xff000004);
-  static const Color textColorLight = Color(0x61000000);
+  static const Color textColorLight = AppColors.graphiteDrive;
   static const Color textColorExtraLight = Color(0x33000000);
 
   static const Color heroTextColor = Color(0xFFFFFFFF);
@@ -190,8 +188,6 @@ class AppColors {
 
   static const Color disabledTextColor = Color(0xff555555);
   static const Color disabledTextColorDark = Color(0xff777777);
-
-  static const Color textColorDark = Color(0xFFFFFFFF);
 
   static const Color primaryTextColor = Color(0xFF000004);
   static const Color primaryTextColorLight = Color(0x99000004);

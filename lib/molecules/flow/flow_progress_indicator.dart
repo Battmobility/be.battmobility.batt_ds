@@ -37,7 +37,7 @@ class FlowProgressIndicatorState extends State<FlowProgressIndicator> {
           config: CustomConfig(
             gradients: [
               [AppColors.softGrove, AppColors.skySurge],
-              [AppColors.offWhite, AppColors.airFlow],
+              [AppColors.ecoHorizon, AppColors.offWhite],
               [AppColors.skySurge, AppColors.futureBlue],
             ],
             durations: [
@@ -49,7 +49,11 @@ class FlowProgressIndicatorState extends State<FlowProgressIndicator> {
           ),
           backgroundColor: AppColors.airFlow,
           size: const Size(double.infinity, double.infinity),
-          waveAmplitude: 0,
+          waveAmplitude: widget.size == IndicatorSize.xsmall
+              ? -7
+              : widget.size == IndicatorSize.small
+                  ? -5
+                  : 0,
         ),
       ),
     );

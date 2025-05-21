@@ -26,16 +26,16 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
   /// {@macro app_input_theme}
   factory AppInputTheme.light() {
     return AppInputTheme(
-      defaultText: AppColors.primaryColors[900]!,
+      defaultText: AppColors.graphiteDrive,
       focusedOnBrand: AppColors.primaryColors[500]!,
       focusedTextDefault: AppColors.primaryColors[50]!,
-      errorTextDefault: AppColors.orange,
+      errorTextDefault: AppColors.ctaSand,
       successTextDefault: AppColors.ctaGreen,
       disabledText: AppColors.grey[300]!,
-      borderDefault: AppColors.defaultBlue,
-      borderHover: AppColors.defaultBlue,
-      borderFocused: AppColors.defaultBlue,
-      borderError: AppColors.orange,
+      borderDefault: AppColors.skySurge,
+      borderHover: AppColors.futureBlue,
+      borderFocused: AppColors.futureBlue,
+      borderError: AppColors.ctaSand,
       borderSuccess: AppColors.ctaGreen,
       borderDisabled: AppColors.grey[300]!,
       defaultColor: AppColors.grey[50]!,
@@ -45,15 +45,15 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
 
   factory AppInputTheme.dark() {
     return AppInputTheme(
-      defaultText: AppColors.primaryColors[50]!,
+      defaultText: AppColors.offWhite,
       focusedOnBrand: AppColors.primaryColors[500]!,
       focusedTextDefault: AppColors.primaryColors[50]!,
       errorTextDefault: AppColors.orange,
       successTextDefault: AppColors.ctaGreen,
       disabledText: AppColors.grey[300]!,
-      borderDefault: AppColors.defaultBlue,
-      borderHover: AppColors.defaultBlue,
-      borderFocused: AppColors.defaultBlue,
+      borderDefault: AppColors.skySurge,
+      borderHover: AppColors.futureBlue,
+      borderFocused: AppColors.futureBlue,
       borderError: AppColors.orange,
       borderSuccess: AppColors.ctaGreen,
       borderDisabled: AppColors.grey[300]!,

@@ -66,14 +66,9 @@ final class VehicleCard extends StatelessWidget {
                           },
                           loadingBuilder: (context, child, loadingProgress) {
                             if (loadingProgress == null) return child;
-                            return Center(
-                              child: CircularProgressIndicator(
-                                value: loadingProgress.expectedTotalBytes !=
-                                        null
-                                    ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                    : null,
-                              ),
+                            return const Center(
+                              child: FlowProgressIndicator(
+                                  size: IndicatorSize.small),
                             );
                           },
                         ),
@@ -92,14 +87,12 @@ final class VehicleCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Flexible(
-                          child: FittedBox(
-                            child: Text(
-                              name,
-                              style: theme.textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
+                          child: Text(
+                            name,
+                            style: theme.textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.bold,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         const SizedBox(
@@ -117,7 +110,7 @@ final class VehicleCard extends StatelessWidget {
                             child: Text(
                               tag!,
                               style: theme.textTheme.bodySmall?.copyWith(
-                                color: AppColors.white,
+                                color: AppColors.offWhite,
                               ),
                             ),
                           ),
@@ -142,17 +135,15 @@ final class VehicleCard extends StatelessWidget {
                             if (price != null)
                               Text(
                                 price!,
-                                style: theme.textTheme.bodyLarge?.copyWith(
+                                style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.grey[700],
                                 ),
                               ),
                             if (price2 != null)
                               Text(
                                 price2!,
-                                style: theme.textTheme.bodyLarge?.copyWith(
+                                style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.grey[700],
                                 ),
                               ),
                           ],
@@ -176,14 +167,14 @@ final class VehicleCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              rangeIcon.colored(AppColors.green[400]!),
+              rangeIcon.colored(AppColors.greenShift),
               const SizedBox(width: AppSpacings.xs),
               Flexible(
                 child: Text(
                   range!,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppColors.green[400],
+                    color: AppColors.greenShift,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -202,7 +193,8 @@ final class VehicleCard extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (walkingDuration != null) walkIcon.colored(AppColors.grey[400]!),
+          if (walkingDuration != null)
+            walkIcon.colored(theme.colorScheme.onSurface),
           if (walkingDuration != null) const SizedBox(width: AppSpacings.xs),
           if (walkingDuration != null)
             Flexible(
@@ -210,7 +202,6 @@ final class VehicleCard extends StatelessWidget {
                 walkingDuration!,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600,
-                  color: AppColors.grey[400],
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -224,7 +215,6 @@ final class VehicleCard extends StatelessWidget {
                 walkingDistance!,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w200,
-                  color: AppColors.grey[400],
                 ),
                 overflow: TextOverflow.ellipsis,
               ),

@@ -5,7 +5,6 @@ import 'storybook_pages/molecules/borders_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
 import 'storybook_pages/molecules/flow_page.dart';
 import 'storybook_pages/molecules/icon_text_button_page.dart';
-import 'storybook_pages/molecules/inputs_page.dart';
 import 'storybook_pages/molecules/license_plate_page.dart';
 import 'storybook_pages/molecules/outlined_buttons_page.dart';
 import 'storybook_pages/molecules/solid_button_page.dart';
@@ -145,16 +144,6 @@ Storybook get storybook {
       },
       name: 'Molecules/Battery Icons');
 
-  final inputsStory = Story(
-      builder: (context) {
-        return MaterialApp(
-          home: const InputsPage(),
-          theme: lightTheme(context),
-          darkTheme: darkTheme(context),
-        );
-      },
-      name: 'Molecules/Inputs');
-
   // Organisms
   final snackBarStory = Story(
       builder: (context) {
@@ -208,7 +197,6 @@ Storybook get storybook {
       mapMarkersStory,
       licensePlateStory,
       bordersStory,
-      inputsStory,
       batteryIconsStory,
       snackBarStory,
       vehicleCardsStory,

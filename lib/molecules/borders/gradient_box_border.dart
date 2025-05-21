@@ -20,7 +20,7 @@ class GradientBorderDecoration extends BoxDecoration {
 
   factory GradientBorderDecoration.standard() {
     return GradientBorderDecoration(
-        gradient: GradientTheme.dark().inputBorderGradient,
+        gradient: GradientTheme.standard().inputBorderGradient,
         borderWidth: 2.0,
         borderRadius: const BorderRadius.all(CornerRadii.s));
   }

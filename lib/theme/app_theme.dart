@@ -39,7 +39,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       appChipTheme: AppChipTheme.standard(),
       appSnackbarTheme: SnackbarTheme.standard(),
       actionSliderTheme: ActionSliderTheme.standard(),
-      gradientTheme: GradientTheme.light(),
+      gradientTheme: GradientTheme.standard(),
     );
   }
 
@@ -52,7 +52,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       appChipTheme: AppChipTheme.standard(),
       appSnackbarTheme: SnackbarTheme.standard(),
       actionSliderTheme: ActionSliderTheme.standard(),
-      gradientTheme: GradientTheme.dark(),
+      gradientTheme: GradientTheme.standard(),
     );
   }
 
@@ -102,13 +102,13 @@ class AppTheme extends ThemeExtension<AppTheme> {
     shadowColor: Colors.transparent,
     scrolledUnderElevation: 0,
     elevation: 0,
-    iconTheme: IconThemeData(color: AppColors.transitSand),
+    iconTheme: IconThemeData(color: AppColors.ctaSand),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.ctaBrightGreen,
+        color: AppColors.ctaSand,
         fontFamily: "LexendDeca",
         package: "batt_ds"),
   );
@@ -130,25 +130,25 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   final NavigationBarThemeData navigationBarThemeLight = NavigationBarThemeData(
     backgroundColor: AppColors.primaryColors[800]!,
-    indicatorColor: AppColors.grey[50]!,
-    labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
-      fontSize: 18,
+    indicatorColor: AppColors.skySurge,
+    labelTextStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
+      fontSize: 12,
       height: 24 / 24,
       fontWeight: FontWeight.w600,
-      color: AppColors.primaryColors[50]!,
+      color: AppColors.graphiteDrive,
       fontFamily: "LexendDeca",
       package: "batt_ds",
     )),
   );
 
   final NavigationBarThemeData navigationBarThemeDark = NavigationBarThemeData(
-    backgroundColor: AppColors.primaryColors[800]!,
-    indicatorColor: AppColors.grey[50]!,
-    labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
-        fontSize: 18,
+    backgroundColor: AppColors.graphiteDrive,
+    indicatorColor: AppColors.skySurge,
+    labelTextStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
+        fontSize: 12,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryColors[50]!,
+        color: AppColors.offWhite,
         fontFamily: "LexendDeca",
         package: "batt_ds")),
   );
@@ -196,75 +196,74 @@ class AppTheme extends ThemeExtension<AppTheme> {
         AppTypographyDark().mediumLabel.copyWith(color: AppColors.black),
     hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.black),
     filled: true,
-    fillColor: AppColors.defaultBlue.withAlpha(6),
+    fillColor: AppColors.futureBlue.withAlpha(6),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultBlue),
+      borderSide: BorderSide(color: AppColors.futureBlue),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultBlue),
+      borderSide: BorderSide(color: AppColors.futureBlue),
     ),
     focusedBorder: GradientOutlineInputBorder(
-      gradient: GradientTheme.light().inputBorderGradient,
+      gradient: GradientTheme.standard().inputBorderGradient,
       width: 2,
     ),
     errorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultOrange, width: 1),
+      borderSide: BorderSide(color: AppColors.ctaSand, width: 1),
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultOrange, width: 2),
+      borderSide: BorderSide(color: AppColors.ctaSand, width: 2),
     ),
-    errorStyle: AppTypographyDark()
-        .mediumLabel
-        .copyWith(color: AppColors.defaultOrange),
+    errorStyle:
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.ctaSand),
   );
 
   final InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
-    prefixIconColor: AppColors.grey[200],
-    suffixIconColor: AppColors.grey[200],
+    prefixIconColor: AppColors.urbanMist,
+    suffixIconColor: AppColors.urbanMist,
     labelStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.white),
-    hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.white),
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.offWhite),
+    hintStyle:
+        AppTypographyDark().smallLabel.copyWith(color: AppColors.offWhite),
     filled: true,
-    fillColor: AppColors.defaultBlue.withAlpha(6),
+    fillColor: AppColors.futureBlue.withAlpha(6),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultBlue),
+      borderSide: BorderSide(color: AppColors.skySurge),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultBlue),
+      borderSide: BorderSide(color: AppColors.futureBlue),
     ),
     focusedBorder: GradientOutlineInputBorder(
-      gradient: GradientTheme.dark().inputBorderGradient,
+      gradient: GradientTheme.standard().inputBorderGradient,
       width: 2,
     ),
     errorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultOrange, width: 1),
+      borderSide: BorderSide(color: AppColors.ctaSand, width: 1),
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.defaultOrange, width: 2),
+      borderSide: BorderSide(color: AppColors.ctaSand, width: 2),
     ),
-    errorStyle: AppTypographyDark()
-        .mediumLabel
-        .copyWith(color: AppColors.defaultOrange),
+    errorStyle:
+        AppTypographyDark().mediumLabel.copyWith(color: AppColors.ctaSand),
   );
 
-  final TextSelectionThemeData textSelectionThemeLight = TextSelectionThemeData(
-    cursorColor: AppColors.primaryColors[500],
-    selectionColor: AppColors.primaryColors[500],
-    selectionHandleColor: AppColors.primaryColors[800],
+  TextSelectionThemeData textSelectionThemeLight = const TextSelectionThemeData(
+    cursorColor: AppColors.skySurge,
+    selectionColor: AppColors.skySurge,
+    selectionHandleColor: AppColors.futureBlue,
   );
 
-  final TextSelectionThemeData textSelectionThemeDark = TextSelectionThemeData(
-    cursorColor: AppColors.primaryColors[500],
-    selectionColor: AppColors.primaryColors[500],
-    selectionHandleColor: AppColors.primaryColors[800],
+  TextSelectionThemeData textSelectionThemeDark = const TextSelectionThemeData(
+    cursorColor: AppColors.skySurge,
+    selectionColor: AppColors.skySurge,
+    selectionHandleColor: AppColors.futureBlue,
   );
 
   @override
