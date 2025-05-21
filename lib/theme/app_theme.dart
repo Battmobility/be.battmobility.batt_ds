@@ -128,52 +128,52 @@ class AppTheme extends ThemeExtension<AppTheme> {
         package: "batt_ds"),
   );
 
-  final BottomNavigationBarThemeData bottomNavigationBarThemeLight =
-      BottomNavigationBarThemeData(
-    backgroundColor: AppColors.airFlow.withAlpha(75),
+  BottomNavigationBarThemeData bottomNavigationBarThemeLight =
+      const BottomNavigationBarThemeData(
+    backgroundColor: AppColors.offWhite,
     elevation: 0,
     selectedItemColor: AppColors.futureBlue,
     unselectedItemColor: AppColors.graphiteDrive,
-    selectedLabelStyle: const TextStyle(
+    selectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w600,
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    unselectedLabelStyle: const TextStyle(
+    unselectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w400,
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    type: BottomNavigationBarType.fixed,
+    type: BottomNavigationBarType.shifting,
     showSelectedLabels: true,
     showUnselectedLabels: true,
   );
 
-  final BottomNavigationBarThemeData bottomNavigationBarThemeDark =
-      BottomNavigationBarThemeData(
-    backgroundColor: AppColors.airFlow.withAlpha(75),
+  BottomNavigationBarThemeData bottomNavigationBarThemeDark =
+      const BottomNavigationBarThemeData(
+    backgroundColor: AppColors.graphiteDrive,
     elevation: 0,
     selectedItemColor: AppColors.futureBlue,
-    unselectedItemColor: AppColors.graphiteDrive,
-    selectedLabelStyle: const TextStyle(
+    unselectedItemColor: AppColors.offWhite,
+    selectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w600,
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    unselectedLabelStyle: const TextStyle(
+    unselectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w400,
       fontFamily: "LexendDeca",
       package: "batt_ds",
     ),
-    type: BottomNavigationBarType.fixed,
+    type: BottomNavigationBarType.shifting,
     showSelectedLabels: true,
     showUnselectedLabels: true,
   );
