@@ -128,6 +128,56 @@ class AppTheme extends ThemeExtension<AppTheme> {
         package: "batt_ds"),
   );
 
+  final BottomNavigationBarThemeData bottomNavigationBarThemeLight =
+      BottomNavigationBarThemeData(
+    backgroundColor: AppColors.airFlow.withAlpha(75),
+    elevation: 0,
+    selectedItemColor: AppColors.futureBlue,
+    unselectedItemColor: AppColors.graphiteDrive,
+    selectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      height: 1.2,
+      fontWeight: FontWeight.w600,
+      fontFamily: "LexendDeca",
+      package: "batt_ds",
+    ),
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      height: 1.2,
+      fontWeight: FontWeight.w400,
+      fontFamily: "LexendDeca",
+      package: "batt_ds",
+    ),
+    type: BottomNavigationBarType.fixed,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+  );
+
+  final BottomNavigationBarThemeData bottomNavigationBarThemeDark =
+      BottomNavigationBarThemeData(
+    backgroundColor: AppColors.airFlow.withAlpha(75),
+    elevation: 0,
+    selectedItemColor: AppColors.futureBlue,
+    unselectedItemColor: AppColors.graphiteDrive,
+    selectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      height: 1.2,
+      fontWeight: FontWeight.w600,
+      fontFamily: "LexendDeca",
+      package: "batt_ds",
+    ),
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      height: 1.2,
+      fontWeight: FontWeight.w400,
+      fontFamily: "LexendDeca",
+      package: "batt_ds",
+    ),
+    type: BottomNavigationBarType.fixed,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+  );
+
   final NavigationBarThemeData navigationBarThemeLight = NavigationBarThemeData(
     backgroundColor: AppColors.offWhite,
     height: 80,
