@@ -129,28 +129,83 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final NavigationBarThemeData navigationBarThemeLight = NavigationBarThemeData(
-    backgroundColor: AppColors.primaryColors[800]!,
-    indicatorColor: AppColors.skySurge,
-    labelTextStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
-      fontSize: 12,
-      height: 24 / 24,
-      fontWeight: FontWeight.w600,
-      color: AppColors.graphiteDrive,
-      fontFamily: "LexendDeca",
-      package: "batt_ds",
-    )),
+    backgroundColor: AppColors.offWhite,
+    height: 80,
+    labelTextStyle: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return const TextStyle(
+          fontSize: 12,
+          height: 1.2,
+          fontWeight: FontWeight.w600,
+          color: AppColors.futureBlue,
+          fontFamily: "LexendDeca",
+          package: "batt_ds",
+        );
+      }
+      return const TextStyle(
+        fontSize: 12,
+        height: 1.2,
+        fontWeight: FontWeight.w400,
+        color: AppColors.graphiteDrive,
+        fontFamily: "LexendDeca",
+        package: "batt_ds",
+      );
+    }),
+    iconTheme: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return const IconThemeData(
+          color: AppColors.futureBlue,
+          size: 24,
+        );
+      }
+      return const IconThemeData(
+        color: AppColors.graphiteDrive,
+        size: 24,
+      );
+    }),
+    indicatorColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    elevation: 0,
   );
 
   final NavigationBarThemeData navigationBarThemeDark = NavigationBarThemeData(
     backgroundColor: AppColors.graphiteDrive,
-    indicatorColor: AppColors.skySurge,
-    labelTextStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
+    height: 80,
+    labelTextStyle: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return const TextStyle(
+          fontSize: 12,
+          height: 1.2,
+          fontWeight: FontWeight.w600,
+          color: AppColors.futureBlue,
+          fontFamily: "LexendDeca",
+          package: "batt_ds",
+        );
+      }
+      return const TextStyle(
         fontSize: 12,
-        height: 24 / 24,
-        fontWeight: FontWeight.w600,
-        color: AppColors.offWhite,
+        height: 1.2,
+        fontWeight: FontWeight.w400,
+        color: AppColors.graphiteDrive,
         fontFamily: "LexendDeca",
-        package: "batt_ds")),
+        package: "batt_ds",
+      );
+    }),
+    iconTheme: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return const IconThemeData(
+          color: AppColors.futureBlue,
+          size: 24,
+        );
+      }
+      return const IconThemeData(
+        color: AppColors.graphiteDrive,
+        size: 24,
+      );
+    }),
+    indicatorColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    elevation: 0,
   );
 
   final TextTheme textThemeLight = TextTheme(

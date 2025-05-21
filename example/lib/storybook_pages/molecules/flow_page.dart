@@ -55,7 +55,7 @@ class FlowPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'Flow',
+                    'Animated Flow',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -79,27 +79,66 @@ class FlowPage extends StatelessWidget {
                               child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.m.x),
-                                  child: FlowWidget(
-                                    amplitude: 5.0,
-                                  ))),
+                                  child: FlowWidget())),
                           SizedBox(
                               height: constraints.maxWidth / 3,
                               width: constraints.maxHeight / 20,
                               child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.m.x),
-                                  child: FlowWidget(
-                                    amplitude: 10.0,
-                                  ))),
+                                  child: FlowWidget())),
                           SizedBox(
                               height: constraints.maxWidth / 3,
                               width: constraints.maxHeight / 20,
                               child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.m.x),
-                                  child: FlowWidget(
-                                    amplitude: 20.0,
-                                  ))),
+                                  child: FlowWidget())),
+                        ]);
+                  }),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Static Flow',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: LayoutBuilder(builder: (context, constraints) {
+                    return Wrap(
+                        spacing: AppSpacings.sm,
+                        runSpacing: AppSpacings.md,
+                        children: [
+                          SizedBox(
+                              height: constraints.maxWidth / 3,
+                              width: constraints.maxHeight / 20,
+                              child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.m.x),
+                                  child: StaticFlowWidget())),
+                          SizedBox(
+                              height: constraints.maxWidth / 5,
+                              width: constraints.maxHeight / 20,
+                              child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.m.x),
+                                  child: StaticFlowWidget())),
+                          SizedBox(
+                              height: constraints.maxWidth / 3,
+                              width: constraints.maxHeight / 20,
+                              child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.m.x),
+                                  child: StaticFlowWidget())),
+                          SizedBox(
+                              height: constraints.maxWidth / 3,
+                              width: constraints.maxHeight / 20,
+                              child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.m.x),
+                                  child: StaticFlowWidget())),
                         ]);
                   }),
                 ),
