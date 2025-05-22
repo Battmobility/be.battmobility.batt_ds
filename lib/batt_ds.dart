@@ -3,8 +3,8 @@ library batt_ds;
 import 'package:batt_ds/theme/app_theme.dart';
 import 'package:batt_ds/theme/typography_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:batt_ds/atoms/atoms.dart';
 
-import 'atoms/app_colors.dart';
 export 'atoms/atoms.dart';
 export 'molecules/molecules.dart';
 export 'organisms/organisms.dart';

@@ -21,31 +21,31 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
   factory AppButtonTheme.light() {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.futureBlue,
+        primaryDefault: AppColors.b2cKeyColor,
         primaryHover: AppColors.primaryColors[700]!,
         primaryFocused: AppColors.background,
         primaryDisabled: AppColors.urbanMist,
-        secondaryText: AppColors.futureBlue,
+        secondaryText: AppColors.b2cKeyColor,
         secondaryDefault: Colors.transparent,
         secondaryHover: AppColors.urbanMist,
         secondaryFocused: AppColors.offWhite,
         secondaryDisabled: AppColors.urbanMist,
-        iconButtonColor: AppColors.futureBlue);
+        iconButtonColor: AppColors.b2cKeyColor);
   }
 
   factory AppButtonTheme.dark() {
     return AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.futureBlue,
+        primaryDefault: AppColors.b2cKeyColor,
         primaryHover: AppColors.primaryColors[700]!,
         primaryFocused: AppColors.graphiteDrive,
         primaryDisabled: AppColors.urbanMist,
-        secondaryText: AppColors.futureBlue,
+        secondaryText: AppColors.b2cKeyColor,
         secondaryDefault: Colors.transparent,
         secondaryHover: AppColors.urbanMist,
         secondaryFocused: AppColors.graphiteDrive,
         secondaryDisabled: AppColors.urbanMist,
-        iconButtonColor: AppColors.futureBlue);
+        iconButtonColor: AppColors.b2cKeyColor);
   }
 
   /// The color of the primary text.

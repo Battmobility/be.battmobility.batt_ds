@@ -23,16 +23,16 @@ class OrangeSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.secondaryFocused;
+    return Colors.transparent;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.transitSand;
+    return Colors.transparent;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.graphiteDrive;
+    return AppColors.transitSand;
   }
 }

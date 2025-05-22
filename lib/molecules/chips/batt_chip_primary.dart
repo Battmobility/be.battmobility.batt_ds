@@ -21,11 +21,10 @@ final class BattChipPrimary extends BattChip {
   Color primaryColor(BuildContext context) {
     switch (state) {
       case BattChipState.disabled:
-        return context.chipTheme.disabledColor;
+        return AppColors.urbanMist;
       case BattChipState.active:
-        return AppColors.skySurge;
       case BattChipState.enabled:
-        return AppColors.futureBlue;
+        return AppColors.graphiteDrive;
     }
   }
 
@@ -34,11 +33,11 @@ final class BattChipPrimary extends BattChip {
   Color secondaryColor(BuildContext context) {
     switch (state) {
       case BattChipState.disabled:
-        return context.chipTheme.disabledBackgroundColor;
+        return AppColors.softGrove;
       case BattChipState.active:
-        return AppColors.skySurge;
+        return AppColors.greenShift;
       case BattChipState.enabled:
-        return context.chipTheme.enabledBackgroundColor;
+        return AppColors.b2cKeyColor;
     }
   }
 }

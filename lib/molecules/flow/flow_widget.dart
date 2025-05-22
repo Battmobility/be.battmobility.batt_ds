@@ -6,7 +6,10 @@ import 'package:wave/wave.dart';
 final class FlowWidget extends StatefulWidget {
   final Widget? child;
   final double amplitude;
-  const FlowWidget({super.key, this.child, this.amplitude = 0});
+  final double blur;
+
+  const FlowWidget({super.key, this.child, this.amplitude = 0, this.blur = 0});
+
   @override
   FlowWidgetState createState() => FlowWidgetState();
 }
@@ -34,6 +37,7 @@ class FlowWidgetState extends State<FlowWidget> {
       children: [
         WaveWidget(
           config: CustomConfig(
+              blur: MaskFilter.blur(BlurStyle.normal, widget.blur),
               durations: _durations,
               heightPercentages: _heightPercentages,
               gradients: _gradients,

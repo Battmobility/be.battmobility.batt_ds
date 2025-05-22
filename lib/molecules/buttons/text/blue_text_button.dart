@@ -17,21 +17,21 @@ class PurpleSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.purple.withAlpha(122);
+    return AppColors.airFlow;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.secondaryFocused;
+    return Colors.transparent;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.purple[600]!;
+    return Colors.transparent;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.purple;
+    return AppColors.offWhite;
   }
 }

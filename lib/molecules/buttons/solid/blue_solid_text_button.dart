@@ -3,9 +3,9 @@ import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
-class PurpleSolidTextButton extends BattTextButton {
+class BlueSolidTextButton extends BattTextButton {
   /// {@macro primary_text_button}
-  const PurpleSolidTextButton({
+  const BlueSolidTextButton({
     super.key,
     required super.label,
     super.leading,
@@ -17,26 +17,26 @@ class PurpleSolidTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return AppColors.purple;
+    return AppColors.skySurge;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.purple.withAlpha(122);
+    return AppColors.airFlow;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.purple[800]!;
+    return AppColors.futureBlue;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.purple[600]!;
+    return AppColors.futureBlue;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.primaryText;
+    return AppColors.offWhite;
   }
 }

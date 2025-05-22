@@ -392,22 +392,22 @@ class SolidButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -417,28 +417,28 @@ class SolidButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XXLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XLarge with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Large with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               leading: (color) =>
                                   Icon(Icons.car_crash_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Regular with leading icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -450,28 +450,28 @@ class SolidButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XXLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XLarge with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Large with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Regular with trailing icon",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
@@ -483,7 +483,7 @@ class SolidButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XXLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
@@ -492,7 +492,7 @@ class SolidButtonsPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "XLarge with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
@@ -501,7 +501,7 @@ class SolidButtonsPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Large with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
@@ -510,7 +510,7 @@ class SolidButtonsPage extends StatelessWidget {
                               trailing: (color) =>
                                   Icon(Icons.car_repair_outlined, color: color),
                             ),
-                            PurpleSolidTextButton(
+                            BlueSolidTextButton(
                               label: "Regular with both",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,

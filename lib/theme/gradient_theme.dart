@@ -21,20 +21,22 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         ],
       ),
       heroGradient: RadialGradient(
-        colors: [AppColors.softGrove, AppColors.futureBlue],
+        colors: [AppColors.b2cKeyColor, AppColors.ecoHorizon],
         center: Alignment(-0.6, 0),
         radius: 2.0,
       ),
       inputBorderGradient: LinearGradient(
         colors: [
           AppColors.futureBlue,
-          AppColors.ecoHorizon,
+          AppColors.b2cKeyColor,
+          AppColors.greenShift,
+          AppColors.skySurge,
           AppColors.futureBlue
         ],
         transform: GradientRotation(-0.79),
       ),
       canvasBackgroundGradient: LinearGradient(
-        colors: [AppColors.background, AppColors.skySurge],
+        colors: [AppColors.offWhite, AppColors.softGrove],
         transform: GradientRotation(-0.79),
       ),
     );

@@ -86,14 +86,16 @@ class FlowPage extends StatelessWidget {
                               child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.m.x),
-                                  child: FlowWidget())),
+                                  child: FlowWidget(
+                                    amplitude: 30,
+                                  ))),
                           SizedBox(
                               height: constraints.maxWidth / 3,
                               width: constraints.maxHeight / 20,
                               child: ClipRRect(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.m.x),
-                                  child: FlowWidget())),
+                                  child: FlowWidget(blur: 5))),
                         ]);
                   }),
                 ),

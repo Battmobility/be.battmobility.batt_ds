@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
+  static const Color b2cKeyColor = Color(0xFF4F8459);
+  static const Color b2bKeyColor = Color(0xFF1943A3);
+
   static const Color graphiteDrive = Color(0xFF4F4F4F);
   static const Color urbanMist = Color(0xFFD8D8D8);
   static const Color futureBlue = Color(0xFF3D73F0);

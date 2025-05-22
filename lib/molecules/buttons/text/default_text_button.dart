@@ -16,7 +16,12 @@ class DefaultSimpleTextButton extends BattSimpleTextButton {
   });
 
   @override
+  Color focusColor(BuildContext context) {
+    return Colors.transparent;
+  }
+
+  @override
   Color hoverColor(BuildContext context) {
-    return AppColors.primaryColors[600]!;
+    return Colors.transparent;
   }
 }

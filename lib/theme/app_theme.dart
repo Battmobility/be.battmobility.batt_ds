@@ -86,9 +86,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final shadowColorLight = AppColors.shadow;
   final shadowColorDark = AppColors.black;
 
-  final themeColorPrimary = AppColors.futureBlue;
+  final themeColorPrimary = AppColors.b2cKeyColor;
   final themeColorPrimaryContainer = AppColors.urbanMist;
-  final themeColorPrimaryContainerLowest = AppColors.grey[500]!;
 
   final themeColorSecondary = AppColors.greenShift;
   final themeColorSecondaryContainer = AppColors.pathClay;
@@ -109,7 +108,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         height: 24 / 24,
         fontWeight: FontWeight.w600,
         color: AppColors.ctaSand,
-        fontFamily: "LexendDeca",
+        fontFamily: "Inter",
         package: "batt_ds"),
   );
 
@@ -124,7 +123,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         height: 24 / 24,
         fontWeight: FontWeight.w600,
         color: AppColors.transitSand,
-        fontFamily: "LexendDeca",
+        fontFamily: "Inter",
         package: "batt_ds"),
   );
 
@@ -138,14 +137,14 @@ class AppTheme extends ThemeExtension<AppTheme> {
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w600,
-      fontFamily: "LexendDeca",
+      fontFamily: "Inter",
       package: "batt_ds",
     ),
     unselectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w400,
-      fontFamily: "LexendDeca",
+      fontFamily: "Inter",
       package: "batt_ds",
     ),
     type: BottomNavigationBarType.fixed,
@@ -163,14 +162,14 @@ class AppTheme extends ThemeExtension<AppTheme> {
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w600,
-      fontFamily: "LexendDeca",
+      fontFamily: "Inter",
       package: "batt_ds",
     ),
     unselectedLabelStyle: TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w400,
-      fontFamily: "LexendDeca",
+      fontFamily: "Inter",
       package: "batt_ds",
     ),
     type: BottomNavigationBarType.fixed,
@@ -188,7 +187,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
           height: 1.2,
           fontWeight: FontWeight.w600,
           color: AppColors.futureBlue,
-          fontFamily: "LexendDeca",
+          fontFamily: "Inter",
           package: "batt_ds",
         );
       }
@@ -197,7 +196,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         height: 1.2,
         fontWeight: FontWeight.w400,
         color: AppColors.graphiteDrive,
-        fontFamily: "LexendDeca",
+        fontFamily: "Inter",
         package: "batt_ds",
       );
     }),
@@ -228,7 +227,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
           height: 1.2,
           fontWeight: FontWeight.w600,
           color: AppColors.futureBlue,
-          fontFamily: "LexendDeca",
+          fontFamily: "Inter",
           package: "batt_ds",
         );
       }
@@ -237,7 +236,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         height: 1.2,
         fontWeight: FontWeight.w400,
         color: AppColors.graphiteDrive,
-        fontFamily: "LexendDeca",
+        fontFamily: "Inter",
         package: "batt_ds",
       );
     }),
@@ -301,14 +300,14 @@ class AppTheme extends ThemeExtension<AppTheme> {
         AppTypographyDark().mediumLabel.copyWith(color: AppColors.black),
     hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.black),
     filled: true,
-    fillColor: AppColors.futureBlue.withAlpha(6),
+    fillColor: AppColors.b2cKeyColor.withAlpha(6),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.futureBlue),
+      borderSide: BorderSide(color: AppColors.b2cKeyColor),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.futureBlue),
+      borderSide: BorderSide(color: AppColors.b2cKeyColor),
     ),
     focusedBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().inputBorderGradient,

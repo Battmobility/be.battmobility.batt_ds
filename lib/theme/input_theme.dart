@@ -31,15 +31,15 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       focusedTextDefault: AppColors.primaryColors[50]!,
       errorTextDefault: AppColors.ctaSand,
       successTextDefault: AppColors.ctaGreen,
-      disabledText: AppColors.grey[300]!,
-      borderDefault: AppColors.skySurge,
+      disabledText: AppColors.urbanMist,
+      borderDefault: AppColors.b2cKeyColor,
       borderHover: AppColors.futureBlue,
       borderFocused: AppColors.futureBlue,
       borderError: AppColors.rusticClay,
       borderSuccess: AppColors.ctaGreen,
-      borderDisabled: AppColors.grey[300]!,
-      defaultColor: AppColors.grey[50]!,
-      disabledColor: AppColors.grey[300]!,
+      borderDisabled: AppColors.urbanMist,
+      defaultColor: AppColors.urbanMist.withAlpha(100),
+      disabledColor: AppColors.urbanMist,
     );
   }
 
@@ -51,14 +51,14 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       errorTextDefault: AppColors.orange,
       successTextDefault: AppColors.ctaGreen,
       disabledText: AppColors.grey[300]!,
-      borderDefault: AppColors.skySurge,
+      borderDefault: AppColors.b2cKeyColor,
       borderHover: AppColors.futureBlue,
       borderFocused: AppColors.futureBlue,
       borderError: AppColors.rusticClay,
       borderSuccess: AppColors.ctaGreen,
-      borderDisabled: AppColors.grey[300]!,
-      defaultColor: AppColors.grey[900]!,
-      disabledColor: AppColors.grey[300]!,
+      borderDisabled: AppColors.urbanMist,
+      defaultColor: AppColors.urbanMist.withAlpha(100),
+      disabledColor: AppColors.urbanMist,
     );
   }
 
