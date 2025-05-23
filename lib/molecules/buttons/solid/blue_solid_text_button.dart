@@ -1,6 +1,5 @@
 import 'package:batt_ds/molecules/buttons/batt_text_button.dart';
 import 'package:batt_ds/atoms/atoms.dart';
-import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
 class BlueSolidTextButton extends BattTextButton {

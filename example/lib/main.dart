@@ -1,3 +1,4 @@
+import 'package:batt_ds_example/storybook_pages/atoms/typography_page.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
@@ -43,6 +44,18 @@ Storybook get storybook {
         );
       },
       name: 'Home');
+
+  // Atoms
+  final typographyStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const Typographypage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Atoms/Typography');
+
   // Molecules
   final chipStory = Story(
       builder: (context) {
@@ -187,6 +200,7 @@ Storybook get storybook {
 
   return Storybook(
     stories: [
+      typographyStory,
       flowStory,
       introStory,
       solidButtonsStory,

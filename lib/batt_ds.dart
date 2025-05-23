@@ -87,7 +87,7 @@ ThemeData darkTheme(BuildContext context) {
     textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
             textStyle:
-                WidgetStatePropertyAll(AppTypographyDark().mediumLabel))),
+                WidgetStatePropertyAll(AppTypographyDark().labelMedium))),
     textSelectionTheme: theme.textSelectionThemeDark,
     inputDecorationTheme: theme.inputDecorationThemeDark,
     sliderTheme: SliderThemeData(

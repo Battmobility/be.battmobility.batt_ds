@@ -7,24 +7,23 @@ import 'package:flutter/material.dart';
 interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   /// {@macro app_typography}
   AppTypographyTheme({
-    required this.largeHeadline,
-    required this.mediumHeadline,
-    required this.smallHeadline,
-    required this.largeLabel,
-    required this.mediumLabel,
-    required this.smallLabel,
+    required this.headlineLarge,
+    required this.headlineMedium,
+    required this.headlineSmall,
+    required this.titleLarge,
+    required this.titleMedium,
+    required this.titleSmall,
+    required this.bodyLarge,
+    required this.bodyMedium,
+    required this.bodySmall,
+    required this.labelLarge,
+    required this.labelMedium,
+    required this.labelSmall,
     required this.licensePlate,
-    required this.defaultText,
     required this.disabledText,
     required this.errorText,
     required this.successText,
     required this.warningText,
-    required this.largeText,
-    required this.smallText,
-    required this.heroTitle,
-    required this.largeTitle,
-    required this.mediumTitle,
-    required this.smallTitle,
     required this.button2XLarge,
     required this.buttonXLarge,
     required this.buttonLarge,
@@ -41,6 +40,15 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     required this.dateTimeStyle,
     required this.actionSliderStyle,
   });
+
+  // Default text
+  final TextStyle bodyLarge;
+
+  // Default text
+  final TextStyle bodyMedium;
+
+  // Small text
+  final TextStyle bodySmall;
 
   /// License plate
   final TextStyle licensePlate;
@@ -72,15 +80,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   /// Button XSmall
   final TextStyle buttonXSmall;
 
-  // Default text
-  final TextStyle largeText;
-
-  // Default text
-  final TextStyle defaultText;
-
-  // Small text
-  final TextStyle smallText;
-
   // Disabled text
   final TextStyle disabledText;
 
@@ -93,35 +92,32 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   // Warning text
   final TextStyle warningText;
 
-  // Hero title
-  final TextStyle heroTitle;
-
   // Large headline
-  final TextStyle largeHeadline;
+  final TextStyle headlineLarge;
 
   // Medium headline
-  final TextStyle mediumHeadline;
+  final TextStyle headlineMedium;
 
   // Small headline
-  final TextStyle smallHeadline;
+  final TextStyle headlineSmall;
 
   // Large title
-  final TextStyle largeTitle;
+  final TextStyle titleLarge;
 
   // Medium title
-  final TextStyle mediumTitle;
+  final TextStyle titleMedium;
 
   // Small title
-  final TextStyle smallTitle;
+  final TextStyle titleSmall;
 
   // Large label
-  final TextStyle largeLabel;
+  final TextStyle labelLarge;
 
   // Medium label
-  final TextStyle mediumLabel;
+  final TextStyle labelMedium;
 
   // Small label
-  final TextStyle smallLabel;
+  final TextStyle labelSmall;
 
   // Placeholder text
   final TextStyle inputPlaceholder;
@@ -143,6 +139,18 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
 
   @override
   ThemeExtension<AppTypographyTheme> copyWith({
+    TextStyle? headlineLarge,
+    TextStyle? headlineMedium,
+    TextStyle? headlineSmall,
+    TextStyle? titleLarge,
+    TextStyle? titleMedium,
+    TextStyle? titleSmall,
+    TextStyle? bodyLarge,
+    TextStyle? bodyMedium,
+    TextStyle? bodySmall,
+    TextStyle? labelLarge,
+    TextStyle? labelMedium,
+    TextStyle? labelSmall,
     TextStyle? licensePlate,
     TextStyle? button2XLarge,
     TextStyle? buttonXLarge,
@@ -158,29 +166,26 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     TextStyle? errorText,
     TextStyle? successText,
     TextStyle? warningText,
-    TextStyle? largeText,
-    TextStyle? smallText,
-    TextStyle? heroTitle,
-    TextStyle? largeTitle,
-    TextStyle? mediumTitle,
-    TextStyle? smallTitle,
     TextStyle? inputPlaceholder,
     TextStyle? inputHint,
     TextStyle? inputLabel,
     TextStyle? navigationBarLabelStyle,
-    TextStyle? largeLabel,
-    TextStyle? mediumLabel,
-    TextStyle? smallLabel,
     TextStyle? dateTimeStyle,
     TextStyle? actionSliderStyle,
-    TextStyle? largeHeadline,
-    TextStyle? mediumHeadline,
-    TextStyle? smallHeadline,
   }) {
     return AppTypographyTheme(
-      largeHeadline: largeHeadline ?? this.largeHeadline,
-      mediumHeadline: mediumHeadline ?? this.mediumHeadline,
-      smallHeadline: smallHeadline ?? this.smallHeadline,
+      headlineLarge: headlineLarge ?? this.headlineLarge,
+      headlineMedium: headlineMedium ?? this.headlineMedium,
+      headlineSmall: headlineSmall ?? this.headlineSmall,
+      titleLarge: titleLarge ?? this.titleLarge,
+      titleMedium: titleMedium ?? this.titleMedium,
+      titleSmall: titleSmall ?? this.titleSmall,
+      bodyLarge: bodyLarge ?? this.bodyLarge,
+      bodyMedium: bodyMedium ?? this.bodyMedium,
+      bodySmall: bodySmall ?? this.bodySmall,
+      labelLarge: labelLarge ?? this.labelLarge,
+      labelMedium: labelMedium ?? this.labelMedium,
+      labelSmall: labelSmall ?? this.labelSmall,
       licensePlate: licensePlate ?? this.licensePlate,
       button2XLarge: button2XLarge ?? this.button2XLarge,
       buttonXLarge: buttonXLarge ?? this.buttonXLarge,
@@ -191,25 +196,15 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       chipLarge: chipLarge ?? this.chipLarge,
       chipMedium: chipMedium ?? this.chipMedium,
       chipSmall: chipSmall ?? this.chipSmall,
-      defaultText: defaultText ?? this.defaultText,
       disabledText: disabledText ?? this.disabledText,
       errorText: errorText ?? this.errorText,
       successText: successText ?? this.successText,
       warningText: warningText ?? this.warningText,
-      heroTitle: heroTitle ?? this.heroTitle,
-      largeText: largeText ?? this.largeText,
-      smallText: smallText ?? this.smallText,
-      largeTitle: largeTitle ?? this.largeTitle,
-      mediumTitle: mediumTitle ?? this.mediumTitle,
-      smallTitle: smallTitle ?? this.smallTitle,
       inputPlaceholder: inputPlaceholder ?? this.inputPlaceholder,
       inputHint: inputHint ?? this.inputHint,
       inputLabel: inputLabel ?? this.inputLabel,
       navigationBarLabelStyle:
           navigationBarLabelStyle ?? this.navigationBarLabelStyle,
-      largeLabel: largeLabel ?? this.largeLabel,
-      mediumLabel: mediumLabel ?? this.mediumLabel,
-      smallLabel: smallLabel ?? this.smallLabel,
       dateTimeStyle: dateTimeStyle ?? this.dateTimeStyle,
       actionSliderStyle: actionSliderStyle ?? this.actionSliderStyle,
     );
@@ -225,9 +220,9 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     }
 
     return AppTypographyTheme(
-      largeHeadline: TextStyle.lerp(largeHeadline, other.largeHeadline, t)!,
-      mediumHeadline: TextStyle.lerp(mediumHeadline, other.mediumHeadline, t)!,
-      smallHeadline: TextStyle.lerp(smallHeadline, other.smallHeadline, t)!,
+      headlineLarge: TextStyle.lerp(headlineLarge, other.headlineLarge, t)!,
+      headlineMedium: TextStyle.lerp(headlineMedium, other.headlineMedium, t)!,
+      headlineSmall: TextStyle.lerp(headlineSmall, other.headlineSmall, t)!,
       licensePlate: TextStyle.lerp(licensePlate, other.licensePlate, t)!,
       button2XLarge: TextStyle.lerp(button2XLarge, other.button2XLarge, t)!,
       buttonXLarge: TextStyle.lerp(buttonXLarge, other.buttonXLarge, t)!,
@@ -238,17 +233,16 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       chipSmall: TextStyle.lerp(chipSmall, other.chipSmall, t)!,
       chipMedium: TextStyle.lerp(chipMedium, other.chipMedium, t)!,
       chipLarge: TextStyle.lerp(chipLarge, other.chipLarge, t)!,
-      defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
-      heroTitle: TextStyle.lerp(heroTitle, other.heroTitle, t)!,
-      largeText: TextStyle.lerp(largeText, other.largeText, t)!,
+      bodyMedium: TextStyle.lerp(bodyMedium, other.bodyMedium, t)!,
+      bodyLarge: TextStyle.lerp(bodyLarge, other.bodyLarge, t)!,
       disabledText: TextStyle.lerp(disabledText, other.disabledText, t)!,
       errorText: TextStyle.lerp(errorText, other.errorText, t)!,
       successText: TextStyle.lerp(successText, other.successText, t)!,
       warningText: TextStyle.lerp(warningText, other.warningText, t)!,
-      smallText: TextStyle.lerp(smallText, other.smallText, t)!,
-      largeTitle: TextStyle.lerp(largeTitle, other.largeTitle, t)!,
-      mediumTitle: TextStyle.lerp(mediumTitle, other.mediumTitle, t)!,
-      smallTitle: TextStyle.lerp(smallTitle, other.smallTitle, t)!,
+      bodySmall: TextStyle.lerp(bodySmall, other.bodySmall, t)!,
+      titleLarge: TextStyle.lerp(titleLarge, other.titleLarge, t)!,
+      titleMedium: TextStyle.lerp(titleMedium, other.titleMedium, t)!,
+      titleSmall: TextStyle.lerp(titleSmall, other.titleSmall, t)!,
       inputPlaceholder:
           TextStyle.lerp(inputPlaceholder, other.inputPlaceholder, t)!,
       inputHint: TextStyle.lerp(inputHint, other.inputHint, t)!,
@@ -258,9 +252,9 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
         other.navigationBarLabelStyle,
         t,
       )!,
-      largeLabel: TextStyle.lerp(largeLabel, other.largeLabel, t)!,
-      mediumLabel: TextStyle.lerp(mediumLabel, other.mediumLabel, t)!,
-      smallLabel: TextStyle.lerp(smallLabel, other.smallLabel, t)!,
+      labelLarge: TextStyle.lerp(labelLarge, other.labelLarge, t)!,
+      labelMedium: TextStyle.lerp(labelMedium, other.labelMedium, t)!,
+      labelSmall: TextStyle.lerp(labelSmall, other.labelSmall, t)!,
       dateTimeStyle: TextStyle.lerp(dateTimeStyle, other.dateTimeStyle, t)!,
       actionSliderStyle:
           TextStyle.lerp(actionSliderStyle, other.actionSliderStyle, t)!,
@@ -272,24 +266,84 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
 class AppTypography extends AppTypographyTheme {
   /// {@macro app_typography}
   AppTypography({
-    super.largeHeadline = const TextStyle(
-        fontSize: 26,
+    super.headlineLarge = const TextStyle(
+        fontSize: 24,
         height: 32 / 24,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
         color: AppColors.textColor,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.mediumHeadline = const TextStyle(
-        fontSize: 20,
+    super.headlineMedium = const TextStyle(
+        fontSize: 16,
         height: 24 / 20,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
         color: AppColors.textColor,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.smallHeadline = const TextStyle(
+    super.headlineSmall = const TextStyle(
+        fontSize: 14,
+        height: 24 / 16,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleLarge = const TextStyle(
+        fontSize: 18,
+        height: 32 / 24,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleMedium = const TextStyle(
         fontSize: 16,
         height: 24 / 16,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleSmall = const TextStyle(
+        fontSize: 14,
+        height: 24 / 14,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodyLarge = const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodyMedium = const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodySmall = const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelLarge = const TextStyle(
+        fontSize: 16,
+        height: 20 / 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelMedium = const TextStyle(
+        fontSize: 14,
+        height: 16 / 14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textColor,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelSmall = const TextStyle(
+        fontSize: 12,
+        height: 16 / 12,
+        fontWeight: FontWeight.w400,
         color: AppColors.textColor,
         fontFamily: "Inter",
         package: "batt_ds"),
@@ -362,20 +416,6 @@ class AppTypography extends AppTypographyTheme {
         color: AppColors.textColor,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.largeText = const TextStyle(
-        fontSize: 16,
-        height: 24 / 20,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.defaultText = const TextStyle(
-        fontSize: 12,
-        height: 24 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
     super.disabledText = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
@@ -402,62 +442,6 @@ class AppTypography extends AppTypographyTheme {
         height: 24 / 24,
         fontWeight: FontWeight.w600,
         color: AppColors.ctaSand,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.smallText = const TextStyle(
-        fontSize: 10,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.smallLabel = const TextStyle(
-        fontSize: 10,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.mediumLabel = const TextStyle(
-        fontSize: 12,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.largeLabel = const TextStyle(
-        fontSize: 14,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.heroTitle = const TextStyle(
-        fontSize: 36,
-        height: 32 / 32,
-        fontWeight: FontWeight.w800,
-        color: AppColors.heroTextColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.largeTitle = const TextStyle(
-        fontSize: 26,
-        height: 32 / 24,
-        fontWeight: FontWeight.w500,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.mediumTitle = const TextStyle(
-        fontSize: 20,
-        height: 24 / 20,
-        fontWeight: FontWeight.w500,
-        color: AppColors.textColor,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.smallTitle = const TextStyle(
-        fontSize: 16,
-        height: 24 / 16,
-        fontWeight: FontWeight.w500,
-        color: AppColors.textColor,
         fontFamily: "Inter",
         package: "batt_ds"),
     super.inputPlaceholder = const TextStyle(
@@ -510,24 +494,84 @@ class AppTypography extends AppTypographyTheme {
 class AppTypographyDark extends AppTypographyTheme {
   /// {@macro app_typography}
   AppTypographyDark({
-    super.largeHeadline = const TextStyle(
-        fontSize: 26,
+    super.headlineLarge = const TextStyle(
+        fontSize: 24,
         height: 32 / 24,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
         color: AppColors.offWhite,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.mediumHeadline = const TextStyle(
-        fontSize: 20,
+    super.headlineMedium = const TextStyle(
+        fontSize: 16,
         height: 24 / 20,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
         color: AppColors.offWhite,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.smallHeadline = const TextStyle(
+    super.headlineSmall = const TextStyle(
+        fontSize: 14,
+        height: 24 / 16,
+        fontWeight: FontWeight.w600,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleLarge = const TextStyle(
+        fontSize: 18,
+        height: 32 / 24,
+        fontWeight: FontWeight.w600,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleMedium = const TextStyle(
         fontSize: 16,
         height: 24 / 16,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w600,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleSmall = const TextStyle(
+        fontSize: 14,
+        height: 24 / 14,
+        fontWeight: FontWeight.w600,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodyLarge = const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodyMedium = const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.bodySmall = const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelLarge = const TextStyle(
+        fontSize: 16,
+        height: 20 / 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelMedium = const TextStyle(
+        fontSize: 14,
+        height: 16 / 14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.labelSmall = const TextStyle(
+        fontSize: 12,
+        height: 16 / 12,
+        fontWeight: FontWeight.w400,
         color: AppColors.offWhite,
         fontFamily: "Inter",
         package: "batt_ds"),
@@ -600,37 +644,6 @@ class AppTypographyDark extends AppTypographyTheme {
         color: AppColors.offWhite,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.largeText = const TextStyle(
-        fontSize: 16,
-        height: 24 / 20,
-        fontWeight: FontWeight.w400,
-        color: AppColors.offWhite,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.defaultText = const TextStyle(
-        fontSize: 12,
-        height: 24 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.offWhite,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.smallLabel = const TextStyle(
-        fontSize: 10,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.offWhite),
-    super.mediumLabel = const TextStyle(
-        fontSize: 12,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.offWhite,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.largeLabel = const TextStyle(
-        fontSize: 14,
-        height: 32 / 24,
-        fontWeight: FontWeight.w400,
-        color: AppColors.offWhite),
     super.disabledText = const TextStyle(
         fontSize: 12,
         height: 24 / 24,
@@ -659,46 +672,6 @@ class AppTypographyDark extends AppTypographyTheme {
         color: AppColors.ctaSand,
         fontFamily: "Inter",
         package: "batt_ds"),
-    super.smallText = const TextStyle(
-      fontSize: 10,
-      height: 16 / 16,
-      fontWeight: FontWeight.w400,
-      color: AppColors.offWhite,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
-    super.heroTitle = const TextStyle(
-      fontSize: 36,
-      height: 38 / 32,
-      fontWeight: FontWeight.w800,
-      color: AppColors.heroTextColorDark,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
-    super.largeTitle = const TextStyle(
-      fontSize: 26,
-      height: 32 / 24,
-      fontWeight: FontWeight.w500,
-      color: AppColors.offWhite,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
-    super.mediumTitle = const TextStyle(
-      fontSize: 20,
-      height: 24 / 20,
-      fontWeight: FontWeight.w500,
-      color: AppColors.offWhite,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
-    super.smallTitle = const TextStyle(
-      fontSize: 16,
-      height: 24 / 16,
-      fontWeight: FontWeight.w500,
-      color: AppColors.offWhite,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
     super.inputPlaceholder = const TextStyle(
       fontSize: 12,
       height: 24 / 24,

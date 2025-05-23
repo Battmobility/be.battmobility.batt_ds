@@ -258,47 +258,41 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final TextTheme textThemeLight = TextTheme(
-    bodyLarge: AppTypography().largeText,
-    bodySmall: AppTypography().smallText,
-    bodyMedium: AppTypography().defaultText,
-    titleLarge: AppTypography().largeTitle,
-    titleMedium: AppTypography().mediumTitle,
-    titleSmall: AppTypography().smallTitle,
-    displayLarge: AppTypography().heroTitle,
-    displayMedium: AppTypography().mediumTitle,
-    displaySmall: AppTypography().smallTitle,
-    labelLarge: AppTypography().largeLabel,
-    labelMedium: AppTypography().mediumLabel,
-    labelSmall: AppTypography().smallLabel,
-    headlineLarge: AppTypography().largeHeadline,
-    headlineMedium: AppTypography().mediumHeadline,
-    headlineSmall: AppTypography().smallHeadline,
+    bodyLarge: AppTypography().bodyLarge,
+    bodySmall: AppTypography().bodySmall,
+    bodyMedium: AppTypography().bodyMedium,
+    titleLarge: AppTypography().titleLarge,
+    titleMedium: AppTypography().titleMedium,
+    titleSmall: AppTypography().titleSmall,
+    labelLarge: AppTypography().labelLarge,
+    labelMedium: AppTypography().labelMedium,
+    labelSmall: AppTypography().labelSmall,
+    headlineLarge: AppTypography().headlineLarge,
+    headlineMedium: AppTypography().headlineMedium,
+    headlineSmall: AppTypography().headlineSmall,
   );
 
   final TextTheme textThemeDark = TextTheme(
-    bodyLarge: AppTypographyDark().largeText,
-    bodySmall: AppTypographyDark().smallText,
-    bodyMedium: AppTypographyDark().defaultText,
-    titleLarge: AppTypographyDark().largeTitle,
-    titleMedium: AppTypographyDark().mediumTitle,
-    titleSmall: AppTypographyDark().smallTitle,
-    displayLarge: AppTypographyDark().heroTitle,
-    displayMedium: AppTypographyDark().mediumTitle,
-    displaySmall: AppTypographyDark().smallTitle,
-    labelLarge: AppTypographyDark().largeLabel,
-    labelMedium: AppTypographyDark().mediumLabel,
-    labelSmall: AppTypographyDark().smallLabel,
-    headlineLarge: AppTypographyDark().largeHeadline,
-    headlineMedium: AppTypographyDark().mediumHeadline,
-    headlineSmall: AppTypographyDark().smallHeadline,
+    bodyLarge: AppTypographyDark().bodyLarge,
+    bodySmall: AppTypographyDark().bodySmall,
+    bodyMedium: AppTypographyDark().bodyMedium,
+    titleLarge: AppTypographyDark().titleLarge,
+    titleMedium: AppTypographyDark().titleMedium,
+    titleSmall: AppTypographyDark().titleSmall,
+    labelLarge: AppTypographyDark().labelLarge,
+    labelMedium: AppTypographyDark().labelMedium,
+    labelSmall: AppTypographyDark().labelSmall,
+    headlineLarge: AppTypographyDark().headlineLarge,
+    headlineMedium: AppTypographyDark().headlineMedium,
+    headlineSmall: AppTypographyDark().headlineSmall,
   );
 
   final InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
     prefixIconColor: AppColors.primaryTextColor,
     suffixIconColor: AppColors.primaryTextColor,
     labelStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.black),
-    hintStyle: AppTypographyDark().smallLabel.copyWith(color: AppColors.black),
+        AppTypographyDark().labelMedium.copyWith(color: AppColors.black),
+    hintStyle: AppTypographyDark().labelSmall.copyWith(color: AppColors.black),
     filled: true,
     fillColor: AppColors.b2cKeyColor.withAlpha(6),
     border: const OutlineInputBorder(
@@ -322,16 +316,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
       borderSide: BorderSide(color: AppColors.rusticClay, width: 2),
     ),
     errorStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.rusticClay),
+        AppTypographyDark().labelMedium.copyWith(color: AppColors.rusticClay),
   );
 
   final InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
     prefixIconColor: AppColors.urbanMist,
     suffixIconColor: AppColors.urbanMist,
     labelStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.offWhite),
+        AppTypographyDark().labelMedium.copyWith(color: AppColors.offWhite),
     hintStyle:
-        AppTypographyDark().smallLabel.copyWith(color: AppColors.offWhite),
+        AppTypographyDark().labelSmall.copyWith(color: AppColors.offWhite),
     filled: true,
     fillColor: AppColors.futureBlue.withAlpha(6),
     border: const OutlineInputBorder(
@@ -355,7 +349,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       borderSide: BorderSide(color: AppColors.rusticClay, width: 2),
     ),
     errorStyle:
-        AppTypographyDark().mediumLabel.copyWith(color: AppColors.rusticClay),
+        AppTypographyDark().labelMedium.copyWith(color: AppColors.rusticClay),
   );
 
   TextSelectionThemeData textSelectionThemeLight = const TextSelectionThemeData(

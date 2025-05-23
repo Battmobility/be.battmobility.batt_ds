@@ -15,10 +15,10 @@ class BattDialog {
   AlertDialog build(BuildContext context) {
     return AlertDialog(
         title: title != null
-            ? Text(title!, style: context.typographyTheme.smallTitle)
+            ? Text(title!, style: context.typographyTheme.titleSmall)
             : null,
         content: message != null
-            ? Text(message!, style: context.typographyTheme.defaultText)
+            ? Text(message!, style: context.typographyTheme.bodyMedium)
             : null,
         actions: actions);
   }
