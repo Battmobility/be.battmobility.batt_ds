@@ -96,8 +96,8 @@ class BattSnackbar {
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,
       duration: duration ?? const Duration(seconds: 4),
-      showCloseIcon: showCloseIcon,
-      closeIconColor: _textColor(context),
+      showCloseIcon: false,
+      elevation: 0,
     );
   }
 
@@ -110,50 +110,97 @@ class BattSnackbar {
             ? GradientBorder(
                 gradient: GradientTheme.standard().progressGradient, width: 2)
             : GradientBorder(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                     colors: [AppColors.rusticClay, AppColors.ctaSand],
                     transform: GradientRotation(3)),
                 width: 2),
       ),
       child: Padding(
-        padding: AppPaddings.small.all,
+        padding: AppPaddings.large.all,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: action != null
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.center,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: AppSpacings.xs,
+              spacing: AppSpacings.sm,
               children: [
-                const BattIcon(
-                  iconColor: AppColors.white,
-                  backgroundColor: AppColors.ctaGreen,
-                  size: BattIconSize.small,
-                  battIcon: BattIcons.walk, // TODO: various icons and colors
-                ),
+                _icon,
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (title != null) ...[
-                      Text(title!, style: _titleStyle(context))
+                      Padding(
+                          padding: message == null
+                              ? AppPaddings.xxsmall.vertical
+                              : AppPaddings.none.bottom,
+                          child: Text(title!, style: _titleStyle(context)))
                     ],
                     if (message != null) ...[
-                      Text(message!, style: _messageStyle(context))
+                      Padding(
+                        padding: title == null
+                            ? AppPaddings.xsmall.vertical
+                            : AppPaddings.small.top,
+                        child: Text(message!, style: _messageStyle(context)),
+                      )
                     ],
                   ],
                 ),
               ],
             ),
             if (action != null) ...[
+              const SizedBox(width: AppSpacings.md),
               DefaultSolidTextButton(
                   label: action!.label, onPressed: action!.onPressed)
+            ],
+            if (showCloseIcon) ...[
+              const SizedBox(width: AppSpacings.md),
+              IconButton.outlined(
+                  visualDensity: VisualDensity.compact,
+                  onPressed: () {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).hideCurrentSnackBar(reason: SnackBarClosedReason.dismiss);
+                  },
+                  icon: const Icon(Icons.close, color: AppColors.white))
             ]
           ],
         ),
       ),
     );
+  }
+
+  BattIcon get _icon {
+    switch (type) {
+      case SnackBarType.info:
+        return const BattIcon(
+            size: BattIconSize.small,
+            backgroundColor: AppColors.ctaGreen,
+            icon: Icons.info_outline,
+            iconColor: AppColors.white);
+      case SnackBarType.success:
+        return const BattIcon(
+            size: BattIconSize.small,
+            backgroundColor: AppColors.b2cKeyColor,
+            icon: Icons.check,
+            iconColor: AppColors.white);
+      case SnackBarType.warning:
+        return const BattIcon(
+            size: BattIconSize.small,
+            backgroundColor: AppColors.rusticClay,
+            icon: Icons.warning_amber,
+            iconColor: AppColors.white);
+
+      case SnackBarType.error:
+        return const BattIcon(
+            size: BattIconSize.small,
+            backgroundColor: AppColors.rusticClay,
+            icon: Icons.close,
+            iconColor: AppColors.white);
+    }
   }
 
   TextStyle _titleStyle(BuildContext context) {
@@ -167,19 +214,6 @@ class BattSnackbar {
         .textTheme
         .labelMedium!
         .apply(color: Theme.of(context).colorScheme.onSurface);
-  }
-
-  Color _textColor(BuildContext context) {
-    switch (type) {
-      case SnackBarType.info:
-        return context.appSnackbarTheme.infoTextColor;
-      case SnackBarType.success:
-        return context.appSnackbarTheme.successTextColor;
-      case SnackBarType.warning:
-        return context.appSnackbarTheme.warningTextColor;
-      case SnackBarType.error:
-        return context.appSnackbarTheme.errorTextColor;
-    }
   }
 }
 

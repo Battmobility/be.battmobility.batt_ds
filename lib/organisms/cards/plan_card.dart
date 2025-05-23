@@ -31,7 +31,11 @@ final class PlanCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 spacing: AppSpacings.sm,
                 children: [
-                  Text(title, style: Theme.of(context).textTheme.labelMedium!),
+                  Text(title,
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: AppColors.white)),
                   Text(planName,
                       style: Theme.of(context)
                           .textTheme
@@ -52,9 +56,7 @@ final class PlanCard extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(
-              Icons.chevron_right,
-            ),
+            const Icon(Icons.chevron_right, color: AppColors.white),
           ],
         ),
       ),

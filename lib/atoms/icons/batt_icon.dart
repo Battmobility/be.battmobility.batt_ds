@@ -27,16 +27,17 @@ class BattIcon extends StatelessWidget {
   final Color? iconColor;
   final String? iconPath;
   final BattIcons? battIcon;
+  final IconData? icon;
   final BattIconSize size;
 
-  const BattIcon({
-    super.key,
-    this.backgroundColor = AppColors.softGrove,
-    this.iconColor = AppColors.b2cKeyColor,
-    this.size = BattIconSize.medium,
-    this.iconPath,
-    this.battIcon,
-  });
+  const BattIcon(
+      {super.key,
+      this.backgroundColor = AppColors.softGrove,
+      this.iconColor = AppColors.b2cKeyColor,
+      this.size = BattIconSize.medium,
+      this.iconPath,
+      this.battIcon,
+      this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +50,16 @@ class BattIcon extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(size.size / 4),
-        child: SvgPicture.asset(
-          iconPath ?? "packages/batt_ds/assets/icons/${battIcon?.name}.svg",
-          colorFilter: iconColor != null
-              ? ColorFilter.mode(iconColor!, BlendMode.srcIn)
-              : null,
-        ),
+        child: icon == null
+            ? SvgPicture.asset(
+                iconPath ??
+                    "packages/batt_ds/assets/icons/${battIcon?.name}.svg",
+                colorFilter: iconColor != null
+                    ? ColorFilter.mode(iconColor!, BlendMode.srcIn)
+                    : null,
+              )
+            : Icon(icon,
+                size: size.size * 0.5, color: iconColor ?? AppColors.white),
       ),
     );
   }
