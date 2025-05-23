@@ -24,6 +24,13 @@ class GradientBorderDecoration extends BoxDecoration {
         borderWidth: 2.0,
         borderRadius: const BorderRadius.all(CornerRadii.s));
   }
+
+  factory GradientBorderDecoration.progress() {
+    return GradientBorderDecoration(
+        gradient: GradientTheme.standard().progressGradient,
+        borderWidth: 2.0,
+        borderRadius: const BorderRadius.all(CornerRadii.s));
+  }
 }
 
 class GradientBorder extends Border {

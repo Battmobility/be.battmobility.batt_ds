@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/utils/gradient_progress_border.dart';
 import 'package:flutter/material.dart';
 
 enum MapMarkerState { standard, active, disabled, error }
@@ -23,30 +24,24 @@ final class MapMarker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          constraints: BoxConstraints(
-              minHeight: accessory != null ? size : size * 1.5,
-              minWidth: size,
-              maxHeight: accessory != null ? size : size * 1.5,
-              maxWidth: size),
-          decoration: BoxDecoration(
-            color: _getBackgroundColor(state),
-            shape: BoxShape.circle,
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                height: size,
-                width: size,
-                child: CircularProgressIndicator(
-                  value: progress,
-                  strokeWidth: 3.0,
-                  backgroundColor: AppColors.grey[100]!,
-                  color: _getProgressColor(state),
-                ),
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            SizedBox(
+                height: size + 6,
+                width: size + 6,
+                child: GradientProgressBorder(progress: progress)),
+            Container(
+              constraints: BoxConstraints(
+                  minHeight: accessory != null ? size : size * 1.5,
+                  minWidth: size,
+                  maxHeight: accessory != null ? size : size * 1.5,
+                  maxWidth: size),
+              decoration: BoxDecoration(
+                color: _getBackgroundColor(state),
+                shape: BoxShape.circle,
               ),
-              icon ??
+              child: icon ??
                   Icon(
                     Icons.car_rental,
                     color: _getIconColor(state),
@@ -54,8 +49,8 @@ final class MapMarker extends StatelessWidget {
                     weight: 0.5,
                     grade: 0.5,
                   ),
-            ],
-          ),
+            ),
+          ],
         ),
         if (accessory != null) SizedBox(height: size * 0.5, child: accessory!)
       ],
@@ -66,36 +61,24 @@ final class MapMarker extends StatelessWidget {
     switch (state) {
       case MapMarkerState.standard:
       case MapMarkerState.disabled:
-        return AppColors.white;
+        return AppColors.offWhite;
       case MapMarkerState.active:
-        return AppColors.green[100]!;
+        return AppColors.ecoHorizon;
       case MapMarkerState.error:
-        return AppColors.orange[100]!;
+        return AppColors.pathClay;
     }
   }
 
   Color _getIconColor(MapMarkerState state) {
     switch (state) {
       case MapMarkerState.standard:
-        return Colors.grey[800]!;
+        return AppColors.graphiteDrive;
       case MapMarkerState.disabled:
-        return Colors.grey[500]!;
+        return AppColors.urbanMist;
       case MapMarkerState.active:
-        return AppColors.green[600]!;
+        return AppColors.b2cKeyColor;
       case MapMarkerState.error:
-        return AppColors.orange[600]!;
-    }
-  }
-
-  Color _getProgressColor(MapMarkerState state) {
-    switch (state) {
-      case MapMarkerState.standard:
-      case MapMarkerState.active:
-        return AppColors.green[500]!;
-      case MapMarkerState.disabled:
-        return Colors.grey[400]!;
-      case MapMarkerState.error:
-        return AppColors.orange[600]!;
+        return AppColors.rusticClay;
     }
   }
 }

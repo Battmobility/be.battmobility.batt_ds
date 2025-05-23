@@ -7,6 +7,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.heroGradient,
     required this.inputBorderGradient,
     required this.canvasBackgroundGradient,
+    required this.progressGradient,
   });
 
   factory GradientTheme.standard() {
@@ -21,7 +22,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         ],
       ),
       heroGradient: RadialGradient(
-        colors: [AppColors.b2cKeyColor, AppColors.ecoHorizon],
+        colors: [AppColors.futureBlue, AppColors.b2bKeyColor],
         center: Alignment(-0.6, 0),
         radius: 2.0,
       ),
@@ -39,6 +40,15 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         colors: [AppColors.offWhite, AppColors.softGrove],
         transform: GradientRotation(-0.79),
       ),
+      progressGradient: LinearGradient(
+        colors: [
+          AppColors.futureBlue,
+          AppColors.greenShift,
+          AppColors.skySurge
+        ],
+        stops: [0.35, 0.65, 1.0],
+        transform: GradientRotation(1.5),
+      ),
     );
   }
 
@@ -51,6 +61,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
 // The gradient for input borders
   final Gradient inputBorderGradient;
 
+  final Gradient progressGradient;
+
   // The background gradient
   final Gradient canvasBackgroundGradient;
 
@@ -60,6 +72,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? heroGradient,
     Gradient? inputBorderGradient,
     Gradient? canvasBackgroundGradient,
+    Gradient? progressGradient,
   }) {
     return GradientTheme(
       cardBackgroundGradient:
@@ -68,6 +81,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
       canvasBackgroundGradient:
           canvasBackgroundGradient ?? this.canvasBackgroundGradient,
+      progressGradient: progressGradient ?? this.progressGradient,
     );
   }
 
@@ -88,6 +102,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
       canvasBackgroundGradient: Gradient.lerp(
           canvasBackgroundGradient, other.canvasBackgroundGradient, t)!,
+      progressGradient:
+          Gradient.lerp(progressGradient, other.progressGradient, t)!,
     );
   }
 }

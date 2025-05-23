@@ -38,13 +38,4 @@ flutter:
         - asset: packages/batt_ds/assets/fonts/LicensePlate.ttf
     - family: Inter
       fonts:
-        - asset: packages/batt_ds/assets/fonts/Inter_18pt-Bold.ttf
-          weight: 600
         - asset: packages/batt_ds/assets/fonts/Inter_18pt-Regular.ttf
-        - asset: packages/batt_ds/assets/fonts/Inter_24pt-Bold.ttf
-          weight: 600
-        - asset: packages/batt_ds/assets/fonts/Inter_24pt-Regular.ttf
-        - asset: packages/batt_ds/assets/fonts/Inter_28pt-Bold.ttf
-          weight: 600
-        - asset: packages/batt_ds/assets/fonts/Inter_28pt-Regular.ttf
-        - asset: packages/batt_ds/assets/fonts/Inter_28pt-Light.ttf

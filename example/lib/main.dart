@@ -1,6 +1,10 @@
+import 'package:batt_ds_example/storybook_pages/atoms/icons_page.dart';
+import 'package:batt_ds_example/storybook_pages/atoms/progress_page.dart';
 import 'package:batt_ds_example/storybook_pages/atoms/typography_page.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/plan_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/borders_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
@@ -55,6 +59,26 @@ Storybook get storybook {
         );
       },
       name: 'Atoms/Typography');
+
+  final iconsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const IconsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Atoms/Icons');
+
+  final progressStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const ProgressPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Atoms/Progress');
 
   // Molecules
   final chipStory = Story(
@@ -178,6 +202,16 @@ Storybook get storybook {
       },
       name: 'Organisms/Vehicle cards');
 
+  final planCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const PlanCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Plan cards');
+
   final locationCardsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -198,9 +232,21 @@ Storybook get storybook {
       },
       name: 'Organisms/Booking cards');
 
+  final headersStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const HeadersPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Headers');
+
   return Storybook(
     stories: [
       typographyStory,
+      iconsStory,
+      progressStory,
       flowStory,
       introStory,
       solidButtonsStory,
@@ -215,7 +261,9 @@ Storybook get storybook {
       snackBarStory,
       vehicleCardsStory,
       locationCardsStory,
-      bookingCardsStory
+      bookingCardsStory,
+      planCardsStory,
+      headersStory
     ],
     initialStory: "Home",
     plugins: initializePlugins(

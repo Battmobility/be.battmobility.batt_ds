@@ -54,7 +54,7 @@ class BordersPage extends StatelessWidget {
                       spacing: AppSpacings.sm,
                       runSpacing: AppSpacings.md,
                       children: [
-                        HeroRadialGradientContainer.orangeBlue(
+                        HeroRadialGradientContainer.hero(
                           child: SizedBox(
                             width: 300,
                             height: 150,
@@ -67,6 +67,22 @@ class BordersPage extends StatelessWidget {
                   child: Text(
                     'Input',
                     style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                SizedBox(
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Hint text',
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {},
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

@@ -6,6 +6,8 @@ class AppColors {
   static const Color b2cKeyColor = Color(0xFF4F8459);
   static const Color b2bKeyColor = Color(0xFF1943A3);
 
+  static const Color white = Color(0xffffffff);
+
   static const Color graphiteDrive = Color(0xFF4F4F4F);
   static const Color urbanMist = Color(0xFFD8D8D8);
   static const Color futureBlue = Color(0xFF3D73F0);
@@ -158,7 +160,6 @@ class AppColors {
 
   static const Color iconColor = Color(_primaryValue);
 
-  static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000004);
   static const Color brown = Color(0xffb5935e);
 
