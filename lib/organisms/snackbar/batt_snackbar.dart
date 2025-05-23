@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class BattSnackbar {
@@ -93,53 +94,79 @@ class BattSnackbar {
     return SnackBar(
       content: _body(context),
       behavior: SnackBarBehavior.floating,
-      backgroundColor: _backgroundColor(context),
+      backgroundColor: Colors.transparent,
       duration: duration ?? const Duration(seconds: 4),
       showCloseIcon: showCloseIcon,
       closeIconColor: _textColor(context),
-      action: action != null
-          ? SnackBarAction(
-              label: action!.label,
-              onPressed: action!.onPressed,
-              textColor: _backgroundColor(context),
-              backgroundColor: _textColor(context),
-            )
-          : null,
     );
   }
 
   Widget _body(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.small.all,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          title != null
-              ? Text(title!, style: _titleStyle(context))
-              : Container(),
-          (title != null && message != null)
-              ? const SizedBox(height: AppSpacings.sm)
-              : Container(),
-          message != null
-              ? Text(message!, style: _messageStyle(context))
-              : Container(),
-        ],
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).canvasColor,
+        borderRadius: const BorderRadius.all(CornerRadii.m),
+        border: (type == SnackBarType.success || type == SnackBarType.info)
+            ? GradientBorder(
+                gradient: GradientTheme.standard().progressGradient, width: 2)
+            : GradientBorder(
+                gradient: LinearGradient(
+                    colors: [AppColors.rusticClay, AppColors.ctaSand],
+                    transform: GradientRotation(3)),
+                width: 2),
+      ),
+      child: Padding(
+        padding: AppPaddings.small.all,
+        child: Row(
+          mainAxisAlignment: action != null
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: AppSpacings.xs,
+              children: [
+                const BattIcon(
+                  iconColor: AppColors.white,
+                  backgroundColor: AppColors.ctaGreen,
+                  size: BattIconSize.small,
+                  battIcon: BattIcons.walk, // TODO: various icons and colors
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (title != null) ...[
+                      Text(title!, style: _titleStyle(context))
+                    ],
+                    if (message != null) ...[
+                      Text(message!, style: _messageStyle(context))
+                    ],
+                  ],
+                ),
+              ],
+            ),
+            if (action != null) ...[
+              DefaultSolidTextButton(
+                  label: action!.label, onPressed: action!.onPressed)
+            ]
+          ],
+        ),
       ),
     );
   }
 
   TextStyle _titleStyle(BuildContext context) {
-    return Theme.of(context)
-        .textTheme
-        .labelLarge!
-        .copyWith(color: _textColor(context), fontWeight: FontWeight.bold);
+    return Theme.of(context).textTheme.labelLarge!.copyWith(
+        color: Theme.of(context).colorScheme.onSurface,
+        fontWeight: FontWeight.bold);
   }
 
   TextStyle _messageStyle(BuildContext context) {
     return Theme.of(context)
         .textTheme
         .labelMedium!
-        .apply(color: _textColor(context));
+        .apply(color: Theme.of(context).colorScheme.onSurface);
   }
 
   Color _textColor(BuildContext context) {
@@ -152,19 +179,6 @@ class BattSnackbar {
         return context.appSnackbarTheme.warningTextColor;
       case SnackBarType.error:
         return context.appSnackbarTheme.errorTextColor;
-    }
-  }
-
-  Color _backgroundColor(BuildContext context) {
-    switch (type) {
-      case SnackBarType.info:
-        return context.appSnackbarTheme.infoBackgroundColor;
-      case SnackBarType.success:
-        return context.appSnackbarTheme.successBackgroundColor;
-      case SnackBarType.warning:
-        return context.appSnackbarTheme.warningBackgroundColor;
-      case SnackBarType.error:
-        return context.appSnackbarTheme.errorBackgroundColor;
     }
   }
 }

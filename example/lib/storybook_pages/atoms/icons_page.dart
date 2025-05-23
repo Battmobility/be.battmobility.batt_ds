@@ -22,6 +22,42 @@ class IconsPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Small',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
+                Wrap(
+                  children: [
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.car,
+                          size: BattIconSize.small,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.walk,
+                          size: BattIconSize.small,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.range,
+                          size: BattIconSize.small,
+                        )),
+                  ],
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Medium',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
                 Wrap(
                   children: [
                     Padding(
@@ -38,6 +74,35 @@ class IconsPage extends StatelessWidget {
                         padding: AppPaddings.small.all,
                         child: BattIcon(
                           battIcon: BattIcons.range,
+                        )),
+                  ],
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Large',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
+                Wrap(
+                  children: [
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.car,
+                          size: BattIconSize.large,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.walk,
+                          size: BattIconSize.large,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.range,
+                          size: BattIconSize.large,
                         )),
                   ],
                 ),

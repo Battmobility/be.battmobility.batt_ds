@@ -8,16 +8,32 @@ enum BattIcons {
   range,
 }
 
+enum BattIconSize {
+  small,
+  medium,
+  large,
+}
+
+extension WithSize on BattIconSize {
+  double get size => (this == BattIconSize.small)
+      ? 24
+      : (this == BattIconSize.medium)
+          ? 32
+          : 38;
+}
+
 class BattIcon extends StatelessWidget {
   final Color? backgroundColor;
   final Color? iconColor;
   final String? iconPath;
   final BattIcons? battIcon;
+  final BattIconSize size;
 
   const BattIcon({
     super.key,
     this.backgroundColor = AppColors.softGrove,
     this.iconColor = AppColors.b2cKeyColor,
+    this.size = BattIconSize.medium,
     this.iconPath,
     this.battIcon,
   });
@@ -25,14 +41,14 @@ class BattIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 32,
-      height: 32,
+      width: size.size,
+      height: size.size,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(size.size / 2),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(size.size / 4),
         child: SvgPicture.asset(
           iconPath ?? "packages/batt_ds/assets/icons/${battIcon?.name}.svg",
           colorFilter: iconColor != null

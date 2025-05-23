@@ -20,26 +20,26 @@ class DefaultSolidTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return context.buttonTheme.primaryDefault;
+    return AppColors.b2bKeyColor;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return context.buttonTheme.primaryDisabled;
+    return AppColors.airFlow;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.primaryFocused;
+    return AppColors.futureBlue;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.skySurge;
+    return AppColors.futureBlue;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.primaryText;
+    return AppColors.offWhite;
   }
 }

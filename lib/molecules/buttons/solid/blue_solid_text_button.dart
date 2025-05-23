@@ -16,7 +16,7 @@ class BlueSolidTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return AppColors.skySurge;
+    return AppColors.b2bKeyColor;
   }
 
   @override
