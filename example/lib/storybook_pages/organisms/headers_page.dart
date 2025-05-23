@@ -8,12 +8,11 @@ class HeadersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: AppPaddings.medium.horizontal,
-          child: SingleChildScrollView(
-            padding: AppPaddings.medium.trailing,
-            child: LayoutBuilder(builder: (context, constraints) {
-              return Column(
+        child: SingleChildScrollView(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 800),
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -37,27 +36,21 @@ class HeadersPage extends StatelessWidget {
                         spacing: AppSpacings.sm,
                         runSpacing: AppSpacings.md,
                         children: [
-                          SizedBox(
-                            width: 300,
-                            child: ProfileHeader(
-                              name: "Your name Here",
-                              imageUrl:
-                                  "https://unsplash.com/photos/woman-wearing-black-crew-neck-shirt-3TLl_97HNJo",
-                            ),
+                          ProfileHeader(
+                            name: "Your name Here",
+                            imageUrl:
+                                "https://unsplash.com/photos/woman-wearing-black-crew-neck-shirt-3TLl_97HNJo",
                           ),
-                          SizedBox(
-                            width: 300,
-                            child: ProfileHeader(
-                              name: "Your name Here But It's Long",
-                              imageUrl:
-                                  "https://unsplash.com/photos/woman-wearing-black-crew-neck-shirt-3TLl_97HNJo",
-                            ),
+                          ProfileHeader(
+                            name: "Your name Here But It's Long",
+                            imageUrl:
+                                "https://unsplash.com/photos/woman-wearing-black-crew-neck-shirt-3TLl_97HNJo",
                           ),
                         ]),
                   ),
                 ],
-              );
-            }),
+              ),
+            ),
           ),
         ),
       ),

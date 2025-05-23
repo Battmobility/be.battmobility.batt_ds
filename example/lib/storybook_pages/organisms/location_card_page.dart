@@ -10,10 +10,11 @@ class LocationCardsPage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: AppPaddings.medium.horizontal,
-          child: SingleChildScrollView(
-            padding: AppPaddings.medium.trailing,
-            child: LayoutBuilder(builder: (context, constraints) {
-              return Column(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: SingleChildScrollView(
+              padding: AppPaddings.medium.trailing,
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -34,39 +35,28 @@ class LocationCardsPage extends StatelessWidget {
                   Padding(
                     padding: AppPaddings.small.vertical,
                     child: Wrap(
-                        spacing: AppSpacings.sm,
-                        runSpacing: AppSpacings.md,
-                        children: [
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afhaallocatie",
-                              address: "Miriam Makebaplein 4",
-                              showEdit: true,
-                            ),
-                          ),
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afzetlocatie",
-                              address:
-                                  "Miriam Makebaplein 4, maar met nog een beschrijving erbij",
-                              showEdit: true,
-                            ),
-                          ),
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afzetlocatie",
-                              address:
-                                  "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
-                              showEdit: true,
-                            ),
-                          ),
-                        ]),
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        LocationCard(
+                          description: "Afhaallocatie",
+                          address: "Miriam Makebaplein 4",
+                          showEdit: true,
+                        ),
+                        LocationCard(
+                          description: "Afzetlocatie",
+                          address:
+                              "Miriam Makebaplein 4, maar met nog een beschrijving erbij",
+                          showEdit: true,
+                        ),
+                        LocationCard(
+                          description: "Afzetlocatie",
+                          address:
+                              "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
+                          showEdit: true,
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: AppPaddings.small.vertical,
@@ -78,43 +68,32 @@ class LocationCardsPage extends StatelessWidget {
                   Padding(
                     padding: AppPaddings.small.vertical,
                     child: Wrap(
-                        spacing: AppSpacings.sm,
-                        runSpacing: AppSpacings.md,
-                        children: [
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afhaallocatie",
-                              address: "Miriam Makebaplein 4",
-                              showEdit: false,
-                            ),
-                          ),
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afzetlocatie",
-                              address:
-                                  "Miriam Makebaplein 4, maar met nog een beschrijving erbij",
-                              showEdit: false,
-                            ),
-                          ),
-                          SizedBox(
-                            width: constraints.maxWidth * 0.5,
-                            height: constraints.maxWidth * 0.125,
-                            child: LocationCard(
-                              description: "Afzetlocatie",
-                              address:
-                                  "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
-                              showEdit: true,
-                            ),
-                          )
-                        ]),
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        LocationCard(
+                          description: "Afhaallocatie",
+                          address: "Miriam Makebaplein 4",
+                          showEdit: false,
+                        ),
+                        LocationCard(
+                          description: "Afzetlocatie",
+                          address:
+                              "Miriam Makebaplein 4, maar met nog een beschrijving erbij",
+                          showEdit: false,
+                        ),
+                        LocationCard(
+                          description: "Afzetlocatie",
+                          address:
+                              "Miriam Makebaplein 4, maar met nog een beschrijving die zeker gaat overflowen erbij",
+                          showEdit: true,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
-              );
-            }),
+              ),
+            ),
           ),
         ),
       ),

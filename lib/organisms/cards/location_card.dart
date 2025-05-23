@@ -29,6 +29,7 @@ final class LocationCard extends StatelessWidget {
         child: Row(
           children: [
             Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
                   padding: AppPaddings.medium.horizontal,
@@ -47,30 +48,23 @@ final class LocationCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Column(
-                      spacing: AppSpacings.sm,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        FittedBox(
-                          child: Text(
-                            description,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            overflow: TextOverflow.ellipsis,
+                        Text(
+                          description,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
                           ),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        Flexible(
-                          child: FittedBox(
-                            child: Text(
-                              address,
-                              style: theme.textTheme.titleMedium!
-                                  .copyWith(color: theme.colorScheme.onSurface),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                            ),
-                          ),
-                        )
+                        Text(
+                          address,
+                          style: theme.textTheme.titleMedium!
+                              .copyWith(color: theme.colorScheme.onSurface),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
                       ],
                     ),
                   ),

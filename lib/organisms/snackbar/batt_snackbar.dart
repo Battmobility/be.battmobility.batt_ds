@@ -119,54 +119,71 @@ class BattSnackbar {
         padding: AppPaddings.large.all,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: action != null
-              ? MainAxisAlignment.spaceBetween
-              : MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: AppSpacings.sm,
-              children: [
-                _icon,
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (title != null) ...[
-                      Padding(
-                          padding: message == null
-                              ? AppPaddings.xxsmall.vertical
-                              : AppPaddings.none.bottom,
-                          child: Text(title!, style: _titleStyle(context)))
-                    ],
-                    if (message != null) ...[
-                      Padding(
-                        padding: title == null
-                            ? AppPaddings.xsmall.vertical
-                            : AppPaddings.small.top,
-                        child: Text(message!, style: _messageStyle(context)),
-                      )
-                    ],
-                  ],
-                ),
-              ],
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: AppPaddings.small.trailing,
+                    child: _icon,
+                  ),
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (title != null) ...[
+                          Padding(
+                            padding: message == null
+                                ? AppPaddings.xxsmall.vertical
+                                : AppPaddings.none.bottom,
+                            child: Text(
+                              title!,
+                              style: _titleStyle(context),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                            ),
+                          ),
+                        ],
+                        if (message != null) ...[
+                          Padding(
+                            padding: title == null
+                                ? AppPaddings.xsmall.vertical
+                                : AppPaddings.small.top,
+                            child: Text(
+                              message!,
+                              style: _messageStyle(context),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-            if (action != null) ...[
+            if (action != null || showCloseIcon) ...[
               const SizedBox(width: AppSpacings.md),
-              DefaultSolidTextButton(
-                  label: action!.label, onPressed: action!.onPressed)
-            ],
-            if (showCloseIcon) ...[
-              const SizedBox(width: AppSpacings.md),
-              IconButton.outlined(
+              if (action != null)
+                DefaultSolidTextButton(
+                  label: action!.label,
+                  onPressed: action!.onPressed,
+                )
+              else if (showCloseIcon)
+                IconButton.outlined(
                   visualDensity: VisualDensity.compact,
                   onPressed: () {
                     ScaffoldMessenger.of(
                       context,
                     ).hideCurrentSnackBar(reason: SnackBarClosedReason.dismiss);
                   },
-                  icon: const Icon(Icons.close, color: AppColors.white))
-            ]
+                  icon: const Icon(Icons.close, color: AppColors.white),
+                ),
+            ],
           ],
         ),
       ),
@@ -193,7 +210,6 @@ class BattSnackbar {
             backgroundColor: AppColors.rusticClay,
             icon: Icons.warning_amber,
             iconColor: AppColors.white);
-
       case SnackBarType.error:
         return const BattIcon(
             size: BattIconSize.small,
