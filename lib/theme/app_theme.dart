@@ -86,13 +86,6 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final shadowColorLight = AppColors.shadow;
   final shadowColorDark = AppColors.black;
 
-  final themeColorPrimary = AppColors.b2cKeyColor;
-  final themeColorPrimaryContainer = AppColors.urbanMist;
-
-  final themeColorSecondary = AppColors.greenShift;
-  final themeColorSecondaryContainer = AppColors.pathClay;
-  final themeColorSecondaryContainerLowest = AppColors.grey[400]!;
-
   final themeColorSuccess = AppColors.ctaGreen;
   final themeColorError = AppColors.rusticClay;
 

@@ -14,7 +14,7 @@ class HatchPatternPainter extends CustomPainter {
   HatchPatternPainter({
     this.spacing = 10.0,
     this.strokeWidth = 1.0,
-    this.color = AppColors.defaultGrey,
+    this.color = AppColors.urbanMist,
     this.horizontal = true,
     this.vertical = true,
     this.diagonalLeft = true,

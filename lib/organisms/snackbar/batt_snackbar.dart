@@ -110,7 +110,9 @@ class BattSnackbar {
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
-        action: action?.onPressed,
+        action: () {
+          action?.onPressed();
+        },
         actionLabel: action?.label,
         showCloseIcon: showCloseIcon);
   }

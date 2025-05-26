@@ -21,11 +21,11 @@ final class BattChipBlack extends BattChip {
   Color primaryColor(BuildContext context) {
     switch (state) {
       case BattChipState.disabled:
-        return AppColors.grey[300]!;
+        return AppColors.urbanMist;
       case BattChipState.active:
         return AppColors.urbanMist;
       case BattChipState.enabled:
-        return AppColors.grey[800]!;
+        return AppColors.graphiteDrive;
     }
   }
 

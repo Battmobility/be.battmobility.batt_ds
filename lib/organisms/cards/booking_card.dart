@@ -42,7 +42,7 @@ final class BookingCard extends StatelessWidget {
               aspectRatio: 1,
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppColors.grey[100],
+                  color: Theme.of(context).colorScheme.surfaceDim,
                   borderRadius: BorderRadius.circular(CornerRadii.s.x),
                 ),
                 child: (imageUrl ?? "").isNotEmpty
@@ -53,11 +53,11 @@ final class BookingCard extends StatelessWidget {
                           fit: BoxFit.fitWidth,
                           errorBuilder: (context, error, stackTrace) {
                             // Show a placeholder when image fails to load
-                            return Center(
+                            return const Center(
                               child: Icon(
                                 Icons.book_online_rounded,
                                 size: 32,
-                                color: AppColors.grey[400],
+                                color: AppColors.urbanMist,
                               ),
                             );
                           },
@@ -75,11 +75,11 @@ final class BookingCard extends StatelessWidget {
                           },
                         ),
                       )
-                    : Center(
+                    : const Center(
                         child: Icon(
                           Icons.book_online_rounded,
                           size: 32,
-                          color: AppColors.grey[400],
+                          color: AppColors.urbanMist,
                         ),
                       ),
               ),
@@ -121,11 +121,11 @@ final class BookingCard extends StatelessWidget {
                       child: Padding(
                     padding: AppPaddings.small.horizontal,
                     child: (price == null)
-                        ? Icon(
+                        ? const Icon(
                             Icons.chevron_right_sharp,
                             size: 24,
                             weight: 0.5,
-                            color: AppColors.grey[600],
+                            color: AppColors.urbanMist,
                           )
                         : Text(
                             price!,

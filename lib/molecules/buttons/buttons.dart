@@ -1,6 +1,5 @@
 export 'solid/default_solid_text_button.dart';
 export 'outlined/default_outlined_text_button.dart';
-export 'outlined/purple_outlined_text_button.dart';
 export 'outlined/orange_outlined_text_button.dart';
 export 'solid/blue_solid_text_button.dart';
 export 'solid/orange_solid_text_button.dart';

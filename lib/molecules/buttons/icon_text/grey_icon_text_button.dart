@@ -12,12 +12,12 @@ final class GreyIconTextButton extends BattIconTextButton {
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.grey;
+    return AppColors.urbanMist;
   }
 
   @override
   Color iconColor(BuildContext context) {
-    return AppColors.grey;
+    return AppColors.urbanMist;
   }
 
   @override
@@ -27,6 +27,6 @@ final class GreyIconTextButton extends BattIconTextButton {
 
   @override
   Color iconBorderColor(BuildContext context) {
-    return AppColors.grey;
+    return AppColors.urbanMist;
   }
 }

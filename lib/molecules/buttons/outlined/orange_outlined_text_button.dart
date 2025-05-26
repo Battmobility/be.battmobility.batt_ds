@@ -25,7 +25,7 @@ class OrangeOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.orange.withAlpha(122);
+    return AppColors.transitSand;
   }
 
   @override

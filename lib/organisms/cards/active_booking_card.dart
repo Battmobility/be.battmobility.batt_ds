@@ -44,11 +44,11 @@ final class ActiveBookingCard extends StatelessWidget {
                             fit: BoxFit.fitWidth,
                             errorBuilder: (context, error, stackTrace) {
                               // Show a placeholder when image fails to load
-                              return Center(
+                              return const Center(
                                 child: Icon(
                                   Icons.book_online_rounded,
                                   size: 32,
-                                  color: AppColors.grey[400],
+                                  color: AppColors.urbanMist,
                                 ),
                               );
                             },
@@ -66,11 +66,11 @@ final class ActiveBookingCard extends StatelessWidget {
                             },
                           ),
                         )
-                      : Center(
+                      : const Center(
                           child: Icon(
                             Icons.book_online_rounded,
                             size: 32,
-                            color: AppColors.grey[400],
+                            color: AppColors.urbanMist,
                           ),
                         ),
                 ),

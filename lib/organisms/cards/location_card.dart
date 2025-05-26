@@ -20,8 +20,8 @@ final class LocationCard extends StatelessWidget {
       padding: AppPaddings.medium.all,
       decoration: BoxDecoration(
         color: Theme.of(context).canvasColor,
-        border: Border(
-          top: BorderSide(color: AppColors.grey[200]!),
+        border: const Border(
+          top: BorderSide(color: AppColors.offWhite),
         ),
       ),
       child: Padding(

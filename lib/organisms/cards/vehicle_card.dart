@@ -30,28 +30,28 @@ final class VehicleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return AspectRatio(
-      aspectRatio: 3.8 / 1,
-      child: Container(
-        padding: AppPaddings.medium.all,
-        decoration: BoxDecoration(
-          color: Theme.of(context).canvasColor,
-          borderRadius: BorderRadius.circular(CornerRadii.m.x),
-          boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).colorScheme.shadow,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
+    return Container(
+      padding: AppPaddings.medium.all,
+      decoration: BoxDecoration(
+        color: Theme.of(context).canvasColor,
+        borderRadius: BorderRadius.circular(CornerRadii.m.x),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.shadow,
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: IntrinsicHeight(
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 1,
+            SizedBox(
+              width: 80, // Fixed width for image container
+              height: 80, // Fixed height to maintain square aspect
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppColors.grey[100],
+                  color: Theme.of(context).colorScheme.surfaceDim,
                   borderRadius: BorderRadius.circular(CornerRadii.s.x),
                 ),
                 child: (imageUrl ?? "").isNotEmpty
@@ -78,80 +78,80 @@ final class VehicleCard extends StatelessWidget {
             ),
             const SizedBox(width: AppSpacings.lg),
             Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: AppSpacings.md,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          name,
+                          style: theme.textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: AppSpacings.sm,
+                      ),
+                      if (tag != null)
+                        Container(
+                          padding: AppPaddings.small.all
+                              .add(AppPaddings.small.horizontal),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary,
+                            borderRadius:
+                                BorderRadius.circular(CornerRadii.s.x),
+                          ),
                           child: Text(
-                            name,
-                            style: theme.textTheme.titleSmall?.copyWith(
+                            tag!,
+                            style: theme.textTheme.bodySmall?.copyWith(
                               fontWeight: FontWeight.bold,
-                            ),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: AppSpacings.sm,
-                        ),
-                        if (tag != null)
-                          Container(
-                            padding: AppPaddings.small.all
-                                .add(AppPaddings.small.horizontal),
-                            decoration: BoxDecoration(
-                              color: AppColors.grey[700],
-                              borderRadius:
-                                  BorderRadius.circular(CornerRadii.s.x),
-                            ),
-                            child: Text(
-                              tag!,
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: AppColors.offWhite,
-                              ),
+                              color: AppColors.white,
                             ),
                           ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              _rangeInfo(theme),
-                              _walkingInfo(theme),
-                            ],
-                          ),
                         ),
-                        Column(
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            if (price != null)
-                              Text(
-                                price!,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            if (price2 != null)
-                              Text(
-                                price2!,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                            _rangeInfo(theme),
+                            _walkingInfo(theme),
                           ],
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          if (price != null)
+                            Text(
+                              price!,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          if (price2 != null)
+                            Text(
+                              price2!,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],

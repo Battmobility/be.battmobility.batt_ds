@@ -19,11 +19,11 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
 
   /// {@macro app_button_theme}
   factory AppButtonTheme.light() {
-    return AppButtonTheme(
+    return const AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.b2cKeyColor,
-        primaryHover: AppColors.primaryColors[700]!,
-        primaryFocused: AppColors.background,
+        primaryDefault: AppColors.b2bKeyColor,
+        primaryHover: AppColors.skySurge,
+        primaryFocused: AppColors.skySurge,
         primaryDisabled: AppColors.urbanMist,
         secondaryText: AppColors.b2cKeyColor,
         secondaryDefault: Colors.transparent,
@@ -34,10 +34,10 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
   }
 
   factory AppButtonTheme.dark() {
-    return AppButtonTheme(
+    return const AppButtonTheme(
         primaryText: AppColors.primaryButtonTextColor,
-        primaryDefault: AppColors.b2cKeyColor,
-        primaryHover: AppColors.primaryColors[700]!,
+        primaryDefault: AppColors.b2bKeyColor,
+        primaryHover: AppColors.skySurge,
         primaryFocused: AppColors.graphiteDrive,
         primaryDisabled: AppColors.urbanMist,
         secondaryText: AppColors.b2cKeyColor,

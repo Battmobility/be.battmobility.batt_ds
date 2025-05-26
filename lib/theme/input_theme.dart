@@ -25,11 +25,30 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
 
   /// {@macro app_input_theme}
   factory AppInputTheme.light() {
-    return AppInputTheme(
+    return const AppInputTheme(
       defaultText: AppColors.graphiteDrive,
-      focusedOnBrand: AppColors.primaryColors[500]!,
-      focusedTextDefault: AppColors.primaryColors[50]!,
+      focusedOnBrand: AppColors.b2bKeyColor,
+      focusedTextDefault: AppColors.black,
       errorTextDefault: AppColors.ctaSand,
+      successTextDefault: AppColors.ctaGreen,
+      disabledText: AppColors.urbanMist,
+      borderDefault: AppColors.b2cKeyColor,
+      borderHover: AppColors.b2bKeyColor,
+      borderFocused: AppColors.futureBlue,
+      borderError: AppColors.rusticClay,
+      borderSuccess: AppColors.ctaGreen,
+      borderDisabled: AppColors.urbanMist,
+      defaultColor: AppColors.graphiteDrive,
+      disabledColor: AppColors.urbanMist,
+    );
+  }
+
+  factory AppInputTheme.dark() {
+    return const AppInputTheme(
+      defaultText: AppColors.offWhite,
+      focusedOnBrand: AppColors.b2bKeyColor,
+      focusedTextDefault: AppColors.white,
+      errorTextDefault: AppColors.rusticClay,
       successTextDefault: AppColors.ctaGreen,
       disabledText: AppColors.urbanMist,
       borderDefault: AppColors.b2cKeyColor,
@@ -38,26 +57,7 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       borderError: AppColors.rusticClay,
       borderSuccess: AppColors.ctaGreen,
       borderDisabled: AppColors.urbanMist,
-      defaultColor: AppColors.urbanMist.withAlpha(100),
-      disabledColor: AppColors.urbanMist,
-    );
-  }
-
-  factory AppInputTheme.dark() {
-    return AppInputTheme(
-      defaultText: AppColors.offWhite,
-      focusedOnBrand: AppColors.primaryColors[500]!,
-      focusedTextDefault: AppColors.primaryColors[50]!,
-      errorTextDefault: AppColors.orange,
-      successTextDefault: AppColors.ctaGreen,
-      disabledText: AppColors.grey[300]!,
-      borderDefault: AppColors.b2cKeyColor,
-      borderHover: AppColors.futureBlue,
-      borderFocused: AppColors.futureBlue,
-      borderError: AppColors.rusticClay,
-      borderSuccess: AppColors.ctaGreen,
-      borderDisabled: AppColors.urbanMist,
-      defaultColor: AppColors.urbanMist.withAlpha(100),
+      defaultColor: AppColors.urbanMist,
       disabledColor: AppColors.urbanMist,
     );
   }
