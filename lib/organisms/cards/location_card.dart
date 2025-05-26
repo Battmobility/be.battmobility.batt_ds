@@ -43,42 +43,45 @@ final class LocationCard extends StatelessWidget {
             ),
             const SizedBox(width: AppSpacings.sm),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          description,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
+              child: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            description,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        Text(
-                          address,
-                          style: theme.textTheme.titleMedium!
-                              .copyWith(color: theme.colorScheme.onSurface),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                        ),
-                      ],
-                    ),
-                  ),
-                  if (showEdit)
-                    Center(
-                        child: Padding(
-                      padding: AppPaddings.medium.horizontal,
-                      child: Icon(
-                        Icons.mode_edit,
-                        size: 24,
-                        color: theme.colorScheme.onSurface,
+                          Text(
+                            address,
+                            style: theme.textTheme.titleMedium!
+                                .copyWith(color: theme.colorScheme.onSurface),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ],
                       ),
-                    )),
-                ],
+                    ),
+                    if (showEdit)
+                      Center(
+                        child: Padding(
+                          padding: AppPaddings.medium.horizontal,
+                          child: Icon(
+                            Icons.mode_edit,
+                            size: 24,
+                            color: theme.colorScheme.onSurface,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           ],

@@ -118,7 +118,6 @@ class IntroPage extends StatelessWidget {
                         ),
                         SizedBox(
                           width: 260,
-                          height: 100,
                           child: LocationCard(
                             description: "Afhaallocatie",
                             address: "Miriam Makebaplein 4",

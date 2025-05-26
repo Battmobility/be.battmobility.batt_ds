@@ -30,28 +30,32 @@ ThemeData lightTheme(BuildContext context) {
     brightness: Brightness.light,
     extensions: [theme],
     appBarTheme: theme.appBarThemeLight,
-    navigationBarTheme: theme.navigationBarThemeLight,
     bottomNavigationBarTheme: theme.bottomNavigationBarThemeLight,
+    canvasColor: theme.themeColorLight,
     cardTheme: CardThemeData(color: theme.themeColorLight),
-    textTheme: theme.textThemeLight,
-    textSelectionTheme: theme.textSelectionThemeLight,
+    checkboxTheme: CheckboxThemeData(
+        side: BorderSide(color: theme.themeColorPrimary),
+        fillColor: WidgetStatePropertyAll(theme.themeColorPrimary),
+        checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
+    dividerTheme: const DividerThemeData(color: AppColors.urbanMist),
     inputDecorationTheme: theme.inputDecorationThemeLight,
-    sliderTheme: SliderThemeData(
-        activeTrackColor: theme.themeColorPrimary,
-        inactiveTrackColor: theme.themeColorPrimary.withValues(alpha: 0.5),
-        thumbColor: theme.themeColorPrimary,
-        overlayColor: theme.themeColorPrimary.withValues(alpha: 0.5)),
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: theme.themeColorPrimary,
-    ),
     elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
+    navigationBarTheme: theme.navigationBarThemeLight,
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: theme.themeColorPrimary,
+    ),
+    sliderTheme: SliderThemeData(
+        activeTrackColor: theme.themeColorPrimary,
+        inactiveTrackColor: theme.themeColorPrimary.withValues(alpha: 0.5),
+        thumbColor: theme.themeColorPrimary,
+        overlayColor: theme.themeColorPrimary.withValues(alpha: 0.5)),
     scaffoldBackgroundColor: theme.themeColorLight,
-    dividerColor: theme.themeColorPrimary,
-    canvasColor: theme.themeColorLight,
+    textTheme: theme.textThemeLight,
+    textSelectionTheme: theme.textSelectionThemeLight,
   );
 }
 
@@ -73,8 +77,8 @@ ThemeData darkTheme(BuildContext context) {
     brightness: Brightness.dark,
     extensions: [theme],
     appBarTheme: theme.appBarThemeDark,
-    navigationBarTheme: theme.navigationBarThemeDark,
     bottomNavigationBarTheme: theme.bottomNavigationBarThemeDark,
+    canvasColor: theme.themeColorDark,
     cardTheme: CardThemeData(
       color: theme.themeColorDark,
       shadowColor: theme.themeColorLight,
@@ -83,29 +87,29 @@ ThemeData darkTheme(BuildContext context) {
         side: BorderSide(color: theme.themeColorPrimary),
         fillColor: WidgetStatePropertyAll(theme.themeColorPrimary),
         checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
-    textTheme: theme.textThemeDark,
-    textButtonTheme: TextButtonThemeData(
+    dividerTheme: const DividerThemeData(color: AppColors.urbanMist),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+        style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
+    iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-            textStyle:
-                WidgetStatePropertyAll(AppTypographyDark().labelMedium))),
-    textSelectionTheme: theme.textSelectionThemeDark,
+            foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     inputDecorationTheme: theme.inputDecorationThemeDark,
+    navigationBarTheme: theme.navigationBarThemeDark,
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: theme.themeColorPrimary,
+    ),
     sliderTheme: SliderThemeData(
       activeTrackColor: theme.themeColorPrimary,
       inactiveTrackColor: theme.themeColorPrimary.withValues(alpha: 0.5),
       thumbColor: theme.themeColorPrimary,
       overlayColor: theme.themeColorPrimary.withValues(alpha: 0.5),
     ),
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: theme.themeColorPrimary,
-    ),
-    elevatedButtonTheme: const ElevatedButtonThemeData(
-        style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
-    iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-            foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     scaffoldBackgroundColor: theme.themeColorDark,
-    canvasColor: theme.themeColorDark,
-    dividerColor: theme.themeColorPrimary,
+    textTheme: theme.textThemeDark,
+    textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+            textStyle:
+                WidgetStatePropertyAll(AppTypographyDark().labelMedium))),
+    textSelectionTheme: theme.textSelectionThemeDark,
   );
 }
