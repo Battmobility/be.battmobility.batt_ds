@@ -37,32 +37,32 @@ class TextButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
                             ),
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "Small button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.small,
                             ),
-                            DefaultSimpleTextButton(
+                            MonochromeSimpleTextButton(
                               label: "XSmall button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,

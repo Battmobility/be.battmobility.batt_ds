@@ -5,12 +5,14 @@ final class ListSection extends StatelessWidget {
   final Widget icon;
   final String title;
   final List<Widget> items;
+  final Widget? accessory;
 
   const ListSection({
     super.key,
     required this.icon,
     required this.title,
     required this.items,
+    this.accessory,
   });
 
   @override
@@ -43,6 +45,7 @@ final class ListSection extends StatelessWidget {
               ],
             ),
           ),
+          if (accessory != null) ...[accessory!]
         ],
       ),
     );

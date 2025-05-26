@@ -52,7 +52,7 @@ class IntroPage extends StatelessWidget {
                           onPressed: () => {},
                           buttonSize: BattButtonSize.xxLarge,
                         ),
-                        DefaultSimpleTextButton(
+                        MonochromeSimpleTextButton(
                           label: "Large button",
                           onPressed: () => {},
                           buttonSize: BattButtonSize.large,

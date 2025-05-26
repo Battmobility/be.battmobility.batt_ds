@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/buttons/text/batt_simple_text_button.dart';
 import 'package:batt_ds/utils/svg_icon.dart';
 import 'package:flutter/material.dart';
 
@@ -90,7 +91,21 @@ class ListSectionPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Divider()
+                      Divider(),
+                      ListSection(
+                        icon: carIcon,
+                        title: "Section title",
+                        items: [
+                          Text(
+                            "Content of the list without a callout, just a regular list",
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ],
+                        accessory: MonochromeSimpleTextButton(
+                          label: "Accessory",
+                          onPressed: () {},
+                        ),
+                      ),
                     ],
                   ),
                 ],
