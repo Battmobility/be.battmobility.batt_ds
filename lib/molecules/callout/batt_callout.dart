@@ -114,13 +114,6 @@ final class BattCallout extends StatelessWidget {
         fontWeight: FontWeight.bold);
   }
 
-  TextStyle _messageStyle(BuildContext context) {
-    return Theme.of(context)
-        .textTheme
-        .labelMedium!
-        .apply(color: Theme.of(context).colorScheme.onSurface);
-  }
-
   BattIcon get _icon {
     switch (type) {
       case CalloutType.info:

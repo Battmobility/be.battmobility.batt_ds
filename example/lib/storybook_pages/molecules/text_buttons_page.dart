@@ -126,58 +126,6 @@ class TextButtonsPage extends StatelessWidget {
                               child: e,
                             ))
                         .toList()),
-                Padding(
-                  padding: AppPaddings.small.vertical,
-                  child: Text(
-                    'Purple',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                ),
-                Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Wrap(
-                          spacing: AppSpacings.sm,
-                          runSpacing: AppSpacings.md,
-                          children: [
-                            PurpleSimpleTextButton(
-                              label: "XXLarge button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.xxLarge,
-                            ),
-                            PurpleSimpleTextButton(
-                              label: "XLarge button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.xLarge,
-                            ),
-                            PurpleSimpleTextButton(
-                              label: "Large button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.large,
-                            ),
-                            PurpleSimpleTextButton(
-                              label: "Regular button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.medium,
-                            ),
-                            PurpleSimpleTextButton(
-                              label: "Small button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.small,
-                            ),
-                            PurpleSimpleTextButton(
-                              label: "XSmall button",
-                              onPressed: () => {},
-                              buttonSize: BattButtonSize.xSmall,
-                            ),
-                          ]),
-                    ]
-                        .map((e) => Padding(
-                              padding: AppPaddings.small.vertical,
-                              child: e,
-                            ))
-                        .toList()),
               ],
             ),
           ),
