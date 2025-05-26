@@ -26,6 +26,48 @@ class BookingCardsPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
+                    'Active',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        ActiveBookingCard(
+                          vehicleName: "Polestar 4",
+                          bookingPeriodStart:
+                              DateTime.now().subtract(Duration(days: 2)),
+                          bookingPeriodEnd:
+                              DateTime.now().subtract(Duration(hours: 5)),
+                          imageUrl:
+                              "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                        ),
+                        ActiveBookingCard(
+                          vehicleName: "Polestar 4",
+                          bookingPeriodStart:
+                              DateTime.now().add(Duration(hours: 1)),
+                          bookingPeriodEnd:
+                              DateTime.now().add(Duration(hours: 5)),
+                          imageUrl:
+                              "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                        ),
+                        ActiveBookingCard(
+                          vehicleName: "Polestar 4 in past and with long name",
+                          bookingPeriodStart:
+                              DateTime.now().add(Duration(days: 100)),
+                          bookingPeriodEnd:
+                              DateTime.now().add(Duration(days: 90)),
+                          imageUrl:
+                              "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
                     'With price',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
