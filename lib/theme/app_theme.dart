@@ -100,7 +100,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         overflow: TextOverflow.fade,
         height: 24 / 24,
         fontWeight: FontWeight.w600,
-        color: AppColors.ctaSand,
+        color: AppColors.graphiteDrive,
         fontFamily: "Inter",
         package: "batt_ds"),
   );
