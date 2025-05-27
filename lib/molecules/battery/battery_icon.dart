@@ -48,11 +48,13 @@ final class BatteryIcon extends StatelessWidget {
 
   Color _iconColor(double percentage) {
     if (percentage >= 70) {
-      return AppColors.greenShift;
+      return AppColors.ctaBrightGreen;
+    } else if (percentage >= 50) {
+      return AppColors.ctaGreen;
     } else if (percentage >= 30) {
-      return AppColors.ecoHorizon;
+      return AppColors.ctaSand;
     } else {
-      return AppColors.transitSand;
+      return AppColors.rusticClay;
     }
   }
 }
