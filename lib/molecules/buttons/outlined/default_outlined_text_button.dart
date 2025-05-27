@@ -1,3 +1,4 @@
+import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -29,21 +30,21 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return context.buttonTheme.primaryDisabled;
+    return AppColors.airFlow;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.primaryFocused;
+    return AppColors.futureBlue;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return context.buttonTheme.primaryHover;
+    return AppColors.skySurge;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.primaryText;
+    return AppColors.b2bKeyColor;
   }
 }

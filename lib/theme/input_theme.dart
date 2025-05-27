@@ -38,7 +38,7 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       borderError: AppColors.rusticClay,
       borderSuccess: AppColors.ctaGreen,
       borderDisabled: AppColors.urbanMist,
-      defaultColor: AppColors.graphiteDrive,
+      defaultColor: AppColors.urbanMist,
       disabledColor: AppColors.urbanMist,
     );
   }
@@ -57,7 +57,7 @@ class AppInputTheme extends ThemeExtension<AppInputTheme> {
       borderError: AppColors.rusticClay,
       borderSuccess: AppColors.ctaGreen,
       borderDisabled: AppColors.urbanMist,
-      defaultColor: AppColors.urbanMist,
+      defaultColor: AppColors.graphiteDrive,
       disabledColor: AppColors.urbanMist,
     );
   }
