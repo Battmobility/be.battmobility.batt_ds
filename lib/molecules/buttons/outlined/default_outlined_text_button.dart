@@ -29,21 +29,21 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return context.buttonTheme.secondaryDisabled;
+    return context.buttonTheme.primaryDisabled;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return context.buttonTheme.secondaryFocused;
+    return context.buttonTheme.primaryFocused;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return context.buttonTheme.secondaryHover;
+    return context.buttonTheme.primaryHover;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return context.buttonTheme.secondaryText;
+    return context.buttonTheme.primaryText;
   }
 }
