@@ -94,7 +94,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     shadowColor: Colors.transparent,
     scrolledUnderElevation: 0,
     elevation: 0,
-    iconTheme: IconThemeData(color: AppColors.ctaSand),
+    iconTheme: IconThemeData(color: AppColors.graphiteDrive),
     titleTextStyle: TextStyle(
         fontSize: 20,
         overflow: TextOverflow.fade,
@@ -290,11 +290,11 @@ class AppTheme extends ThemeExtension<AppTheme> {
     fillColor: AppColors.b2cKeyColor.withAlpha(6),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.b2cKeyColor),
+      borderSide: BorderSide(color: AppColors.graphiteDrive),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.b2cKeyColor),
+      borderSide: BorderSide(color: AppColors.b2bKeyColor),
     ),
     focusedBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().inputBorderGradient,
@@ -323,7 +323,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     fillColor: AppColors.futureBlue.withAlpha(6),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.skySurge),
+      borderSide: BorderSide(color: AppColors.urbanMist),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),

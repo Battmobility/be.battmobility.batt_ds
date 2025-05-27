@@ -59,6 +59,18 @@ class VehicleCardsPage extends StatelessWidget {
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
+                          VehicleCard(
+                            name: "Een auto met een lange naam",
+                            chargePercentage: 100,
+                            price: "€ 1.000",
+                            price2: "€100 / uur",
+                            tag: "Een lange tag",
+                            walkingDistance: "200m.",
+                            walkingDuration: "2h",
+                            licensePlate: "2-ABC-123",
+                            imageUrl:
+                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                          ),
                         ]),
                   ),
                   Padding(
@@ -148,6 +160,58 @@ class VehicleCardsPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: AppPaddings.small.vertical,
+                    child: Text(
+                      'Without borders',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ),
+                  Padding(
+                    padding: AppPaddings.small.vertical,
+                    child: Wrap(
+                        spacing: AppSpacings.sm,
+                        runSpacing: AppSpacings.md,
+                        children: [
+                          VehicleCard(
+                            name: "Polestar 2",
+                            range: "500 km",
+                            chargePercentage: 75,
+                            price: "€ 18",
+                            tag: "Eerste prijs",
+                            walkingDistance: "20",
+                            walkingDuration: "10 min",
+                            imageUrl:
+                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                            showBorder: false,
+                          ),
+                          VehicleCard(
+                            name: "Een auto met een lange naam",
+                            chargePercentage: 100,
+                            price: "€ 1.000",
+                            price2: "€100 / uur",
+                            tag: "Een lange tag",
+                            walkingDistance: "200m.",
+                            walkingDuration: "2h",
+                            imageUrl:
+                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                            showBorder: false,
+                          ),
+                          VehicleCard(
+                            name: "Een auto met een lange naam",
+                            chargePercentage: 100,
+                            price: "€ 1.000",
+                            price2: "€100 / uur",
+                            tag: "Een lange tag",
+                            walkingDistance: "200m.",
+                            walkingDuration: "2h",
+                            licensePlate: "2-ABC-123",
+                            imageUrl:
+                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                            showBorder: false,
+                          ),
+                        ]),
                   ),
                 ],
               ),
