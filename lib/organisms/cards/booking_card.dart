@@ -28,13 +28,7 @@ final class BookingCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).canvasColor,
           borderRadius: BorderRadius.circular(CornerRadii.m.x),
-          boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).colorScheme.shadow,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
+          border: Border.all(color: AppColors.urbanMist, width: 1),
         ),
         child: Row(
           children: [
