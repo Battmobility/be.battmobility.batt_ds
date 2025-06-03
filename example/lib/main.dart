@@ -10,7 +10,7 @@ import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/list_section_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/plan_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
-import 'storybook_pages/molecules/borders_page.dart';
+import 'storybook_pages/molecules/gradients_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
 import 'storybook_pages/molecules/flow_page.dart';
 import 'storybook_pages/molecules/icon_text_button_page.dart';
@@ -183,7 +183,7 @@ Storybook get storybook {
           darkTheme: darkTheme(context),
         );
       },
-      name: 'Molecules/Borders');
+      name: 'Molecules/Gradients');
 
   final shadowsStory = Story(
       builder: (context) {

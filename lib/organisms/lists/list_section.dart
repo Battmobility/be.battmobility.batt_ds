@@ -6,19 +6,20 @@ final class ListSection extends StatelessWidget {
   final String title;
   final List<Widget> items;
   final Widget? accessory;
+  final EdgeInsetsGeometry? padding;
 
-  const ListSection({
-    super.key,
-    required this.icon,
-    required this.title,
-    required this.items,
-    this.accessory,
-  });
+  const ListSection(
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.items,
+      this.accessory,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.medium.all,
+      padding: padding ?? AppPaddings.medium.all,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

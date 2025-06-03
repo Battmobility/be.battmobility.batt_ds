@@ -41,9 +41,9 @@ class SolidCtaButton extends StatelessWidget {
         child: Center(
           child: Text(
             label,
-            style: const TextStyle(
+            style: TextStyle(
               color: AppColors.white,
-              fontSize: 18.0,
+              fontSize: height * 0.4,
               fontWeight: FontWeight.w500,
             ),
           ),

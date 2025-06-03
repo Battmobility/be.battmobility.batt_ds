@@ -50,9 +50,9 @@ class OutlinedCtaButton extends StatelessWidget {
             child: Center(
               child: Text(
                 label,
-                style: const TextStyle(
+                style: TextStyle(
                   color: AppColors.b2bKeyColor,
-                  fontSize: 18.0,
+                  fontSize: height * 0.4,
                   fontWeight: FontWeight.w500,
                 ),
               ),

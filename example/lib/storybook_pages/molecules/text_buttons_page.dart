@@ -37,32 +37,32 @@ class TextButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "Small button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.small,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               label: "XSmall button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,
@@ -72,43 +72,81 @@ class TextButtonsPage extends StatelessWidget {
                           spacing: AppSpacings.sm,
                           runSpacing: AppSpacings.md,
                           children: [
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "XXLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xxLarge,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "XLarge button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xLarge,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "Large button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.large,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "Regular button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.medium,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "Small button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.small,
                             ),
-                            MonochromeSimpleTextButton(
+                            InvertedMonochromeSimpleTextButton(
                               underline: true,
                               label: "XSmall button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,
                             ),
                           ]),
+                      Wrap(children: [
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "XXLarge button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.xxLarge,
+                        ),
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "XLarge button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.xLarge,
+                        ),
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "Large button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.large,
+                        ),
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "Regular button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.medium,
+                        ),
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "Small button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.small,
+                        ),
+                        MonochromeSimpleTextButton(
+                          underline: true,
+                          label: "XSmall button",
+                          onPressed: () => {},
+                          buttonSize: BattButtonSize.xSmall,
+                        ),
+                      ]),
                     ]
                         .map((e) => Padding(
                               padding: AppPaddings.small.vertical,

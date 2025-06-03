@@ -56,7 +56,7 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           ),
         ],
       ),
-      height: 84,
+      height: 90,
       child: LayoutBuilder(builder: (context, constraints) {
         return Stack(
           children: [
@@ -74,6 +74,7 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
               child: Padding(
                 padding: AppPaddings.small.horizontal,
                 child: Container(
+                  height: 86,
                   decoration: BoxDecoration(
                     color: AppColors.airFlow,
                     borderRadius: BorderRadius.circular(12),
@@ -118,7 +119,7 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
                               if (item.badge != null)
                                 Positioned(
                                   right: -10,
-                                  top: -8,
+                                  top: -2,
                                   child: item.badge!,
                                 ),
                             ],
@@ -175,7 +176,7 @@ class Badge extends StatelessWidget {
     required this.text,
     this.backgroundColor = Colors.blue,
     this.textColor = Colors.white,
-    this.size = 20,
+    this.size = 16,
   });
 
   @override

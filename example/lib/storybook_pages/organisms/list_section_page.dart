@@ -100,7 +100,7 @@ class ListSectionPage extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ],
-                        accessory: MonochromeSimpleTextButton(
+                        accessory: InvertedMonochromeSimpleTextButton(
                           underline: true,
                           label: "Accessory",
                           onPressed: () {},

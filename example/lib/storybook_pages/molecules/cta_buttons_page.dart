@@ -72,7 +72,7 @@ class CtaButtonsPage extends StatelessWidget {
                         Padding(
                           padding: AppPaddings.small.vertical,
                           child: Text(
-                            'Solid',
+                            'Outlined',
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                         ),
@@ -95,6 +95,39 @@ class CtaButtonsPage extends StatelessWidget {
                               height: 98,
                             ),
                             OutlinedCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: AppPaddings.small.vertical,
+                          child: Text(
+                            'Solid inverted',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                        ),
+                        Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            InvertedSolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                            ),
+                            InvertedSolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                            ),
+                            InvertedSolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              height: 98,
+                            ),
+                            InvertedSolidCtaButton(
                               label: "Plan je rit",
                               onPressed: () => {},
                               width: 200,

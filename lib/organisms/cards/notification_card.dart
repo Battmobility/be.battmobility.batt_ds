@@ -1,0 +1,37 @@
+import 'package:batt_ds/batt_ds.dart';
+import 'package:flutter/material.dart';
+
+final class NotificationCard extends StatelessWidget {
+  final Widget content;
+  final List<Widget> actions;
+
+  const NotificationCard({
+    super.key,
+    required this.content,
+    required this.actions,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return HeroRadialGradientContainer(
+      cornerradius: CornerRadii.m,
+      child: Padding(
+        padding: AppPaddings.medium.all.add(AppPaddings.small.horizontal),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            content,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: actions,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

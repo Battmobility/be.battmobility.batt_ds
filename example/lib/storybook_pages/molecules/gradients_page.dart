@@ -65,6 +65,27 @@ class BordersPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
+                    'Notification gradient',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        NotificationGradientContainer(
+                          child: SizedBox(
+                            width: 300,
+                            height: 150,
+                          ),
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
                     'Input',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),

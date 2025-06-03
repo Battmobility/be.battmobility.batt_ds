@@ -1,5 +1,4 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/molecules/chips/batt_chip_default.dart';
 import 'package:flutter/material.dart';
 
 class ChipPage extends StatelessWidget {

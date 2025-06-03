@@ -52,7 +52,7 @@ class IntroPage extends StatelessWidget {
                           onPressed: () => {},
                           buttonSize: BattButtonSize.xxLarge,
                         ),
-                        MonochromeSimpleTextButton(
+                        InvertedMonochromeSimpleTextButton(
                           label: "Large button",
                           onPressed: () => {},
                           buttonSize: BattButtonSize.large,
@@ -122,6 +122,35 @@ class IntroPage extends StatelessWidget {
                             description: "Afhaallocatie",
                             address: "Miriam Makebaplein 4",
                             showEdit: true,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 360,
+                          height: 120,
+                          child: NotificationCard(
+                            content: Row(
+                              children: [
+                                Icon(
+                                  Icons.refresh,
+                                  color: AppColors.white,
+                                ),
+                                Text(
+                                  "Notification card title",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(color: AppColors.white),
+                                )
+                              ],
+                            ),
+                            actions: [
+                              InvertedSolidCtaButton(
+                                label: "Action",
+                                onPressed: () {},
+                              ),
+                              InvertedMonochromeSimpleTextButton(
+                                  label: "Cancel", onPressed: () {})
+                            ],
                           ),
                         ),
                       ]),

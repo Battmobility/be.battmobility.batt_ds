@@ -1,5 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 
 class BattomnavigationPage extends StatelessWidget {
   const BattomnavigationPage({super.key});
@@ -30,7 +30,11 @@ class BattomnavigationPage extends StatelessWidget {
                       BattomNavigationBarItem(
                           icon: Icons.calendar_month, label: "Boekingen"),
                       BattomNavigationBarItem(
-                          icon: Icons.person, label: "Profiel")
+                          icon: Icons.person_outline,
+                          label: "Profiel",
+                          badge: Badge(
+                            text: "1",
+                          ))
                     ],
                     onTap: (p0) => {},
                   )
