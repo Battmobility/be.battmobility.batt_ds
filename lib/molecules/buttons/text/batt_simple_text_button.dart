@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import '../batt_text_button.dart';
 
 abstract class BattSimpleTextButton extends BattTextButton {
+  final bool underline;
+
   const BattSimpleTextButton({
+    required this.underline,
     super.key,
     required super.label,
     super.buttonSize,
@@ -42,6 +45,15 @@ abstract class BattSimpleTextButton extends BattTextButton {
         return textColor(context);
       },
     );
+
+    final TextStyle baseTextStyle = switch (buttonSize) {
+      BattButtonSize.xSmall => context.typographyTheme.buttonXSmall,
+      BattButtonSize.small => context.typographyTheme.buttonSmall,
+      BattButtonSize.medium => context.typographyTheme.buttonMedium,
+      BattButtonSize.large => context.typographyTheme.buttonLarge,
+      BattButtonSize.xLarge => context.typographyTheme.buttonXLarge,
+      BattButtonSize.xxLarge => context.typographyTheme.button2XLarge,
+    };
 
     return TextButton(
       style: ButtonStyle(
@@ -100,25 +112,17 @@ abstract class BattSimpleTextButton extends BattTextButton {
           Flexible(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacings.xxs),
-              child: Text(
-                label,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: switch (buttonSize) {
-                  BattButtonSize.xSmall => context.typographyTheme.buttonXSmall
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.small => context.typographyTheme.buttonSmall
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.medium => context.typographyTheme.buttonMedium
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.large => context.typographyTheme.buttonLarge
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.xLarge => context.typographyTheme.buttonXLarge
-                      .copyWith(color: textColor(context)),
-                  BattButtonSize.xxLarge => context
-                      .typographyTheme.button2XLarge
-                      .copyWith(color: textColor(context)),
-                },
+              child: DefaultTextStyle(
+                style: baseTextStyle.copyWith(
+                  color: textColor(context),
+                  decoration: underline ? TextDecoration.underline : null,
+                  inherit: true,
+                ),
+                child: Text(
+                  label,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
               ),
             ),
           ),

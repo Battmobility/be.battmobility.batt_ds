@@ -1,3 +1,5 @@
+export 'cta_button/solid_cta_button.dart';
+export 'cta_button/outlined_cta_button.dart';
 export 'solid/default_solid_text_button.dart';
 export 'outlined/default_outlined_text_button.dart';
 export 'outlined/orange_outlined_text_button.dart';

@@ -30,7 +30,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
         secondaryHover: AppColors.urbanMist,
         secondaryFocused: AppColors.offWhite,
         secondaryDisabled: AppColors.urbanMist,
-        iconButtonColor: AppColors.b2cKeyColor);
+        iconButtonColor: AppColors.b2bKeyColor);
   }
 
   factory AppButtonTheme.dark() {
@@ -45,7 +45,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
         secondaryHover: AppColors.urbanMist,
         secondaryFocused: AppColors.graphiteDrive,
         secondaryDisabled: AppColors.urbanMist,
-        iconButtonColor: AppColors.b2cKeyColor);
+        iconButtonColor: AppColors.b2bKeyColor);
   }
 
   /// The color of the primary text.

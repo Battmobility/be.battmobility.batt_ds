@@ -101,6 +101,7 @@ class ListSectionPage extends StatelessWidget {
                           ),
                         ],
                         accessory: MonochromeSimpleTextButton(
+                          underline: true,
                           label: "Accessory",
                           onPressed: () {},
                         ),

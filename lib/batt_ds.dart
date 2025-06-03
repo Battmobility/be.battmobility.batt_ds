@@ -19,7 +19,7 @@ ThemeData lightTheme(BuildContext context) {
       primary: AppColors.b2bKeyColor,
       primaryContainer: AppColors.futureBlue,
       secondary: AppColors.skySurge,
-      shadow: theme.shadowColorLight,
+      shadow: theme.shadowColorLight.withAlpha(20),
       error: theme.themeColorError,
       errorContainer: theme.themeColorError,
       onErrorContainer: theme.themeColorLight,

@@ -8,6 +8,7 @@ import 'batt_simple_text_button.dart';
 class DefaultSimpleTextButton extends BattSimpleTextButton {
   /// {@macro primary_text_button}
   const DefaultSimpleTextButton({
+    super.underline = false,
     super.key,
     required super.label,
     super.buttonSize,

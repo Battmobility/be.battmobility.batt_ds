@@ -29,7 +29,7 @@ class AppColors {
   static const Color black = Color(0xff000004);
   static const Color brown = Color(0xffb5935e);
 
-  static const Color shadow = Color(0xFF999999);
+  static const Color shadow = Color(0x4E4E4E0A);
   static const Color shadowDark = Color(0xff000000);
 
   static const Color navigationBarBackground = AppColors.white;

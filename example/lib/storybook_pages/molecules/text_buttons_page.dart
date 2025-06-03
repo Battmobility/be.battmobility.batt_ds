@@ -68,6 +68,47 @@ class TextButtonsPage extends StatelessWidget {
                               buttonSize: BattButtonSize.xSmall,
                             ),
                           ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "XXLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                            ),
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "XLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                            ),
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "Large button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                            ),
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "Regular button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                            ),
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "Small button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                            ),
+                            MonochromeSimpleTextButton(
+                              underline: true,
+                              label: "XSmall button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                            ),
+                          ]),
                     ]
                         .map((e) => Padding(
                               padding: AppPaddings.small.vertical,
@@ -115,6 +156,47 @@ class TextButtonsPage extends StatelessWidget {
                               buttonSize: BattButtonSize.small,
                             ),
                             OrangeSimpleTextButton(
+                              label: "XSmall button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            OrangeSimpleTextButton(
+                              underline: true,
+                              label: "XXLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                            ),
+                            OrangeSimpleTextButton(
+                              underline: true,
+                              label: "XLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                            ),
+                            OrangeSimpleTextButton(
+                              underline: true,
+                              label: "Large button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                            ),
+                            OrangeSimpleTextButton(
+                              underline: true,
+                              label: "Regular button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                            ),
+                            OrangeSimpleTextButton(
+                              underline: true,
+                              label: "Small button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                            ),
+                            OrangeSimpleTextButton(
+                              underline: true,
                               label: "XSmall button",
                               onPressed: () => {},
                               buttonSize: BattButtonSize.xSmall,

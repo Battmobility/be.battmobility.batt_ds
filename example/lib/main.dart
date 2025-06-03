@@ -2,6 +2,9 @@ import 'package:batt_ds_example/storybook_pages/atoms/icons_page.dart';
 import 'package:batt_ds_example/storybook_pages/atoms/progress_page.dart';
 import 'package:batt_ds_example/storybook_pages/atoms/typography_page.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
+import 'package:batt_ds_example/storybook_pages/molecules/cta_buttons_page.dart';
+import 'package:batt_ds_example/storybook_pages/molecules/shadows_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/battom_navigation_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/list_section_page.dart';
@@ -92,6 +95,16 @@ Storybook get storybook {
       },
       name: 'Molecules/Chips');
 
+  final ctaButtonsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const CtaButtonsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Molecules/CTA buttons');
+
   final solidButtonsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -101,16 +114,6 @@ Storybook get storybook {
         );
       },
       name: 'Molecules/Solid buttons');
-
-  final flowStory = Story(
-      builder: (context) {
-        return MaterialApp(
-          home: const FlowPage(),
-          theme: lightTheme(context),
-          darkTheme: darkTheme(context),
-        );
-      },
-      name: 'Molecules/Flow');
 
   final simpleButtonsStory = Story(
       builder: (context) {
@@ -142,6 +145,16 @@ Storybook get storybook {
       },
       name: 'Molecules/Icon text buttons');
 
+  final flowStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const FlowPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Molecules/Flow');
+
   final mapMarkersStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -172,6 +185,16 @@ Storybook get storybook {
       },
       name: 'Molecules/Borders');
 
+  final shadowsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const ShadowsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Molecules/Shadows');
+
   final batteryIconsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -183,6 +206,16 @@ Storybook get storybook {
       name: 'Molecules/Battery Icons');
 
   // Organisms
+  final battomNavigationStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const BattomnavigationPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Bottom navigation');
+
   final listSectionsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -192,6 +225,7 @@ Storybook get storybook {
         );
       },
       name: 'Organisms/List sections');
+
   final snackBarStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -259,6 +293,7 @@ Storybook get storybook {
       progressStory,
       flowStory,
       introStory,
+      ctaButtonsStory,
       solidButtonsStory,
       outlinedButtonsStory,
       simpleButtonsStory,
@@ -267,6 +302,7 @@ Storybook get storybook {
       mapMarkersStory,
       licensePlateStory,
       bordersStory,
+      shadowsStory,
       batteryIconsStory,
       listSectionsStory,
       snackBarStory,
@@ -274,7 +310,8 @@ Storybook get storybook {
       locationCardsStory,
       bookingCardsStory,
       planCardsStory,
-      headersStory
+      headersStory,
+      battomNavigationStory
     ],
     initialStory: "Home",
     plugins: initializePlugins(

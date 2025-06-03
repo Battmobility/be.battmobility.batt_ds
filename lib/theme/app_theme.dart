@@ -122,9 +122,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   BottomNavigationBarThemeData bottomNavigationBarThemeLight =
       const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.offWhite,
+    backgroundColor: AppColors.white,
     elevation: 0,
-    selectedItemColor: AppColors.futureBlue,
+    selectedItemColor: AppColors.b2bKeyColor,
     unselectedItemColor: AppColors.graphiteDrive,
     selectedLabelStyle: TextStyle(
       fontSize: 12,
@@ -149,7 +149,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       const BottomNavigationBarThemeData(
     backgroundColor: AppColors.graphiteDrive,
     elevation: 0,
-    selectedItemColor: AppColors.futureBlue,
+    selectedItemColor: AppColors.b2bKeyColor,
     unselectedItemColor: AppColors.offWhite,
     selectedLabelStyle: TextStyle(
       fontSize: 12,
