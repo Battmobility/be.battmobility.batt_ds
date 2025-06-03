@@ -34,11 +34,12 @@ class AppChipTheme extends ThemeExtension<AppChipTheme> {
       enabledColor: AppColors.skySurge,
       disabledColor: AppColors.urbanMist,
       activeColor: AppColors.futureBlue,
-      enabledBackgroundColor: AppColors.airFlow,
-      disabledBackgroundColor: AppColors.cloudBase,
-      activeBackgroundColor: AppColors.skySurge,
+      enabledBackgroundColor: AppColors.white,
+      disabledBackgroundColor: AppColors.white,
+      activeBackgroundColor: AppColors.b2bKeyColor,
     );
   }
+
   @override
   ThemeExtension<AppChipTheme> copyWith({
     Color? enabledColor,

@@ -135,27 +135,38 @@ abstract class BattChip extends StatelessWidget {
         return leading != null
             ? const EdgeInsets.only(
                 left: AppSpacings.sm,
-                right: AppSpacings.xxs,
-                bottom: AppSpacings.xxs)
+                right: AppSpacings.xs,
+                top: AppSpacings.xs,
+                bottom: AppSpacings.xs)
             : const EdgeInsets.only(
-                left: AppSpacings.xxs,
-                right: AppSpacings.xxs,
-                bottom: AppSpacings.xxs);
+                left: AppSpacings.xs,
+                right: AppSpacings.xs,
+                top: AppSpacings.xs,
+                bottom: AppSpacings.xs);
       case BattChipSize.medium:
         return leading != null
             ? const EdgeInsets.only(
                 left: AppSpacings.sm,
                 right: AppSpacings.xxs,
-                bottom: AppSpacings.xxs)
+                top: AppSpacings.xs,
+                bottom: AppSpacings.xs)
             : const EdgeInsets.only(
-                left: AppSpacings.xxs,
+                left: AppSpacings.xs,
                 right: AppSpacings.xxs,
-                bottom: AppSpacings.xxs);
+                top: AppSpacings.xs,
+                bottom: AppSpacings.xs);
       case BattChipSize.large:
         return leading != null
-            ? const EdgeInsets.only(left: AppSpacings.md, right: AppSpacings.xs)
+            ? const EdgeInsets.only(
+                left: AppSpacings.xs,
+                right: AppSpacings.xxs,
+                top: AppSpacings.sm,
+                bottom: AppSpacings.sm)
             : const EdgeInsets.only(
-                left: AppSpacings.xs, right: AppSpacings.xs);
+                left: AppSpacings.md,
+                right: AppSpacings.xs,
+                top: AppSpacings.sm,
+                bottom: AppSpacings.sm);
     }
   }
 
@@ -175,7 +186,7 @@ abstract class BattChip extends StatelessWidget {
       case BattChipSize.small:
         return CornerRadii.l.x;
       case BattChipSize.medium:
-        return CornerRadii.xl.x;
+        return CornerRadii.xxl.x;
       case BattChipSize.large:
         return CornerRadii.xxl.x;
     }

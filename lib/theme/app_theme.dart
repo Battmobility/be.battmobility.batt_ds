@@ -281,20 +281,21 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
-    prefixIconColor: AppColors.primaryTextColor,
-    suffixIconColor: AppColors.primaryTextColor,
+    prefixIconColor: AppColors.urbanMist,
+    suffixIconColor: AppColors.urbanMist,
     labelStyle:
         AppTypographyDark().labelMedium.copyWith(color: AppColors.black),
-    hintStyle: AppTypographyDark().labelSmall.copyWith(color: AppColors.black),
+    hintStyle:
+        AppTypographyDark().labelSmall.copyWith(color: AppColors.graphiteDrive),
     filled: true,
-    fillColor: AppColors.b2cKeyColor.withAlpha(6),
+    fillColor: AppColors.white,
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.graphiteDrive),
+      borderSide: BorderSide(color: AppColors.urbanMist),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.b2bKeyColor),
+      borderSide: BorderSide(color: AppColors.urbanMist),
     ),
     focusedBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().inputBorderGradient,
@@ -320,14 +321,14 @@ class AppTheme extends ThemeExtension<AppTheme> {
     hintStyle:
         AppTypographyDark().labelSmall.copyWith(color: AppColors.offWhite),
     filled: true,
-    fillColor: AppColors.futureBlue.withAlpha(6),
+    fillColor: AppColors.graphiteDrive,
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
       borderSide: BorderSide(color: AppColors.urbanMist),
     ),
     enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.futureBlue),
+      borderSide: BorderSide(color: AppColors.urbanMist),
     ),
     focusedBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().inputBorderGradient,

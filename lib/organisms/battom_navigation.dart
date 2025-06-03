@@ -56,7 +56,7 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           ),
         ],
       ),
-      height: 80,
+      height: 84,
       child: LayoutBuilder(builder: (context, constraints) {
         return Stack(
           children: [
@@ -127,10 +127,8 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
                           Text(
                             item.label,
                             style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: isSelected
-                                  ? FontWeight.w600
-                                  : FontWeight.normal,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                               color: isSelected
                                   ? Theme.of(context)
                                       .bottomNavigationBarTheme

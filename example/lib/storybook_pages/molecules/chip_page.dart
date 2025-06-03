@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/chips/batt_chip_default.dart';
 import 'package:flutter/material.dart';
 
 class ChipPage extends StatelessWidget {
@@ -21,6 +22,120 @@ class ChipPage extends StatelessWidget {
                     'Chips',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Default',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipDefault(
+                          label: "Enabled large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipDefault(
+                          label: "Enabled medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipDefault(
+                          label: "Enabled small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.enabled,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipDefault(
+                          label: "Active large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.active,
+                        ),
+                        BattChipDefault(
+                          label: "Active medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattChipDefault(
+                          label: "Active small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.active,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipDefault(
+                          label: "Disabled large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.disabled,
+                        ),
+                        BattChipDefault(
+                          label: "Disabled medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.disabled,
+                        ),
+                        BattChipDefault(
+                          label: "Disabled small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.disabled,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipDefault(
+                          label: "Enabled leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                        BattChipDefault(
+                          label: "Active leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                        BattChipDefault(
+                          label: "Disabled leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.disabled,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                      ]),
                 ),
                 Padding(
                   padding: AppPaddings.small.vertical,
