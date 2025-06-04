@@ -16,27 +16,32 @@ final class VehicleCard extends StatelessWidget {
 
   final String? licensePlate;
   final bool showBorder;
+  final bool showIndicator;
 
-  const VehicleCard({
-    super.key,
-    required this.name,
-    this.chargePercentage,
-    this.range,
-    this.walkingDuration,
-    this.walkingDistance,
-    this.tag,
-    this.price,
-    this.price2,
-    this.imageUrl,
-    this.licensePlate,
-    this.showBorder = true,
-  });
+  const VehicleCard(
+      {super.key,
+      required this.name,
+      this.chargePercentage,
+      this.range,
+      this.walkingDuration,
+      this.walkingDistance,
+      this.tag,
+      this.price,
+      this.price2,
+      this.imageUrl,
+      this.licensePlate,
+      this.showBorder = true,
+      this.showIndicator = false});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: showBorder ? AppPaddings.medium.all : AppPaddings.none.all,
+      padding: showBorder
+          ? showIndicator
+              ? AppPaddings.medium.all.add(-AppPaddings.small.trailing)
+              : AppPaddings.medium.all
+          : AppPaddings.none.all,
       decoration: showBorder
           ? BoxDecoration(
               color: Theme.of(context).canvasColor,
@@ -66,7 +71,6 @@ final class VehicleCard extends StatelessWidget {
                                 image: NetworkImage(imageUrl!),
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
-                                  // Show a placeholder when image fails to load
                                   return const Center(child: carIcon);
                                 },
                                 loadingBuilder:
@@ -107,7 +111,7 @@ final class VehicleCard extends StatelessWidget {
                         Flexible(
                           child: Text(
                             name,
-                            style: theme.textTheme.titleSmall?.copyWith(
+                            style: theme.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
                             overflow: TextOverflow.ellipsis,
@@ -172,6 +176,15 @@ final class VehicleCard extends StatelessWidget {
                   ],
                 ),
               ),
+              if (showIndicator) ...[
+                Padding(
+                  padding: AppPaddings.small.leading,
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.neutralColors[500],
+                  ),
+                )
+              ]
             ],
           ),
         );

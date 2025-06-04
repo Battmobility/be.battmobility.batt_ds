@@ -37,7 +37,7 @@ final class ListSection extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall!
-                        .copyWith(fontWeight: FontWeight.bold)),
+                        .copyWith(fontWeight: FontWeight.w700)),
                 const SizedBox(height: AppSpacings.sm),
                 ...items.map((item) => Padding(
                       padding: AppPaddings.small.vertical,
