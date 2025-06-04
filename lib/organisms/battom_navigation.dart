@@ -61,27 +61,6 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
         return Stack(
           children: [
             // Animated selection indicator
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-              left: (constraints.maxWidth *
-                      (_currentIndex / widget.items.length)) +
-                  AppSpacings.lg,
-              top: AppSpacings.sm,
-              bottom: AppSpacings.sm,
-              width: (constraints.maxWidth / widget.items.length) -
-                  AppSpacings.xxl,
-              child: Padding(
-                padding: AppPaddings.small.horizontal,
-                child: Container(
-                  height: 86,
-                  decoration: BoxDecoration(
-                    color: AppColors.airFlow,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-            ),
 
             // Navigation items row
             Row(

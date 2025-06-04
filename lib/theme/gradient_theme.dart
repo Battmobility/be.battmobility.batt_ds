@@ -6,7 +6,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.cardBackgroundGradient,
     required this.heroGradient,
     required this.inputBorderGradient,
-    required this.canvasBackgroundGradient,
+    required this.errorBorderGradient,
     required this.progressGradient,
   });
 
@@ -27,27 +27,29 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         radius: 2.0,
       ),
       inputBorderGradient: LinearGradient(
-        colors: [
-          AppColors.futureBlue,
-          AppColors.b2cKeyColor,
-          AppColors.greenShift,
-          AppColors.skySurge,
-          AppColors.futureBlue
-        ],
-        transform: GradientRotation(-0.79),
+        colors: [AppColors.futureBlue, AppColors.greenShift],
+        stops: [0.6, 1.0],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        transform: GradientRotation(0.6),
       ),
-      canvasBackgroundGradient: LinearGradient(
-        colors: [AppColors.offWhite, AppColors.softGrove],
-        transform: GradientRotation(-0.79),
+      errorBorderGradient: LinearGradient(
+        colors: [
+          AppColors.errorBorderPrimary,
+          AppColors.errorBorderSecondary,
+          AppColors.errorBorderPrimary
+        ],
+        stops: [0.6, 0.8, 1.0],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        transform: GradientRotation(0.6),
       ),
       progressGradient: LinearGradient(
-        colors: [
-          AppColors.futureBlue,
-          AppColors.greenShift,
-          AppColors.skySurge
-        ],
-        stops: [0.35, 0.65, 1.0],
-        transform: GradientRotation(1.5),
+        colors: [AppColors.futureBlue, AppColors.greenShift],
+        stops: [0.6, 1.0],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        transform: GradientRotation(0.6),
       ),
     );
   }
@@ -64,14 +66,14 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   final Gradient progressGradient;
 
   // The background gradient
-  final Gradient canvasBackgroundGradient;
+  final Gradient errorBorderGradient;
 
   @override
   ThemeExtension<GradientTheme> copyWith({
     Gradient? cardBackgroundGradient,
     Gradient? heroGradient,
     Gradient? inputBorderGradient,
-    Gradient? canvasBackgroundGradient,
+    Gradient? errorBorderGradient,
     Gradient? progressGradient,
   }) {
     return GradientTheme(
@@ -79,8 +81,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           cardBackgroundGradient ?? this.cardBackgroundGradient,
       heroGradient: heroGradient ?? this.heroGradient,
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
-      canvasBackgroundGradient:
-          canvasBackgroundGradient ?? this.canvasBackgroundGradient,
+      errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
       progressGradient: progressGradient ?? this.progressGradient,
     );
   }
@@ -100,8 +101,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       heroGradient: Gradient.lerp(heroGradient, other.heroGradient, t)!,
       inputBorderGradient:
           Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
-      canvasBackgroundGradient: Gradient.lerp(
-          canvasBackgroundGradient, other.canvasBackgroundGradient, t)!,
+      errorBorderGradient:
+          Gradient.lerp(errorBorderGradient, other.errorBorderGradient, t)!,
       progressGradient:
           Gradient.lerp(progressGradient, other.progressGradient, t)!,
     );

@@ -108,6 +108,82 @@ class ListSectionPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Padding(
+                    padding: AppPaddings.medium.all,
+                    child: Text(
+                      'List Tiles',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ),
+                  Column(children: [
+                    BattListTile(
+                      title: "List title",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                    ),
+                    Divider(),
+                    BattListTile(
+                      title: "List title",
+                      subtitle: "List tile subtitle",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                    ),
+                    Divider(),
+                    BattListTile(
+                      title: "List title",
+                      subtitle: "List tile subtitle",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                    ),
+                    Divider(),
+                    BattListTile(
+                      title: "List title",
+                      subtitle: "List tile subtitle",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                      trailing: Icon(Icons.more),
+                    ),
+                    Divider(),
+                    BattListTile(
+                      title: "List title",
+                      subtitle:
+                          "List tile longer than the other subtitle so that it hopefully grows the tile instead of overflowing",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                      trailing: Icon(Icons.more),
+                    ),
+                    BattListTile(
+                      title: "List title",
+                      subtitle: "List tile subtitle",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                      trailing: Row(children: [
+                        MonochromeSimpleTextButton(
+                            label: "Action", underline: true, onPressed: () {}),
+                        Icon(Icons.more)
+                      ]),
+                    ),
+                    Divider(),
+                    BattListTile(
+                      title: "List title",
+                      subtitle:
+                          "List tile longer than the other subtitle so that it hopefully grows the tile instead of overflowing",
+                      leading: BattIcon(
+                        battIcon: BattIcons.car,
+                      ),
+                      trailing: Row(children: [
+                        MonochromeSimpleTextButton(
+                            label: "Action", underline: true, onPressed: () {}),
+                        Icon(Icons.more)
+                      ]),
+                    ),
+                  ]),
                 ],
               ),
             ),

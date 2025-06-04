@@ -26,16 +26,13 @@ class AppColors {
   static const Color ctaGreen = Color(0xFF6DD19A);
   static const Color ctaSand = Color(0xFFE6B985);
 
+  static const Color errorBorderPrimary = Color(0xFFAC0533);
+  static const Color errorBorderSecondary = Color(0xFFFFAEC4);
+
   static const Color black = Color(0xff000004);
-  static const Color brown = Color(0xffb5935e);
 
   static const Color shadow = Color(0x4E4E4E0A);
   static const Color shadowDark = Color(0xff000000);
-
-  static const Color navigationBarBackground = AppColors.white;
-  static const Color navigationBarBackgroundDark = AppColors.black;
-  static const Color navigationBarLabel = Color(0xFFFFFFFF);
-  static const Color navigationBarIcon = Color(0xFFFFFFFF);
 
   static const Color textColor = Color(0xff000004);
   static const Color textColorLight = AppColors.graphiteDrive;
@@ -44,7 +41,6 @@ class AppColors {
   static const Color disabledTextColor = Color(0xff555555);
   static const Color disabledTextColorDark = Color(0xff777777);
 
-  static const Color primaryTextColor = Color(0xFF000004);
   static const Color primaryTextColorLight = Color(0x99000004);
 
   static const Color primaryButtonTextColor = Color(0xFFFFFFFF);
@@ -53,4 +49,27 @@ class AppColors {
   static const Color licensePlateBelgiumTextColor = Color(0xFF861a22);
   static const Color licensePlateBelgiumBoxColor = Color(0xFF053673);
   static const Color licensePlateBelgiumBackgroundColor = Color(0xFFFFFFFF);
+
+  // Greys
+  static const _neutralValue = 0xFF626678;
+
+  static MaterialColor get neutralColors {
+    return const MaterialColor(
+      _neutralValue,
+      <int, Color>{
+        0: Color(0xFFFFFFFF),
+        50: Color(0xFFF5F5F7),
+        100: Color(0xFFE5E5E9),
+        200: Color(0xFFCCCED6),
+        300: Color(0xFFA8ABB8),
+        400: Color(0xFF7C8094),
+        500: Color(_neutralValue),
+        600: Color(0xFF545766),
+        700: Color(0xFF474A57),
+        800: Color(0xFF3E404C),
+        900: Color(0xFF373943),
+        950: Color(0xFF22232A)
+      },
+    );
+  }
 }

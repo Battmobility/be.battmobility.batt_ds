@@ -48,6 +48,16 @@ ThemeData lightTheme(BuildContext context) {
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
+    listTileTheme: ListTileThemeData(
+      titleTextStyle: Theme.of(context)
+          .textTheme
+          .bodyMedium!
+          .copyWith(color: AppColors.neutralColors[900]!),
+      subtitleTextStyle: Theme.of(context)
+          .textTheme
+          .bodySmall!
+          .copyWith(color: AppColors.neutralColors[600]!),
+    ),
     navigationBarTheme: theme.navigationBarThemeLight,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: AppColors.b2bKeyColor,
@@ -105,6 +115,16 @@ ThemeData darkTheme(BuildContext context) {
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     inputDecorationTheme: theme.inputDecorationThemeDark,
+    listTileTheme: ListTileThemeData(
+      titleTextStyle: Theme.of(context)
+          .textTheme
+          .bodyMedium!
+          .copyWith(color: AppColors.neutralColors[0]!),
+      subtitleTextStyle: Theme.of(context)
+          .textTheme
+          .bodySmall!
+          .copyWith(color: AppColors.neutralColors[50]!),
+    ),
     navigationBarTheme: theme.navigationBarThemeDark,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: AppColors.b2bKeyColor,

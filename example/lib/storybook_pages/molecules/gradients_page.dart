@@ -106,21 +106,12 @@ class BordersPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: AppSpacings.md),
                 SizedBox(
                   width: 300,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Hint text',
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: () {},
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                  ),
+                  height: 46,
+                  child:
+                      Container(decoration: GradientBorderDecoration.error()),
                 )
               ],
             ),

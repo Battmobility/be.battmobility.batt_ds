@@ -121,19 +121,19 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   BottomNavigationBarThemeData bottomNavigationBarThemeLight =
-      const BottomNavigationBarThemeData(
+      BottomNavigationBarThemeData(
     backgroundColor: AppColors.white,
     elevation: 0,
     selectedItemColor: AppColors.b2bKeyColor,
-    unselectedItemColor: AppColors.graphiteDrive,
-    selectedLabelStyle: TextStyle(
+    unselectedItemColor: AppColors.neutralColors[500],
+    selectedLabelStyle: const TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w600,
       fontFamily: "Inter",
       package: "batt_ds",
     ),
-    unselectedLabelStyle: TextStyle(
+    unselectedLabelStyle: const TextStyle(
       fontSize: 12,
       height: 1.2,
       fontWeight: FontWeight.w400,
@@ -301,9 +301,9 @@ class AppTheme extends ThemeExtension<AppTheme> {
       gradient: GradientTheme.standard().inputBorderGradient,
       width: 2,
     ),
-    errorBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.ctaSand, width: 1),
+    errorBorder: GradientOutlineInputBorder(
+      gradient: GradientTheme.standard().errorBorderGradient,
+      width: 2,
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),

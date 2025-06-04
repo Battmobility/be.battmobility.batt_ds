@@ -36,7 +36,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     required this.inputPlaceholder,
     required this.inputHint,
     required this.inputLabel,
-    required this.navigationBarLabelStyle,
     required this.dateTimeStyle,
     required this.actionSliderStyle,
   });
@@ -128,9 +127,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   // Input label
   final TextStyle inputLabel;
 
-  // Navigation bar label
-  final TextStyle navigationBarLabelStyle;
-
   // DateTime style
   final TextStyle dateTimeStyle;
 
@@ -169,7 +165,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     TextStyle? inputPlaceholder,
     TextStyle? inputHint,
     TextStyle? inputLabel,
-    TextStyle? navigationBarLabelStyle,
     TextStyle? dateTimeStyle,
     TextStyle? actionSliderStyle,
   }) {
@@ -203,8 +198,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       inputPlaceholder: inputPlaceholder ?? this.inputPlaceholder,
       inputHint: inputHint ?? this.inputHint,
       inputLabel: inputLabel ?? this.inputLabel,
-      navigationBarLabelStyle:
-          navigationBarLabelStyle ?? this.navigationBarLabelStyle,
       dateTimeStyle: dateTimeStyle ?? this.dateTimeStyle,
       actionSliderStyle: actionSliderStyle ?? this.actionSliderStyle,
     );
@@ -247,11 +240,6 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
           TextStyle.lerp(inputPlaceholder, other.inputPlaceholder, t)!,
       inputHint: TextStyle.lerp(inputHint, other.inputHint, t)!,
       inputLabel: TextStyle.lerp(inputLabel, other.inputLabel, t)!,
-      navigationBarLabelStyle: TextStyle.lerp(
-        navigationBarLabelStyle,
-        other.navigationBarLabelStyle,
-        t,
-      )!,
       labelLarge: TextStyle.lerp(labelLarge, other.labelLarge, t)!,
       labelMedium: TextStyle.lerp(labelMedium, other.labelMedium, t)!,
       labelSmall: TextStyle.lerp(labelSmall, other.labelSmall, t)!,
@@ -463,13 +451,6 @@ class AppTypography extends AppTypographyTheme {
         height: 24 / 24,
         fontWeight: FontWeight.w300,
         color: AppColors.primaryTextColorLight,
-        fontFamily: "Inter",
-        package: "batt_ds"),
-    super.navigationBarLabelStyle = const TextStyle(
-        fontSize: 18,
-        height: 24 / 24,
-        fontWeight: FontWeight.w600,
-        color: AppColors.navigationBarLabel,
         fontFamily: "Inter",
         package: "batt_ds"),
     super.dateTimeStyle = const TextStyle(
@@ -693,14 +674,6 @@ class AppTypographyDark extends AppTypographyTheme {
       height: 24 / 24,
       fontWeight: FontWeight.w300,
       color: AppColors.offWhite,
-      fontFamily: "Inter",
-      package: "batt_ds",
-    ),
-    super.navigationBarLabelStyle = const TextStyle(
-      fontSize: 18,
-      height: 24 / 24,
-      fontWeight: FontWeight.w600,
-      color: AppColors.navigationBarLabel,
       fontFamily: "Inter",
       package: "batt_ds",
     ),
