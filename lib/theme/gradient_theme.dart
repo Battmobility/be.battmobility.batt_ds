@@ -8,6 +8,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.inputBorderGradient,
     required this.errorBorderGradient,
     required this.progressGradient,
+    required this.ctaButtonGradient,
   });
 
   factory GradientTheme.standard() {
@@ -51,6 +52,17 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.bottomRight,
         transform: GradientRotation(0.6),
       ),
+      ctaButtonGradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.skySurge
+        ],
+        transform: GradientRotation(0.05),
+      ),
     );
   }
 
@@ -68,6 +80,9 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   // The background gradient
   final Gradient errorBorderGradient;
 
+  /// The gradient for CTA buttons
+  final Gradient ctaButtonGradient;
+
   @override
   ThemeExtension<GradientTheme> copyWith({
     Gradient? cardBackgroundGradient,
@@ -75,6 +90,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? inputBorderGradient,
     Gradient? errorBorderGradient,
     Gradient? progressGradient,
+    Gradient? ctaButtonGradient,
   }) {
     return GradientTheme(
       cardBackgroundGradient:
@@ -83,6 +99,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
       errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
       progressGradient: progressGradient ?? this.progressGradient,
+      ctaButtonGradient: ctaButtonGradient ?? this.ctaButtonGradient,
     );
   }
 
@@ -105,6 +122,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           Gradient.lerp(errorBorderGradient, other.errorBorderGradient, t)!,
       progressGradient:
           Gradient.lerp(progressGradient, other.progressGradient, t)!,
+      ctaButtonGradient:
+          Gradient.lerp(ctaButtonGradient, other.ctaButtonGradient, t)!,
     );
   }
 }

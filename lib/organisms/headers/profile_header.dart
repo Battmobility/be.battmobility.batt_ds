@@ -13,9 +13,10 @@ final class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeroRadialGradientContainer(
+    return Container(
+      color: Theme.of(context).canvasColor,
       child: Padding(
-          padding: AppPaddings.xlarge.all,
+          padding: AppPaddings.large.all.add(AppPaddings.small.bottom),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -64,15 +65,11 @@ final class ProfileHeader extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: AppSpacings.md),
-                Text(
-                  name,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineLarge!
-                      .copyWith(color: AppColors.white),
-                )
+                const SizedBox(height: AppSpacings.lg),
+                Text(name,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface))
               ],
             ),
           )),

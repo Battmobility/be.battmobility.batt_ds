@@ -1,4 +1,5 @@
 import 'package:batt_ds/atoms/app_colors.dart';
+import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class OutlinedCtaButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class OutlinedCtaButton extends StatelessWidget {
     required this.onPressed,
     this.isEnabled = true,
     this.width,
-    this.height = 56.0,
+    this.height = 48.0,
     this.borderWidth = 2.0,
   });
 
@@ -27,16 +28,7 @@ class OutlinedCtaButton extends StatelessWidget {
         width: width ?? double.infinity,
         height: height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [
-              Theme.of(context).colorScheme.primary, // b2BKeyColor
-              Theme.of(context).colorScheme.secondary, // skySurge
-            ],
-            transform:
-                const GradientRotation(0.05), // Slight angle for the gradient
-          ),
+          gradient: GradientTheme.standard().ctaButtonGradient,
           borderRadius: BorderRadius.circular(height / 2),
         ),
         child: Padding(

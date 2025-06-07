@@ -14,7 +14,7 @@ class InvertedSolidCtaButton extends StatelessWidget {
     required this.onPressed,
     this.isEnabled = true,
     this.width,
-    this.height = 56.0,
+    this.height = 48.0,
   });
 
   @override

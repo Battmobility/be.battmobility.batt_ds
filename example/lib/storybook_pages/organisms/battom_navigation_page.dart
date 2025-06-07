@@ -37,6 +37,23 @@ class BattomnavigationPage extends StatelessWidget {
                           ))
                     ],
                     onTap: (p0) => {},
+                  ),
+                  BattomNavigationBar(
+                    items: [
+                      BattomNavigationBarItem(
+                          icon: Icons.car_crash, label: "Auto's"),
+                      BattomNavigationBarItem(
+                          icon: Icons.calendar_month, label: "Boekingen"),
+                      BattomNavigationBarItem(
+                          icon: Icons.person_outline,
+                          label: "Profiel",
+                          badge: Badge(
+                            text: "1",
+                          )),
+                      BattomNavigationBarItem(
+                          icon: Icons.garage, label: "Mijn wagens"),
+                    ],
+                    onTap: (p0) => {},
                   )
                 ],
               ),
