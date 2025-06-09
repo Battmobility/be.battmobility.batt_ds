@@ -48,31 +48,19 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(25),
-            blurRadius: 10,
-            offset: const Offset(0, -2),
-          ),
-        ],
       ),
       height: 90,
       child: LayoutBuilder(builder: (context, constraints) {
-        // Calculate the maximum font size that will fit all labels
         final double availableWidth = constraints.maxWidth;
 
-        // Initial default font size
         const double defaultFontSize = 14.0;
-        // Minimum font size we'll allow
         const double minFontSize = 11.0;
-        // Default spacing between items
         const double defaultSpacing = AppSpacings.md;
         // Minimum spacing we'll allow
         const double minSpacing = AppSpacings.sm;
         // Number of items
         final int itemCount = widget.items.length;
 
-        // Determine the longest label to use for font size calculation
         String longestLabel = "";
         for (var item in widget.items) {
           if (item.label.length > longestLabel.length) {
@@ -80,7 +68,6 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           }
         }
 
-        // Start with default values
         double fontSize = defaultFontSize;
         double itemSpacing = defaultSpacing;
         final TextPainter textPainter = TextPainter(
@@ -88,14 +75,13 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           maxLines: 1,
         );
 
-        // First check if everything fits with default values
-        final double iconWidth = 28.0;
+        const double iconWidth = 28.0;
         final double initialItemWidth =
             (availableWidth - (defaultSpacing * (itemCount - 1))) / itemCount;
 
         textPainter.text = TextSpan(
           text: longestLabel,
-          style: TextStyle(fontSize: defaultFontSize),
+          style: const TextStyle(fontSize: defaultFontSize),
         );
         textPainter.layout(maxWidth: initialItemWidth - iconWidth);
 
@@ -106,13 +92,9 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           for (fontSize = defaultFontSize - 0.5;
               fontSize >= minFontSize;
               fontSize -= 0.5) {
-            // Calculate a proportional spacing based on how much we've reduced the font
             double fontReductionRatio = fontSize / defaultFontSize;
             itemSpacing = defaultSpacing * fontReductionRatio;
-            // Don't go below minimum spacing
             itemSpacing = itemSpacing < minSpacing ? minSpacing : itemSpacing;
-
-            // Calculate available width per item with current spacing
             final double availableWidthPerItem =
                 (availableWidth - (itemSpacing * (itemCount - 1))) / itemCount;
 

@@ -61,7 +61,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           AppColors.b2bKeyColor,
           AppColors.skySurge
         ],
-        transform: GradientRotation(0.05),
+        transform: GradientRotation(-1),
       ),
     );
   }

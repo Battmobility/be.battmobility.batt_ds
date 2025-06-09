@@ -27,9 +27,9 @@ final class BattListTile extends StatelessWidget {
         spacing: AppSpacings.sm,
         children: [
           leading,
-          GestureDetector(
-            onTap: () => onTap != null ? onTap!() : null,
-            child: Expanded(
+          Expanded(
+            child: GestureDetector(
+              onTap: () => onTap != null ? onTap!() : null,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
