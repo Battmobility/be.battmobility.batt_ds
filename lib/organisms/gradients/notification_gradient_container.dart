@@ -11,17 +11,17 @@ class NotificationGradientContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: const LinearGradient(colors: [
-            AppColors.skySurge,
-            AppColors.futureBlue,
-            AppColors.skySurge,
-            AppColors.softGrove,
-          ], stops: [
+          gradient: LinearGradient(colors: [
+            AppColors.skySurge.withAlpha(150),
+            AppColors.futureBlue.withAlpha(150),
+            AppColors.skySurge.withAlpha(150),
+            AppColors.softGrove.withAlpha(150),
+          ], stops: const [
             0,
             0.15,
-            0.85,
+            0.8,
             1.0
-          ], transform: GradientRotation(0.25)),
+          ], transform: const GradientRotation(1.3)),
           borderRadius: BorderRadius.all(cornerradius)),
       child: child,
     );

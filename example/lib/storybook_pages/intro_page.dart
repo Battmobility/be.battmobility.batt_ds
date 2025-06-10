@@ -174,7 +174,6 @@ class IntroPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 360,
-                            height: 120,
                             child: NotificationCard(
                               content: Row(
                                 children: [
