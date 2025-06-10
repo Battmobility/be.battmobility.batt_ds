@@ -4,6 +4,7 @@ import 'package:batt_ds_example/storybook_pages/atoms/typography_page.dart';
 import 'package:batt_ds_example/storybook_pages/intro_page.dart';
 import 'package:batt_ds_example/storybook_pages/molecules/cta_buttons_page.dart';
 import 'package:batt_ds_example/storybook_pages/molecules/shadows_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/app_bar_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/battom_navigation_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
@@ -247,6 +248,16 @@ Storybook get storybook {
       },
       name: 'Organisms/Vehicle cards');
 
+  final appBarsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const AppBarPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/App bars');
+
   final resultCardsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -323,7 +334,8 @@ Storybook get storybook {
       bookingCardsStory,
       planCardsStory,
       headersStory,
-      battomNavigationStory
+      battomNavigationStory,
+      appBarsStory
     ],
     initialStory: "Home",
     plugins: initializePlugins(

@@ -1,22 +1,33 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 final class PlanCard extends StatelessWidget {
   final String title;
   final String planName;
   final String cta;
+  final bool isActive;
+  final bool showIndicator;
 
   const PlanCard({
     super.key,
     required this.title,
     required this.planName,
     required this.cta,
+    required this.isActive,
+    this.showIndicator = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return HeroRadialGradientContainer(
-      cornerradius: CornerRadii.m,
+    return Container(
+      decoration: BoxDecoration(
+          gradient: isActive ? GradientTheme.standard().heroGradient : null,
+          color: isActive ? null : Theme.of(context).colorScheme.surface,
+          boxShadow: isActive ? [] : [bottomShadow],
+          borderRadius: const BorderRadius.all(
+            CornerRadii.m,
+          )),
       child: Padding(
         padding: AppPaddings.xlarge.all,
         child: Row(
@@ -32,23 +43,26 @@ final class PlanCard extends StatelessWidget {
                 spacing: AppSpacings.sm,
                 children: [
                   Text(title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium!
-                          .copyWith(color: AppColors.white)),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: isActive
+                              ? AppColors.white
+                              : AppColors.neutralColors[600])),
                   Text(planName,
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge!
-                          .copyWith(color: AppColors.white)),
+                          .copyWith(
+                              color: isActive
+                                  ? AppColors.white
+                                  : AppColors.neutralColors[950])),
                   Padding(
                     padding: AppPaddings.xsmall.top,
                     child: Text(
                       cta,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(color: AppColors.white),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: isActive
+                              ? AppColors.white
+                              : AppColors.neutralColors[600]),
                       maxLines: 3,
                       overflow: TextOverflow.fade,
                     ),
@@ -56,7 +70,12 @@ final class PlanCard extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: AppColors.white),
+            if (showIndicator) ...[
+              Icon(Icons.chevron_right,
+                  color: isActive
+                      ? AppColors.white
+                      : AppColors.neutralColors[600]),
+            ]
           ],
         ),
       ),

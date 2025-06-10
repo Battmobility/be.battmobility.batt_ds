@@ -5,6 +5,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   const GradientTheme({
     required this.cardBackgroundGradient,
     required this.heroGradient,
+    required this.defaultAppBarGradient,
+    required this.activeAppBarGradient,
     required this.inputBorderGradient,
     required this.errorBorderGradient,
     required this.flowGradient,
@@ -27,6 +29,16 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         center: Alignment(-0.6, 0),
         radius: 2.0,
       ),
+      activeAppBarGradient: LinearGradient(
+        colors: [AppColors.ecoHorizon, AppColors.b2bKeyColor],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomCenter,
+        transform: GradientRotation(0.6),
+      ),
+      defaultAppBarGradient: LinearGradient(
+          colors: [AppColors.urbanMist, AppColors.offWhite],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter),
       inputBorderGradient: LinearGradient(
         colors: [AppColors.futureBlue, AppColors.greenShift],
         stops: [0.6, 1.0],
@@ -75,6 +87,12 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   /// The gradient for hero headers.
   final Gradient heroGradient;
 
+  /// The gradient for active appbars.
+  final Gradient activeAppBarGradient;
+
+  /// The gradient for default appbars.
+  final Gradient defaultAppBarGradient;
+
 // The gradient for input borders
   final Gradient inputBorderGradient;
 
@@ -90,6 +108,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   ThemeExtension<GradientTheme> copyWith({
     Gradient? cardBackgroundGradient,
     Gradient? heroGradient,
+    Gradient? activeAppBarGradient,
+    Gradient? defaultAppBarGradient,
     Gradient? inputBorderGradient,
     Gradient? errorBorderGradient,
     Gradient? flowGradient,
@@ -99,6 +119,9 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       cardBackgroundGradient:
           cardBackgroundGradient ?? this.cardBackgroundGradient,
       heroGradient: heroGradient ?? this.heroGradient,
+      activeAppBarGradient: activeAppBarGradient ?? this.activeAppBarGradient,
+      defaultAppBarGradient:
+          defaultAppBarGradient ?? this.defaultAppBarGradient,
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
       errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
       flowGradient: flowGradient ?? this.flowGradient,
@@ -119,6 +142,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       cardBackgroundGradient: Gradient.lerp(
           cardBackgroundGradient, other.cardBackgroundGradient, t)!,
       heroGradient: Gradient.lerp(heroGradient, other.heroGradient, t)!,
+      activeAppBarGradient:
+          Gradient.lerp(activeAppBarGradient, other.activeAppBarGradient, t)!,
+      defaultAppBarGradient:
+          Gradient.lerp(defaultAppBarGradient, other.defaultAppBarGradient, t)!,
       inputBorderGradient:
           Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
       errorBorderGradient:

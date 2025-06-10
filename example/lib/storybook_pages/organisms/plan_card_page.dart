@@ -44,6 +44,7 @@ class PlanCardsPage extends StatelessWidget {
                                 title: "Jouw plan",
                                 planName: "BattFun",
                                 cta: "Bekijk details en beheer je plan",
+                                isActive: true,
                               ),
                             ),
                             SizedBox(
@@ -53,6 +54,17 @@ class PlanCardsPage extends StatelessWidget {
                                 planName: "BattFun",
                                 cta:
                                     "Bekijk details en beheer je plan maar wat als deze beschrijving nu eens veel langer was",
+                                isActive: true,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Jouw inactief plan",
+                                planName: "BattFun",
+                                cta:
+                                    "Bekijk details en beheer je plan maar wat als deze beschrijving nu eens veel langer was",
+                                isActive: false,
                               ),
                             ),
                           ]),
