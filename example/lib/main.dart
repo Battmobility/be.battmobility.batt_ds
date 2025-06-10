@@ -9,6 +9,7 @@ import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart
 import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/list_section_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/plan_card_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/result_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/gradients_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
@@ -246,6 +247,16 @@ Storybook get storybook {
       },
       name: 'Organisms/Vehicle cards');
 
+  final resultCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const ResultCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Result cards');
+
   final planCardsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -307,6 +318,7 @@ Storybook get storybook {
       listSectionsStory,
       snackBarStory,
       vehicleCardsStory,
+      resultCardsStory,
       locationCardsStory,
       bookingCardsStory,
       planCardsStory,

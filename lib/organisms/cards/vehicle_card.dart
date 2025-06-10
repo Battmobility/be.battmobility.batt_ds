@@ -16,45 +16,48 @@ final class VehicleCard extends StatelessWidget {
 
   final String? licensePlate;
   final bool showBorder;
-  final bool showIndicator;
+  final bool selected;
 
-  const VehicleCard(
-      {super.key,
-      required this.name,
-      this.chargePercentage,
-      this.range,
-      this.walkingDuration,
-      this.walkingDistance,
-      this.tag,
-      this.price,
-      this.price2,
-      this.imageUrl,
-      this.licensePlate,
-      this.showBorder = true,
-      this.showIndicator = false});
+  const VehicleCard({
+    super.key,
+    required this.name,
+    this.chargePercentage,
+    this.range,
+    this.walkingDuration,
+    this.walkingDistance,
+    this.tag,
+    this.price,
+    this.price2,
+    this.imageUrl,
+    this.licensePlate,
+    this.showBorder = true,
+    this.selected = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
       padding: showBorder
-          ? showIndicator
-              ? AppPaddings.medium.all.add(-AppPaddings.small.trailing)
-              : AppPaddings.medium.all
+          ? AppPaddings.medium.all.add(-AppPaddings.small.trailing)
           : AppPaddings.none.all,
-      decoration: showBorder
-          ? BoxDecoration(
-              color: Theme.of(context).canvasColor,
-              borderRadius: BorderRadius.circular(CornerRadii.m.x),
-              border: Border.all(color: AppColors.urbanMist, width: 1),
-            )
-          : null,
+      decoration: selected
+          ? GradientBorderDecoration.flow()
+          : showBorder
+              ? BoxDecoration(
+                  color: Theme.of(context).canvasColor,
+                  borderRadius: BorderRadius.circular(CornerRadii.m.x),
+                  border: Border.all(color: AppColors.urbanMist, width: 1),
+                )
+              : null,
       child: LayoutBuilder(builder: (context, constraints) {
         return IntrinsicHeight(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 width: constraints.maxWidth / 2.5,
+                height: (constraints.maxWidth / 3.5),
                 child: Stack(
                   alignment: Alignment.bottomLeft,
                   children: [
@@ -101,91 +104,78 @@ final class VehicleCard extends StatelessWidget {
               const SizedBox(width: AppSpacings.lg),
               Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: AppSpacings.md,
+                  spacing: AppSpacings.sm,
                   children: [
+                    if (tag != null)
+                      Container(
+                        padding: AppPaddings.xxsmall.all
+                            .add(AppPaddings.small.horizontal),
+                        decoration: BoxDecoration(
+                          color: AppColors.airFlow,
+                          borderRadius: BorderRadius.circular(CornerRadii.xs.x),
+                        ),
+                        child: Text(
+                          tag!,
+                          style: theme.textTheme.labelSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.b2bKeyColor,
+                          ),
+                        ),
+                      ),
+                    Flexible(
+                      child: Text(
+                        name,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Flexible(
-                          child: Text(
-                            name,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: AppSpacings.sm,
-                        ),
-                        if (tag != null)
-                          Container(
-                            padding: AppPaddings.small.all
-                                .add(AppPaddings.small.horizontal),
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primary,
-                              borderRadius:
-                                  BorderRadius.circular(CornerRadii.s.x),
-                            ),
-                            child: Text(
-                              tag!,
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.white,
-                              ),
-                            ),
-                          ),
+                        _rangeInfo(theme),
+                        _walkingInfo(theme),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Expanded(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              _rangeInfo(theme),
-                              _walkingInfo(theme),
-                            ],
+                        if (price != null)
+                          Text(
+                            price!,
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.neutralColors[950],
+                            ),
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            if (price != null)
-                              Text(
-                                price!,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            if (price2 != null)
-                              Text(
-                                price2!,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                          ],
-                        ),
+                        if (price2 != null)
+                          Padding(
+                            padding: price == null
+                                ? AppPaddings.none.leading
+                                : AppPaddings.small.leading,
+                            child: Text(
+                              price2!,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.neutralColors[400]),
+                            ),
+                          ),
                       ],
                     ),
                   ],
                 ),
               ),
-              if (showIndicator) ...[
-                Padding(
-                  padding: AppPaddings.small.leading,
-                  child: Icon(
-                    Icons.arrow_forward_ios,
-                    color: AppColors.neutralColors[500],
-                  ),
-                )
-              ]
+              Padding(
+                padding: AppPaddings.small.leading,
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  color: AppColors.neutralColors[500],
+                ),
+              )
             ],
           ),
         );
@@ -200,14 +190,14 @@ final class VehicleCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              rangeIcon.colored(AppColors.greenShift),
+              rangeIcon.colored(AppColors.b2cKeyColor),
               const SizedBox(width: AppSpacings.xs),
               Flexible(
                 child: Text(
                   range!,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppColors.greenShift,
+                    color: AppColors.b2cKeyColor,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -239,9 +229,7 @@ final class VehicleCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-          if (walkingDuration != null)
-            const SizedBox(
-                width: AppSpacings.xs), // No spacing if no element before
+          if (walkingDuration != null) const SizedBox(width: AppSpacings.xs),
           if (walkingDistance != null)
             Flexible(
               child: Text(

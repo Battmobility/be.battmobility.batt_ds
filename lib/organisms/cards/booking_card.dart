@@ -8,12 +8,14 @@ final class BookingCard extends StatelessWidget {
   final DateTime bookingPeriodEnd;
   final String? price;
   final String? imageUrl;
+  final String? tag;
 
   const BookingCard({
     super.key,
     required this.vehicleName,
     required this.bookingPeriodStart,
     required this.bookingPeriodEnd,
+    this.tag,
     this.price,
     this.imageUrl,
   });
@@ -89,6 +91,23 @@ final class BookingCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        if (tag != null)
+                          Container(
+                            padding: AppPaddings.xsmall.all
+                                .add(AppPaddings.small.horizontal),
+                            decoration: BoxDecoration(
+                              color: AppColors.airFlow,
+                              borderRadius:
+                                  BorderRadius.circular(CornerRadii.xs.x),
+                            ),
+                            child: Text(
+                              tag!,
+                              style: theme.textTheme.labelSmall?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.b2bKeyColor,
+                              ),
+                            ),
+                          ),
                         FittedBox(
                           child: Text(
                             vehicleName,

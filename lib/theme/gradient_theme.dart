@@ -7,7 +7,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.heroGradient,
     required this.inputBorderGradient,
     required this.errorBorderGradient,
-    required this.progressGradient,
+    required this.flowGradient,
     required this.ctaButtonGradient,
   });
 
@@ -45,7 +45,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.bottomRight,
         transform: GradientRotation(0.6),
       ),
-      progressGradient: LinearGradient(
+      flowGradient: LinearGradient(
         colors: [AppColors.futureBlue, AppColors.greenShift],
         stops: [0.6, 1.0],
         begin: Alignment.topLeft,
@@ -59,7 +59,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           AppColors.b2bKeyColor,
           AppColors.b2bKeyColor,
           AppColors.b2bKeyColor,
-          AppColors.skySurge
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.skySurge,
+          AppColors.softGrove
         ],
         transform: GradientRotation(-1),
       ),
@@ -75,7 +78,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
 // The gradient for input borders
   final Gradient inputBorderGradient;
 
-  final Gradient progressGradient;
+  final Gradient flowGradient;
 
   // The background gradient
   final Gradient errorBorderGradient;
@@ -89,7 +92,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? heroGradient,
     Gradient? inputBorderGradient,
     Gradient? errorBorderGradient,
-    Gradient? progressGradient,
+    Gradient? flowGradient,
     Gradient? ctaButtonGradient,
   }) {
     return GradientTheme(
@@ -98,7 +101,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       heroGradient: heroGradient ?? this.heroGradient,
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
       errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
-      progressGradient: progressGradient ?? this.progressGradient,
+      flowGradient: flowGradient ?? this.flowGradient,
       ctaButtonGradient: ctaButtonGradient ?? this.ctaButtonGradient,
     );
   }
@@ -120,8 +123,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
       errorBorderGradient:
           Gradient.lerp(errorBorderGradient, other.errorBorderGradient, t)!,
-      progressGradient:
-          Gradient.lerp(progressGradient, other.progressGradient, t)!,
+      flowGradient: Gradient.lerp(flowGradient, other.flowGradient, t)!,
       ctaButtonGradient:
           Gradient.lerp(ctaButtonGradient, other.ctaButtonGradient, t)!,
     );

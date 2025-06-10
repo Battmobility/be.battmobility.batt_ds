@@ -1,8 +1,8 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
 
-class VehicleCardsPage extends StatelessWidget {
-  const VehicleCardsPage({super.key});
+class ResultCardsPage extends StatelessWidget {
+  const ResultCardsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class VehicleCardsPage extends StatelessWidget {
                   Padding(
                     padding: AppPaddings.small.vertical,
                     child: Text(
-                      'Vehicle cards',
+                      'Result cards',
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                   ),
@@ -37,37 +37,36 @@ class VehicleCardsPage extends StatelessWidget {
                         spacing: AppSpacings.sm,
                         runSpacing: AppSpacings.md,
                         children: [
-                          VehicleCard(
+                          ResultCard(
                             name: "Polestar 2",
                             range: "500 km",
-                            chargePercentage: 75,
                             price: "€ 18",
+                            price2: "+ €0,14/km",
                             tag: "Eerste prijs",
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
-                          VehicleCard(
+                          ResultCard(
                             name: "Een auto met een lange naam",
-                            chargePercentage: 100,
                             price: "€ 1.000",
-                            price2: "€100 / uur",
+                            price2: "+ €0,14/km",
+                            range: "550km",
                             tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
-                          VehicleCard(
+                          ResultCard(
                             name: "Een auto met een lange naam",
-                            chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
+                            range: "550km",
                             tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
-                            licensePlate: "2-ABC-123",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -86,17 +85,18 @@ class VehicleCardsPage extends StatelessWidget {
                         spacing: AppSpacings.sm,
                         runSpacing: AppSpacings.md,
                         children: [
-                          VehicleCard(
+                          ResultCard(
                             name: "Polestar 2",
-                            chargePercentage: 75,
                             price: "€12",
+                            price2: "+ €0.16/km",
+                            range: "550km",
                             tag: "Eerste prijs",
                             walkingDistance: "2km.",
                             walkingDuration: "10 min",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
-                          VehicleCard(
+                          ResultCard(
                             name: "Een auto met een lange naam",
                             range: "50 km",
                             price: "€1.000 / dag",
@@ -106,65 +106,14 @@ class VehicleCardsPage extends StatelessWidget {
                             walkingDuration: "2h",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                            deviationInfo: "12 mei 14:00 - 13 mei 15:00",
                           ),
                         ]),
                   ),
                   Padding(
                     padding: AppPaddings.small.vertical,
                     child: Text(
-                      'With incomplete data',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                  ),
-                  Padding(
-                    padding: AppPaddings.small.vertical,
-                    child: Wrap(
-                      spacing: AppSpacings.sm,
-                      runSpacing: AppSpacings.md,
-                      children: [
-                        VehicleCard(
-                          name: "Polestar 2",
-                          price: "€12",
-                          tag: "Eerste prijs",
-                          walkingDistance: "2km.",
-                          walkingDuration: "10 min",
-                          imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                        ),
-                        VehicleCard(
-                          name: "Polestar 2",
-                          price: "€12",
-                          tag: "Eerste prijs",
-                          imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                        ),
-                        VehicleCard(
-                          name: "Een auto met een lange naam",
-                          chargePercentage: 100,
-                          price: "€1.000 / dag",
-                          price2: "€100 / uur",
-                          tag: "Een lange tag",
-                          walkingDistance: "200m.",
-                          imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                        ),
-                        VehicleCard(
-                          name: "Een auto met een lange naam",
-                          range: "500 km",
-                          price: "€1.000 / dag",
-                          price2: "€100 / uur",
-                          tag: "Een lange tag",
-                          walkingDuration: "10 min",
-                          imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: AppPaddings.small.vertical,
-                    child: Text(
-                      'Without borders',
+                      'Selected',
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
@@ -174,90 +123,42 @@ class VehicleCardsPage extends StatelessWidget {
                         spacing: AppSpacings.sm,
                         runSpacing: AppSpacings.md,
                         children: [
-                          VehicleCard(
+                          ResultCard(
                             name: "Polestar 2",
                             range: "500 km",
-                            chargePercentage: 75,
                             price: "€ 18",
+                            price2: "+ €0.16/km",
                             tag: "Eerste prijs",
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                            showBorder: false,
+                            selected: true,
                           ),
-                          VehicleCard(
+                          ResultCard(
                             name: "Een auto met een lange naam",
-                            chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
+                            range: "300 km",
                             tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                            showBorder: false,
+                            selected: true,
+                            deviationInfo: "12 mei 14:00 - 13 mei 15:00",
                           ),
-                          VehicleCard(
+                          ResultCard(
                             name: "Een auto met een lange naam",
-                            chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
-                            licensePlate: "2-ABC-123",
-                            imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                            showBorder: false,
-                          ),
-                        ]),
-                  ),
-                  Padding(
-                    padding: AppPaddings.small.vertical,
-                    child: Text(
-                      'With indicator',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                  ),
-                  Padding(
-                    padding: AppPaddings.small.vertical,
-                    child: Wrap(
-                        spacing: AppSpacings.sm,
-                        runSpacing: AppSpacings.md,
-                        children: [
-                          VehicleCard(
-                            name: "Polestar 2",
-                            range: "500 km",
-                            chargePercentage: 75,
-                            price: "€ 18",
-                            tag: "Eerste prijs",
-                            walkingDistance: "20",
-                            walkingDuration: "10 min",
-                            imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                          ),
-                          VehicleCard(
-                            name: "Een auto met een lange naam",
-                            chargePercentage: 100,
-                            price: "€ 1.000",
-                            price2: "€100 / uur",
+                            range: "300 km",
                             tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                          ),
-                          VehicleCard(
-                            name: "Een auto met een lange naam",
-                            chargePercentage: 100,
-                            price: "€ 1.000",
-                            price2: "€100 / uur",
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
-                            licensePlate: "2-ABC-123",
-                            imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                            selected: true,
                           ),
                         ]),
                   ),

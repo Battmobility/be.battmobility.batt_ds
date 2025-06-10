@@ -21,7 +21,7 @@ class GradientProgressBorder extends StatelessWidget {
       painter: _GradientProgressPainter(
         progress: progress,
         strokeWidth: strokeWidth,
-        gradient: GradientTheme.standard().progressGradient,
+        gradient: GradientTheme.standard().flowGradient,
       ),
     );
   }

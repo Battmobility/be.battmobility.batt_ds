@@ -25,9 +25,9 @@ class GradientBorderDecoration extends BoxDecoration {
         borderRadius: const BorderRadius.all(CornerRadii.s));
   }
 
-  factory GradientBorderDecoration.progress() {
+  factory GradientBorderDecoration.flow() {
     return GradientBorderDecoration(
-        gradient: GradientTheme.standard().progressGradient,
+        gradient: GradientTheme.standard().flowGradient,
         borderWidth: 2.0,
         borderRadius: const BorderRadius.all(CornerRadii.s));
   }

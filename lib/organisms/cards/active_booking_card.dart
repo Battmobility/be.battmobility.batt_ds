@@ -8,6 +8,7 @@ final class ActiveBookingCard extends StatelessWidget {
   final DateTime bookingPeriodEnd;
   final String? price;
   final String? imageUrl;
+  final String? tag;
 
   const ActiveBookingCard({
     super.key,
@@ -16,6 +17,7 @@ final class ActiveBookingCard extends StatelessWidget {
     required this.bookingPeriodEnd,
     this.price,
     this.imageUrl,
+    this.tag,
   });
 
   @override
@@ -86,6 +88,23 @@ final class ActiveBookingCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          if (tag != null)
+                            Container(
+                              padding: AppPaddings.xsmall.all
+                                  .add(AppPaddings.small.horizontal),
+                              decoration: BoxDecoration(
+                                color: AppColors.airFlow,
+                                borderRadius:
+                                    BorderRadius.circular(CornerRadii.xs.x),
+                              ),
+                              child: Text(
+                                tag!,
+                                style: theme.textTheme.labelSmall?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.b2bKeyColor,
+                                ),
+                              ),
+                            ),
                           FittedBox(
                             child: Text(
                               vehicleName,

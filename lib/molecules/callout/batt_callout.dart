@@ -31,7 +31,7 @@ final class BattCallout extends StatelessWidget {
         borderRadius: const BorderRadius.all(CornerRadii.m),
         border: (type == CalloutType.success || type == CalloutType.info)
             ? GradientBorder(
-                gradient: GradientTheme.standard().progressGradient, width: 2)
+                gradient: GradientTheme.standard().flowGradient, width: 2)
             : GradientBorder(
                 gradient: const LinearGradient(
                     colors: [AppColors.rusticClay, AppColors.ctaSand],
