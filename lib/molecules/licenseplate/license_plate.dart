@@ -98,11 +98,11 @@ class LicensePlate extends StatelessWidget {
   TextStyle textStyle(BuildContext context) {
     switch (size) {
       case LicensePlateSize.small:
-        return context.typographyTheme.licensePlate.copyWith(fontSize: 10);
+        return context.typographyTheme.licensePlate.copyWith(fontSize: 12);
       case LicensePlateSize.medium:
         return context.typographyTheme.licensePlate;
       case LicensePlateSize.large:
-        return context.typographyTheme.licensePlate.copyWith(fontSize: 18);
+        return context.typographyTheme.licensePlate.copyWith(fontSize: 20);
     }
   }
 
@@ -120,11 +120,11 @@ class LicensePlate extends StatelessWidget {
   double height() {
     switch (size) {
       case LicensePlateSize.small:
-        return 18;
+        return 20;
       case LicensePlateSize.medium:
-        return 25;
+        return 26;
       case LicensePlateSize.large:
-        return 35;
+        return 38;
     }
   }
 

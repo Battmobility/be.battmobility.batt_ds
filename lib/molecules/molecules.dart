@@ -13,3 +13,4 @@ export 'map_markers/map_marker.dart';
 export 'properties/property_widget.dart';
 export 'properties/price_widget.dart';
 export 'shadows/shadows.dart';
+export 'text/helper_text.dart';

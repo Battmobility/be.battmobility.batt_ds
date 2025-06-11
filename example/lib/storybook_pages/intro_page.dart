@@ -143,6 +143,7 @@ class IntroPage extends StatelessWidget {
                             onPressed: () => {},
                             buttonSize: BattButtonSize.large,
                           ),
+                          Helpertext(text: "Helper text"),
                           BattomNavigationBar(onTap: (_) {}, items: [
                             BattomNavigationBarItem(
                                 icon: Icons.abc, label: "Item 1"),

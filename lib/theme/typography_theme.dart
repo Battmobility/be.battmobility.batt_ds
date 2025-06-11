@@ -336,7 +336,7 @@ class AppTypography extends AppTypographyTheme {
         fontFamily: "Inter",
         package: "batt_ds"),
     super.licensePlate = const TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         height: 24 / 16,
         fontWeight: FontWeight.w700,
         color: AppColors.licensePlateBelgiumTextColor,
