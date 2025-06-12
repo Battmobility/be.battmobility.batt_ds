@@ -193,11 +193,14 @@ class IntroPage extends StatelessWidget {
                               ),
                               actions: [
                                 InvertedSolidCtaButton(
+                                  height: 44,
                                   label: "Action",
                                   onPressed: () {},
                                 ),
                                 InvertedMonochromeSimpleTextButton(
-                                    label: "Cancel", onPressed: () {})
+                                    underline: true,
+                                    label: "Cancel",
+                                    onPressed: () {})
                               ],
                             ),
                           ),

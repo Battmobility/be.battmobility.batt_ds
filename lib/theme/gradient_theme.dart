@@ -11,6 +11,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.errorBorderGradient,
     required this.flowGradient,
     required this.ctaButtonGradient,
+    required this.backgroundGradient,
+    required this.mutedBackgroundGradient,
   });
 
   factory GradientTheme.standard() {
@@ -78,6 +80,27 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         ],
         transform: GradientRotation(-1),
       ),
+      backgroundGradient: LinearGradient(
+        colors: [
+          AppColors.greenShift,
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.greenShift
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
+      mutedBackgroundGradient: LinearGradient(
+        colors: [
+          AppColors.urbanMist,
+          AppColors.white,
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
     );
   }
 
@@ -104,6 +127,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
   /// The gradient for CTA buttons
   final Gradient ctaButtonGradient;
 
+  final Gradient backgroundGradient;
+
+  final Gradient mutedBackgroundGradient;
+
   @override
   ThemeExtension<GradientTheme> copyWith({
     Gradient? cardBackgroundGradient,
@@ -114,6 +141,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? errorBorderGradient,
     Gradient? flowGradient,
     Gradient? ctaButtonGradient,
+    Gradient? backgroundGradient,
+    Gradient? mutedBackgroundGradient,
   }) {
     return GradientTheme(
       cardBackgroundGradient:
@@ -126,6 +155,9 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
       flowGradient: flowGradient ?? this.flowGradient,
       ctaButtonGradient: ctaButtonGradient ?? this.ctaButtonGradient,
+      backgroundGradient: backgroundGradient ?? this.backgroundGradient,
+      mutedBackgroundGradient:
+          mutedBackgroundGradient ?? this.mutedBackgroundGradient,
     );
   }
 
@@ -153,6 +185,10 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       flowGradient: Gradient.lerp(flowGradient, other.flowGradient, t)!,
       ctaButtonGradient:
           Gradient.lerp(ctaButtonGradient, other.ctaButtonGradient, t)!,
+      backgroundGradient:
+          Gradient.lerp(backgroundGradient, other.backgroundGradient, t)!,
+      mutedBackgroundGradient: Gradient.lerp(
+          mutedBackgroundGradient, other.mutedBackgroundGradient, t)!,
     );
   }
 }

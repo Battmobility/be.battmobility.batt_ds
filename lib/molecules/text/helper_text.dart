@@ -12,7 +12,7 @@ final class Helpertext extends StatelessWidget {
       padding: AppPaddings.xxsmall.all.add(AppPaddings.xsmall.horizontal),
       decoration: const BoxDecoration(
           color: AppColors.airFlow,
-          borderRadius: BorderRadius.all(CornerRadii.xxs)),
+          borderRadius: BorderRadius.all(CornerRadii.xs)),
       child: Text(text,
           style: Theme.of(context)
               .textTheme

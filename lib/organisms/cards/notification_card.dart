@@ -17,21 +17,23 @@ final class NotificationCard extends StatelessWidget {
       cornerradius: CornerRadii.m,
       child: Padding(
         padding: AppPaddings.medium.all.add(AppPaddings.small.horizontal),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            content,
-            const SizedBox(height: AppSpacings.md),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: actions,
+        child: IntrinsicHeight(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              content,
+              const SizedBox(height: AppSpacings.md),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: actions,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -46,7 +46,7 @@ class VehicleCardsPage extends StatelessWidget {
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                           VehicleCard(
                             name: "Een auto met een lange naam",
@@ -57,19 +57,18 @@ class VehicleCardsPage extends StatelessWidget {
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                           VehicleCard(
                             name: "Een auto met een lange naam",
                             chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             licensePlate: "2-ABC-123",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                         ]),
                   ),
@@ -90,7 +89,6 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Polestar 2",
                             chargePercentage: 75,
                             price: "€12",
-                            tag: "Eerste prijs",
                             walkingDistance: "2km.",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -101,11 +99,10 @@ class VehicleCardsPage extends StatelessWidget {
                             range: "50 km",
                             price: "€1.000 / dag",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                         ]),
                   ),
@@ -125,7 +122,6 @@ class VehicleCardsPage extends StatelessWidget {
                         VehicleCard(
                           name: "Polestar 2",
                           price: "€12",
-                          tag: "Eerste prijs",
                           walkingDistance: "2km.",
                           walkingDuration: "10 min",
                           imageUrl:
@@ -136,17 +132,16 @@ class VehicleCardsPage extends StatelessWidget {
                           price: "€12",
                           tag: "Eerste prijs",
                           imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                              "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         VehicleCard(
                           name: "Een auto met een lange naam",
                           chargePercentage: 100,
                           price: "€1.000 / dag",
                           price2: "€100 / uur",
-                          tag: "Een lange tag",
                           walkingDistance: "200m.",
                           imageUrl:
-                              "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                              "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         VehicleCard(
                           name: "Een auto met een lange naam",
@@ -183,7 +178,7 @@ class VehicleCardsPage extends StatelessWidget {
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                             showBorder: false,
                           ),
                           VehicleCard(
@@ -191,11 +186,10 @@ class VehicleCardsPage extends StatelessWidget {
                             chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                             showBorder: false,
                           ),
                           VehicleCard(
@@ -203,7 +197,6 @@ class VehicleCardsPage extends StatelessWidget {
                             chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             licensePlate: "2-ABC-123",
@@ -235,18 +228,17 @@ class VehicleCardsPage extends StatelessWidget {
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                           VehicleCard(
                             name: "Een auto met een lange naam",
                             chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
-                                "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                           VehicleCard(
                             name: "Een auto met een lange naam",

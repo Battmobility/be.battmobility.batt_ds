@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class BordersPage extends StatelessWidget {
@@ -112,6 +113,37 @@ class BordersPage extends StatelessWidget {
                   height: 46,
                   child:
                       Container(decoration: GradientBorderDecoration.error()),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Background',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                SizedBox(
+                  width: 300,
+                  height: 400,
+                  child: Container(
+                      decoration: BoxDecoration(
+                          gradient: GradientTheme.standard().backgroundGradient,
+                          borderRadius: BorderRadius.all(CornerRadii.m))),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Background muted',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                SizedBox(
+                  width: 300,
+                  height: 400,
+                  child: Container(
+                      decoration: BoxDecoration(
+                          gradient:
+                              GradientTheme.standard().mutedBackgroundGradient,
+                          borderRadius: BorderRadius.all(CornerRadii.m))),
                 )
               ],
             ),

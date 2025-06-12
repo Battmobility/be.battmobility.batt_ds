@@ -56,49 +56,59 @@ final class VehicleCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: constraints.maxWidth / 2.5,
-                height: (constraints.maxWidth / 3.5),
-                child: Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.surfaceDim,
-                        borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                      ),
-                      child: (imageUrl ?? "").isNotEmpty
-                          ? ClipRRect(
-                              borderRadius:
-                                  BorderRadius.circular(CornerRadii.s.x),
-                              child: Image(
-                                image: NetworkImage(imageUrl!),
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return const Center(child: carIcon);
-                                },
-                                loadingBuilder:
-                                    (context, child, loadingProgress) {
-                                  if (loadingProgress == null) return child;
-                                  return const Center(
-                                    child: FlowProgressIndicator(
-                                        size: IndicatorSize.small),
-                                  );
-                                },
-                              ),
-                            )
-                          : const Center(child: carIcon),
-                    ),
-                    if (licensePlate != null) ...[
-                      Padding(
-                        padding: AppPaddings.xsmall.bottom
-                            .add(AppPaddings.xsmall.leading),
-                        child: LicensePlate(
-                          licensePlate!,
-                          size: LicensePlateSize.small,
+                width: constraints.maxWidth / 4,
+                child: AspectRatio(
+                  aspectRatio: 1.5, // Make the container square
+                  child: Stack(
+                    alignment: Alignment.bottomLeft,
+                    fit: StackFit.expand,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.surfaceDim,
+                          borderRadius: BorderRadius.circular(CornerRadii.s.x),
                         ),
-                      )
-                    ]
-                  ],
+                        child: (imageUrl ?? "").isNotEmpty
+                            ? ClipRRect(
+                                borderRadius:
+                                    BorderRadius.circular(CornerRadii.s.x),
+                                child: Center(
+                                  child: Image(
+                                    image: NetworkImage(imageUrl!),
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return const Center(child: carIcon);
+                                    },
+                                    loadingBuilder:
+                                        (context, child, loadingProgress) {
+                                      if (loadingProgress == null) return child;
+                                      return const Center(
+                                        child: FlowProgressIndicator(
+                                            size: IndicatorSize.small),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              )
+                            : const Center(child: carIcon),
+                      ),
+                      if (licensePlate != null) ...[
+                        Positioned(
+                          bottom: AppSpacings.xs,
+                          left: AppSpacings.xs,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(
+                                maxHeight: constraints.maxWidth /
+                                    16), // 1/4 of the height
+                            child: LicensePlate(
+                              licensePlate!,
+                              size: LicensePlateSize.small,
+                            ),
+                          ),
+                        )
+                      ]
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(width: AppSpacings.lg),
@@ -204,9 +214,10 @@ final class VehicleCard extends StatelessWidget {
               ),
             ],
           ),
-        if (chargePercentage != null && range == null) // never show both
+        if (chargePercentage != null && range == null) ...[
           BatteryIcon(chargePercentage: chargePercentage!),
-        const SizedBox(width: AppSpacings.xs),
+          const SizedBox(width: AppSpacings.xs),
+        ]
       ],
     );
   }
