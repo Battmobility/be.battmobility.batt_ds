@@ -1,3 +1,4 @@
+import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,6 +61,7 @@ AppBar buildDefaultAppBar(BuildContext context,
 
 AppBar buildTransparentAppBar(BuildContext context,
         {required String title,
+        Color contentColor = AppColors.white,
         bool showBackButton = true,
         Widget? trailing}) =>
     AppBar(
@@ -67,36 +69,16 @@ AppBar buildTransparentAppBar(BuildContext context,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
       leading: showBackButton
-          ? Theme(
-              data: ThemeData(
-                  iconButtonTheme: IconButtonThemeData(
-                      style: ButtonStyle(
-                          iconSize: const WidgetStatePropertyAll(20),
-                          fixedSize: const WidgetStatePropertyAll(Size(44, 44)),
-                          visualDensity: VisualDensity.compact,
-                          elevation: const WidgetStatePropertyAll(2),
-                          backgroundColor: WidgetStatePropertyAll(
-                              Theme.of(context).colorScheme.surface)))),
-              child: IconButton.filled(
-                color: Theme.of(context).colorScheme.onSurface,
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.arrow_back),
-                style: ButtonStyle(
-                    iconSize: const WidgetStatePropertyAll(20),
-                    fixedSize: const WidgetStatePropertyAll(Size(44, 44)),
-                    visualDensity: VisualDensity.compact,
-                    backgroundColor: WidgetStatePropertyAll(
-                        Theme.of(context).colorScheme.surface),
-                    iconColor: WidgetStatePropertyAll(
-                        Theme.of(context).colorScheme.onSurface)),
-              ),
+          ? IconButton(
+              icon: Icon(Icons.arrow_back, color: contentColor),
+              onPressed: () => Navigator.of(context).pop(),
             )
           : null,
       title: Text(title,
           style: Theme.of(context)
               .textTheme
               .titleMedium!
-              .copyWith(color: Theme.of(context).colorScheme.onSurface)),
+              .copyWith(color: contentColor)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
     );
