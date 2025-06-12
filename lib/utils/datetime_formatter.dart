@@ -29,14 +29,14 @@ final class DatesFormatter {
               style: theme.bodyMedium!
                   .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
-              text: DateFormat('hh:yy').format(start),
+              text: DateFormat('HH:mm').format(start),
               style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
               text: " - ",
               style: theme.bodyMedium!
                   .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
-              text: DateFormat('hh:yy').format(end),
+              text: DateFormat('HH:mm').format(end),
               style: theme.bodyMedium!.copyWith(color: color))
         ]),
       );
@@ -48,7 +48,7 @@ final class DatesFormatter {
             style: theme.bodyMedium!
                 .copyWith(fontWeight: FontWeight.bold, color: color)),
         TextSpan(
-            text: DateFormat('hh:yy').format(start),
+            text: DateFormat('HH:mm').format(start),
             style: theme.bodyMedium!.copyWith(color: color)),
         TextSpan(
             text: " - ",
@@ -59,7 +59,7 @@ final class DatesFormatter {
             style: theme.bodyMedium!
                 .copyWith(fontWeight: FontWeight.bold, color: color)),
         TextSpan(
-            text: DateFormat('hh:yy').format(end),
+            text: DateFormat('HH:mm').format(end),
             style: theme.bodyMedium!.copyWith(color: color))
       ]),
     );
