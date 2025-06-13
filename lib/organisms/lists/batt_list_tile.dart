@@ -7,7 +7,7 @@ final class BattListTile extends StatelessWidget {
   final BattIcon leading;
   final Widget? trailing;
   final Function? onTap;
-  final EdgeInsets? padding;
+  final EdgeInsetsGeometry? padding;
 
   const BattListTile({
     super.key,
