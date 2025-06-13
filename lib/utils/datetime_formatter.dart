@@ -15,7 +15,7 @@ final class DatesFormatter {
               style: theme.bodyMedium!
                   .copyWith(fontWeight: FontWeight.bold, color: color)),
           TextSpan(
-              text: DateFormat('d MMM yyy').format(end),
+              text: DateFormat('d MMM yyyy').format(end),
               style: theme.bodyMedium!.copyWith(color: color))
         ]),
       );

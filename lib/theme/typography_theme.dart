@@ -343,14 +343,14 @@ class AppTypography extends AppTypographyTheme {
         fontFamily: "LicensePlate",
         package: "batt_ds"),
     super.button2XLarge = const TextStyle(
-        fontSize: 20,
+        fontSize: 16,
         height: 24 / 10,
         fontWeight: FontWeight.w700,
         color: AppColors.primaryButtonTextColor,
         fontFamily: "Inter",
         package: "batt_ds"),
     super.buttonXLarge = const TextStyle(
-        fontSize: 18,
+        fontSize: 16,
         height: 24 / 12,
         fontWeight: FontWeight.w600,
         color: AppColors.primaryButtonTextColor,

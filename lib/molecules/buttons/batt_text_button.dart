@@ -112,12 +112,12 @@ abstract class BattTextButton extends StatelessWidget {
 
     double calculateButtonHeight(BattButtonSize buttonSize) {
       return switch (buttonSize) {
-        BattButtonSize.xSmall => 32,
-        BattButtonSize.small => 36,
-        BattButtonSize.medium => 40,
-        BattButtonSize.large => 44,
-        BattButtonSize.xLarge => 52,
-        BattButtonSize.xxLarge => 56,
+        BattButtonSize.xSmall => 30,
+        BattButtonSize.small => 34,
+        BattButtonSize.medium => 42,
+        BattButtonSize.large => 48,
+        BattButtonSize.xLarge => 58,
+        BattButtonSize.xxLarge => 66,
       };
     }
 

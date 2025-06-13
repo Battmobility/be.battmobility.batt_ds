@@ -13,6 +13,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.ctaButtonGradient,
     required this.backgroundGradient,
     required this.mutedBackgroundGradient,
+    required this.activeCardBackgroundGradient,
   });
 
   factory GradientTheme.standard() {
@@ -93,6 +94,16 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
+      activeCardBackgroundGradient: LinearGradient(
+        colors: [
+          AppColors.b2bKeyColor,
+          AppColors.b2bKeyColor,
+          AppColors.greenShift
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        transform: GradientRotation(0.9),
+      ),
       mutedBackgroundGradient: LinearGradient(
         colors: [
           AppColors.urbanMist,
@@ -106,6 +117,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
 
   /// The gradient for cards and cells.
   final Gradient cardBackgroundGradient;
+  final Gradient activeCardBackgroundGradient;
 
   /// The gradient for hero headers.
   final Gradient heroGradient;
@@ -143,10 +155,13 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? ctaButtonGradient,
     Gradient? backgroundGradient,
     Gradient? mutedBackgroundGradient,
+    Gradient? activeCardBackgroundGradient,
   }) {
     return GradientTheme(
       cardBackgroundGradient:
           cardBackgroundGradient ?? this.cardBackgroundGradient,
+      activeCardBackgroundGradient:
+          cardBackgroundGradient ?? this.activeCardBackgroundGradient,
       heroGradient: heroGradient ?? this.heroGradient,
       activeAppBarGradient: activeAppBarGradient ?? this.activeAppBarGradient,
       defaultAppBarGradient:
@@ -173,6 +188,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     return GradientTheme(
       cardBackgroundGradient: Gradient.lerp(
           cardBackgroundGradient, other.cardBackgroundGradient, t)!,
+      activeCardBackgroundGradient: Gradient.lerp(
+          activeCardBackgroundGradient, other.activeCardBackgroundGradient, t)!,
       heroGradient: Gradient.lerp(heroGradient, other.heroGradient, t)!,
       activeAppBarGradient:
           Gradient.lerp(activeAppBarGradient, other.activeAppBarGradient, t)!,

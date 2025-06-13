@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:batt_ds/utils/datetime_formatter.dart';
 import 'package:flutter/material.dart';
 
@@ -25,8 +26,10 @@ final class ActiveBookingCard extends StatelessWidget {
     final theme = Theme.of(context);
     return AspectRatio(
       aspectRatio: 5 / 1,
-      child: HeroRadialGradientContainer(
-        cornerradius: CornerRadii.m,
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: GradientTheme.standard().activeCardBackgroundGradient,
+            borderRadius: const BorderRadius.all(CornerRadii.m)),
         child: Padding(
           padding: AppPaddings.medium.all,
           child: Row(

@@ -134,15 +134,15 @@ abstract class BattChip extends StatelessWidget {
       case BattChipSize.small:
         return leading != null
             ? const EdgeInsets.only(
-                left: AppSpacings.sm,
-                right: AppSpacings.xs,
-                top: AppSpacings.xs,
-                bottom: AppSpacings.xs)
-            : const EdgeInsets.only(
                 left: AppSpacings.xs,
-                right: AppSpacings.xs,
-                top: AppSpacings.xs,
-                bottom: AppSpacings.xs);
+                right: AppSpacings.xxs,
+                top: AppSpacings.xxs,
+                bottom: AppSpacings.xxs)
+            : const EdgeInsets.only(
+                left: AppSpacings.xxs,
+                right: AppSpacings.xxs,
+                top: AppSpacings.xxs,
+                bottom: AppSpacings.xxs);
       case BattChipSize.medium:
         return leading != null
             ? const EdgeInsets.only(

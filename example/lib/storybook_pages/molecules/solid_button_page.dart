@@ -231,6 +231,212 @@ class SolidButtonsPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
+                    'Grey Solid',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            GraySolidTextButton(
+                              label: "XXLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                            ),
+                            GraySolidTextButton(
+                              label: "XLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                            ),
+                            GraySolidTextButton(
+                              label: "Large button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                            ),
+                            GraySolidTextButton(
+                              label: "Regular button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                            ),
+                            GraySolidTextButton(
+                              label: "Small button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                            ),
+                            GraySolidTextButton(
+                              label: "XSmall button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            GraySolidTextButton(
+                              label: "XXLarge with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XLarge with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Large with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Regular with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Small with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XSmall with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            GraySolidTextButton(
+                              label: "XXLarge with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XLarge with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Large with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Regular with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Small with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.small,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XSmall with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xSmall,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            GraySolidTextButton(
+                              label: "XXLarge with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XLarge with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Large with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Regular with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "Regular with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            GraySolidTextButton(
+                              label: "XSmall with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                          ]),
+                    ]
+                        .map((e) => Padding(
+                              padding: AppPaddings.small.vertical,
+                              child: e,
+                            ))
+                        .toList()),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
                     'Solid orange',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),

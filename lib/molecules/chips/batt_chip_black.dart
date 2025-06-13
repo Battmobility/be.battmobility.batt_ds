@@ -23,7 +23,7 @@ final class BattChipBlack extends BattChip {
       case BattChipState.disabled:
         return AppColors.urbanMist;
       case BattChipState.active:
-        return AppColors.urbanMist;
+        return AppColors.white;
       case BattChipState.enabled:
         return AppColors.graphiteDrive;
     }
@@ -36,7 +36,7 @@ final class BattChipBlack extends BattChip {
       case BattChipState.disabled:
         return context.chipTheme.enabledBackgroundColor;
       case BattChipState.active:
-        return AppColors.graphiteDrive;
+        return AppColors.neutralColors[950]!;
       case BattChipState.enabled:
         return context.chipTheme.disabledBackgroundColor;
     }

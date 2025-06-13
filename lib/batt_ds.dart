@@ -52,7 +52,7 @@ ThemeData lightTheme(BuildContext context) {
     listTileTheme: ListTileThemeData(
       titleTextStyle: Theme.of(context)
           .textTheme
-          .bodyMedium!
+          .bodyLarge!
           .copyWith(color: AppColors.neutralColors[900]!),
       subtitleTextStyle: Theme.of(context)
           .textTheme

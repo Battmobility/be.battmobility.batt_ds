@@ -46,7 +46,7 @@ final class BookingCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(CornerRadii.s.x),
                         child: Image(
                           image: NetworkImage(imageUrl!),
-                          fit: BoxFit.fitWidth,
+                          fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             // Show a placeholder when image fails to load
                             return const Center(
