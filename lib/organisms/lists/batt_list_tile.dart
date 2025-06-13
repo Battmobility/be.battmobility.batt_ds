@@ -7,6 +7,7 @@ final class BattListTile extends StatelessWidget {
   final BattIcon leading;
   final Widget? trailing;
   final Function? onTap;
+  final EdgeInsets? padding;
 
   const BattListTile({
     super.key,
@@ -15,15 +16,16 @@ final class BattListTile extends StatelessWidget {
     required this.leading,
     this.trailing,
     this.onTap,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.medium.all,
+      padding: padding ?? AppPaddings.small.all,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         spacing: AppSpacings.sm,
         children: [
           leading,

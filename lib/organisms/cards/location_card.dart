@@ -54,9 +54,7 @@ final class LocationCard extends StatelessWidget {
                         children: [
                           Text(
                             description,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: theme.textTheme.titleMedium?.copyWith(),
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
