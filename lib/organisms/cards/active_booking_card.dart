@@ -7,154 +7,109 @@ final class ActiveBookingCard extends StatelessWidget {
   final String vehicleName;
   final DateTime bookingPeriodStart;
   final DateTime bookingPeriodEnd;
-  final String? price;
   final String? imageUrl;
-  final String? tag;
+  final String tag;
 
   const ActiveBookingCard({
     super.key,
     required this.vehicleName,
     required this.bookingPeriodStart,
     required this.bookingPeriodEnd,
-    this.price,
+    required this.tag,
     this.imageUrl,
-    this.tag,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return AspectRatio(
-      aspectRatio: 5 / 1,
-      child: Container(
-        decoration: BoxDecoration(
-            gradient: GradientTheme.standard().activeCardBackgroundGradient,
-            borderRadius: const BorderRadius.all(CornerRadii.m)),
-        child: Padding(
-          padding: AppPaddings.medium.all,
-          child: Row(
-            children: [
-              AspectRatio(
-                aspectRatio: 1,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.urbanMist,
-                    borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                  ),
-                  child: (imageUrl ?? "").isNotEmpty
-                      ? ClipRRect(
-                          borderRadius: BorderRadius.circular(CornerRadii.s.x),
-                          child: Image(
-                            image: NetworkImage(imageUrl!),
+
+    return Container(
+      padding: AppPaddings.medium.all,
+      decoration: BoxDecoration(
+        gradient: GradientTheme.standard().activeCardBackgroundGradient,
+        borderRadius: const BorderRadius.all(CornerRadii.m),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Flexible(
+            flex: 1,
+            child: Container(
+              padding: AppPaddings.small.all,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceDim,
+                borderRadius: BorderRadius.circular(CornerRadii.s.x),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(CornerRadii.s.x),
+                child: AspectRatio(
+                  aspectRatio: 120 / 90,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: (imageUrl ?? "").isNotEmpty
+                        ? Image.network(
+                            imageUrl!,
                             fit: BoxFit.fitWidth,
-                            errorBuilder: (context, error, stackTrace) {
-                              // Show a placeholder when image fails to load
-                              return const Center(
-                                child: Icon(
-                                  Icons.book_online_rounded,
-                                  size: 32,
-                                  color: AppColors.urbanMist,
-                                ),
-                              );
-                            },
-                            loadingBuilder: (context, child, loadingProgress) {
-                              if (loadingProgress == null) return child;
-                              return Center(
-                                child: CircularProgressIndicator(
-                                  value: loadingProgress.expectedTotalBytes !=
-                                          null
-                                      ? loadingProgress.cumulativeBytesLoaded /
-                                          loadingProgress.expectedTotalBytes!
-                                      : null,
-                                ),
-                              );
-                            },
-                          ),
-                        )
-                      : const Center(
-                          child: Icon(
+                          )
+                        : const Icon(
                             Icons.book_online_rounded,
                             size: 32,
-                            color: AppColors.urbanMist,
+                            color: AppColors.graphiteDrive,
                           ),
-                        ),
+                  ),
                 ),
               ),
-              const SizedBox(width: AppSpacings.sm),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ),
+          ),
+          const SizedBox(width: AppSpacings.md),
+          Flexible(
+            flex: 2,
+            fit: FlexFit.loose,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (tag != null)
-                            Container(
-                              padding: AppPaddings.xsmall.all
-                                  .add(AppPaddings.small.horizontal),
-                              decoration: BoxDecoration(
-                                color: AppColors.airFlow,
-                                borderRadius:
-                                    BorderRadius.circular(CornerRadii.xs.x),
-                              ),
-                              child: Text(
-                                tag!,
-                                style: theme.textTheme.labelSmall?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.b2bKeyColor,
-                                ),
-                              ),
-                            ),
-                          FittedBox(
-                            child: Text(
-                              vehicleName,
-                              style: theme.textTheme.titleMedium?.copyWith(
-                                color: AppColors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacings.sm),
-                          Flexible(
-                            child: FittedBox(
-                                child: DatesFormatter.formatDates(
-                                    bookingPeriodStart,
-                                    bookingPeriodEnd,
-                                    theme.textTheme,
-                                    AppColors.white)),
-                          )
-                        ],
+                    Container(
+                      padding: AppPaddings.xsmall.all
+                          .add(AppPaddings.small.horizontal),
+                      decoration: BoxDecoration(
+                        color: AppColors.airFlow,
+                        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
+                      ),
+                      child: Text(
+                        tag,
+                        style: theme.textTheme.labelSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.b2bKeyColor,
+                        ),
                       ),
                     ),
-                    const SizedBox(width: AppSpacings.md),
-                    Center(
-                        child: Padding(
-                      padding: AppPaddings.small.horizontal,
-                      child: (price == null)
-                          ? const Icon(
-                              Icons.chevron_right_sharp,
-                              size: 24,
-                              weight: 0.5,
-                              color: AppColors.urbanMist,
-                            )
-                          : Text(
-                              price!,
-                              style: theme.textTheme.titleMedium?.copyWith(
-                                color: AppColors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                    )),
+                    const SizedBox(height: AppSpacings.sm),
+                    Text(
+                      vehicleName,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: AppColors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ],
                 ),
-              ),
-            ],
+                const SizedBox(width: AppSpacings.md),
+                DatesFormatter.formatDates(
+                  bookingPeriodStart,
+                  bookingPeriodEnd,
+                  theme.textTheme,
+                  AppColors.white,
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

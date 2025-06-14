@@ -75,7 +75,7 @@ final class VehicleCard extends StatelessWidget {
                                 child: Center(
                                   child: Image(
                                     image: NetworkImage(imageUrl!),
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.fitWidth,
                                     errorBuilder: (context, error, stackTrace) {
                                       return const Center(child: carIcon);
                                     },

@@ -37,6 +37,7 @@ class BookingCardsPage extends StatelessWidget {
                       runSpacing: AppSpacings.md,
                       children: [
                         ActiveBookingCard(
+                          tag: "Start je rit",
                           vehicleName: "Polestar 4",
                           bookingPeriodStart:
                               DateTime.now().subtract(Duration(days: 2)),
@@ -46,6 +47,7 @@ class BookingCardsPage extends StatelessWidget {
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         ActiveBookingCard(
+                          tag: "Start je rit",
                           vehicleName: "Polestar 4",
                           bookingPeriodStart:
                               DateTime.now().add(Duration(hours: 1)),
@@ -55,6 +57,7 @@ class BookingCardsPage extends StatelessWidget {
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         ActiveBookingCard(
+                          tag: "Nu actief",
                           vehicleName: "Polestar 4 in past and with long name",
                           bookingPeriodStart:
                               DateTime.now().add(Duration(days: 100)),

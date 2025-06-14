@@ -35,7 +35,7 @@ final class ProfileHeader extends StatelessWidget {
                         color: AppColors.offWhite,
                         child: Image(
                           image: NetworkImage(imageUrl),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fitWidth,
                           errorBuilder: (context, error, stackTrace) {
                             return const Center(
                               child: Icon(

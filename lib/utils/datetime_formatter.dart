@@ -5,17 +5,32 @@ final class DatesFormatter {
   static RichText formatDates(
       DateTime start, DateTime end, TextTheme theme, Color color) {
     if (start.isBefore(DateTime.now()) && end.isBefore(DateTime.now())) {
+      if (start.isSameDayAs(end)) {
+        return RichText(
+          text: TextSpan(children: [
+            TextSpan(
+                text: DateFormat('d/MM ').format(start),
+                style: theme.bodyMedium!.copyWith(color: color)),
+            TextSpan(
+                text: DateFormat('HH:mm').format(start),
+                style: theme.bodyMedium!.copyWith(color: color)),
+            TextSpan(
+                text: " → ", style: theme.bodyMedium!.copyWith(color: color)),
+            TextSpan(
+                text: DateFormat('HH:mm').format(end),
+                style: theme.bodyMedium!.copyWith(color: color))
+          ]),
+        );
+      }
       return RichText(
         text: TextSpan(children: [
           TextSpan(
-              text: DateFormat('d MMM yyyy ').format(start),
+              text: DateFormat('d/MM HH:mm').format(start),
               style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
-              text: " - ",
-              style: theme.bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold, color: color)),
+              text: " → ", style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
-              text: DateFormat('d MMM yyyy').format(end),
+              text: DateFormat('d/MM HH:mm').format(end),
               style: theme.bodyMedium!.copyWith(color: color))
         ]),
       );
@@ -25,16 +40,13 @@ final class DatesFormatter {
       return RichText(
         text: TextSpan(children: [
           TextSpan(
-              text: DateFormat('d MMM ').format(start),
-              style: theme.bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold, color: color)),
+              text: DateFormat('d/MM ').format(start),
+              style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
               text: DateFormat('HH:mm').format(start),
               style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
-              text: " - ",
-              style: theme.bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold, color: color)),
+              text: " → ", style: theme.bodyMedium!.copyWith(color: color)),
           TextSpan(
               text: DateFormat('HH:mm').format(end),
               style: theme.bodyMedium!.copyWith(color: color))
@@ -44,20 +56,15 @@ final class DatesFormatter {
     return RichText(
       text: TextSpan(children: [
         TextSpan(
-            text: DateFormat('d MMM ').format(start),
-            style: theme.bodyMedium!
-                .copyWith(fontWeight: FontWeight.bold, color: color)),
+            text: DateFormat('d/MM ').format(start),
+            style: theme.bodyMedium!.copyWith(color: color)),
         TextSpan(
             text: DateFormat('HH:mm').format(start),
             style: theme.bodyMedium!.copyWith(color: color)),
+        TextSpan(text: " → ", style: theme.bodyMedium!.copyWith(color: color)),
         TextSpan(
-            text: " - ",
-            style: theme.bodyMedium!
-                .copyWith(fontWeight: FontWeight.bold, color: color)),
-        TextSpan(
-            text: DateFormat('d MMM ').format(end),
-            style: theme.bodyMedium!
-                .copyWith(fontWeight: FontWeight.bold, color: color)),
+            text: DateFormat('d/MM ').format(end),
+            style: theme.bodyMedium!.copyWith(color: color)),
         TextSpan(
             text: DateFormat('HH:mm').format(end),
             style: theme.bodyMedium!.copyWith(color: color))
