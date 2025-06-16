@@ -4,6 +4,7 @@ export 'battom_navigation.dart';
 export 'cards/active_booking_card.dart';
 export 'cards/booking_card.dart';
 export 'cards/location_card.dart';
+export 'cards/non_availability_card.dart';
 export 'cards/notification_card.dart';
 export 'cards/result_card.dart';
 export 'cards/vehicle_card.dart';
