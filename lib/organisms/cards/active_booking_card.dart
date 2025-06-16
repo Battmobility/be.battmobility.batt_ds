@@ -73,21 +73,7 @@ final class ActiveBookingCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
-                      padding: AppPaddings.xsmall.all
-                          .add(AppPaddings.small.horizontal),
-                      decoration: BoxDecoration(
-                        color: AppColors.airFlow,
-                        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-                      ),
-                      child: Text(
-                        tag,
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.b2bKeyColor,
-                        ),
-                      ),
-                    ),
+                    Tag(tag),
                     const SizedBox(height: AppSpacings.sm),
                     Text(
                       vehicleName,

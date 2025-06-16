@@ -9,6 +9,7 @@ import 'package:batt_ds_example/storybook_pages/organisms/battom_navigation_page
 import 'package:batt_ds_example/storybook_pages/organisms/booking_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/headers_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/list_section_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/nonavailability_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/plan_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/result_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
@@ -298,6 +299,16 @@ Storybook get storybook {
       },
       name: 'Organisms/Booking cards');
 
+  final nonAvailabiltyCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const NonAvailabilityCardsPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Nonavailability cards');
+
   final headersStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -332,6 +343,7 @@ Storybook get storybook {
       resultCardsStory,
       locationCardsStory,
       bookingCardsStory,
+      nonAvailabiltyCardsStory,
       planCardsStory,
       headersStory,
       battomNavigationStory,

@@ -91,23 +91,9 @@ final class BookingCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (tag != null)
-                        Container(
-                          padding: AppPaddings.xsmall.all
-                              .add(AppPaddings.small.horizontal),
-                          decoration: BoxDecoration(
-                            color: AppColors.airFlow,
-                            borderRadius:
-                                BorderRadius.circular(CornerRadii.xs.x),
-                          ),
-                          child: Text(
-                            tag!,
-                            style: theme.textTheme.labelSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.b2bKeyColor,
-                            ),
-                          ),
-                        ),
+                      if (tag != null) ...[
+                        Tag(tag!),
+                      ],
                       FittedBox(
                         child: Text(
                           vehicleName,
@@ -129,23 +115,21 @@ final class BookingCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: AppSpacings.md),
-                Center(
-                    child: Padding(
-                  padding: AppPaddings.small.horizontal,
-                  child: (price == null)
-                      ? const Icon(
-                          Icons.chevron_right_sharp,
-                          size: 24,
-                          weight: 0.5,
-                          color: AppColors.urbanMist,
-                        )
-                      : Text(
-                          price!,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                )),
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: (price == null)
+                        ? const Icon(
+                            Icons.chevron_right_sharp,
+                            size: 24,
+                            weight: 0.5,
+                            color: AppColors.urbanMist,
+                          )
+                        : Text(
+                            price!,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
               ],
             ),
           ),
