@@ -34,8 +34,8 @@ class AppColors {
   static const Color shadow = Color(0x4E4E4E0A);
   static const Color shadowDark = Color(0xff000000);
 
-  static const Color textColor = Color(0xff000004);
-  static const Color textColorLight = AppColors.graphiteDrive;
+  static const Color textColor = Color(0xFF22232A); // neutral 950
+  static const Color textColorLight = Color(0xFF545766); // neutral 600
   static const Color textColorExtraLight = Color(0x33000000);
 
   static const Color disabledTextColor = Color(0xff555555);

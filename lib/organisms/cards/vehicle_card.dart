@@ -155,23 +155,27 @@ final class VehicleCard extends StatelessWidget {
                     Row(
                       children: [
                         if (price != null)
-                          Text(
-                            price!,
-                            style: theme.textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.neutralColors[950],
+                          Flexible(
+                            child: Text(
+                              price!,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.neutralColors[950],
+                              ),
                             ),
                           ),
                         if (price2 != null)
-                          Padding(
-                            padding: price == null
-                                ? AppPaddings.none.leading
-                                : AppPaddings.small.leading,
-                            child: Text(
-                              price2!,
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.neutralColors[400]),
+                          Flexible(
+                            child: Padding(
+                              padding: price == null
+                                  ? AppPaddings.none.leading
+                                  : AppPaddings.small.leading,
+                              child: Text(
+                                price2!,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.neutralColors[400]),
+                              ),
                             ),
                           ),
                       ],

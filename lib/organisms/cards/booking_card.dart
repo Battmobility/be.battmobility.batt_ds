@@ -93,6 +93,7 @@ final class BookingCard extends StatelessWidget {
                     children: [
                       if (tag != null) ...[
                         Tag(tag!),
+                        const SizedBox(height: AppSpacings.xs)
                       ],
                       FittedBox(
                         child: Text(
