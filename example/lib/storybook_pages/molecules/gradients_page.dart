@@ -141,8 +141,8 @@ class BordersPage extends StatelessWidget {
                   height: 400,
                   child: Container(
                       decoration: BoxDecoration(
-                          gradient:
-                              GradientTheme.standard().mutedBackgroundGradient,
+                          gradient: GradientTheme.standard()
+                              .lightBlueBackgroundGradient,
                           borderRadius: BorderRadius.all(CornerRadii.m))),
                 )
               ],

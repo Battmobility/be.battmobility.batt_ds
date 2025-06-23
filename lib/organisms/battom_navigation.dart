@@ -55,10 +55,6 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
 
         const double defaultFontSize = 14.0;
         const double minFontSize = 11.0;
-        const double defaultSpacing = AppSpacings.md;
-        // Minimum spacing we'll allow
-        const double minSpacing = AppSpacings.sm;
-        // Number of items
         final int itemCount = widget.items.length;
 
         String longestLabel = "";
@@ -69,15 +65,13 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
         }
 
         double fontSize = defaultFontSize;
-        double itemSpacing = defaultSpacing;
         final TextPainter textPainter = TextPainter(
           textDirection: TextDirection.ltr,
           maxLines: 1,
         );
 
         const double iconWidth = 28.0;
-        final double initialItemWidth =
-            (availableWidth - (defaultSpacing * (itemCount - 1))) / itemCount;
+        final double initialItemWidth = availableWidth / itemCount;
 
         textPainter.text = TextSpan(
           text: longestLabel,
@@ -85,18 +79,14 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
         );
         textPainter.layout(maxWidth: initialItemWidth - iconWidth);
 
-        // If the text doesn't fit with default settings, adjust both font size and spacing
+        // If the text doesn't fit with default settings, adjust font size
         if (textPainter.didExceedMaxLines ||
             textPainter.width > (initialItemWidth - iconWidth)) {
-          // Try different font size and spacing combinations
+          // Try different font sizes
           for (fontSize = defaultFontSize - 0.5;
               fontSize >= minFontSize;
               fontSize -= 0.5) {
-            double fontReductionRatio = fontSize / defaultFontSize;
-            itemSpacing = defaultSpacing * fontReductionRatio;
-            itemSpacing = itemSpacing < minSpacing ? minSpacing : itemSpacing;
-            final double availableWidthPerItem =
-                (availableWidth - (itemSpacing * (itemCount - 1))) / itemCount;
+            final double availableWidthPerItem = availableWidth / itemCount;
 
             textPainter.text = TextSpan(
               text: longestLabel,
@@ -111,86 +101,69 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
           }
         }
 
-        return Stack(
-          children: [
-            // Navigation items row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: List.generate(widget.items.length, (index) {
-                final item = widget.items[index];
-                final isSelected = _currentIndex == index;
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: List.generate(widget.items.length, (index) {
+            final item = widget.items[index];
+            final isSelected = _currentIndex == index;
 
-                // Only add spacing between items (not at the edges)
-                final bool needsSpacerAfter = index < widget.items.length - 1;
-
-                return Expanded(
-                  child: Row(
+            return Expanded(
+              child: GestureDetector(
+                onTap: () => _handleTap(index),
+                behavior: HitTestBehavior.opaque,
+                child: Container(
+                  margin: const EdgeInsets.symmetric(
+                    vertical: AppSpacings.sm,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () => _handleTap(index),
-                          behavior: HitTestBehavior.opaque,
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(
-                              vertical: AppSpacings.sm,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Icon(
-                                      item.icon,
-                                      color: isSelected
-                                          ? Theme.of(context)
-                                              .bottomNavigationBarTheme
-                                              .selectedItemColor
-                                          : Theme.of(context)
-                                              .bottomNavigationBarTheme
-                                              .unselectedItemColor,
-                                      size: 28,
-                                    ),
-                                    if (item.badge != null)
-                                      Positioned(
-                                        right: -10,
-                                        top: -2,
-                                        child: item.badge!,
-                                      ),
-                                  ],
-                                ),
-                                const SizedBox(height: AppSpacings.xs),
-                                Text(
-                                  item.label,
-                                  style: TextStyle(
-                                    fontSize: fontSize,
-                                    fontWeight: FontWeight.w400,
-                                    color: isSelected
-                                        ? Theme.of(context)
-                                            .bottomNavigationBarTheme
-                                            .selectedItemColor
-                                        : Theme.of(context)
-                                            .bottomNavigationBarTheme
-                                            .unselectedItemColor,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Icon(
+                            item.icon,
+                            color: isSelected
+                                ? Theme.of(context)
+                                    .bottomNavigationBarTheme
+                                    .selectedItemColor
+                                : Theme.of(context)
+                                    .bottomNavigationBarTheme
+                                    .unselectedItemColor,
+                            size: 28,
                           ),
-                        ),
+                          if (item.badge != null)
+                            Positioned(
+                              right: -10,
+                              top: -2,
+                              child: item.badge!,
+                            ),
+                        ],
                       ),
-
-                      // Add spacing between items
-                      if (needsSpacerAfter) SizedBox(width: itemSpacing),
+                      const SizedBox(height: AppSpacings.xs),
+                      Text(
+                        item.label,
+                        style: TextStyle(
+                          fontSize: fontSize,
+                          fontWeight: FontWeight.w400,
+                          color: isSelected
+                              ? Theme.of(context)
+                                  .bottomNavigationBarTheme
+                                  .selectedItemColor
+                              : Theme.of(context)
+                                  .bottomNavigationBarTheme
+                                  .unselectedItemColor,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
                     ],
                   ),
-                );
-              }),
-            ),
-          ],
+                ),
+              ),
+            );
+          }),
         );
       }),
     );

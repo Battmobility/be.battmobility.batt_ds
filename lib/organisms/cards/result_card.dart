@@ -82,8 +82,8 @@ final class ResultCard extends StatelessWidget {
                                             return child;
                                           }
                                           return const Center(
-                                            child: FlowProgressIndicator(
-                                                size: IndicatorSize.small),
+                                            child: CircularProgressIndicator
+                                                .adaptive(),
                                           );
                                         },
                                       ),

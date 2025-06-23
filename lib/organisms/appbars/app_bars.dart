@@ -61,18 +61,20 @@ AppBar buildDefaultAppBar(BuildContext context,
 
 AppBar buildTransparentAppBar(BuildContext context,
         {required String title,
-        Color contentColor = AppColors.white,
+        Color contentColor = AppColors.textColor,
         bool showBackButton = true,
+        Widget? leading,
         Widget? trailing}) =>
     AppBar(
       backgroundColor: Colors.transparent,
-      systemOverlayStyle: SystemUiOverlayStyle.light,
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
       elevation: 0,
       leading: showBackButton
-          ? IconButton(
-              icon: Icon(Icons.arrow_back, color: contentColor),
-              onPressed: () => Navigator.of(context).pop(),
-            )
+          ? leading ??
+              IconButton(
+                icon: Icon(Icons.arrow_back, color: contentColor),
+                onPressed: () => Navigator.of(context).pop(),
+              )
           : null,
       title: Text(title,
           style: Theme.of(context)

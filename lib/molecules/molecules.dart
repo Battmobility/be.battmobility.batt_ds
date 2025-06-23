@@ -5,7 +5,6 @@ export 'buttons/buttons.dart';
 export 'callout/batt_callout.dart';
 export 'chips/chips.dart';
 export 'flow/flow_widget.dart';
-export 'flow/flow_progress_indicator.dart';
 export 'flow/static_flow_widget.dart';
 export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';

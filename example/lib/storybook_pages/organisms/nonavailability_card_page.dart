@@ -1,5 +1,4 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/organisms/cards/non_availability_card.dart';
 import 'package:flutter/material.dart';
 
 class NonAvailabilityCardsPage extends StatelessWidget {

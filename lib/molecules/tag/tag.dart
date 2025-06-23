@@ -1,4 +1,3 @@
-import 'package:batt_ds/atoms/app_paddings.dart';
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:flutter/material.dart';
 

@@ -46,6 +46,21 @@ class BattomnavigationPage extends StatelessWidget {
                           icon: Icons.calendar_month, label: "Boekingen"),
                       BattomNavigationBarItem(
                           icon: Icons.person_outline,
+                          label: "Lange naam item",
+                          badge: Badge(
+                            text: "1",
+                          ))
+                    ],
+                    onTap: (p0) => {},
+                  ),
+                  BattomNavigationBar(
+                    items: [
+                      BattomNavigationBarItem(
+                          icon: Icons.car_crash, label: "Auto's"),
+                      BattomNavigationBarItem(
+                          icon: Icons.calendar_month, label: "Boekingen"),
+                      BattomNavigationBarItem(
+                          icon: Icons.person_outline,
                           label: "Profiel",
                           badge: Badge(
                             text: "1",

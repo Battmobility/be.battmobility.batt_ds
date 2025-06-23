@@ -68,7 +68,7 @@ final class VehicleCard extends StatelessWidget {
                           color: Theme.of(context).colorScheme.surfaceDim,
                           borderRadius: BorderRadius.circular(CornerRadii.s.x),
                         ),
-                        child: (imageUrl ?? "").isNotEmpty
+                        child: (imageUrl != null)
                             ? ClipRRect(
                                 borderRadius:
                                     BorderRadius.circular(CornerRadii.s.x),
@@ -83,8 +83,8 @@ final class VehicleCard extends StatelessWidget {
                                         (context, child, loadingProgress) {
                                       if (loadingProgress == null) return child;
                                       return const Center(
-                                        child: FlowProgressIndicator(
-                                            size: IndicatorSize.small),
+                                        child: CircularProgressIndicator
+                                            .adaptive(),
                                       );
                                     },
                                   ),

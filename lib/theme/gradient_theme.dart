@@ -12,7 +12,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.flowGradient,
     required this.ctaButtonGradient,
     required this.backgroundGradient,
-    required this.mutedBackgroundGradient,
+    required this.lightBlueBackgroundGradient,
     required this.activeCardBackgroundGradient,
   });
 
@@ -104,11 +104,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.bottomRight,
         transform: GradientRotation(0.9),
       ),
-      mutedBackgroundGradient: LinearGradient(
-        colors: [
-          AppColors.urbanMist,
-          AppColors.white,
-        ],
+      lightBlueBackgroundGradient: LinearGradient(
+        colors: [Color(0xFFE7EFF9), Color(0xFFF6F9FD)],
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       ),
@@ -141,7 +138,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
 
   final Gradient backgroundGradient;
 
-  final Gradient mutedBackgroundGradient;
+  final Gradient lightBlueBackgroundGradient;
 
   @override
   ThemeExtension<GradientTheme> copyWith({
@@ -154,7 +151,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? flowGradient,
     Gradient? ctaButtonGradient,
     Gradient? backgroundGradient,
-    Gradient? mutedBackgroundGradient,
+    Gradient? lightBlueBackgroundGradient,
     Gradient? activeCardBackgroundGradient,
   }) {
     return GradientTheme(
@@ -171,8 +168,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       flowGradient: flowGradient ?? this.flowGradient,
       ctaButtonGradient: ctaButtonGradient ?? this.ctaButtonGradient,
       backgroundGradient: backgroundGradient ?? this.backgroundGradient,
-      mutedBackgroundGradient:
-          mutedBackgroundGradient ?? this.mutedBackgroundGradient,
+      lightBlueBackgroundGradient:
+          lightBlueBackgroundGradient ?? this.lightBlueBackgroundGradient,
     );
   }
 
@@ -204,8 +201,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           Gradient.lerp(ctaButtonGradient, other.ctaButtonGradient, t)!,
       backgroundGradient:
           Gradient.lerp(backgroundGradient, other.backgroundGradient, t)!,
-      mutedBackgroundGradient: Gradient.lerp(
-          mutedBackgroundGradient, other.mutedBackgroundGradient, t)!,
+      lightBlueBackgroundGradient: Gradient.lerp(
+          lightBlueBackgroundGradient, other.lightBlueBackgroundGradient, t)!,
     );
   }
 }
