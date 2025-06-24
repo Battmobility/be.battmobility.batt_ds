@@ -1,4 +1,5 @@
 export 'batt_chip_default.dart';
+export 'batt_chip_subtle.dart';
 export 'batt_chip_red.dart';
 export 'batt_chip_black.dart';
 export 'batt_chip_green.dart';

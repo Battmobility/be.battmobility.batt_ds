@@ -139,6 +139,170 @@ class ChipPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
+                    'Subtle',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipSubtle(
+                          label: "Enabled large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipSubtle(
+                          label: "Enabled medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipSubtle(
+                          label: "Enabled small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.enabled,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipSubtle(
+                          label: "Active large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.active,
+                        ),
+                        BattChipSubtle(
+                          label: "Active medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattChipSubtle(
+                          label: "Active small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.active,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipSubtle(
+                          label: "Disabled large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.disabled,
+                        ),
+                        BattChipSubtle(
+                          label: "Disabled medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.disabled,
+                        ),
+                        BattChipSubtle(
+                          label: "Disabled small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.disabled,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipSubtle(
+                          label: "Enabled leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                        BattChipSubtle(
+                          label: "Active leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                        BattChipSubtle(
+                          label: "Disabled leading",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.disabled,
+                          leading: Icons.car_crash_outlined,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattChipSubtle(
+                          label: "With delete large",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipSubtle(
+                          label: "With delete medium",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipSubtle(
+                          label: "With delete small",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.enabled,
+                        ),
+                        BattChipSubtle(
+                          label: "With delete large",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.active,
+                        ),
+                        BattChipSubtle(
+                          label: "With delete medium",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattChipSubtle(
+                          label: "With delete small",
+                          onSelected: (_) => {},
+                          onDeleted: () => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.active,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
                     'Primary',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
