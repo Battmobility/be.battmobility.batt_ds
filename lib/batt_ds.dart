@@ -43,6 +43,7 @@ ThemeData lightTheme(BuildContext context) {
         fillColor: const WidgetStatePropertyAll(AppColors.b2bKeyColor),
         checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
     dividerTheme: const DividerThemeData(color: AppColors.urbanMist),
+    iconTheme: IconThemeData(color: AppColors.neutralColors[950]),
     inputDecorationTheme: theme.inputDecorationThemeLight,
     elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
@@ -115,6 +116,7 @@ ThemeData darkTheme(BuildContext context) {
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
             foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
+    iconTheme: IconThemeData(color: AppColors.neutralColors[100]),
     inputDecorationTheme: theme.inputDecorationThemeDark,
     listTileTheme: ListTileThemeData(
       titleTextStyle: Theme.of(context)

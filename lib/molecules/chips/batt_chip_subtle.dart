@@ -32,7 +32,7 @@ final class BattChipSubtle extends BattChip {
       case BattChipState.disabled:
         return AppColors.white;
       case BattChipState.active:
-        return AppColors.airFlow;
+        return AppColors.offWhite;
       case BattChipState.enabled:
         return AppColors.white;
     }
@@ -46,7 +46,7 @@ final class BattChipSubtle extends BattChip {
       case BattChipState.active:
         return const BorderSide(color: AppColors.b2bKeyColor, width: 1);
       case BattChipState.enabled:
-        return BorderSide(color: AppColors.neutralColors[600]!, width: 1);
+        return BorderSide(color: AppColors.neutralColors[100]!, width: 1);
     }
   }
 }

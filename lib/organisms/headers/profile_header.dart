@@ -5,16 +5,19 @@ import 'package:flutter/material.dart';
 final class ProfileHeader extends StatelessWidget {
   final String name;
   final String imageUrl;
+  final Color? contentColor;
+
   const ProfileHeader({
     required this.name,
     required this.imageUrl,
+    this.contentColor,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).canvasColor,
+      color: Colors.transparent,
       child: Padding(
           padding: AppPaddings.large.all.add(AppPaddings.small.bottom),
           child: Center(
@@ -39,7 +42,7 @@ final class ProfileHeader extends StatelessWidget {
                           errorBuilder: (context, error, stackTrace) {
                             return const Center(
                               child: Icon(
-                                Icons.person_4_outlined,
+                                Icons.person_off_outlined,
                                 size: 64,
                                 color: AppColors.graphiteDrive,
                               ),
@@ -66,7 +69,8 @@ final class ProfileHeader extends StatelessWidget {
                 Text(name,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface))
+                        color: contentColor ??
+                            Theme.of(context).colorScheme.onSurface))
               ],
             ),
           )),
