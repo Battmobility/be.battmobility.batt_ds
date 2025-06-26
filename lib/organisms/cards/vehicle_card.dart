@@ -41,18 +41,18 @@ final class VehicleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: showBorder || selected
-          ? AppPaddings.medium.all.add(-AppPaddings.small.trailing)
-          : AppPaddings.none.all,
+      padding: AppPaddings.medium.all.add(-AppPaddings.small.trailing),
       decoration: selected
           ? GradientBorderDecoration.flow()
           : showBorder
               ? BoxDecoration(
-                  color: Theme.of(context).canvasColor,
                   borderRadius: BorderRadius.circular(CornerRadii.m.x),
                   border: Border.all(color: AppColors.urbanMist, width: 1),
                 )
-              : null,
+              : BoxDecoration(
+                  borderRadius: BorderRadius.circular(CornerRadii.m.x),
+                  border: Border.all(color: Colors.transparent, width: 1),
+                ),
       child: LayoutBuilder(builder: (context, constraints) {
         return IntrinsicHeight(
           child: Row(
@@ -141,7 +141,7 @@ final class VehicleCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         name,
-                        style: theme.textTheme.titleMedium?.copyWith(
+                        style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                         maxLines: 1,
@@ -191,7 +191,8 @@ final class VehicleCard extends StatelessWidget {
                   padding: AppPaddings.small.leading,
                   child: Icon(
                     Icons.arrow_forward_ios,
-                    color: AppColors.neutralColors[500],
+                    size: 20,
+                    color: AppColors.neutralColors[600],
                   ),
                 )
             ],
