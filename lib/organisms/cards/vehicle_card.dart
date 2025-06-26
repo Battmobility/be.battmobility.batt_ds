@@ -18,6 +18,8 @@ final class VehicleCard extends StatelessWidget {
   final bool showBorder;
   final bool selected;
 
+  final bool showIndicator;
+
   const VehicleCard({
     super.key,
     required this.name,
@@ -32,13 +34,14 @@ final class VehicleCard extends StatelessWidget {
     this.licensePlate,
     this.showBorder = true,
     this.selected = false,
+    this.showIndicator = true,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: showBorder
+      padding: showBorder || selected
           ? AppPaddings.medium.all.add(-AppPaddings.small.trailing)
           : AppPaddings.none.all,
       decoration: selected
@@ -58,7 +61,7 @@ final class VehicleCard extends StatelessWidget {
               SizedBox(
                 width: constraints.maxWidth / 4,
                 child: AspectRatio(
-                  aspectRatio: 1.5, // Make the container square
+                  aspectRatio: 1.5,
                   child: Stack(
                     alignment: Alignment.bottomLeft,
                     fit: StackFit.expand,
@@ -183,13 +186,14 @@ final class VehicleCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: AppPaddings.small.leading,
-                child: Icon(
-                  Icons.arrow_forward_ios,
-                  color: AppColors.neutralColors[500],
-                ),
-              )
+              if (showIndicator)
+                Padding(
+                  padding: AppPaddings.small.leading,
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.neutralColors[500],
+                  ),
+                )
             ],
           ),
         );

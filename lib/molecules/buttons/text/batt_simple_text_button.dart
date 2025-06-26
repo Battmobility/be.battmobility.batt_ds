@@ -5,14 +5,15 @@ import '../batt_text_button.dart';
 
 abstract class BattSimpleTextButton extends BattTextButton {
   final bool underline;
+  final EdgeInsetsGeometry? padding;
 
-  const BattSimpleTextButton({
-    required this.underline,
-    super.key,
-    required super.label,
-    super.buttonSize,
-    required super.onPressed,
-  });
+  const BattSimpleTextButton(
+      {required this.underline,
+      super.key,
+      required super.label,
+      super.buttonSize,
+      required super.onPressed,
+      this.padding});
 
   @override
   Color disabledColor(BuildContext context) {
@@ -57,6 +58,7 @@ abstract class BattSimpleTextButton extends BattTextButton {
 
     return TextButton(
       style: ButtonStyle(
+        padding: WidgetStateProperty.all(padding ?? AppPaddings.xsmall.all),
         elevation: WidgetStateProperty.all(0),
         splashFactory: NoSplash.splashFactory,
         overlayColor: WidgetStateProperty.resolveWith(
@@ -81,28 +83,6 @@ abstract class BattSimpleTextButton extends BattTextButton {
           },
         ),
         foregroundColor: inputTextColor,
-        fixedSize: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small => const Size(double.infinity, 32),
-            BattButtonSize.xSmall => const Size(double.infinity, 36),
-            BattButtonSize.medium => const Size(double.infinity, 40),
-            BattButtonSize.large => const Size(double.infinity, 44),
-            BattButtonSize.xLarge => const Size(double.infinity, 52),
-            BattButtonSize.xxLarge => const Size(double.infinity, 56),
-          },
-        ),
-        padding: WidgetStateProperty.all(
-          switch (buttonSize) {
-            BattButtonSize.small ||
-            BattButtonSize.xSmall =>
-              const EdgeInsets.symmetric(horizontal: 8),
-            BattButtonSize.medium => const EdgeInsets.symmetric(horizontal: 16),
-            BattButtonSize.large => const EdgeInsets.symmetric(horizontal: 18),
-            BattButtonSize.xLarge => const EdgeInsets.symmetric(horizontal: 22),
-            BattButtonSize.xxLarge =>
-              const EdgeInsets.symmetric(horizontal: 26),
-          },
-        ),
       ),
       onPressed: onPressed,
       child: Row(
@@ -110,19 +90,16 @@ abstract class BattSimpleTextButton extends BattTextButton {
         mainAxisSize: MainAxisSize.min,
         children: [
           Flexible(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacings.xxs),
-              child: DefaultTextStyle(
-                style: baseTextStyle.copyWith(
-                  color: textColor(context),
-                  decoration: underline ? TextDecoration.underline : null,
-                  inherit: true,
-                ),
-                child: Text(
-                  label,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
+            child: DefaultTextStyle(
+              style: baseTextStyle.copyWith(
+                color: textColor(context),
+                decoration: underline ? TextDecoration.underline : null,
+                inherit: true,
+              ),
+              child: Text(
+                label,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
           ),
