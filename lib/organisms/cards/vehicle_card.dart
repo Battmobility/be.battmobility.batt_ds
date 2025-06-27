@@ -68,7 +68,6 @@ final class VehicleCard extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.surfaceDim,
                           borderRadius: BorderRadius.circular(CornerRadii.s.x),
                         ),
                         child: (imageUrl != null)

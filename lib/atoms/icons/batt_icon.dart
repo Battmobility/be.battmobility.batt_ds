@@ -1,4 +1,3 @@
-import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';

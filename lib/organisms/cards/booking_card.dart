@@ -37,7 +37,6 @@ final class BookingCard extends StatelessWidget {
             child: Container(
               padding: AppPaddings.small.all,
               decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceDim,
                 borderRadius: BorderRadius.circular(CornerRadii.s.x),
               ),
               child: ClipRRect(
