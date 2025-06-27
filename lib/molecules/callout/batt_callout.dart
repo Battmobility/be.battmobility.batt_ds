@@ -29,14 +29,7 @@ final class BattCallout extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).canvasColor,
         borderRadius: const BorderRadius.all(CornerRadii.m),
-        border: (type == CalloutType.success || type == CalloutType.info)
-            ? GradientBorder(
-                gradient: GradientTheme.standard().flowGradient, width: 2)
-            : GradientBorder(
-                gradient: const LinearGradient(
-                    colors: [AppColors.rusticClay, AppColors.ctaSand],
-                    transform: GradientRotation(3)),
-                width: 2),
+        border: border,
       ),
       child: Padding(
         padding: AppPaddings.medium.leading
@@ -140,6 +133,21 @@ final class BattCallout extends StatelessWidget {
             backgroundColor: AppColors.rusticClay,
             icon: Icons.close,
             iconColor: AppColors.white);
+    }
+  }
+
+  GradientBorder get border {
+    switch (type) {
+      case CalloutType.info:
+      case CalloutType.success:
+        return GradientBorder(
+            gradient: GradientTheme.standard().flowGradient, width: 2);
+      case CalloutType.warning:
+        return GradientBorder(
+            gradient: GradientTheme.standard().warningBorderGradient, width: 2);
+      case CalloutType.error:
+        return GradientBorder(
+            gradient: GradientTheme.standard().errorBorderGradient, width: 2);
     }
   }
 }

@@ -24,7 +24,7 @@ final class BookingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: AppPaddings.medium.all,
+      padding: AppPaddings.medium.all.subtract(AppPaddings.xxsmall.trailing),
       decoration: BoxDecoration(
         color: theme.canvasColor,
         borderRadius: BorderRadius.circular(CornerRadii.m.x),

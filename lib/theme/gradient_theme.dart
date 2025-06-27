@@ -8,6 +8,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     required this.defaultAppBarGradient,
     required this.activeAppBarGradient,
     required this.inputBorderGradient,
+    required this.warningBorderGradient,
     required this.errorBorderGradient,
     required this.flowGradient,
     required this.ctaButtonGradient,
@@ -49,11 +50,22 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         end: Alignment.bottomRight,
         transform: GradientRotation(0.6),
       ),
+      warningBorderGradient: LinearGradient(
+        colors: [
+          AppColors.warningPrimary,
+          AppColors.warningSecondary,
+          AppColors.ctaSand
+        ],
+        stops: [0.6, 0.8, 1.0],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        transform: GradientRotation(0.6),
+      ),
       errorBorderGradient: LinearGradient(
         colors: [
-          AppColors.errorBorderPrimary,
-          AppColors.errorBorderSecondary,
-          AppColors.errorBorderPrimary
+          AppColors.errorPrimary,
+          AppColors.errorSecondary,
+          AppColors.errorPrimary
         ],
         stops: [0.6, 0.8, 1.0],
         begin: Alignment.topLeft,
@@ -112,28 +124,24 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     );
   }
 
-  /// The gradient for cards and cells.
   final Gradient cardBackgroundGradient;
+
   final Gradient activeCardBackgroundGradient;
 
-  /// The gradient for hero headers.
   final Gradient heroGradient;
 
-  /// The gradient for active appbars.
   final Gradient activeAppBarGradient;
 
-  /// The gradient for default appbars.
   final Gradient defaultAppBarGradient;
 
-// The gradient for input borders
   final Gradient inputBorderGradient;
 
   final Gradient flowGradient;
 
-  // The background gradient
+  final Gradient warningBorderGradient;
+
   final Gradient errorBorderGradient;
 
-  /// The gradient for CTA buttons
   final Gradient ctaButtonGradient;
 
   final Gradient backgroundGradient;
@@ -147,6 +155,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
     Gradient? activeAppBarGradient,
     Gradient? defaultAppBarGradient,
     Gradient? inputBorderGradient,
+    Gradient? warningBorderGradient,
     Gradient? errorBorderGradient,
     Gradient? flowGradient,
     Gradient? ctaButtonGradient,
@@ -164,6 +173,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       defaultAppBarGradient:
           defaultAppBarGradient ?? this.defaultAppBarGradient,
       inputBorderGradient: inputBorderGradient ?? this.inputBorderGradient,
+      warningBorderGradient:
+          warningBorderGradient ?? this.warningBorderGradient,
       errorBorderGradient: errorBorderGradient ?? this.errorBorderGradient,
       flowGradient: flowGradient ?? this.flowGradient,
       ctaButtonGradient: ctaButtonGradient ?? this.ctaButtonGradient,
@@ -194,6 +205,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           Gradient.lerp(defaultAppBarGradient, other.defaultAppBarGradient, t)!,
       inputBorderGradient:
           Gradient.lerp(inputBorderGradient, other.inputBorderGradient, t)!,
+      warningBorderGradient:
+          Gradient.lerp(warningBorderGradient, other.warningBorderGradient, t)!,
       errorBorderGradient:
           Gradient.lerp(errorBorderGradient, other.errorBorderGradient, t)!,
       flowGradient: Gradient.lerp(flowGradient, other.flowGradient, t)!,
