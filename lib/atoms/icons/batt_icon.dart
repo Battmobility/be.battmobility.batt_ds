@@ -1,4 +1,5 @@
 import 'package:batt_ds/atoms/app_colors.dart';
+import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,18 +9,21 @@ enum BattIcons {
   range,
 }
 
-enum BattIconSize {
-  small,
-  medium,
-  large,
-}
+enum BattIconSize { small, medium, large, xlarge }
 
 extension WithSize on BattIconSize {
-  double get size => (this == BattIconSize.small)
-      ? 24
-      : (this == BattIconSize.medium)
-          ? 32
-          : 38;
+  double get size {
+    switch (this) {
+      case BattIconSize.small:
+        return AppSpacings.xl;
+      case BattIconSize.medium:
+        return AppSpacings.xxl;
+      case BattIconSize.large:
+        return AppSpacings.xxxl;
+      case BattIconSize.xlarge:
+        return AppSpacings.xxxxl;
+    }
+  }
 }
 
 class BattIcon extends StatelessWidget {

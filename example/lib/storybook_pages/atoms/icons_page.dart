@@ -104,6 +104,47 @@ class IconsPage extends StatelessWidget {
                           battIcon: BattIcons.range,
                           size: BattIconSize.large,
                         )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.range,
+                          size: BattIconSize.large,
+                        )),
+                  ],
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'XLarge',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
+                Wrap(
+                  children: [
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.car,
+                          size: BattIconSize.xlarge,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.walk,
+                          size: BattIconSize.xlarge,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.range,
+                          size: BattIconSize.xlarge,
+                        )),
+                    Padding(
+                        padding: AppPaddings.small.all,
+                        child: BattIcon(
+                          battIcon: BattIcons.range,
+                          size: BattIconSize.xlarge,
+                        )),
                   ],
                 ),
               ],
