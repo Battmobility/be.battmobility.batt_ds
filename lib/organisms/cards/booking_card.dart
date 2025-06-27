@@ -28,7 +28,6 @@ final class BookingCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.canvasColor,
         borderRadius: BorderRadius.circular(CornerRadii.m.x),
-        border: Border.all(color: AppColors.urbanMist, width: 1),
       ),
       child: Row(
         children: [
@@ -118,11 +117,11 @@ final class BookingCard extends StatelessWidget {
                 Align(
                     alignment: Alignment.centerRight,
                     child: (price == null)
-                        ? const Icon(
+                        ? Icon(
                             Icons.chevron_right_sharp,
                             size: 24,
                             weight: 0.5,
-                            color: AppColors.urbanMist,
+                            color: AppColors.neutralColors[300]!,
                           )
                         : Text(
                             price!,

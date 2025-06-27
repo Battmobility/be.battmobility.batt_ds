@@ -74,7 +74,7 @@ final class PlanCard extends StatelessWidget {
               Icon(Icons.chevron_right,
                   color: isActive
                       ? AppColors.white
-                      : AppColors.neutralColors[600]),
+                      : AppColors.neutralColors[300]!),
             ]
           ],
         ),

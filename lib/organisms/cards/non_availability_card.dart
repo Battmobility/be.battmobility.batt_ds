@@ -62,7 +62,7 @@ final class NonAvailabilityCard extends StatelessWidget {
                     if (showIndicator) ...[
                       Icon(
                         Icons.chevron_right,
-                        color: AppColors.neutralColors[600],
+                        color: AppColors.neutralColors[300]!,
                       ),
                     ]
                   ],
