@@ -44,41 +44,45 @@ final class PlanCard extends StatelessWidget {
                 bottom: BorderSide(width: 1, color: AppColors.urbanMist),
               ),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: AppPaddings.large.all,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    spacing: AppSpacings.sm,
-                    children: [
-                      Icon(icon,
+            child: Padding(
+              padding: AppPaddings.large.all,
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  spacing: AppSpacings.sm,
+                  children: [
+                    SizedBox(
+                      width: 24,
+                      child: Icon(icon,
                           size: AppSpacings.md,
                           color: isActive
                               ? AppColors.white
                               : AppColors.neutralColors[600]),
-                      Expanded(
-                        child: Text(title,
-                            textAlign: TextAlign.start,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                    color: isActive
-                                        ? AppColors.white
-                                        : AppColors.neutralColors[950])),
-                      ),
-                      tag != null
-                          ? Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [Tag(tag!)])
-                          : const SizedBox.shrink()
-                    ],
-                  ),
-                )
-              ],
+                    ),
+                    Expanded(
+                      child: Text(title,
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  color: isActive
+                                      ? AppColors.white
+                                      : AppColors.neutralColors[950])),
+                    ),
+                    tag != null
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                                ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                        maxWidth: constraints.maxWidth / 3),
+                                    child: Tag(tag!))
+                              ])
+                        : const SizedBox.shrink()
+                  ],
+                );
+              }),
             ),
           ),
           if (subtitle != null) ...[
@@ -94,8 +98,14 @@ final class PlanCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   spacing: AppSpacings.sm,
                   children: [
-                    Icon(Icons.info_outline,
-                        weight: 0.5, color: AppColors.neutralColors[600]),
+                    SizedBox(
+                      width: 24,
+                      child: Icon(Icons.info_outline,
+                          size: 10,
+                          grade: 0.5,
+                          weight: 0.5,
+                          color: AppColors.neutralColors[400]),
+                    ),
                     Text(
                       title,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
