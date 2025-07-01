@@ -28,7 +28,7 @@ class PlanCardsPage extends StatelessWidget {
                     Padding(
                       padding: AppPaddings.small.vertical,
                       child: Text(
-                        'With edit',
+                        'Without tag',
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ),
@@ -41,30 +41,139 @@ class PlanCardsPage extends StatelessWidget {
                             SizedBox(
                               width: 300,
                               child: PlanCard(
-                                title: "Jouw plan",
-                                planName: "BattFun",
-                                cta: "Bekijk details en beheer je plan",
-                                isActive: true,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 300,
-                              child: PlanCard(
-                                title: "Jouw plan",
-                                planName: "BattFun",
-                                cta:
-                                    "Bekijk details en beheer je plan maar wat als deze beschrijving nu eens veel langer was",
-                                isActive: true,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 300,
-                              child: PlanCard(
-                                title: "Jouw inactief plan",
-                                planName: "BattFun",
-                                cta:
-                                    "Bekijk details en beheer je plan maar wat als deze beschrijving nu eens veel langer was",
+                                title: "Naam gebruiker",
+                                icon: Icons.abc,
                                 isActive: false,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: false,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                              ),
+                            ),
+                          ]),
+                    ),
+                    Padding(
+                      padding: AppPaddings.small.vertical,
+                      child: Text(
+                        'With tag',
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                    ),
+                    Padding(
+                      padding: AppPaddings.small.vertical,
+                      child: Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: false,
+                                tag: "KONHEF",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: false,
+                                tag: "LONG COMPANY NAME",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                                tag: "KONHEF",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                                tag: "LONG COMPANY NAME",
+                              ),
+                            ),
+                          ]),
+                    ),
+                    Padding(
+                      padding: AppPaddings.small.vertical,
+                      child: Text(
+                        'With subtitle',
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+                    ),
+                    Padding(
+                      padding: AppPaddings.small.vertical,
+                      child: Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: false,
+                                tag: "KONHEF",
+                                subtitle: "Managed by KONHEF",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: false,
+                                tag: "LONG COMPANY NAME",
+                                subtitle: "Managed by LONG COMPANY NAME",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                                tag: "KONHEF",
+                                subtitle: "Managed by LONG COMPANY NAME",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 300,
+                              child: PlanCard(
+                                title: "Uitzonderlijk lange naam gebruiker",
+                                icon: Icons.abc,
+                                isActive: true,
+                                tag: "LONG COMPANY NAME",
+                                subtitle: "Managed by LONG COMPANY NAME",
                               ),
                             ),
                           ]),

@@ -1,83 +1,113 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 final class PlanCard extends StatelessWidget {
   final String title;
-  final String planName;
-  final String cta;
+  final String? tag;
+  final String? subtitle;
+  final IconData? icon;
   final bool isActive;
-  final bool showIndicator;
 
   const PlanCard({
     super.key,
     required this.title,
-    required this.planName,
-    required this.cta,
     required this.isActive,
-    this.showIndicator = true,
+    required this.icon,
+    this.tag,
+    this.subtitle,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: isActive ? GradientTheme.standard().heroGradient : null,
-          color: isActive ? null : Theme.of(context).colorScheme.surface,
-          boxShadow: isActive ? [] : [bottomShadow],
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
           borderRadius: const BorderRadius.all(
-            CornerRadii.m,
-          )),
-      child: Padding(
-        padding: AppPaddings.xlarge.all,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                spacing: AppSpacings.sm,
-                children: [
-                  Text(title,
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                          color: isActive
-                              ? AppColors.white
-                              : AppColors.neutralColors[600])),
-                  Text(planName,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineLarge!
-                          .copyWith(
-                              color: isActive
-                                  ? AppColors.white
-                                  : AppColors.neutralColors[950])),
-                  Padding(
-                    padding: AppPaddings.xsmall.top,
-                    child: Text(
-                      cta,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+            CornerRadii.s,
+          ),
+          border: isActive
+              ? (subtitle != null)
+                  ? Border.all(width: 1.0, color: AppColors.urbanMist)
+                  : null
+              : Border.all(width: 1.0, color: AppColors.urbanMist)),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.surfaceContainer,
+              borderRadius: const BorderRadius.all(
+                CornerRadii.s,
+              ),
+              border: const Border(
+                bottom: BorderSide(width: 1, color: AppColors.urbanMist),
+              ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: AppPaddings.large.all,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    spacing: AppSpacings.sm,
+                    children: [
+                      Icon(icon,
+                          size: AppSpacings.md,
                           color: isActive
                               ? AppColors.white
                               : AppColors.neutralColors[600]),
-                      maxLines: 3,
-                      overflow: TextOverflow.fade,
-                    ),
+                      Expanded(
+                        child: Text(title,
+                            textAlign: TextAlign.start,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(
+                                    color: isActive
+                                        ? AppColors.white
+                                        : AppColors.neutralColors[950])),
+                      ),
+                      tag != null
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [Tag(tag!)])
+                          : const SizedBox.shrink()
+                    ],
                   ),
-                ],
+                )
+              ],
+            ),
+          ),
+          if (subtitle != null) ...[
+            Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: CornerRadii.s, bottomRight: CornerRadii.s),
+              ),
+              child: Padding(
+                padding: AppPaddings.large.all,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  spacing: AppSpacings.sm,
+                  children: [
+                    Icon(Icons.info_outline,
+                        weight: 0.5, color: AppColors.neutralColors[600]),
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontStyle: FontStyle.italic,
+                          color: AppColors.neutralColors[950]),
+                    )
+                  ],
+                ),
               ),
             ),
-            if (showIndicator) ...[
-              Icon(Icons.chevron_right,
-                  color: isActive
-                      ? AppColors.white
-                      : AppColors.neutralColors[300]!),
-            ]
-          ],
-        ),
+          ]
+        ],
       ),
     );
   }
