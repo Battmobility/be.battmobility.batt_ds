@@ -101,13 +101,13 @@ final class PlanCard extends StatelessWidget {
                     SizedBox(
                       width: 24,
                       child: Icon(Icons.info_outline,
-                          size: 10,
+                          size: AppSpacings.md,
                           grade: 0.5,
                           weight: 0.5,
                           color: AppColors.neutralColors[400]),
                     ),
                     Text(
-                      title,
+                      subtitle!,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontStyle: FontStyle.italic,
                           color: AppColors.neutralColors[950]),
