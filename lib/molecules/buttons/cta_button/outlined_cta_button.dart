@@ -22,30 +22,33 @@ class OutlinedCtaButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: isEnabled ? onPressed : null,
-      child: Container(
-        width: width ?? double.infinity,
-        height: height,
-        decoration: BoxDecoration(
-          gradient: GradientTheme.standard().ctaButtonGradient,
-          borderRadius: BorderRadius.circular(height / 2),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(borderWidth),
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius:
-                  BorderRadius.circular((height / 2) - borderWidth / 2),
-            ),
-            child: Center(
-              child: Text(
-                label,
-                style: TextStyle(
-                  color: AppColors.b2bKeyColor,
-                  fontSize: height * 0.3,
-                  fontWeight: FontWeight.w500,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: isEnabled ? onPressed : null,
+        child: Container(
+          width: width ?? double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+            gradient: GradientTheme.standard().ctaButtonGradient,
+            borderRadius: BorderRadius.circular(height / 2),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(borderWidth),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius:
+                    BorderRadius.circular((height / 2) - borderWidth / 2),
+              ),
+              child: Center(
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    color: AppColors.b2bKeyColor,
+                    fontSize: height * 0.3,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),

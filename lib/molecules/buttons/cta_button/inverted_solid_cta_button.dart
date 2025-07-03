@@ -19,24 +19,27 @@ class InvertedSolidCtaButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: isEnabled ? onPressed : null,
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(height / 2),
-        ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              label,
-              style: TextStyle(
-                color: AppColors.b2bKeyColor,
-                fontSize: height * 0.3,
-                fontWeight: FontWeight.w500,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: isEnabled ? onPressed : null,
+        child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(height / 2),
+          ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: AppColors.b2bKeyColor,
+                  fontSize: height * 0.3,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

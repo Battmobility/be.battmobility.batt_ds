@@ -108,21 +108,46 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
             final isSelected = _currentIndex == index;
 
             return Expanded(
-              child: GestureDetector(
-                onTap: () => _handleTap(index),
-                behavior: HitTestBehavior.opaque,
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: AppSpacings.sm,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Icon(
-                            item.icon,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => _handleTap(index),
+                  behavior: HitTestBehavior.opaque,
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                      vertical: AppSpacings.sm,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Icon(
+                              item.icon,
+                              color: isSelected
+                                  ? Theme.of(context)
+                                      .bottomNavigationBarTheme
+                                      .selectedItemColor
+                                  : Theme.of(context)
+                                      .bottomNavigationBarTheme
+                                      .unselectedItemColor,
+                              size: 28,
+                            ),
+                            if (item.badge != null)
+                              Positioned(
+                                right: -10,
+                                top: -2,
+                                child: item.badge!,
+                              ),
+                          ],
+                        ),
+                        const SizedBox(height: AppSpacings.xs),
+                        Text(
+                          item.label,
+                          style: TextStyle(
+                            fontSize: fontSize,
+                            fontWeight: FontWeight.w400,
                             color: isSelected
                                 ? Theme.of(context)
                                     .bottomNavigationBarTheme
@@ -130,35 +155,13 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
                                 : Theme.of(context)
                                     .bottomNavigationBarTheme
                                     .unselectedItemColor,
-                            size: 28,
                           ),
-                          if (item.badge != null)
-                            Positioned(
-                              right: -10,
-                              top: -2,
-                              child: item.badge!,
-                            ),
-                        ],
-                      ),
-                      const SizedBox(height: AppSpacings.xs),
-                      Text(
-                        item.label,
-                        style: TextStyle(
-                          fontSize: fontSize,
-                          fontWeight: FontWeight.w400,
-                          color: isSelected
-                              ? Theme.of(context)
-                                  .bottomNavigationBarTheme
-                                  .selectedItemColor
-                              : Theme.of(context)
-                                  .bottomNavigationBarTheme
-                                  .unselectedItemColor,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
