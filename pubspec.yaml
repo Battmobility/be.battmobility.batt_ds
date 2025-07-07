@@ -1,6 +1,6 @@
 name: batt_ds
 description: "The BattMobility design system"
-version: 0.0.75
+version: 0.0.76
 
 environment:
   sdk: ^3.5.4
@@ -38,4 +38,4 @@ flutter:
         - asset: packages/batt_ds/assets/fonts/LicensePlate.ttf
     - family: Inter
       fonts:
-        - asset: packages/batt_ds/assets/fonts/Inter_18pt-Regular.ttf
+        - asset: packages/batt_ds/assets/fonts/Inter_24pt-Regular.ttf
