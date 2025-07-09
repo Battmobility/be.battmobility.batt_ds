@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 AppBar buildActiveAppBar(BuildContext context,
         {required String title,
         bool showBackButton = true,
+        bool centerTitle = true,
+        bool dark = false,
         Widget? trailing}) =>
     AppBar(
       backgroundColor: Colors.transparent,
@@ -13,7 +15,8 @@ AppBar buildActiveAppBar(BuildContext context,
         decoration: BoxDecoration(
             gradient: GradientTheme.standard().activeAppBarGradient),
       ),
-      systemOverlayStyle: SystemUiOverlayStyle.light,
+      systemOverlayStyle:
+          dark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
@@ -34,6 +37,8 @@ AppBar buildActiveAppBar(BuildContext context,
 AppBar buildDefaultAppBar(BuildContext context,
         {required String title,
         bool showBackButton = true,
+        bool centerTitle = true,
+        bool dark = false,
         Widget? trailing}) =>
     AppBar(
       backgroundColor: Colors.transparent,
@@ -41,7 +46,8 @@ AppBar buildDefaultAppBar(BuildContext context,
         decoration: BoxDecoration(
             gradient: GradientTheme.standard().defaultAppBarGradient),
       ),
-      systemOverlayStyle: SystemUiOverlayStyle.light,
+      systemOverlayStyle:
+          dark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
@@ -63,11 +69,14 @@ AppBar buildTransparentAppBar(BuildContext context,
         {required String title,
         Color contentColor = AppColors.textColor,
         bool showBackButton = true,
+        bool centerTitle = true,
+        bool dark = false,
         Widget? leading,
         Widget? trailing}) =>
     AppBar(
       backgroundColor: Colors.transparent,
-      systemOverlayStyle: SystemUiOverlayStyle.dark,
+      systemOverlayStyle:
+          dark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
       elevation: 0,
       leading: showBackButton
           ? leading ??
@@ -82,5 +91,5 @@ AppBar buildTransparentAppBar(BuildContext context,
               .titleMedium!
               .copyWith(color: contentColor)),
       actions: trailing != null ? [trailing] : null,
-      centerTitle: true,
+      centerTitle: centerTitle,
     );

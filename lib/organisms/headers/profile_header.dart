@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 final class ProfileHeader extends StatelessWidget {
   final String name;
-  final String imageUrl;
+  final String? imageUrl;
   final Color? contentColor;
 
   const ProfileHeader({
@@ -37,7 +37,7 @@ final class ProfileHeader extends StatelessWidget {
                         height: 90,
                         color: AppColors.offWhite,
                         child: Image(
-                          image: NetworkImage(imageUrl),
+                          image: NetworkImage(imageUrl ?? ""),
                           fit: BoxFit.fitWidth,
                           errorBuilder: (context, error, stackTrace) {
                             return const Center(
