@@ -27,7 +27,7 @@ final class BattCallout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
+        color: Theme.of(context).colorScheme.onSurface,
         borderRadius: const BorderRadius.all(CornerRadii.m),
         border: border,
       ),
@@ -92,7 +92,7 @@ final class BattCallout extends StatelessWidget {
                       context,
                     ).hideCurrentSnackBar(reason: SnackBarClosedReason.dismiss);
                   },
-                  icon: const Icon(Icons.close, color: AppColors.white),
+                  icon: const Icon(Icons.close, color: AppColors.urbanMist),
                 ),
             ],
           ],
@@ -103,7 +103,7 @@ final class BattCallout extends StatelessWidget {
 
   TextStyle _titleStyle(BuildContext context) {
     return Theme.of(context).textTheme.labelLarge!.copyWith(
-        color: Theme.of(context).colorScheme.onSurface,
+        color: Theme.of(context).colorScheme.surfaceContainer,
         fontWeight: FontWeight.bold);
   }
 

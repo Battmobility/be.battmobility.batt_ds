@@ -107,7 +107,8 @@ class BattSnackbar {
         message: RichText(
           text: TextSpan(
             text: message,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest),
           ),
         ),
         action: () {

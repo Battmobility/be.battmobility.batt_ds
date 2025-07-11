@@ -27,10 +27,10 @@ AppBar buildActiveAppBar(BuildContext context,
           : null,
       title: centerTitle
           ? Text(title,
-              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: Theme.of(context).colorScheme.surfaceContainer))
           : Text(title,
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Theme.of(context).colorScheme.surfaceContainer)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
@@ -62,12 +62,12 @@ AppBar buildDefaultAppBar(BuildContext context,
           ? Text(title,
               style: Theme.of(context)
                   .textTheme
-                  .headlineLarge!
+                  .titleMedium!
                   .copyWith(color: Theme.of(context).colorScheme.onSurface))
           : Text(title,
               style: Theme.of(context)
                   .textTheme
-                  .titleMedium!
+                  .headlineLarge!
                   .copyWith(color: Theme.of(context).colorScheme.onSurface)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
@@ -97,11 +97,11 @@ AppBar buildTransparentAppBar(BuildContext context,
           style: centerTitle
               ? Theme.of(context)
                   .textTheme
-                  .headlineLarge!
+                  .titleMedium!
                   .copyWith(color: contentColor)
               : Theme.of(context)
                   .textTheme
-                  .titleMedium!
+                  .headlineLarge!
                   .copyWith(color: contentColor)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: centerTitle,
