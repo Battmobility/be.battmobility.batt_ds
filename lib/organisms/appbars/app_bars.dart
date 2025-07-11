@@ -25,11 +25,13 @@ AppBar buildActiveAppBar(BuildContext context,
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
-      title: Text(title,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: Theme.of(context).colorScheme.surfaceContainer)),
+      title: centerTitle
+          ? Text(title,
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.surfaceContainer))
+          : Text(title,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.surfaceContainer)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
     );
@@ -56,11 +58,17 @@ AppBar buildDefaultAppBar(BuildContext context,
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
-      title: Text(title,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: Theme.of(context).colorScheme.onSurface)),
+      title: centerTitle
+          ? Text(title,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.onSurface))
+          : Text(title,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Theme.of(context).colorScheme.onSurface)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
     );
@@ -86,10 +94,15 @@ AppBar buildTransparentAppBar(BuildContext context,
               )
           : null,
       title: Text(title,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: contentColor)),
+          style: centerTitle
+              ? Theme.of(context)
+                  .textTheme
+                  .headlineLarge!
+                  .copyWith(color: contentColor)
+              : Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: contentColor)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: centerTitle,
     );
