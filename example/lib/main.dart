@@ -12,6 +12,7 @@ import 'package:batt_ds_example/storybook_pages/organisms/list_section_page.dart
 import 'package:batt_ds_example/storybook_pages/organisms/nonavailability_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/plan_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/result_card_page.dart';
+import 'package:batt_ds_example/storybook_pages/organisms/sort_option_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/gradients_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
@@ -279,6 +280,16 @@ Storybook get storybook {
       },
       name: 'Organisms/Plan cards');
 
+  final sortOptionCardsStory = Story(
+      builder: (context) {
+        return MaterialApp(
+          home: const SortOptioncardPage(),
+          theme: lightTheme(context),
+          darkTheme: darkTheme(context),
+        );
+      },
+      name: 'Organisms/Sort option cards');
+
   final locationCardsStory = Story(
       builder: (context) {
         return MaterialApp(
@@ -344,6 +355,7 @@ Storybook get storybook {
       locationCardsStory,
       bookingCardsStory,
       nonAvailabiltyCardsStory,
+      sortOptionCardsStory,
       planCardsStory,
       headersStory,
       battomNavigationStory,
