@@ -25,36 +25,35 @@ final class BattListTile extends StatelessWidget {
       padding: padding ?? AppPaddings.small.all,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         spacing: AppSpacings.sm,
         children: [
           leading,
           Expanded(
-            child: GestureDetector(
-              onTap: () => onTap != null ? onTap!() : null,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: AppSpacings.xs,
-                children: [
-                  Text(title,
-                      style: Theme.of(context).listTileTheme.titleTextStyle),
-                  if (subtitle != null) ...[
-                    Text(subtitle!,
-                        style:
-                            Theme.of(context).listTileTheme.subtitleTextStyle),
-                  ]
-                ],
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => onTap != null ? onTap!() : null,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: AppSpacings.xs,
+                  children: [
+                    Text(title,
+                        style: Theme.of(context).listTileTheme.titleTextStyle),
+                    if (subtitle != null) ...[
+                      Text(subtitle!,
+                          style: Theme.of(context)
+                              .listTileTheme
+                              .subtitleTextStyle),
+                    ]
+                  ],
+                ),
               ),
             ),
           ),
-          if (trailing != null) ...[
-            Padding(
-              padding: AppPaddings.xxsmall.top,
-              child: trailing!,
-            )
-          ]
+          if (trailing != null) ...[trailing!]
         ],
       ),
     );
