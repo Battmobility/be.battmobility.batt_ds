@@ -5,8 +5,11 @@ import 'batt_simple_text_button.dart';
 /// A custom primary text button widget that adapts to the platform.
 /// {@endtemplate}
 class MonochromeSimpleTextButton extends BattSimpleTextButton {
+  final Color? color;
+
   /// {@macro primary_text_button}
   const MonochromeSimpleTextButton({
+    this.color,
     super.underline = false,
     super.key,
     required super.label,
@@ -16,21 +19,27 @@ class MonochromeSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return Theme.of(context).colorScheme.surfaceDim;
+    return color != null
+        ? color!.withAlpha(120)
+        : Theme.of(context).colorScheme.surfaceDim;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return Theme.of(context).colorScheme.onSurface;
+    return color != null
+        ? color!.withAlpha(200)
+        : Theme.of(context).colorScheme.onSurface;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return Colors.transparent;
+    return color != null
+        ? color!.withAlpha(200)
+        : Theme.of(context).colorScheme.onSurfaceVariant;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return Theme.of(context).colorScheme.onSurface;
+    return color ?? Theme.of(context).colorScheme.onSurface;
   }
 }

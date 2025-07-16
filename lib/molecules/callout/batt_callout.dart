@@ -82,8 +82,12 @@ final class BattCallout extends StatelessWidget {
             if (action != null || showCloseIcon) ...[
               const SizedBox(width: AppSpacings.md),
               if (action != null && actionLabel != null)
-                DefaultSolidTextButton(
-                    label: actionLabel!, onPressed: action!())
+                MonochromeSimpleTextButton(
+                  label: actionLabel!,
+                  onPressed: action!,
+                  color: Theme.of(context).colorScheme.surface,
+                  underline: true,
+                )
               else if (showCloseIcon)
                 IconButton.outlined(
                   visualDensity: VisualDensity.compact,
@@ -112,26 +116,26 @@ final class BattCallout extends StatelessWidget {
       case CalloutType.info:
         return const BattIcon(
             size: BattIconSize.small,
-            backgroundColor: AppColors.ctaGreen,
+            backgroundColor: AppColors.skySurge,
             icon: Icons.info_outline,
             iconColor: AppColors.white);
       case CalloutType.success:
         return const BattIcon(
             size: BattIconSize.small,
-            backgroundColor: AppColors.b2cKeyColor,
+            backgroundColor: AppColors.greenShift,
             icon: Icons.check,
             iconColor: AppColors.white);
       case CalloutType.warning:
         return const BattIcon(
             size: BattIconSize.small,
-            backgroundColor: AppColors.rusticClay,
+            backgroundColor: AppColors.warningPrimary,
             icon: Icons.warning_amber,
             iconColor: AppColors.white);
       case CalloutType.error:
         return const BattIcon(
             size: BattIconSize.small,
-            backgroundColor: AppColors.rusticClay,
-            icon: Icons.close,
+            backgroundColor: AppColors.errorPrimary,
+            icon: Icons.error_outline,
             iconColor: AppColors.white);
     }
   }

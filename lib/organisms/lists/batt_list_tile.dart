@@ -34,10 +34,10 @@ final class BattListTile extends StatelessWidget {
               onTap: () => onTap != null ? onTap!() : null,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: AppSpacings.xs,
                 children: [
-                  const SizedBox(height: AppSpacings.xxs),
                   Text(title,
                       style: Theme.of(context).listTileTheme.titleTextStyle),
                   if (subtitle != null) ...[
