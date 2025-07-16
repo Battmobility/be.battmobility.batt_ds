@@ -25,7 +25,7 @@ final class BattListTile extends StatelessWidget {
       padding: padding ?? AppPaddings.small.all,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         spacing: AppSpacings.sm,
         children: [
           leading,

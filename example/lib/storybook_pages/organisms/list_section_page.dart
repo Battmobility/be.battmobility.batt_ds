@@ -133,15 +133,6 @@ class ListSectionPage extends StatelessWidget {
                     Divider(),
                     BattListTile(
                       title: "List title",
-                      subtitle: "List tile subtitle",
-                      leading: BattIcon(
-                        battIcon: BattIcons.car,
-                      ),
-                    ),
-                    Divider(),
-                    BattListTile(
-                      title: "List title",
-                      subtitle: "List tile subtitle",
                       leading: BattIcon(
                         battIcon: BattIcons.car,
                       ),
@@ -157,6 +148,7 @@ class ListSectionPage extends StatelessWidget {
                       ),
                       trailing: Icon(Icons.more),
                     ),
+                    Divider(),
                     BattListTile(
                       title: "List title",
                       subtitle: "List tile subtitle",

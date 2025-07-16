@@ -75,7 +75,7 @@ class LicensePlate extends StatelessWidget {
       case LicensePlateSize.small:
         return EdgeInsets.all(margin());
       case LicensePlateSize.medium:
-        return EdgeInsets.all(margin()).subtract(const EdgeInsets.only(top: 1));
+        return EdgeInsets.all(margin()).subtract(const EdgeInsets.only(top: 2));
       case LicensePlateSize.large:
         return EdgeInsets.all(margin()).subtract(const EdgeInsets.only(top: 2));
     }
