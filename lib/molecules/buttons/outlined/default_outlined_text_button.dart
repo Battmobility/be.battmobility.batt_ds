@@ -7,8 +7,11 @@ import '../batt_text_button.dart';
 /// A custom primary text button widget that adapts to the platform.
 /// {@endtemplate}
 class DefaultOutlinedTextButton extends BattTextButton {
+  final double borderWidth;
+
   /// {@macro primary_text_button}
   const DefaultOutlinedTextButton({
+    this.borderWidth = 1,
     super.key,
     required super.label,
     super.leading,
@@ -20,7 +23,7 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   BorderSide defaultBorder(BuildContext context) =>
-      BorderSide(color: textColor(context));
+      BorderSide(color: textColor(context), width: borderWidth);
 
   @override
   Color backgroundColor(BuildContext context) {

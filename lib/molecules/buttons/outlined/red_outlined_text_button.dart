@@ -11,6 +11,7 @@ class RedOutlinedTextButton extends DefaultOutlinedTextButton {
     super.trailing,
     super.buttonSize,
     super.focusNode,
+    super.borderWidth,
     required super.onPressed,
   });
 
