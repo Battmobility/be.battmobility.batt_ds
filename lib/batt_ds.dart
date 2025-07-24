@@ -43,16 +43,13 @@ ThemeData lightTheme(BuildContext context) {
         fillColor: const WidgetStatePropertyAll(AppColors.b2bKeyColor),
         checkColor: WidgetStatePropertyAll(theme.themeColorLight)),
     dividerTheme: const DividerThemeData(color: AppColors.urbanMist),
-    iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-            elevation: const WidgetStatePropertyAll(2),
-            foregroundColor: WidgetStatePropertyAll(theme.themeColorDark),
-            backgroundColor:
-                WidgetStatePropertyAll(AppColors.neutralColors[100]))),
     iconTheme: IconThemeData(color: AppColors.neutralColors[950]),
     inputDecorationTheme: theme.inputDecorationThemeLight,
     elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
+    iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+            foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     listTileTheme: ListTileThemeData(
       titleTextStyle: Theme.of(context)
           .textTheme
@@ -118,10 +115,7 @@ ThemeData darkTheme(BuildContext context) {
         style: ButtonStyle(minimumSize: WidgetStatePropertyAll(Size(12, 12)))),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-            elevation: const WidgetStatePropertyAll(2),
-            foregroundColor: WidgetStatePropertyAll(theme.themeColorDark),
-            backgroundColor:
-                WidgetStatePropertyAll(AppColors.neutralColors[100]))),
+            foregroundColor: WidgetStatePropertyAll(theme.themeColorLight))),
     iconTheme: IconThemeData(color: AppColors.neutralColors[100]),
     inputDecorationTheme: theme.inputDecorationThemeDark,
     listTileTheme: ListTileThemeData(
