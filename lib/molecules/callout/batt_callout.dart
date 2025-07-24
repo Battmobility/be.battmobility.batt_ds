@@ -32,7 +32,7 @@ final class BattCallout extends StatelessWidget {
         border: border,
       ),
       child: Padding(
-        padding: AppPaddings.medium.leading
+        padding: AppPaddings.xsmall.leading
             .add(AppPaddings.small.all)
             .add(AppPaddings.small.bottom),
         child: Row(
@@ -44,7 +44,7 @@ final class BattCallout extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: AppPaddings.small.trailing,
+                    padding: AppPaddings.medium.trailing,
                     child: _icon,
                   ),
                   Expanded(
