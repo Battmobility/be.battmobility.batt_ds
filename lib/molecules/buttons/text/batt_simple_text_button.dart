@@ -94,7 +94,6 @@ abstract class BattSimpleTextButton extends BattTextButton {
               style: baseTextStyle.copyWith(
                 color: textColor(context),
                 decoration: underline ? TextDecoration.underline : null,
-                inherit: true,
               ),
               child: Text(
                 label,

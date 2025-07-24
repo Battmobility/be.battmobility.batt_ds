@@ -143,7 +143,7 @@ final class VehicleCard extends StatelessWidget {
                         style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
-                        maxLines: 1,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -160,10 +160,7 @@ final class VehicleCard extends StatelessWidget {
                           Flexible(
                             child: Text(
                               price!,
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.neutralColors[950],
-                              ),
+                              style: theme.textTheme.labelMedium,
                             ),
                           ),
                         if (price2 != null)
@@ -174,8 +171,7 @@ final class VehicleCard extends StatelessWidget {
                                   : AppPaddings.small.leading,
                               child: Text(
                                 price2!,
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w400,
+                                style: theme.textTheme.labelSmall?.copyWith(
                                     color: AppColors.neutralColors[400]),
                               ),
                             ),

@@ -29,7 +29,7 @@ class AppColors {
   static const Color warningPrimary = Color(0xFFFB923C);
   static const Color warningSecondary = Color(0xFF9A3412);
 
-  static const Color errorPrimary = Color(0xFFED5E6F);
+  static const Color errorPrimary = Color(0xFF9F1239);
   static const Color errorSecondary = Color(0xFFFFAEC4);
 
   static const Color black = Color(0xff000004);

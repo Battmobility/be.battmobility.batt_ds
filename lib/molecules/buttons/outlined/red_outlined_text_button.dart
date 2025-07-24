@@ -1,14 +1,10 @@
-import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../batt_text_button.dart';
+import 'default_outlined_text_button.dart';
 
-/// {@template primary_text_button}
-/// A custom primary text button widget that adapts to the platform.
-/// {@endtemplate}
-class GrayOutlinedTextButton extends BattTextButton {
-  /// {@macro primary_text_button}
-  const GrayOutlinedTextButton({
+class RedOutlinedTextButton extends DefaultOutlinedTextButton {
+  const RedOutlinedTextButton({
     super.key,
     required super.label,
     super.leading,
@@ -19,27 +15,31 @@ class GrayOutlinedTextButton extends BattTextButton {
   });
 
   @override
+  BorderSide defaultBorder(BuildContext context) =>
+      const BorderSide(color: AppColors.errorPrimary);
+
+  @override
   Color backgroundColor(BuildContext context) {
-    return AppColors.neutralColors[100]!;
+    return Colors.transparent;
   }
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.neutralColors[50]!;
+    return AppColors.errorSecondary;
   }
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.futureBlue;
+    return AppColors.errorPrimary;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.futureBlue;
+    return AppColors.errorSecondary;
   }
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.b2bKeyColor;
+    return AppColors.errorPrimary;
   }
 }

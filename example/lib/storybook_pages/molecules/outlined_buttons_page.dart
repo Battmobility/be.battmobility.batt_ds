@@ -314,6 +314,156 @@ class OutlinedButtonsPage extends StatelessWidget {
                               child: e,
                             ))
                         .toList()),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Outlined red',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            RedOutlinedTextButton(
+                              label: "XXLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                            ),
+                            RedOutlinedTextButton(
+                              label: "XLarge button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Large button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Regular button",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                            ),
+                          ]),
+                      Wrap(
+                          alignment: WrapAlignment.start,
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            RedOutlinedTextButton(
+                              label: "XXLarge with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "XLarge with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Large with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Regular with leading icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            RedOutlinedTextButton(
+                              label: "XXLarge with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "XLarge with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Large with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Regular with trailing icon",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                          ]),
+                      Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            RedOutlinedTextButton(
+                              label: "XXLarge with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xxLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "XLarge with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.xLarge,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Large with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.large,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                            RedOutlinedTextButton(
+                              label: "Regular with both",
+                              onPressed: () => {},
+                              buttonSize: BattButtonSize.medium,
+                              leading: (color) =>
+                                  Icon(Icons.car_crash_outlined, color: color),
+                              trailing: (color) =>
+                                  Icon(Icons.car_repair_outlined, color: color),
+                            ),
+                          ]),
+                    ]
+                        .map((e) => Padding(
+                              padding: AppPaddings.small.vertical,
+                              child: e,
+                            ))
+                        .toList()),
               ],
             ),
           ),

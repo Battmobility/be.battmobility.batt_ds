@@ -1,17 +1,22 @@
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:flutter/material.dart';
 
+enum TagType { standard, warning }
+
 final class Tag extends StatelessWidget {
   final String text;
+  final TagType type;
 
-  const Tag(this.text, {super.key});
+  const Tag(this.text, {this.type = TagType.standard, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
       decoration: BoxDecoration(
-        color: AppColors.airFlow,
+        color: type == TagType.standard
+            ? AppColors.airFlow
+            : AppColors.errorPrimary,
         borderRadius: BorderRadius.circular(CornerRadii.xs.x),
       ),
       child: Text(
@@ -20,7 +25,9 @@ final class Tag extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontWeight: FontWeight.bold,
-              color: AppColors.b2bKeyColor,
+              color: type == TagType.standard
+                  ? AppColors.b2bKeyColor
+                  : AppColors.white,
             ),
       ),
     );
