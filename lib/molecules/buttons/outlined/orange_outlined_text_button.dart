@@ -17,7 +17,7 @@ class OrangeOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   BorderSide defaultBorder(BuildContext context) =>
-      const BorderSide(color: AppColors.ctaSand);
+      BorderSide(color: AppColors.ctaSand, width: borderWidth);
 
   @override
   Color backgroundColor(BuildContext context) {

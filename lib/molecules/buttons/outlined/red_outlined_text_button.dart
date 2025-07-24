@@ -17,7 +17,7 @@ class RedOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   BorderSide defaultBorder(BuildContext context) =>
-      const BorderSide(color: AppColors.errorPrimary);
+      BorderSide(color: AppColors.errorPrimary, width: borderWidth);
 
   @override
   Color backgroundColor(BuildContext context) {
