@@ -9,7 +9,7 @@ final class VehicleCard extends StatelessWidget {
 
   final String? walkingDuration;
   final String? walkingDistance;
-  final String? tag;
+  final Tag? tag;
   final String? price;
   final String? price2;
   final String? imageUrl;
@@ -121,22 +121,7 @@ final class VehicleCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: AppSpacings.sm,
                   children: [
-                    if (tag != null)
-                      Container(
-                        padding: AppPaddings.xxsmall.all
-                            .add(AppPaddings.small.horizontal),
-                        decoration: BoxDecoration(
-                          color: AppColors.airFlow,
-                          borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-                        ),
-                        child: Text(
-                          tag!,
-                          style: theme.textTheme.labelSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.b2bKeyColor,
-                          ),
-                        ),
-                      ),
+                    if (tag != null) tag!,
                     Flexible(
                       child: Text(
                         name,

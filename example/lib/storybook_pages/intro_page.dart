@@ -65,7 +65,7 @@ class IntroPage extends StatelessWidget {
                               name: "Polestar 2",
                               chargePercentage: 75,
                               price: "€ 18",
-                              tag: "Eerste prijs",
+                              tag: Tag("Eerste prijs", type: TagType.standard),
                               walkingDistance: "20",
                               walkingDuration: "10 min",
                               imageUrl:

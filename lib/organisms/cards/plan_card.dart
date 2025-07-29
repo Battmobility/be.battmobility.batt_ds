@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 final class PlanCard extends StatelessWidget {
   final String title;
-  final String? tag;
+  final Tag? tag;
   final String? subtitle;
   final IconData? icon;
   final bool isActive;
@@ -77,7 +77,7 @@ final class PlanCard extends StatelessWidget {
                                 ConstrainedBox(
                                     constraints: BoxConstraints(
                                         maxWidth: constraints.maxWidth / 3),
-                                    child: Tag(tag!))
+                                    child: tag)
                               ])
                         : const SizedBox.shrink()
                   ],
@@ -106,11 +106,14 @@ final class PlanCard extends StatelessWidget {
                           weight: 0.5,
                           color: AppColors.neutralColors[400]),
                     ),
-                    Text(
-                      subtitle!,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontStyle: FontStyle.italic,
-                          color: AppColors.neutralColors[950]),
+                    Flexible(
+                      child: Text(
+                        subtitle!,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontStyle: FontStyle.italic,
+                            color: AppColors.neutralColors[950]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     )
                   ],
                 ),

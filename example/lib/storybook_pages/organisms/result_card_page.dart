@@ -42,7 +42,7 @@ class ResultCardsPage extends StatelessWidget {
                             range: "500 km",
                             price: "€ 18",
                             price2: "+ €0,14/km",
-                            tag: "Eerste prijs",
+                            tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -53,7 +53,7 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 1.000",
                             price2: "+ €0,14/km",
                             range: "550km",
-                            tag: "Een lange tag",
+                            tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
@@ -64,7 +64,7 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 1.000",
                             price2: "€100 / uur",
                             range: "550km",
-                            tag: "Een lange tag",
+                            tag: Tag("Favoriet", type: TagType.warning),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
@@ -90,7 +90,7 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€12",
                             price2: "+ €0.16/km",
                             range: "550km",
-                            tag: "Eerste prijs",
+                            tag: Tag("Favoriet", type: TagType.warning),
                             walkingDistance: "2km.",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -101,7 +101,7 @@ class ResultCardsPage extends StatelessWidget {
                             range: "50 km",
                             price: "€1.000 / dag",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
+                            tag: Tag("Favoriet", type: TagType.warning),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
@@ -128,7 +128,7 @@ class ResultCardsPage extends StatelessWidget {
                             range: "500 km",
                             price: "€ 18",
                             price2: "+ €0.16/km",
-                            tag: "Eerste prijs",
+                            tag: Tag("Geboekt", type: TagType.booking),
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -140,7 +140,7 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 1.000",
                             price2: "€100 / uur",
                             range: "300 km",
-                            tag: "Een lange tag",
+                            tag: Tag("Geboekt", type: TagType.booking),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
@@ -153,7 +153,7 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 1.000",
                             price2: "€100 / uur",
                             range: "300 km",
-                            tag: "Een lange tag",
+                            tag: Tag("Geboekt", type: TagType.booking),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:

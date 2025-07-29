@@ -42,7 +42,7 @@ class VehicleCardsPage extends StatelessWidget {
                             range: "500 km",
                             chargePercentage: 75,
                             price: "€ 18",
-                            tag: "Eerste prijs",
+                            tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -53,7 +53,7 @@ class VehicleCardsPage extends StatelessWidget {
                             chargePercentage: 100,
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            tag: "Een lange tag",
+                            tag: Tag("Favoriet", type: TagType.warning),
                             walkingDistance: "200m.",
                             walkingDuration: "2h",
                             imageUrl:
@@ -130,7 +130,7 @@ class VehicleCardsPage extends StatelessWidget {
                         VehicleCard(
                           name: "Polestar 2",
                           price: "€12",
-                          tag: "Eerste prijs",
+                          tag: Tag("Eerste prijs", type: TagType.standard),
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
@@ -148,7 +148,7 @@ class VehicleCardsPage extends StatelessWidget {
                           range: "500 km",
                           price: "€1.000 / dag",
                           price2: "€100 / uur",
-                          tag: "Een lange tag",
+                          tag: Tag("Geboekt", type: TagType.booking),
                           walkingDuration: "10 min",
                           imageUrl:
                               "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
@@ -174,7 +174,8 @@ class VehicleCardsPage extends StatelessWidget {
                             range: "500 km",
                             chargePercentage: 75,
                             price: "€ 18",
-                            tag: "Eerste prijs",
+                            tag: Tag("Tag met lange tekst",
+                                type: TagType.standard),
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:
@@ -224,7 +225,7 @@ class VehicleCardsPage extends StatelessWidget {
                             range: "500 km",
                             chargePercentage: 75,
                             price: "€ 18",
-                            tag: "Eerste prijs",
+                            tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "20",
                             walkingDuration: "10 min",
                             imageUrl:

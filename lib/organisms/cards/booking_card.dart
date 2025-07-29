@@ -8,7 +8,7 @@ final class BookingCard extends StatelessWidget {
   final DateTime bookingPeriodEnd;
   final String? price;
   final String? imageUrl;
-  final String? tag;
+  final Tag? tag;
 
   const BookingCard({
     super.key,
@@ -90,7 +90,7 @@ final class BookingCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (tag != null) ...[
-                        Tag(tag!),
+                        tag!,
                         const SizedBox(height: AppSpacings.xs)
                       ],
                       FittedBox(

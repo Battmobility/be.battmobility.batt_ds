@@ -10,7 +10,7 @@ final class ResultCard extends StatelessWidget {
   final String? deviationInfo;
   final String? walkingDuration;
   final String? walkingDistance;
-  final String? tag;
+  final Tag? tag;
 
   final String? imageUrl;
 
@@ -190,26 +190,7 @@ final class ResultCard extends StatelessWidget {
               );
             }),
           ),
-          if (tag != null)
-            Positioned(
-              top: -15,
-              right: 10,
-              child: Container(
-                padding:
-                    AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
-                decoration: BoxDecoration(
-                  color: AppColors.futureBlue,
-                  borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-                ),
-                child: Text(
-                  tag!,
-                  style: theme.textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.white,
-                  ),
-                ),
-              ),
-            ),
+          if (tag != null) Positioned(top: -15, right: 10, child: tag!),
         ],
       ),
     );

@@ -18,7 +18,7 @@ final class Tag extends StatelessWidget {
             ? AppColors.airFlow
             : type == TagType.booking
                 ? AppColors.ecoHorizon
-                : AppColors.errorPrimary,
+                : AppColors.errorSecondary,
         borderRadius: BorderRadius.circular(CornerRadii.xs.x),
       ),
       child: Text(
@@ -31,7 +31,7 @@ final class Tag extends StatelessWidget {
                   ? AppColors.b2bKeyColor
                   : type == TagType.booking
                       ? AppColors.b2cKeyColor
-                      : AppColors.white,
+                      : AppColors.errorPrimary,
             ),
       ),
     );
