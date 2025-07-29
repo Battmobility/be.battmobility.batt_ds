@@ -44,6 +44,11 @@ class CtaButtonsPage extends StatelessWidget {
                             SolidCtaButton(
                               label: "Plan je rit",
                               onPressed: () => {},
+                              isBusy: true,
+                            ),
+                            SolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
                               width: 200,
                             ),
                             SolidCtaButton(
@@ -53,6 +58,13 @@ class CtaButtonsPage extends StatelessWidget {
                             ),
                             SolidCtaButton(
                               label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                            SolidCtaButton(
+                              label: "Plan je rit",
+                              isBusy: true,
                               onPressed: () => {},
                               width: 200,
                               height: 98,
