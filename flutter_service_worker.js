@@ -19,7 +19,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "8fee64e1911c17b4eb97f12f9e2e3f4c
 "assets/packages/batt_ds/assets/icons/car.svg": "96193ea41980136d6eda21b870d167aa",
 "version.json": "b969cf14319447458f3e4b73e1530ad5",
 "manifest.json": "0867c3e13649ac4d06fe34b7b3ddce08",
-"flutter_bootstrap.js": "8198e464f7d3426c4c9a578d752483bb",
+"flutter_bootstrap.js": "52c4dc0dff2f6fcc14b71dbc27a8a403",
 "canvaskit/skwasm.wasm": "39dd80367a4e71582d234948adc521c0",
 "canvaskit/canvaskit.wasm": "7a3f4ae7d65fc1de6a6e7ddd3224bc93",
 "canvaskit/skwasm.js.symbols": "e72c79950c8a8483d826a7f0560573a1",
@@ -37,7 +37,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "8fee64e1911c17b4eb97f12f9e2e3f4c
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
-"main.dart.js": "4a870829b0bc9bf599dfe75587676803"};
+"main.dart.js": "0ae6c0badce601add24028c9e0aa7d45"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
