@@ -120,7 +120,7 @@ class ResultCardsPage extends StatelessWidget {
                   Padding(
                     padding: AppPaddings.small.vertical,
                     child: Wrap(
-                        spacing: AppSpacings.sm,
+                        spacing: AppSpacings.md,
                         runSpacing: AppSpacings.md,
                         children: [
                           ResultCard(
