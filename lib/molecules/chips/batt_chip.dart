@@ -3,6 +3,7 @@ import 'package:batt_ds/molecules/chips/batt_chip_state.dart';
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 abstract class BattChip extends StatelessWidget {
   /// {@macro app_text_button}
@@ -197,8 +198,18 @@ abstract class BattChip extends StatelessWidget {
         avatar:
             leading != null ? Icon(leading, color: textColor(context)) : null,
         labelPadding: _padding,
-        onSelected: onSelected,
-        onDeleted: onDeleted,
+        onSelected: (selected) {
+          if (onSelected != null) {
+            HapticFeedback.lightImpact();
+            onSelected!(selected);
+          }
+        },
+        onDeleted: () {
+          if (onDeleted != null) {
+            HapticFeedback.lightImpact();
+            onDeleted!();
+          }
+        },
         backgroundColor: backgroundColor(context),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius)),
