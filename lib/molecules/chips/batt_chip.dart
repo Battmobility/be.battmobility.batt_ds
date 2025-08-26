@@ -204,12 +204,12 @@ abstract class BattChip extends StatelessWidget {
             onSelected!(selected);
           }
         },
-        onDeleted: () {
-          if (onDeleted != null) {
-            HapticFeedback.lightImpact();
-            onDeleted!();
-          }
-        },
+        onDeleted: onDeleted != null
+            ? () {
+                HapticFeedback.lightImpact();
+                onDeleted!();
+              }
+            : null,
         backgroundColor: backgroundColor(context),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius)),
