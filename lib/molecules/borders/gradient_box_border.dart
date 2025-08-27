@@ -61,13 +61,17 @@ class GradientBorder extends Border {
     BoxShape shape = BoxShape.rectangle,
     BorderRadius? borderRadius,
   }) {
+    // Adjust the rect to account for the stroke width
+    // This ensures the border is drawn completely within the widget bounds
+    final adjustedRect = rect.deflate(top.width / 2);
+
     Path path;
     if (shape == BoxShape.circle) {
-      path = Path()..addOval(rect);
+      path = Path()..addOval(adjustedRect);
     } else if (borderRadius != null) {
-      path = Path()..addRRect(borderRadius.toRRect(rect));
+      path = Path()..addRRect(borderRadius.toRRect(adjustedRect));
     } else {
-      path = Path()..addRect(rect);
+      path = Path()..addRect(adjustedRect);
     }
 
     final Paint paint = Paint()
