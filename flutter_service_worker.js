@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "4dec706ea93faeb30327fa45b05fe1b6",
+const RESOURCES = {"flutter_bootstrap.js": "c79697324faba23c194fcd1e44986b08",
 "flutter.js": "888483df48293866f9f41d3d9274a779",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
@@ -24,7 +24,7 @@ const RESOURCES = {"flutter_bootstrap.js": "4dec706ea93faeb30327fa45b05fe1b6",
 "canvaskit/skwasm_heavy.js.symbols": "3c01ec03b5de6d62c34e17014d1decd3",
 "canvaskit/canvaskit.wasm": "07b9f5853202304d3b0749d9306573cc",
 "canvaskit/canvaskit.js.symbols": "58832fbed59e00d2190aa295c4d70360",
-"main.dart.js": "0de74831eaeec6d21e67c0ba45c1950b",
+"main.dart.js": "e89772a85efbf6d4ef9c5e106753041c",
 "index.html": "23dcf6eb93408b0fdd941cc89698a34c",
 "/": "23dcf6eb93408b0fdd941cc89698a34c",
 "assets/packages/storybook_toolkit/assets/README.md": "fbaed1ae60d80596d99545ef45d72803",
