@@ -125,11 +125,15 @@ final class ResultCard extends StatelessWidget {
                                   ),
                                   Row(
                                     spacing: AppSpacings.md,
-                                    children: topInfoFields,
+                                    children: topInfoFields
+                                        .map((field) => Flexible(child: field))
+                                        .toList(),
                                   ),
                                   Row(
                                     spacing: AppSpacings.md,
-                                    children: bottomInfoFields,
+                                    children: bottomInfoFields
+                                        .map((field) => Flexible(child: field))
+                                        .toList(),
                                   ),
                                 ],
                               ),

@@ -154,6 +154,21 @@ class IntroPage extends StatelessWidget {
                             BattomNavigationBarItem(
                                 icon: Icons.gavel, label: "Item 4"),
                           ]),
+                          Row(
+                            children: [
+                              AnimatedLoader(size: LoaderSize.lg),
+                              AnimatedLoader(),
+                              AnimatedLoader(
+                                size: LoaderSize.xxxxl,
+                              ),
+                              AnimatedLoader(
+                                size: LoaderSize.xxxxxl,
+                              ),
+                              AnimatedLoader(
+                                size: LoaderSize.xxxxxxl,
+                              )
+                            ],
+                          ),
                           BatteryIcon(chargePercentage: 80),
                           BatteryIcon(chargePercentage: 30),
                           ProfileHeader(

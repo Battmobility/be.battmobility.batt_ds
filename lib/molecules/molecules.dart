@@ -9,6 +9,7 @@ export 'flow/static_flow_widget.dart';
 export 'info/info_field.dart';
 export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';
+export 'loaders/animated_loader.dart';
 export 'map_markers/map_marker.dart';
 export 'properties/property_widget.dart';
 export 'properties/price_widget.dart';
