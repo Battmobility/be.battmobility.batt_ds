@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/info/info_field.dart';
 import 'package:flutter/material.dart';
 
 class ResultCardsPage extends StatelessWidget {
@@ -43,8 +44,23 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 18",
                             price2: "+ €0,14/km",
                             tag: Tag("Eerste prijs", type: TagType.standard),
-                            walkingDistance: "20",
-                            walkingDuration: "10 min",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -54,8 +70,23 @@ class ResultCardsPage extends StatelessWidget {
                             price2: "+ €0,14/km",
                             range: "550km",
                             tag: Tag("Eerste prijs", type: TagType.standard),
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -65,8 +96,23 @@ class ResultCardsPage extends StatelessWidget {
                             price2: "€100 / uur",
                             range: "550km",
                             tag: Tag("Favoriet", type: TagType.warning),
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -91,8 +137,23 @@ class ResultCardsPage extends StatelessWidget {
                             price2: "+ €0.16/km",
                             range: "550km",
                             tag: Tag("Favoriet", type: TagType.warning),
-                            walkingDistance: "2km.",
-                            walkingDuration: "10 min",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                           ),
@@ -102,11 +163,25 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€1.000 / dag",
                             price2: "€100 / uur",
                             tag: Tag("Favoriet", type: TagType.warning),
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
-                            deviationInfo: "12 mei 14:00 - 13 mei 15:00",
                           ),
                         ]),
                   ),
@@ -129,8 +204,23 @@ class ResultCardsPage extends StatelessWidget {
                             price: "€ 18",
                             price2: "+ €0.16/km",
                             tag: Tag("Geboekt", type: TagType.booking),
-                            walkingDistance: "20",
-                            walkingDuration: "10 min",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             selected: true,
@@ -141,12 +231,26 @@ class ResultCardsPage extends StatelessWidget {
                             price2: "€100 / uur",
                             range: "300 km",
                             tag: Tag("Geboekt", type: TagType.booking),
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             selected: true,
-                            deviationInfo: "12 mei 14:00 - 13 mei 15:00",
                           ),
                           ResultCard(
                             name: "Een auto met een lange naam",
@@ -154,8 +258,23 @@ class ResultCardsPage extends StatelessWidget {
                             price2: "€100 / uur",
                             range: "300 km",
                             tag: Tag("Geboekt", type: TagType.booking),
-                            walkingDistance: "200m.",
-                            walkingDuration: "2h",
+                            topInfoFields: [
+                              InfoField(
+                                icon: Icons.battery_1_bar,
+                                text: "25%",
+                                color: AppColors.b2cKeyColor,
+                              ),
+                              InfoField(
+                                  icon: Icons.nordic_walking,
+                                  text: "2 MIN (0.3km)",
+                                  color: AppColors.neutralColors[700]),
+                            ],
+                            bottomInfoFields: [
+                              InfoField(
+                                  icon: Icons.watch,
+                                  text: "12 mei 14:00 - 13 mei 15:00",
+                                  color: AppColors.neutralColors[700])
+                            ],
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             selected: true,

@@ -66,6 +66,7 @@ final class VehicleCard extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     fit: StackFit.expand,
                     children: [
+                      Text("", style: Theme.of(context).textTheme.labelSmall),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(CornerRadii.s.x),

@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/info/info_field.dart';
 import 'package:batt_ds/utils/svg_icon.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +8,8 @@ final class ResultCard extends StatelessWidget {
   final String price;
   final String price2;
   final String range;
-  final String? deviationInfo;
-  final String? walkingDuration;
-  final String? walkingDistance;
+  final List<InfoField> topInfoFields;
+  final List<InfoField> bottomInfoFields;
   final Tag? tag;
   final String? imageUrl;
 
@@ -21,13 +21,13 @@ final class ResultCard extends StatelessWidget {
     required this.price,
     required this.price2,
     required this.range,
-    this.walkingDuration,
-    this.walkingDistance,
+    required this.topInfoFields,
+    required this.bottomInfoFields,
     this.tag,
     this.imageUrl,
     this.selected = false,
-    this.deviationInfo,
   });
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -52,42 +52,47 @@ final class ResultCard extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 72,
-                      height: 72,
-                      child: Stack(
-                        alignment: Alignment.topLeft,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.surface,
-                                borderRadius:
-                                    BorderRadius.circular(CornerRadii.s.x),
-                                boxShadow: selected ? null : [softShadow]),
-                            child: (imageUrl ?? "").isNotEmpty
-                                ? ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.circular(CornerRadii.s.x),
-                                    child: Image(
-                                      image: NetworkImage(imageUrl!),
-                                      fit: BoxFit.fitWidth,
-                                      errorBuilder:
-                                          (context, error, stackTrace) {
-                                        return const Center(child: carIcon);
-                                      },
-                                      loadingBuilder:
-                                          (context, child, loadingProgress) {
-                                        if (loadingProgress == null) {
-                                          return child;
-                                        }
-                                        return const Center(
-                                          child: CircularProgressIndicator
-                                              .adaptive(),
-                                        );
-                                      },
-                                    ),
-                                  )
-                                : const Center(child: carIcon),
-                          ),
-                        ],
+                      child: AspectRatio(
+                        aspectRatio: 1.0,
+                        child: Stack(
+                          alignment: Alignment.topLeft,
+                          fit: StackFit.expand,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.surface,
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.s.x),
+                                  boxShadow: selected ? null : [softShadow]),
+                              child: (imageUrl ?? "").isNotEmpty
+                                  ? ClipRRect(
+                                      borderRadius: BorderRadius.circular(
+                                          CornerRadii.s.x),
+                                      child: Center(
+                                        child: Image(
+                                          image: NetworkImage(imageUrl!),
+                                          fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            return const Center(child: carIcon);
+                                          },
+                                          loadingBuilder: (context, child,
+                                              loadingProgress) {
+                                            if (loadingProgress == null) {
+                                              return child;
+                                            }
+                                            return const Center(
+                                              child: CircularProgressIndicator
+                                                  .adaptive(),
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    )
+                                  : const Center(child: carIcon),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(width: AppSpacings.md),
@@ -109,36 +114,26 @@ final class ResultCard extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 spacing: AppSpacings.md,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Flexible(
-                                        child: Text(
-                                          name,
-                                          style: theme.textTheme.titleSmall
-                                              ?.copyWith(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: AppColors
-                                                      .neutralColors[950]),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  _rangeInfo(theme),
-                                  if (deviationInfo != null) ...[
-                                    Text(
-                                      deviationInfo!,
-                                      style: theme.textTheme.bodySmall
+                                  Flexible(
+                                    child: Text(
+                                      name,
+                                      style: theme.textTheme.titleSmall
                                           ?.copyWith(
                                               fontWeight: FontWeight.bold,
                                               color:
-                                                  AppColors.neutralColors[700]),
-                                      overflow: TextOverflow.fade,
-                                    )
-                                  ]
+                                                  AppColors.neutralColors[950]),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  Row(
+                                    spacing: AppSpacings.md,
+                                    children: topInfoFields,
+                                  ),
+                                  Row(
+                                    spacing: AppSpacings.md,
+                                    children: bottomInfoFields,
+                                  ),
                                 ],
                               ),
                             ),
@@ -148,7 +143,7 @@ final class ResultCard extends StatelessWidget {
                                   padding: AppPaddings.xsmall.top,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     spacing: AppSpacings.xs,
                                     children: [
                                       Flexible(
@@ -186,31 +181,6 @@ final class ResultCard extends StatelessWidget {
           }),
         ),
         if (tag != null) Positioned(top: -15, right: 10, child: tag!),
-      ],
-    );
-  }
-
-  Widget _rangeInfo(ThemeData theme) {
-    return Row(
-      children: [
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            rangeIcon.colored(AppColors.b2cKeyColor),
-            const SizedBox(width: AppSpacings.xs),
-            Flexible(
-              child: Text(
-                range,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.b2cKeyColor,
-                ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(width: AppSpacings.xs),
       ],
     );
   }
