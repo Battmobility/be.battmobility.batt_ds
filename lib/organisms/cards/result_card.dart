@@ -68,7 +68,7 @@ final class ResultCard extends StatelessWidget {
                                       child: Center(
                                         child: Image(
                                           image: NetworkImage(imageUrl!),
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.fill,
                                           errorBuilder:
                                               (context, error, stackTrace) {
                                             return const Center(child: carIcon);
@@ -79,9 +79,7 @@ final class ResultCard extends StatelessWidget {
                                               return child;
                                             }
                                             return const Center(
-                                              child: CircularProgressIndicator
-                                                  .adaptive(),
-                                            );
+                                                child: AnimatedLoader());
                                           },
                                         ),
                                       ),

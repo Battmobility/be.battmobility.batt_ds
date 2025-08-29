@@ -50,15 +50,7 @@ final class ProfileHeader extends StatelessWidget {
                           },
                           loadingBuilder: (context, child, loadingProgress) {
                             if (loadingProgress == null) return child;
-                            return Center(
-                              child: CircularProgressIndicator.adaptive(
-                                value: loadingProgress.expectedTotalBytes !=
-                                        null
-                                    ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                    : null,
-                              ),
-                            );
+                            return const Center(child: AnimatedLoader());
                           },
                         ),
                       ),
