@@ -68,7 +68,7 @@ final class ResultCard extends StatelessWidget {
                                       child: Center(
                                         child: Image(
                                           image: NetworkImage(imageUrl!),
-                                          fit: BoxFit.fill,
+                                          fit: BoxFit.contain,
                                           errorBuilder:
                                               (context, error, stackTrace) {
                                             return const Center(child: carIcon);
