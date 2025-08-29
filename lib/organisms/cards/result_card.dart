@@ -1,5 +1,4 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/molecules/info/info_field.dart';
 import 'package:batt_ds/utils/svg_icon.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,6 @@ final class ResultCard extends StatelessWidget {
   final String name;
   final String price;
   final String price2;
-  final String range;
   final List<InfoField> topInfoFields;
   final List<InfoField> bottomInfoFields;
   final Tag? tag;
@@ -20,7 +18,6 @@ final class ResultCard extends StatelessWidget {
     required this.name,
     required this.price,
     required this.price2,
-    required this.range,
     required this.topInfoFields,
     required this.bottomInfoFields,
     this.tag,

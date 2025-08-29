@@ -1,5 +1,4 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/molecules/info/info_field.dart';
 import 'package:flutter/material.dart';
 
 class ResultCardsPage extends StatelessWidget {
@@ -40,7 +39,6 @@ class ResultCardsPage extends StatelessWidget {
                         children: [
                           ResultCard(
                             name: "Polestar 2",
-                            range: "500 km",
                             price: "€ 18",
                             price2: "+ €0,14/km",
                             tag: Tag("Eerste prijs", type: TagType.standard),
@@ -68,7 +66,6 @@ class ResultCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             price: "€ 1.000",
                             price2: "+ €0,14/km",
-                            range: "550km",
                             tag: Tag("Eerste prijs", type: TagType.standard),
                             topInfoFields: [
                               InfoField(
@@ -94,7 +91,6 @@ class ResultCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            range: "550km",
                             tag: Tag("Favoriet", type: TagType.warning),
                             topInfoFields: [
                               InfoField(
@@ -135,7 +131,6 @@ class ResultCardsPage extends StatelessWidget {
                             name: "Polestar 2",
                             price: "€12",
                             price2: "+ €0.16/km",
-                            range: "550km",
                             tag: Tag("Favoriet", type: TagType.warning),
                             topInfoFields: [
                               InfoField(
@@ -159,7 +154,6 @@ class ResultCardsPage extends StatelessWidget {
                           ),
                           ResultCard(
                             name: "Een auto met een lange naam",
-                            range: "50 km",
                             price: "€1.000 / dag",
                             price2: "€100 / uur",
                             tag: Tag("Favoriet", type: TagType.warning),
@@ -200,7 +194,6 @@ class ResultCardsPage extends StatelessWidget {
                         children: [
                           ResultCard(
                             name: "Polestar 2",
-                            range: "500 km",
                             price: "€ 18",
                             price2: "+ €0.16/km",
                             tag: Tag("Geboekt", type: TagType.booking),
@@ -229,7 +222,6 @@ class ResultCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            range: "300 km",
                             tag: Tag("Geboekt", type: TagType.booking),
                             topInfoFields: [
                               InfoField(
@@ -256,7 +248,6 @@ class ResultCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             price: "€ 1.000",
                             price2: "€100 / uur",
-                            range: "300 km",
                             tag: Tag("Geboekt", type: TagType.booking),
                             topInfoFields: [
                               InfoField(
