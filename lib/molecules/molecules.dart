@@ -6,6 +6,7 @@ export 'callout/batt_callout.dart';
 export 'chips/chips.dart';
 export 'flow/flow_widget.dart';
 export 'flow/static_flow_widget.dart';
+export 'gradual_blur.dart';
 export 'info/info_field.dart';
 export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';

@@ -16,3 +16,4 @@ export 'headers/profile_header.dart';
 export 'lists/list_section.dart';
 export 'lists/batt_list_tile.dart';
 export 'snackbar/batt_snackbar.dart';
+export 'rating_bar/rating_bar.dart';

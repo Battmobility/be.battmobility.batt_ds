@@ -42,9 +42,7 @@ class _AnimatedLoaderState extends State<AnimatedLoader>
       duration: const Duration(seconds: 1),
       vsync: this,
     );
-
     _animation = IntTween(begin: 1, end: 24).animate(_controller);
-
     _controller.repeat();
   }
 

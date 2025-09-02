@@ -2,7 +2,7 @@ import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
-class OutlinedCtaButton extends StatelessWidget {
+class PlainCtaButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final bool isEnabled;
@@ -10,7 +10,7 @@ class OutlinedCtaButton extends StatelessWidget {
   final double height;
   final double borderWidth;
 
-  const OutlinedCtaButton({
+  const PlainCtaButton({
     super.key,
     required this.label,
     required this.onPressed,

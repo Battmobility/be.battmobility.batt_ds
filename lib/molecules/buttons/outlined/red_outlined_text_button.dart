@@ -21,7 +21,7 @@ class RedOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return Colors.transparent;
+    return AppColors.offWhite;
   }
 
   @override
