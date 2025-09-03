@@ -132,22 +132,20 @@ AppBar buildBlurryAppBar(BuildContext context,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
-              icon: Icon(Icons.arrow_back,
-                  color: Theme.of(context).colorScheme.surfaceContainer),
+              icon: Icon(Icons.arrow_back, color: contentColor),
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
-      title: centerTitle
-          ? Text(title,
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  color: dark
-                      ? Theme.of(context).colorScheme.surfaceContainer
-                      : Theme.of(context).colorScheme.onSurface))
-          : Text(title,
-              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                  color: dark
-                      ? Theme.of(context).colorScheme.surfaceContainer
-                      : Theme.of(context).colorScheme.onSurface)),
+      title: Text(title,
+          style: centerTitle
+              ? Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: contentColor)
+              : Theme.of(context)
+                  .textTheme
+                  .headlineLarge!
+                  .copyWith(color: contentColor)),
       actions: trailing != null ? [trailing] : null,
       centerTitle: true,
     );
