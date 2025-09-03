@@ -17,7 +17,7 @@ class SolidCtaButton extends StatelessWidget {
     required this.onPressed,
     this.isEnabled = true,
     this.width,
-    this.height = 48.0,
+    this.height = 56.0,
     this.isBusy = false,
   });
 

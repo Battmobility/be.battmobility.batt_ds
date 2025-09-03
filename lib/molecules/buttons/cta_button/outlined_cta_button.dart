@@ -1,5 +1,4 @@
 import 'package:batt_ds/atoms/app_colors.dart';
-import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class OutlinedCtaButton extends StatelessWidget {
@@ -16,7 +15,7 @@ class OutlinedCtaButton extends StatelessWidget {
     required this.onPressed,
     this.isEnabled = true,
     this.width,
-    this.height = 48.0,
+    this.height = 56.0,
     this.borderWidth = 2.0,
   });
 

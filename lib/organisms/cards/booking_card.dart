@@ -45,7 +45,7 @@ final class BookingCard extends StatelessWidget {
                   child: (imageUrl ?? "").isNotEmpty
                       ? Image.network(
                           imageUrl!,
-                          fit: BoxFit.fitWidth,
+                          fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return const Center(
                               child: Icon(

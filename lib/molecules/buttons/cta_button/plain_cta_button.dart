@@ -1,5 +1,4 @@
 import 'package:batt_ds/atoms/app_colors.dart';
-import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class PlainCtaButton extends StatelessWidget {
@@ -16,7 +15,7 @@ class PlainCtaButton extends StatelessWidget {
     required this.onPressed,
     this.isEnabled = true,
     this.width,
-    this.height = 48.0,
+    this.height = 56.0,
     this.borderWidth = 2.0,
   });
 
@@ -30,8 +29,8 @@ class PlainCtaButton extends StatelessWidget {
           width: width ?? double.infinity,
           height: height,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(height / 2),
-              border: Border.all(color: AppColors.b2bKeyColor)),
+            borderRadius: BorderRadius.circular(height / 2),
+          ),
           child: Padding(
             padding: EdgeInsets.all(borderWidth),
             child: Container(
