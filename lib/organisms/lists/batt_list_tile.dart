@@ -33,6 +33,7 @@ final class BattListTile extends StatelessWidget {
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: () => onTap != null ? onTap!() : null,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
