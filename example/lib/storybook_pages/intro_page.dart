@@ -105,11 +105,10 @@ class IntroPage extends StatelessWidget {
                             height: 80,
                             child: BookingCard(
                               vehicleName: "Polestar 4",
-                              bookingPeriodStart:
-                                  DateTime.now().subtract(Duration(days: 2)),
-                              bookingPeriodEnd:
-                                  DateTime.now().subtract(Duration(hours: 5)),
-                              price: "€ 105",
+                              fromLabel: "Van",
+                              fromDate: "Ma 2 jul, 14:40",
+                              toLabel: "Tot",
+                              toDate: "Ma 2 jul, 18:40",
                               imageUrl:
                                   "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                             ),

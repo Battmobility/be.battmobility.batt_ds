@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/buttons/cta_button/plain_cta_button.dart';
 import 'package:flutter/material.dart';
 
 class CtaButtonsPage extends StatelessWidget {
@@ -140,6 +141,59 @@ class CtaButtonsPage extends StatelessWidget {
                               height: 98,
                             ),
                             InvertedSolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                          ],
+                        ),
+                      ]
+                          .map((e) => Padding(
+                                padding: AppPaddings.small.vertical,
+                                child: e,
+                              ))
+                          .toList()),
+                  Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: AppPaddings.small.vertical,
+                          child: Text(
+                            'Plain',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                        ),
+                        Wrap(
+                          spacing: AppSpacings.sm,
+                          runSpacing: AppSpacings.md,
+                          children: [
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                            ),
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                            ),
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                            ),
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              height: 98,
+                            ),
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                            PlainCtaButton(
                               label: "Plan je rit",
                               onPressed: () => {},
                               width: 200,

@@ -71,7 +71,7 @@ class BookingCardsPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'With price',
+                    'With accessory',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -83,34 +83,94 @@ class BookingCardsPage extends StatelessWidget {
                       children: [
                         BookingCard(
                           vehicleName: "Polestar 4",
-                          bookingPeriodStart:
-                              DateTime.now().subtract(Duration(days: 2)),
-                          bookingPeriodEnd:
-                              DateTime.now().subtract(Duration(hours: 5)),
-                          price: "€ 105",
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                          accessory: SizedBox(
+                            height: 48,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: AppColors.airFlow,
+                                  borderRadius:
+                                      BorderRadius.all(CornerRadii.s)),
+                              child: Padding(
+                                padding: AppPaddings.xsmall.all,
+                                child: Center(
+                                  child: Text(
+                                    "Example accessory",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(color: AppColors.b2bKeyColor),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                         BookingCard(
                           vehicleName: "Polestar 4",
-                          bookingPeriodStart:
-                              DateTime.now().add(Duration(hours: 1)),
-                          bookingPeriodEnd:
-                              DateTime.now().add(Duration(hours: 5)),
-                          price: "€ 105",
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           tag: Tag("Verlopen", type: TagType.warning),
+                          accessory: SizedBox(
+                            height: 48,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: AppColors.airFlow,
+                                  borderRadius:
+                                      BorderRadius.all(CornerRadii.s)),
+                              child: Padding(
+                                padding: AppPaddings.xsmall.all,
+                                child: Center(
+                                  child: Text(
+                                    "Example accessory",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(color: AppColors.b2bKeyColor),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                         BookingCard(
                           vehicleName: "Polestar 4 in past and with long name",
-                          bookingPeriodStart:
-                              DateTime.now().add(Duration(days: 100)),
-                          bookingPeriodEnd:
-                              DateTime.now().add(Duration(days: 90)),
-                          price: "€ 105",
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                          accessory: SizedBox(
+                            height: 48,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: AppColors.airFlow,
+                                  borderRadius:
+                                      BorderRadius.all(CornerRadii.s)),
+                              child: Padding(
+                                padding: AppPaddings.xsmall.all,
+                                child: Center(
+                                  child: Text(
+                                    "Example accessory",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(color: AppColors.b2bKeyColor),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                       ]),
                 ),
@@ -129,26 +189,26 @@ class BookingCardsPage extends StatelessWidget {
                       children: [
                         BookingCard(
                           vehicleName: "Polestar 4",
-                          bookingPeriodStart:
-                              DateTime.now().subtract(Duration(days: 2)),
-                          bookingPeriodEnd:
-                              DateTime.now().subtract(Duration(hours: 5)),
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         BookingCard(
                           vehicleName: "Polestar 4 no image",
-                          bookingPeriodStart:
-                              DateTime.now().add(Duration(hours: 1)),
-                          bookingPeriodEnd:
-                              DateTime.now().add(Duration(hours: 5)),
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                         ),
                         BookingCard(
                           vehicleName: "Polestar 4 in past and with long name",
-                          bookingPeriodStart:
-                              DateTime.now().add(Duration(days: 100)),
-                          bookingPeriodEnd:
-                              DateTime.now().add(Duration(days: 90)),
+                          fromLabel: "Van",
+                          fromDate: "Ma 2 jul, 14:40",
+                          toLabel: "Tot",
+                          toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),

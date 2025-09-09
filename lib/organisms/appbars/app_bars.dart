@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/batt_ds.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
