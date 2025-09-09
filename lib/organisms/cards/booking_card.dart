@@ -27,7 +27,7 @@ final class BookingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Card(
-      margin: AppPaddings.medium.all,
+      margin: AppPaddings.none.all,
       color: AppColors.white,
       elevation: 5,
       shadowColor: AppColors.neutralColors[100]!.withAlpha(100),
@@ -145,10 +145,14 @@ final class BookingCard extends StatelessWidget {
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Icon(Icons.arrow_forward,
-                        color: AppColors.neutralColors[300]!,
-                        size: AppSpacings.md),
+                    Padding(
+                      padding: AppPaddings.xxsmall.bottom,
+                      child: Icon(Icons.arrow_forward,
+                          color: AppColors.neutralColors[300]!,
+                          size: AppSpacings.md),
+                    ),
                     const SizedBox(width: AppSpacings.md),
                     Flexible(
                       flex: 2,
