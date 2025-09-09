@@ -109,7 +109,7 @@ final class BookingCard extends StatelessWidget {
                     ],
                     Icon(
                       Icons.arrow_forward_ios,
-                      size: 18,
+                      size: AppSpacings.lg,
                       color: AppColors.neutralColors[300]!,
                     ),
                   ],
@@ -135,6 +135,7 @@ final class BookingCard extends StatelessWidget {
                                 .onSurface
                                 .withAlpha(163)),
                       ),
+                      const SizedBox(width: AppSpacings.xs),
                       Text(
                         fromDate,
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
@@ -147,12 +148,9 @@ final class BookingCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding: AppPaddings.xxsmall.bottom,
-                      child: Icon(Icons.arrow_forward,
-                          color: AppColors.neutralColors[300]!,
-                          size: AppSpacings.md),
-                    ),
+                    Icon(Icons.arrow_forward,
+                        color: AppColors.neutralColors[300]!,
+                        size: AppSpacings.lg),
                     const SizedBox(width: AppSpacings.md),
                     Flexible(
                       flex: 2,
@@ -171,6 +169,7 @@ final class BookingCard extends StatelessWidget {
                                         .onSurface
                                         .withAlpha(163)),
                           ),
+                          const SizedBox(width: AppSpacings.xs),
                           Text(
                             toDate,
                             style: Theme.of(context)

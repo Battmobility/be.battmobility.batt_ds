@@ -101,6 +101,7 @@ final class ActiveBookingCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (tag != null) ...[
                     Padding(
@@ -110,7 +111,7 @@ final class ActiveBookingCard extends StatelessWidget {
                   ],
                   const Icon(
                     Icons.arrow_forward_ios,
-                    size: 18,
+                    size: AppSpacings.lg,
                     color: AppColors.white,
                   ),
                 ],
@@ -136,6 +137,7 @@ final class ActiveBookingCard extends StatelessWidget {
                               .surface
                               .withAlpha(163)),
                     ),
+                    const SizedBox(width: AppSpacings.xs),
                     Text(
                       fromDate,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
@@ -148,11 +150,8 @@ final class ActiveBookingCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Padding(
-                    padding: AppPaddings.xxsmall.bottom,
-                    child: const Icon(Icons.arrow_forward,
-                        color: AppColors.white, size: AppSpacings.md),
-                  ),
+                  const Icon(Icons.arrow_forward,
+                      color: AppColors.white, size: AppSpacings.lg),
                   const SizedBox(width: AppSpacings.md),
                   Flexible(
                     flex: 2,
@@ -171,6 +170,7 @@ final class ActiveBookingCard extends StatelessWidget {
                                       .surface
                                       .withAlpha(163)),
                         ),
+                        const SizedBox(width: AppSpacings.xs),
                         Text(
                           toDate,
                           style: Theme.of(context)
