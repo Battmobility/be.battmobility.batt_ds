@@ -111,74 +111,77 @@ final class BookingCardBody extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppSpacings.md),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Flexible(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      fromLabel,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: lightTextColor),
-                    ),
-                    const SizedBox(width: AppSpacings.xs),
-                    Text(
-                      fromDate,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: textColor),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: Flexible(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Icon(Icons.arrow_forward,
-                        color: textColor, size: AppSpacings.lg),
-                    const SizedBox(width: AppSpacings.md),
-                    Flexible(
-                      flex: 2,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            toLabel,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall!
-                                .copyWith(color: lightTextColor),
-                          ),
-                          const SizedBox(width: AppSpacings.xs),
-                          Text(
-                            toDate,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall!
-                                .copyWith(color: textColor),
-                          ),
-                        ],
+        LayoutBuilder(builder: (context, constraints) {
+          return Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: constraints.maxWidth / 2,
+                child: Flexible(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        fromLabel,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodySmall!
+                            .copyWith(color: lightTextColor),
                       ),
-                    )
-                  ],
+                      const SizedBox(width: AppSpacings.xs),
+                      Text(
+                        fromDate,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodySmall!
+                            .copyWith(color: textColor),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
+              SizedBox(
+                width: constraints.maxWidth / 2,
+                child: Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Icon(Icons.arrow_forward,
+                          color: textColor, size: AppSpacings.lg),
+                      const SizedBox(width: AppSpacings.md),
+                      Flexible(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              toLabel,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .copyWith(color: lightTextColor),
+                            ),
+                            const SizedBox(width: AppSpacings.xs),
+                            Text(
+                              toDate,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .copyWith(color: textColor),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        }),
         if (accessory != null) ...[
           Padding(
             padding: AppPaddings.medium.top,
