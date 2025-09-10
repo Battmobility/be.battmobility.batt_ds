@@ -221,9 +221,9 @@ class BookingCardsPage extends StatelessWidget {
                         BookingCard(
                           vehicleName: "Polestar 4",
                           fromLabel: "Van",
-                          fromDate: "Ma 2 jul, 14:40",
+                          fromDate: "Maandag 21 augustus, 14:40",
                           toLabel: "Tot",
-                          toDate: "Ma 2 jul, 18:40",
+                          toDate: "Maandag 21 augustus, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),

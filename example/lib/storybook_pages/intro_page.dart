@@ -60,7 +60,7 @@ class IntroPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 360,
-                            height: 120,
+                            height: 160,
                             child: VehicleCard(
                               name: "Polestar 2",
                               chargePercentage: 75,
@@ -90,28 +90,28 @@ class IntroPage extends StatelessWidget {
                             onPressed: () => {},
                             buttonSize: BattButtonSize.small,
                           ),
-                          BattListTile(
-                            title: "List tile",
-                            leading: BattIcon(icon: Icons.label),
-                            subtitle: "Subtitle text",
+                          SizedBox(
+                            width: 120,
+                            child: BattListTile(
+                              title: "List tile",
+                              leading: BattIcon(icon: Icons.label),
+                              subtitle: "Subtitle text",
+                            ),
                           ),
+                          ListButton(onTap: () => {}),
                           Padding(
                             padding: AppPaddings.small.vertical,
                             child: const LicensePlate("2-ABC-323",
                                 size: LicensePlateSize.medium),
                           ),
-                          SizedBox(
-                            width: 200,
-                            height: 80,
-                            child: BookingCard(
-                              vehicleName: "Polestar 4",
-                              fromLabel: "Van",
-                              fromDate: "Ma 2 jul, 14:40",
-                              toLabel: "Tot",
-                              toDate: "Ma 2 jul, 18:40",
-                              imageUrl:
-                                  "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
-                            ),
+                          ActiveBookingCard(
+                            vehicleName: "Polestar 4",
+                            fromLabel: "Van",
+                            fromDate: "Ma 2 jul, 14:40",
+                            toLabel: "Tot",
+                            toDate: "Ma 2 jul, 18:40",
+                            imageUrl:
+                                "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                           ),
                           BattCallout(
                             type: CalloutType.success,
