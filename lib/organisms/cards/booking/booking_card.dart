@@ -36,6 +36,7 @@ final class BookingCard extends StatelessWidget {
         padding: AppPaddings.medium.all,
         child: BookingCardBody(
           vehicleName: vehicleName,
+          imageUrl: imageUrl,
           fromLabel: fromLabel,
           toLabel: toLabel,
           fromDate: fromDate,

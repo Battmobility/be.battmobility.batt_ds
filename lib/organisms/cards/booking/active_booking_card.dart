@@ -35,6 +35,7 @@ final class ActiveBookingCard extends StatelessWidget {
       ),
       child: BookingCardBody(
         vehicleName: vehicleName,
+        imageUrl: imageUrl,
         fromLabel: fromLabel,
         toLabel: toLabel,
         fromDate: fromDate,
