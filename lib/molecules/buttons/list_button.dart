@@ -9,8 +9,8 @@ final class ListButton extends StatelessWidget {
 
   const ListButton({
     this.size = AppSpacings.xxxxl,
-    this.backgroundColor = AppColors.airFlow,
-    this.iconColor = AppColors.b2bKeyColor,
+    this.backgroundColor = AppColors.offWhite,
+    this.iconColor = AppColors.futureBlue,
     required this.onTap,
     super.key,
   });
@@ -27,6 +27,7 @@ final class ListButton extends StatelessWidget {
           height: size,
           decoration: BoxDecoration(
               color: backgroundColor,
+              border: Border.all(color: AppColors.neutralColors[50]!, width: 1),
               borderRadius: const BorderRadius.all(CornerRadii.s)),
           child: Padding(
             padding: AppPaddings.small.all,

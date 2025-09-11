@@ -116,9 +116,9 @@ final class BookingCardBody extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: constraints.maxWidth / 2,
-                child: Flexible(
+              Flexible(
+                child: SizedBox(
+                  width: constraints.maxWidth / 2,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -142,9 +142,9 @@ final class BookingCardBody extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: constraints.maxWidth / 2,
-                child: Flexible(
+              Flexible(
+                child: SizedBox(
+                  width: constraints.maxWidth / 2,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.end,
