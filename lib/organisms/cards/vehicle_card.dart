@@ -68,32 +68,38 @@ final class VehicleCard extends StatelessWidget {
                     children: [
                       Text("", style: Theme.of(context).textTheme.labelSmall),
                       Container(
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(CornerRadii.s.x),
-                            color: AppColors.neutralColors[100]),
-                        child: (imageUrl != null && (imageUrl ?? "").isNotEmpty)
-                            ? ClipRRect(
-                                borderRadius:
-                                    BorderRadius.circular(CornerRadii.s.x),
-                                child: Center(
-                                  child: Image(
-                                    image: NetworkImage(imageUrl ?? ""),
-                                    fit: BoxFit.cover,
-                                    errorBuilder: (context, error, stackTrace) {
-                                      return const Center(child: carIcon);
-                                    },
-                                    loadingBuilder:
-                                        (context, child, loadingProgress) {
-                                      if (loadingProgress == null) return child;
-                                      return const Center(
-                                          child: AnimatedLoader());
-                                    },
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(CornerRadii.s.x),
+                              color: AppColors.neutralColors[100]),
+                          child: (imageUrl != null &&
+                                  (imageUrl ?? "").isNotEmpty)
+                              ? ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(CornerRadii.s.x),
+                                  child: Center(
+                                    child: Image(
+                                      image: NetworkImage(imageUrl ?? ""),
+                                      fit: BoxFit.cover,
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                        return const Center(
+                                            child: Icon(Icons
+                                                .image_not_supported_sharp));
+                                      },
+                                      loadingBuilder:
+                                          (context, child, loadingProgress) {
+                                        return loadingProgress == null
+                                            ? child
+                                            : const Center(
+                                                child: AnimatedLoader());
+                                      },
+                                    ),
                                   ),
-                                ),
-                              )
-                            : const Center(child: carIcon),
-                      ),
+                                )
+                              : const Center(
+                                  child:
+                                      Icon(Icons.image_not_supported_sharp))),
                       if (licensePlate != null) ...[
                         Positioned(
                           bottom: AppSpacings.xs,

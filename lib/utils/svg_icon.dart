@@ -10,12 +10,13 @@ final class SvgIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentColor = color;
     return SvgPicture.asset(
       "packages/batt_ds/assets/icons/$assetName",
       width: size?.width,
       height: size?.height,
       colorFilter:
-          color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+          currentColor != null ? ColorFilter.mode(currentColor, BlendMode.srcIn) : null,
     );
   }
 
