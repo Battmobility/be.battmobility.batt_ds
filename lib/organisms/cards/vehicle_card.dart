@@ -72,34 +72,7 @@ final class VehicleCard extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.circular(CornerRadii.s.x),
                               color: AppColors.neutralColors[100]),
-                          child: (imageUrl != null &&
-                                  (imageUrl ?? "").isNotEmpty)
-                              ? ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.circular(CornerRadii.s.x),
-                                  child: Center(
-                                    child: Image(
-                                      image: NetworkImage(imageUrl ?? ""),
-                                      fit: BoxFit.cover,
-                                      errorBuilder:
-                                          (context, error, stackTrace) {
-                                        return const Center(
-                                            child: Icon(Icons
-                                                .image_not_supported_sharp));
-                                      },
-                                      loadingBuilder:
-                                          (context, child, loadingProgress) {
-                                        return loadingProgress == null
-                                            ? child
-                                            : const Center(
-                                                child: AnimatedLoader());
-                                      },
-                                    ),
-                                  ),
-                                )
-                              : const Center(
-                                  child:
-                                      Icon(Icons.image_not_supported_sharp))),
+                          child: _imageWidget()),
                       if (licensePlate != null) ...[
                         Positioned(
                           bottom: AppSpacings.xs,
@@ -185,6 +158,39 @@ final class VehicleCard extends StatelessWidget {
           ),
         );
       }),
+    );
+  }
+
+  Widget _imageWidget() {
+    final url = imageUrl;
+
+    if (url == null || url.isEmpty) {
+      return const Center(
+        child: Icon(Icons.image_not_supported_sharp),
+      );
+    }
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(CornerRadii.s.x),
+      child: Center(
+        child: Image.network(
+          url,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            return const Center(
+              child: Icon(Icons.image_not_supported_sharp),
+            );
+          },
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) {
+              return child;
+            }
+            return const Center(
+              child: AnimatedLoader(),
+            );
+          },
+        ),
+      ),
     );
   }
 
