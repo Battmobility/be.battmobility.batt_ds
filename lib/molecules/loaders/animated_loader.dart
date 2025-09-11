@@ -31,9 +31,12 @@ final class AnimatedLoader extends StatefulWidget {
 }
 
 class _AnimatedLoaderState extends State<AnimatedLoader>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late AnimationController _controller;
   late Animation<int> _animation;
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -54,6 +57,8 @@ class _AnimatedLoaderState extends State<AnimatedLoader>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // Required for AutomaticKeepAliveClientMixin
+
     return SizedBox(
       width: widget.size.value,
       height: widget.size.value,

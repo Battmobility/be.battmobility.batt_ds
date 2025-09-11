@@ -57,7 +57,7 @@ final class ResultCard extends StatelessWidget {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.surface,
+                                  color: AppColors.neutralColors[100],
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.s.x),
                                   boxShadow: selected ? null : [softShadow]),

@@ -7,3 +7,5 @@ export 'batt_chip_primary.dart';
 export 'batt_chip_orange.dart';
 export 'batt_chip_state.dart';
 export 'batt_chip_size.dart';
+export 'batt_square_chip.dart';
+export 'batt_filter_chip.dart';

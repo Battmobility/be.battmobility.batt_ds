@@ -25,6 +25,75 @@ class ChipPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
+                    'Square',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattSquareChip(
+                          label: "Enabled large ",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.enabled,
+                        ),
+                        BattSquareChip(
+                          label: "Enabled medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattSquareChip(
+                          label: "Enabled small",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          state: BattChipState.enabled,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'Filter',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Container(
+                  color: AppColors.airFlow,
+                  child: Padding(
+                    padding: AppPaddings.small.all,
+                    child: Wrap(
+                        spacing: AppSpacings.sm,
+                        runSpacing: AppSpacings.md,
+                        children: [
+                          BattFilterChip(
+                            label: "Large ",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.large,
+                            state: BattChipState.enabled,
+                          ),
+                          BattFilterChip(
+                            label: "Medium",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            state: BattChipState.enabled,
+                          ),
+                          BattFilterChip(
+                            label: "Small",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.small,
+                            state: BattChipState.enabled,
+                          ),
+                        ]),
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
                     'Default',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
