@@ -27,7 +27,7 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return Colors.transparent;
+    return AppColors.white;
   }
 
   @override

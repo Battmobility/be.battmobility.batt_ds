@@ -192,16 +192,30 @@ class BattFilterChip extends StatelessWidget {
               label,
               style: switch (chipSize) {
                 BattChipSize.small => context.typographyTheme.chipSmall
-                    .copyWith(color: textColor(context)),
+                    .copyWith(
+                        color: textColor(context),
+                        fontWeight: state == BattChipState.active
+                            ? FontWeight.w800
+                            : FontWeight.w400),
                 BattChipSize.medium => context.typographyTheme.chipMedium
-                    .copyWith(color: textColor(context)),
+                    .copyWith(
+                        color: textColor(context),
+                        fontWeight: state == BattChipState.active
+                            ? FontWeight.w800
+                            : FontWeight.w400),
                 BattChipSize.large => context.typographyTheme.chipLarge
-                    .copyWith(color: textColor(context)),
+                    .copyWith(
+                        color: textColor(context),
+                        fontWeight: state == BattChipState.active
+                            ? FontWeight.w800
+                            : FontWeight.w400),
               },
             ),
             Icon(
               Icons.keyboard_arrow_down_sharp,
-              color: textColor(context).withAlpha(100),
+              color: state == BattChipState.active
+                  ? textColor(context).withAlpha(200)
+                  : textColor(context).withAlpha(100),
               size: iconSize * 1.5,
             ),
           ],

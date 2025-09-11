@@ -36,7 +36,7 @@ class ChipPage extends StatelessWidget {
                       runSpacing: AppSpacings.md,
                       children: [
                         BattSquareChip(
-                          label: "Enabled large ",
+                          label: "Enabled large",
                           onSelected: (_) => {},
                           chipSize: BattChipSize.large,
                           state: BattChipState.enabled,
@@ -71,7 +71,7 @@ class ChipPage extends StatelessWidget {
                         runSpacing: AppSpacings.md,
                         children: [
                           BattFilterChip(
-                            label: "Large ",
+                            label: "Large",
                             onSelected: (_) => {},
                             chipSize: BattChipSize.large,
                             state: BattChipState.enabled,
@@ -87,6 +87,24 @@ class ChipPage extends StatelessWidget {
                             onSelected: (_) => {},
                             chipSize: BattChipSize.small,
                             state: BattChipState.enabled,
+                          ),
+                           BattFilterChip(
+                            label: "Large",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.large,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Medium",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Small",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.small,
+                            state: BattChipState.active,
                           ),
                         ]),
                   ),

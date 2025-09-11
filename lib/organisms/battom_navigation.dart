@@ -47,8 +47,9 @@ class _BattomNavigationBarState extends State<BattomNavigationBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-      ),
+          color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          border: Border(
+              top: BorderSide(color: AppColors.neutralColors[50]!, width: 1))),
       height: 90,
       child: LayoutBuilder(builder: (context, constraints) {
         final double availableWidth = constraints.maxWidth;
