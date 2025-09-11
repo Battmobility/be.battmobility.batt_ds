@@ -103,7 +103,7 @@ final class VehicleCard extends StatelessWidget {
                                 maxHeight: constraints.maxWidth /
                                     16), // 1/4 of the height
                             child: LicensePlate(
-                              licensePlate!,
+                              licensePlate ?? "",
                               size: LicensePlateSize.small,
                             ),
                           ),
@@ -121,7 +121,7 @@ final class VehicleCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: AppSpacings.sm,
                   children: [
-                    if (tag != null) tag!,
+                    if (tag != null) tag ?? const SizedBox.shrink(),
                     Flexible(
                       child: Text(
                         name,
@@ -144,7 +144,7 @@ final class VehicleCard extends StatelessWidget {
                         if (price != null)
                           Flexible(
                             child: Text(
-                              price!,
+                              price ?? "",
                               style: theme.textTheme.labelMedium,
                             ),
                           ),
@@ -155,7 +155,7 @@ final class VehicleCard extends StatelessWidget {
                                   ? AppPaddings.none.leading
                                   : AppPaddings.small.leading,
                               child: Text(
-                                price2!,
+                                price2 ?? "",
                                 style: theme.textTheme.labelSmall?.copyWith(
                                     color: AppColors.neutralColors[400]),
                               ),
@@ -193,7 +193,7 @@ final class VehicleCard extends StatelessWidget {
               const SizedBox(width: AppSpacings.xs),
               Flexible(
                 child: Text(
-                  range!,
+                  range ?? "",
                   style: theme.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.b2cKeyColor,
@@ -204,7 +204,7 @@ final class VehicleCard extends StatelessWidget {
             ],
           ),
         if (chargePercentage != null && range == null) ...[
-          BatteryIcon(chargePercentage: chargePercentage!),
+          BatteryIcon(chargePercentage: chargePercentage ?? 0.0),
           const SizedBox(width: AppSpacings.xs),
         ]
       ],
@@ -222,7 +222,7 @@ final class VehicleCard extends StatelessWidget {
           if (walkingDuration != null)
             Flexible(
               child: Text(
-                walkingDuration!,
+                walkingDuration ?? "",
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -233,7 +233,7 @@ final class VehicleCard extends StatelessWidget {
           if (walkingDistance != null)
             Flexible(
               child: Text(
-                walkingDistance!,
+                walkingDistance ?? "",
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w200,
                 ),
