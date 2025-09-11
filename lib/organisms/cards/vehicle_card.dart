@@ -72,13 +72,13 @@ final class VehicleCard extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(CornerRadii.s.x),
                             color: AppColors.neutralColors[100]),
-                        child: (imageUrl != null)
+                        child: (imageUrl != null && (imageUrl ?? "").isNotEmpty)
                             ? ClipRRect(
                                 borderRadius:
                                     BorderRadius.circular(CornerRadii.s.x),
                                 child: Center(
                                   child: Image(
-                                    image: NetworkImage(imageUrl!),
+                                    image: NetworkImage(imageUrl ?? ""),
                                     fit: BoxFit.cover,
                                     errorBuilder: (context, error, stackTrace) {
                                       return const Center(child: carIcon);
