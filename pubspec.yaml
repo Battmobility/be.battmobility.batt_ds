@@ -1,6 +1,6 @@
 name: batt_ds
 description: "The BattMobility design system"
-version: 0.1.12
+version: 0.1.13
 
 environment:
   sdk: ^3.5.4
@@ -62,3 +62,6 @@ flutter:
     - family: Inter
       fonts:
         - asset: packages/batt_ds/assets/fonts/Inter_24pt-Regular.ttf
+    - family: InterBold
+      fonts:
+        - asset: packages/batt_ds/assets/fonts/Inter_24pt-Bold.ttf

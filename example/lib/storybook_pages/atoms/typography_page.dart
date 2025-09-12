@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/theme/typography_theme.dart';
 import 'package:flutter/material.dart';
 
 class Typographypage extends StatelessWidget {
@@ -71,6 +72,12 @@ class Typographypage extends StatelessWidget {
                     child: Text(
                       "Title small",
                       style: Theme.of(context).textTheme.titleSmall,
+                    )),
+                Padding(
+                    padding: AppPaddings.small.vertical,
+                    child: Text(
+                      "Title bold",
+                      style: AppTypography().titleBold,
                     )),
                 Padding(
                   padding: AppPaddings.small.vertical,

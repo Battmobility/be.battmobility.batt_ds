@@ -13,6 +13,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     required this.titleLarge,
     required this.titleMedium,
     required this.titleSmall,
+    required this.titleBold,
     required this.bodyLarge,
     required this.bodyMedium,
     required this.bodySmall,
@@ -118,6 +119,9 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
   // Small label
   final TextStyle labelSmall;
 
+  // Small title
+  final TextStyle titleBold;
+
   // Placeholder text
   final TextStyle inputPlaceholder;
 
@@ -141,6 +145,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
     TextStyle? titleLarge,
     TextStyle? titleMedium,
     TextStyle? titleSmall,
+    TextStyle? titleBold,
     TextStyle? bodyLarge,
     TextStyle? bodyMedium,
     TextStyle? bodySmall,
@@ -175,6 +180,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       titleLarge: titleLarge ?? this.titleLarge,
       titleMedium: titleMedium ?? this.titleMedium,
       titleSmall: titleSmall ?? this.titleSmall,
+      titleBold: titleBold ?? this.titleBold,
       bodyLarge: bodyLarge ?? this.bodyLarge,
       bodyMedium: bodyMedium ?? this.bodyMedium,
       bodySmall: bodySmall ?? this.bodySmall,
@@ -236,6 +242,7 @@ interface class AppTypographyTheme extends ThemeExtension<AppTypographyTheme> {
       titleLarge: TextStyle.lerp(titleLarge, other.titleLarge, t)!,
       titleMedium: TextStyle.lerp(titleMedium, other.titleMedium, t)!,
       titleSmall: TextStyle.lerp(titleSmall, other.titleSmall, t)!,
+      titleBold: TextStyle.lerp(titleBold, other.titleBold, t)!,
       inputPlaceholder:
           TextStyle.lerp(inputPlaceholder, other.inputPlaceholder, t)!,
       inputHint: TextStyle.lerp(inputHint, other.inputHint, t)!,
@@ -295,6 +302,13 @@ class AppTypography extends AppTypographyTheme {
         fontWeight: FontWeight.w600,
         color: AppColors.textColor,
         fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleBold = const TextStyle(
+        fontSize: 16,
+        height: 24 / 14,
+        fontWeight: FontWeight.w900,
+        color: AppColors.textColor,
+        fontFamily: "InterBold",
         package: "batt_ds"),
     super.bodyLarge = const TextStyle(
         fontSize: 16,
@@ -514,6 +528,12 @@ class AppTypographyDark extends AppTypographyTheme {
         fontSize: 14,
         height: 24 / 14,
         fontWeight: FontWeight.w600,
+        color: AppColors.offWhite,
+        fontFamily: "Inter",
+        package: "batt_ds"),
+    super.titleBold = const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
         color: AppColors.offWhite,
         fontFamily: "Inter",
         package: "batt_ds"),

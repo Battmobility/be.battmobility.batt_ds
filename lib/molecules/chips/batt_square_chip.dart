@@ -6,17 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class BattSquareChip extends StatelessWidget {
-  /// {@macro app_text_button}
-  const BattSquareChip({
-    super.key,
-    required this.label,
-    required this.onSelected,
-    this.onDeleted,
-    this.leading,
-    this.chipSize = BattChipSize.medium,
-    this.state = BattChipState.enabled,
-  });
-
   final Function(bool)? onSelected;
   final Function()? onDeleted;
 
@@ -30,6 +19,19 @@ class BattSquareChip extends StatelessWidget {
 
   /// The size of the chip.
   final BattChipSize chipSize;
+
+  final bool expand;
+
+  const BattSquareChip({
+    super.key,
+    required this.label,
+    required this.onSelected,
+    this.onDeleted,
+    this.leading,
+    this.chipSize = BattChipSize.medium,
+    this.state = BattChipState.enabled,
+    this.expand = false,
+  });
 
   /// The text color for the text button.
   Color textColor(BuildContext context) {
@@ -162,18 +164,27 @@ class BattSquareChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textWidget = Text(
+      label,
+      style: switch (chipSize) {
+        BattChipSize.small =>
+          context.typographyTheme.chipSmall.copyWith(color: textColor(context)),
+        BattChipSize.medium => context.typographyTheme.chipMedium
+            .copyWith(color: textColor(context)),
+        BattChipSize.large =>
+          context.typographyTheme.chipLarge.copyWith(color: textColor(context)),
+      },
+      textAlign: expand ? TextAlign.center : null, // Center text when expanded
+    );
     return FilterChip(
-        label: Text(
-          label,
-          style: switch (chipSize) {
-            BattChipSize.small => context.typographyTheme.chipSmall
-                .copyWith(color: textColor(context)),
-            BattChipSize.medium => context.typographyTheme.chipMedium
-                .copyWith(color: textColor(context)),
-            BattChipSize.large => context.typographyTheme.chipLarge
-                .copyWith(color: textColor(context)),
-          },
-        ),
+        label: expand
+            ? Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(child: textWidget),
+                ],
+              )
+            : textWidget,
         avatar:
             leading != null ? Icon(leading, color: textColor(context)) : null,
         labelPadding: _padding,
