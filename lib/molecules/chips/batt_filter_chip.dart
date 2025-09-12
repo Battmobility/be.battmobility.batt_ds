@@ -12,6 +12,8 @@ class BattFilterChip extends StatelessWidget {
   final BattChipState state;
   final String label;
   final IconData? leading;
+  final Color? leadingIconColor;
+  final Color? trailingIconColor;
   final IconData? trailing;
   final BattChipSize chipSize;
   final double elevation;
@@ -24,7 +26,9 @@ class BattFilterChip extends StatelessWidget {
     required this.onSelected,
     this.onDeleted,
     this.leading,
+    this.leadingIconColor,
     this.trailing,
+    this.trailingIconColor,
     this.elevation = 0,
     this.expand = false,
     this.chipSize = BattChipSize.medium,
@@ -214,8 +218,9 @@ class BattFilterChip extends StatelessWidget {
                 ],
               )
             : textWidget,
-        avatar:
-            leading != null ? Icon(leading, color: textColor(context)) : null,
+        avatar: leading != null
+            ? Icon(leading, color: leadingIconColor ?? textColor(context))
+            : null,
         labelPadding: _padding,
         onSelected: (selected) {
           if (onSelected != null) {
@@ -237,7 +242,7 @@ class BattFilterChip extends StatelessWidget {
         side: border(context),
         deleteIcon: Icon(
           Icons.close,
-          color: textColor(context),
+          color: trailingIconColor ?? textColor(context),
           size: iconSize,
         ),
         visualDensity: VisualDensity.compact,
