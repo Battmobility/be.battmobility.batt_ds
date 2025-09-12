@@ -48,6 +48,19 @@ class ChipPage extends StatelessWidget {
                           state: BattChipState.enabled,
                         ),
                         BattSquareChip(
+                          label: "Enabled medium with a long text",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattSquareChip(
+                          label:
+                              "Enabled medium with a really stupendously long text that will overflow the screen",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.enabled,
+                        ),
+                        BattSquareChip(
                           label: "Enabled small",
                           onSelected: (_) => {},
                           chipSize: BattChipSize.small,
@@ -88,7 +101,7 @@ class ChipPage extends StatelessWidget {
                             chipSize: BattChipSize.small,
                             state: BattChipState.enabled,
                           ),
-                           BattFilterChip(
+                          BattFilterChip(
                             label: "Large",
                             onSelected: (_) => {},
                             chipSize: BattChipSize.large,
@@ -104,6 +117,47 @@ class ChipPage extends StatelessWidget {
                             label: "Small",
                             onSelected: (_) => {},
                             chipSize: BattChipSize.small,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Small with a long text",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.small,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label:
+                                "Small with a really stupendously long text that will overflow the screen",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.small,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Elevation 1",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            elevation: 1,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Elevation 3",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            elevation: 1,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Elevation 5",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            elevation: 1,
+                            state: BattChipState.active,
+                          ),
+                          BattFilterChip(
+                            label: "Stretched",
+                            onSelected: (_) => {},
+                            chipSize: BattChipSize.medium,
+                            stretch: true,
                             state: BattChipState.active,
                           ),
                         ]),

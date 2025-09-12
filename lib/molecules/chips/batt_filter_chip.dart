@@ -6,6 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class BattFilterChip extends StatelessWidget {
+  final Function(bool)? onSelected;
+  final Function()? onDeleted;
+
+  final BattChipState state;
+  final String label;
+  final IconData? leading;
+  final IconData? trailing;
+  final BattChipSize chipSize;
+  final double elevation;
+  final bool stretch;
+
   /// {@macro app_text_button}
   const BattFilterChip({
     super.key,
@@ -13,23 +24,12 @@ class BattFilterChip extends StatelessWidget {
     required this.onSelected,
     this.onDeleted,
     this.leading,
+    this.trailing,
+    this.elevation = 0,
+    this.stretch = false,
     this.chipSize = BattChipSize.medium,
     this.state = BattChipState.enabled,
   });
-
-  final Function(bool)? onSelected;
-  final Function()? onDeleted;
-
-  final BattChipState state;
-
-  /// The label for the chip.
-  final String label;
-
-  /// The leading icon for the chip.
-  final IconData? leading;
-
-  /// The size of the chip.
-  final BattChipSize chipSize;
 
   /// The background color for the chip
   Color backgroundColor(BuildContext context) {
@@ -185,34 +185,36 @@ class BattFilterChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilterChip(
         label: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: stretch ? MainAxisSize.max : MainAxisSize.min,
           spacing: AppSpacings.xxs,
           children: [
-            Text(
-              label,
-              style: switch (chipSize) {
-                BattChipSize.small => context.typographyTheme.chipSmall
-                    .copyWith(
-                        color: textColor(context),
-                        fontWeight: state == BattChipState.active
-                            ? FontWeight.w800
-                            : FontWeight.w400),
-                BattChipSize.medium => context.typographyTheme.chipMedium
-                    .copyWith(
-                        color: textColor(context),
-                        fontWeight: state == BattChipState.active
-                            ? FontWeight.w800
-                            : FontWeight.w400),
-                BattChipSize.large => context.typographyTheme.chipLarge
-                    .copyWith(
-                        color: textColor(context),
-                        fontWeight: state == BattChipState.active
-                            ? FontWeight.w800
-                            : FontWeight.w400),
-              },
+            _parent(
+              child: Text(
+                label,
+                style: switch (chipSize) {
+                  BattChipSize.small => context.typographyTheme.chipSmall
+                      .copyWith(
+                          color: textColor(context),
+                          fontWeight: state == BattChipState.active
+                              ? FontWeight.w800
+                              : FontWeight.w400),
+                  BattChipSize.medium => context.typographyTheme.chipMedium
+                      .copyWith(
+                          color: textColor(context),
+                          fontWeight: state == BattChipState.active
+                              ? FontWeight.w800
+                              : FontWeight.w400),
+                  BattChipSize.large => context.typographyTheme.chipLarge
+                      .copyWith(
+                          color: textColor(context),
+                          fontWeight: state == BattChipState.active
+                              ? FontWeight.w800
+                              : FontWeight.w400),
+                },
+              ),
             ),
             Icon(
-              Icons.keyboard_arrow_down_sharp,
+              trailing ?? Icons.keyboard_arrow_down_sharp,
               color: state == BattChipState.active
                   ? textColor(context).withAlpha(200)
                   : textColor(context).withAlpha(100),
@@ -236,6 +238,8 @@ class BattFilterChip extends StatelessWidget {
               }
             : null,
         backgroundColor: Theme.of(context).colorScheme.surface,
+        elevation: elevation,
+        shadowColor: AppColors.neutralColors[300],
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius)),
         side: border(context),
@@ -247,4 +251,7 @@ class BattFilterChip extends StatelessWidget {
         visualDensity: VisualDensity.compact,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap);
   }
+
+  Widget _parent({required Widget child}) =>
+      stretch ? Expanded(child: child) : Flexible(child: child);
 }

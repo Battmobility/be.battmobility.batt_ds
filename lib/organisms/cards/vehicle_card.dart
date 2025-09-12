@@ -172,17 +172,30 @@ final class VehicleCard extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(CornerRadii.s.x),
-      child: Center(
+      child: RepaintBoundary(
         child: Image.network(
           url,
           fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
+          cacheWidth: 200,
+          cacheHeight: 200,
+          errorBuilder:
+              (BuildContext context, Object error, StackTrace? stackTrace) {
             return const Center(
               child: Icon(Icons.image_not_supported_sharp),
             );
           },
-          loadingBuilder: (context, child, loadingProgress) {
+          loadingBuilder: (BuildContext context, Widget child,
+              ImageChunkEvent? loadingProgress) {
             if (loadingProgress == null) {
+              return child;
+            }
+            return const Center(
+              child: AnimatedLoader(),
+            );
+          },
+          frameBuilder: (BuildContext context, Widget child, int? frame,
+              bool wasSynchronouslyLoaded) {
+            if (wasSynchronouslyLoaded || frame != null) {
               return child;
             }
             return const Center(
