@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class BatteryIcon extends StatelessWidget {
   final double? chargePercentage;
@@ -8,6 +9,7 @@ final class BatteryIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: AppSpacings.xs,
       children: [
         Icon(
           _iconData,
@@ -16,7 +18,7 @@ final class BatteryIcon extends StatelessWidget {
         ),
         Text(
           (chargePercentage != null) ? '${chargePercentage!.toInt()}%' : "--",
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: _iconColor,
               ),
@@ -29,24 +31,20 @@ final class BatteryIcon extends StatelessWidget {
   IconData get _iconData {
     if (chargePercentage != null) {
       if (chargePercentage! >= 0.95) {
-        return Icons.battery_full_rounded;
-      } else if (chargePercentage! >= 0.80) {
-        return Icons.battery_6_bar_rounded;
+        return PhosphorIcons.batteryVerticalFull();
       } else if (chargePercentage! >= 0.70) {
-        return Icons.battery_5_bar_rounded;
+        return PhosphorIcons.batteryVerticalHigh();
       } else if (chargePercentage! >= 0.50) {
-        return Icons.battery_4_bar_rounded;
-      } else if (chargePercentage! >= 0.40) {
-        return Icons.battery_3_bar_rounded;
+        return PhosphorIcons.batteryVerticalMedium();
       } else if (chargePercentage! >= 0.30) {
-        return Icons.battery_2_bar_rounded;
+        return PhosphorIcons.batteryVerticalLow();
       } else if (chargePercentage! >= 0.10) {
-        return Icons.battery_1_bar_rounded;
+        return PhosphorIcons.batteryVerticalEmpty();
       } else {
-        return Icons.battery_0_bar_rounded;
+        return PhosphorIcons.batteryVerticalEmpty();
       }
     } else {
-      return Icons.battery_0_bar_rounded;
+      return PhosphorIcons.batteryVerticalEmpty();
     }
   }
 
@@ -55,11 +53,11 @@ final class BatteryIcon extends StatelessWidget {
       return AppColors.neutralColors[600]!;
     }
     if (chargePercentage! >= 0.70) {
-      return AppColors.ctaBrightGreen;
+      return AppColors.successDark;
     } else if (chargePercentage! >= 0.50) {
-      return AppColors.ctaGreen;
+      return AppColors.futureBlue;
     } else if (chargePercentage! >= 0.30) {
-      return AppColors.warningPrimary;
+      return AppColors.warningDark;
     } else {
       return AppColors.errorPrimary;
     }

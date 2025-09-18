@@ -4,6 +4,7 @@ import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class BattFilterChip extends StatelessWidget {
   final Function(bool)? onSelected;
@@ -241,7 +242,7 @@ class BattFilterChip extends StatelessWidget {
             borderRadius: BorderRadius.circular(cornerRadius)),
         side: border(context),
         deleteIcon: Icon(
-          Icons.close,
+          PhosphorIcons.x(),
           color: trailingIconColor ?? textColor(context),
           size: iconSize,
         ),

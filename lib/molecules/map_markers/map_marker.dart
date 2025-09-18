@@ -1,6 +1,7 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:batt_ds/utils/gradient_progress_border.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 enum MapMarkerState { standard, active, disabled, error }
 
@@ -43,7 +44,7 @@ final class MapMarker extends StatelessWidget {
               ),
               child: icon ??
                   Icon(
-                    Icons.car_rental,
+                    PhosphorIcons.car(),
                     color: _getIconColor(state),
                     size: size / 1.75,
                     weight: 0.5,

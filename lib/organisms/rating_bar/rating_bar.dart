@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class RatingBar extends StatefulWidget {
   final int maxRating;
@@ -124,8 +125,10 @@ class RatingBarState extends State<RatingBar>
                                 grade: 0.8,
                                 key: ValueKey(isFilled),
                                 isFilled
-                                    ? Icons.star_rounded
-                                    : Icons.star_outline_rounded,
+                                    ? PhosphorIcons.star(
+                                        PhosphorIconsStyle.fill)
+                                    : PhosphorIcons.star(
+                                        PhosphorIconsStyle.regular),
                                 size: starSize,
                                 color: isFilled
                                     ? AppColors.futureBlue

@@ -60,14 +60,13 @@ class IntroPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 360,
-                            height: 160,
+                            height: 190,
                             child: VehicleCard(
                               name: "Polestar 2",
+                              address: "Lammerstraat 13, 9000 Gent",
                               chargePercentage: 75,
-                              price: "€ 18",
                               tag: Tag("Eerste prijs", type: TagType.standard),
                               walkingDistance: "20",
-                              walkingDuration: "10 min",
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),

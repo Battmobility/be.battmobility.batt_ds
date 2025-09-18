@@ -1,6 +1,6 @@
 name: batt_ds
 description: "The BattMobility design system"
-version: 0.1.13
+version: 0.1.14
 
 environment:
   sdk: ^3.5.4
@@ -12,7 +12,7 @@ dependencies:
   shared_preferences: any
   intl: any
   flutter_svg: any
-  wave: ^0.2.2
+  phosphor_flutter: ^2.1.0
 
 flutter_localizations:
   sdk: flutter

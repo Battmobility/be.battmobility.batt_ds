@@ -42,9 +42,12 @@ final class BookingCard extends StatelessWidget {
           fromDate: fromDate,
           toDate: toDate,
           accessory: accessory,
+          tag: tag,
           textColor: Theme.of(context).colorScheme.onSurface,
           lightTextColor:
               Theme.of(context).colorScheme.onSurface.withAlpha(163),
+          arrowColor: AppColors.neutralColors[400]!,
+          arrowBackgroundColor: AppColors.offWhite,
         ),
       ),
     );

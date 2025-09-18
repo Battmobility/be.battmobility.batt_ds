@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class NonAvailabilityCard extends StatelessWidget {
   final String mainLabel;
@@ -61,7 +62,7 @@ final class NonAvailabilityCard extends StatelessWidget {
                     ),
                     if (showIndicator) ...[
                       Icon(
-                        Icons.chevron_right,
+                        PhosphorIcons.caretRight(),
                         color: AppColors.neutralColors[300]!,
                       ),
                     ]
@@ -74,8 +75,8 @@ final class NonAvailabilityCard extends StatelessWidget {
                       const SizedBox(
                         width: AppSpacings.sm,
                       ),
-                      const Icon(
-                        Icons.cached,
+                      Icon(
+                        PhosphorIcons.arrowClockwise(),
                         size: 14,
                         color: AppColors.b2bKeyColor,
                       ),

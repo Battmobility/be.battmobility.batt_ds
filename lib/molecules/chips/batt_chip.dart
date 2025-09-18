@@ -4,6 +4,7 @@ import 'package:batt_ds/atoms/atoms.dart';
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 abstract class BattChip extends StatelessWidget {
   /// {@macro app_text_button}
@@ -215,7 +216,7 @@ abstract class BattChip extends StatelessWidget {
             borderRadius: BorderRadius.circular(cornerRadius)),
         side: border(context),
         deleteIcon: Icon(
-          Icons.close,
+          PhosphorIcons.x(),
           color: textColor(context),
           size: iconSize,
         ),

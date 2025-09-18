@@ -26,7 +26,10 @@ class AppColors {
   static const Color ctaGreen = Color(0xFF6DD19A);
   static const Color ctaSand = Color(0xFFE6B985);
 
+  static const Color successDark = Color(0xFF4F8459);
+
   static const Color warningPrimary = Color(0xFFFB923C);
+  static const Color warningDark = Color(0xFFA45E0E);
   static const Color warningSecondary = Color(0xFF9A3412);
 
   static const Color errorPrimary = Color(0xFF9F1239);

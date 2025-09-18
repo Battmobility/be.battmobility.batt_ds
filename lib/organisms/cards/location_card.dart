@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class LocationCard extends StatelessWidget {
   final String description;
@@ -34,7 +35,7 @@ final class LocationCard extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.medium.horizontal,
                   child: Icon(
-                    Icons.location_pin,
+                    PhosphorIcons.mapPin(),
                     size: 24,
                     color: theme.colorScheme.onSurface,
                   ),
@@ -72,7 +73,7 @@ final class LocationCard extends StatelessWidget {
                         child: Padding(
                           padding: AppPaddings.medium.horizontal,
                           child: Icon(
-                            Icons.mode_edit,
+                            PhosphorIcons.pencilSimpleLine(),
                             size: 24,
                             color: theme.colorScheme.onSurface,
                           ),

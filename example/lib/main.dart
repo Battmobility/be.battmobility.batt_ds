@@ -17,7 +17,6 @@ import 'package:batt_ds_example/storybook_pages/organisms/sort_option_card_page.
 import 'storybook_pages/molecules/battery_icon_page.dart';
 import 'storybook_pages/molecules/gradients_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
-import 'storybook_pages/molecules/flow_page.dart';
 import 'storybook_pages/molecules/icon_text_button_page.dart';
 import 'storybook_pages/molecules/license_plate_page.dart';
 import 'storybook_pages/molecules/outlined_buttons_page.dart';
@@ -149,16 +148,6 @@ Storybook get storybook {
         );
       },
       name: 'Molecules/Icon text buttons');
-
-  final flowStory = Story(
-      builder: (context) {
-        return MaterialApp(
-          home: const FlowPage(),
-          theme: lightTheme(context),
-          darkTheme: darkTheme(context),
-        );
-      },
-      name: 'Molecules/Flow');
 
   final mapMarkersStory = Story(
       builder: (context) {
@@ -346,7 +335,6 @@ Storybook get storybook {
       typographyStory,
       iconsStory,
       progressStory,
-      flowStory,
       introStory,
       ctaButtonsStory,
       solidButtonsStory,

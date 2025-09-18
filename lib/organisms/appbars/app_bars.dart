@@ -2,6 +2,7 @@ import 'package:batt_ds/batt_ds.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 AppBar buildActiveAppBar(BuildContext context,
         {required String title,
@@ -20,7 +21,7 @@ AppBar buildActiveAppBar(BuildContext context,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
-              icon: Icon(Icons.arrow_back,
+              icon: Icon(PhosphorIcons.arrowLeft(),
                   color: Theme.of(context).colorScheme.surfaceContainer),
               onPressed: () => Navigator.of(context).pop(),
             )
@@ -53,7 +54,7 @@ AppBar buildDefaultAppBar(BuildContext context,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
-              icon: Icon(Icons.arrow_back,
+              icon: Icon(PhosphorIcons.arrowLeft(),
                   color: Theme.of(context).colorScheme.onSurface),
               onPressed: () => Navigator.of(context).pop(),
             )
@@ -89,7 +90,7 @@ AppBar buildTransparentAppBar(BuildContext context,
       leading: showBackButton
           ? leading ??
               IconButton(
-                icon: Icon(Icons.arrow_back, color: contentColor),
+                icon: Icon(PhosphorIcons.arrowLeft(), color: contentColor),
                 onPressed: () => Navigator.of(context).pop(),
               )
           : null,
@@ -129,7 +130,7 @@ AppBar buildBlurryAppBar(BuildContext context,
       elevation: 0,
       leading: showBackButton
           ? IconButton(
-              icon: Icon(Icons.arrow_back, color: contentColor),
+              icon: Icon(PhosphorIcons.arrowLeft(), color: contentColor),
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,

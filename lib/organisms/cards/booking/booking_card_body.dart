@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class BookingCardBody extends StatelessWidget {
   final String vehicleName;
@@ -12,6 +13,9 @@ final class BookingCardBody extends StatelessWidget {
   final Tag? tag;
   final Color textColor;
   final Color lightTextColor;
+  final Color arrowColor;
+  final Color arrowBackgroundColor;
+  final bool arrowShadow;
 
   const BookingCardBody({
     super.key,
@@ -22,6 +26,9 @@ final class BookingCardBody extends StatelessWidget {
     required this.toDate,
     required this.textColor,
     required this.lightTextColor,
+    required this.arrowColor,
+    required this.arrowBackgroundColor,
+    this.arrowShadow = false,
     this.tag,
     this.imageUrl,
     this.accessory,
@@ -37,6 +44,7 @@ final class BookingCardBody extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Flexible(
               child: Row(
@@ -50,8 +58,8 @@ final class BookingCardBody extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(CornerRadii.s.x),
                       child: SizedBox(
-                        width: 44,
-                        height: 44,
+                        width: 64,
+                        height: 64,
                         child: (imageUrl ?? "").isNotEmpty
                             ? Image.network(
                                 imageUrl!,
@@ -59,7 +67,7 @@ final class BookingCardBody extends StatelessWidget {
                                 errorBuilder: (context, error, stackTrace) {
                                   return Center(
                                     child: Icon(
-                                      Icons.list_alt,
+                                      PhosphorIcons.carSimple(),
                                       size: AppSpacings.xxl,
                                       color: AppColors.neutralColors[950],
                                     ),
@@ -72,7 +80,7 @@ final class BookingCardBody extends StatelessWidget {
                                 },
                               )
                             : Icon(
-                                Icons.list_alt,
+                                PhosphorIcons.carSimple(),
                                 size: AppSpacings.xxl,
                                 color: AppColors.neutralColors[950],
                               ),
@@ -81,34 +89,53 @@ final class BookingCardBody extends StatelessWidget {
                   ),
                   const SizedBox(width: AppSpacings.md),
                   Flexible(
-                    child: Text(
-                      vehicleName,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold, color: textColor),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                      textAlign: TextAlign.start,
-                    ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: tag == null
+                            ? MainAxisAlignment.start
+                            : MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.min,
+                        spacing: AppSpacings.sm,
+                        children: [
+                          Text(
+                            vehicleName,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.bold, color: textColor),
+                            overflow: TextOverflow.fade,
+                            maxLines: tag == null ? 2 : 1,
+                            softWrap: tag == null ? true : false,
+                            textAlign: TextAlign.start,
+                          ),
+                          tag ?? const SizedBox.shrink()
+                        ]),
                   ),
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (tag != null) ...[
-                  Padding(
-                    padding: AppPaddings.medium.horizontal,
-                    child: tag!,
-                  )
-                ],
-                Icon(Icons.arrow_forward_ios,
-                    size: AppSpacings.lg, color: textColor),
-              ],
+            const SizedBox(width: AppSpacings.md),
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                  color: arrowBackgroundColor,
+                  borderRadius: const BorderRadius.all(CornerRadii.s),
+                  boxShadow: arrowShadow
+                      ? [
+                          BoxShadow(
+                              color: arrowBackgroundColor,
+                              blurRadius: 2,
+                              spreadRadius: 2)
+                        ]
+                      : []),
+              child: Icon(PhosphorIcons.caretRight(),
+                  size: AppSpacings.lg, color: arrowColor),
             )
           ],
+        ),
+        const SizedBox(height: AppSpacings.md),
+        Divider(
+          thickness: 0.5,
+          color: AppColors.neutralColors[100]!,
         ),
         const SizedBox(height: AppSpacings.md),
         LayoutBuilder(builder: (context, constraints) {
@@ -149,7 +176,7 @@ final class BookingCardBody extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Icon(Icons.arrow_forward,
+                      Icon(PhosphorIcons.caretRight(),
                           color: textColor, size: AppSpacings.lg),
                       const SizedBox(width: AppSpacings.md),
                       Flexible(

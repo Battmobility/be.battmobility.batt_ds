@@ -1,7 +1,7 @@
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:flutter/material.dart';
 
-enum TagType { standard, warning, booking }
+enum TagType { standard, warning, booking, price }
 
 final class Tag extends StatelessWidget {
   final String text;
@@ -18,7 +18,9 @@ final class Tag extends StatelessWidget {
             ? AppColors.airFlow
             : type == TagType.booking
                 ? AppColors.ecoHorizon
-                : AppColors.errorSecondary,
+                : type == TagType.price
+                    ? AppColors.offWhite
+                    : AppColors.errorSecondary,
         borderRadius: BorderRadius.circular(CornerRadii.xs.x),
       ),
       child: Text(
@@ -31,7 +33,9 @@ final class Tag extends StatelessWidget {
                   ? AppColors.b2bKeyColor
                   : type == TagType.booking
                       ? AppColors.b2cKeyColor
-                      : AppColors.errorPrimary,
+                      : type == TagType.price
+                          ? AppColors.b2bKeyColor
+                          : AppColors.errorPrimary,
             ),
       ),
     );

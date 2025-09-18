@@ -1,6 +1,7 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:batt_ds/utils/gradient_progress_border.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 final class ProfileHeader extends StatelessWidget {
   final String name;
@@ -40,9 +41,9 @@ final class ProfileHeader extends StatelessWidget {
                           image: NetworkImage(imageUrl ?? ""),
                           fit: BoxFit.fitWidth,
                           errorBuilder: (context, error, stackTrace) {
-                            return const Center(
+                            return Center(
                               child: Icon(
-                                Icons.person_off_outlined,
+                                PhosphorIcons.userCircleDashed(),
                                 size: 64,
                                 color: AppColors.graphiteDrive,
                               ),

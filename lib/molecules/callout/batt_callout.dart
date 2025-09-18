@@ -1,5 +1,6 @@
 import 'package:batt_ds/batt_ds.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../theme/gradient_theme.dart';
 
@@ -114,28 +115,28 @@ final class BattCallout extends StatelessWidget {
   BattIcon get _icon {
     switch (type) {
       case CalloutType.info:
-        return const BattIcon(
+        return BattIcon(
             size: BattIconSize.small,
             backgroundColor: AppColors.skySurge,
-            icon: Icons.info_outline,
+            icon: PhosphorIcons.info(),
             iconColor: AppColors.white);
       case CalloutType.success:
-        return const BattIcon(
+        return BattIcon(
             size: BattIconSize.small,
             backgroundColor: AppColors.greenShift,
-            icon: Icons.check,
+            icon: PhosphorIcons.check(),
             iconColor: AppColors.white);
       case CalloutType.warning:
-        return const BattIcon(
+        return BattIcon(
             size: BattIconSize.small,
             backgroundColor: AppColors.warningPrimary,
-            icon: Icons.warning_amber,
+            icon: PhosphorIcons.warning(),
             iconColor: AppColors.white);
       case CalloutType.error:
-        return const BattIcon(
+        return BattIcon(
             size: BattIconSize.small,
             backgroundColor: AppColors.errorPrimary,
-            icon: Icons.error_outline,
+            icon: PhosphorIcons.warningOctagon(),
             iconColor: AppColors.white);
     }
   }
