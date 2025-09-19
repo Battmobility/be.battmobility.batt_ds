@@ -63,7 +63,13 @@ final class BookingCardBody extends StatelessWidget {
                         child: (imageUrl ?? "").isNotEmpty
                             ? Image.network(
                                 imageUrl!,
+                                width: 64,
+                                height: 64,
                                 fit: BoxFit.contain,
+                                filterQuality: FilterQuality.low,
+                                isAntiAlias: false,
+                                gaplessPlayback: false,
+                                excludeFromSemantics: true,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Center(
                                     child: Icon(
@@ -76,7 +82,11 @@ final class BookingCardBody extends StatelessWidget {
                                 loadingBuilder:
                                     (context, child, loadingProgress) {
                                   if (loadingProgress == null) return child;
-                                  return const Center(child: AnimatedLoader());
+                                  return const SizedBox(
+                                    width: 64,
+                                    height: 64,
+                                    child: Center(child: AnimatedLoader()),
+                                  );
                                 },
                               )
                             : Icon(

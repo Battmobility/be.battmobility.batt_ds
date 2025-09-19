@@ -179,7 +179,13 @@ final class VehicleCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(CornerRadii.s.x),
       child: Image.network(
         url,
-        fit: BoxFit.fitWidth,
+        width: 64,
+        height: 64,
+        fit: BoxFit.contain,
+        filterQuality: FilterQuality.low,
+        isAntiAlias: false,
+        gaplessPlayback: false,
+        excludeFromSemantics: true,
         errorBuilder:
             (BuildContext context, Object error, StackTrace? stackTrace) {
           return const Center(
@@ -191,8 +197,12 @@ final class VehicleCard extends StatelessWidget {
           if (loadingProgress == null) {
             return child;
           }
-          return const Center(
-            child: AnimatedLoader(),
+          return const SizedBox(
+            width: 64,
+            height: 64,
+            child: Center(
+              child: AnimatedLoader(),
+            ),
           );
         },
         frameBuilder: (BuildContext context, Widget child, int? frame,
@@ -200,8 +210,12 @@ final class VehicleCard extends StatelessWidget {
           if (wasSynchronouslyLoaded || frame != null) {
             return child;
           }
-          return const Center(
-            child: AnimatedLoader(),
+          return const SizedBox(
+            width: 64,
+            height: 64,
+            child: Center(
+              child: AnimatedLoader(),
+            ),
           );
         },
       ),
