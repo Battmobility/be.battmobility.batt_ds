@@ -76,7 +76,7 @@ class BattSquareChip extends StatelessWidget {
       case BattChipState.disabled:
         return AppColors.urbanMist;
       case BattChipState.active:
-        return AppColors.white;
+        return AppColors.futureBlue;
       case BattChipState.enabled:
         return AppColors.graphiteDrive;
     }
@@ -99,7 +99,7 @@ class BattSquareChip extends StatelessWidget {
       case BattChipState.disabled:
         return disabledBorder(context);
       case BattChipState.active:
-        return defaultBorder(context);
+        return activeBorder(context);
       case BattChipState.enabled:
         return defaultBorder(context);
     }
@@ -112,6 +112,10 @@ class BattSquareChip extends StatelessWidget {
   /// The focused border for the text button.
   BorderSide focusedBorder(BuildContext context) =>
       BorderSide(color: secondaryColor(context), width: 3);
+
+  /// The focused border for the text button.
+  BorderSide activeBorder(BuildContext context) =>
+      const BorderSide(color: AppColors.airFlow, width: 1);
 
   /// The hover border for the text button.
   BorderSide hoverBorder(BuildContext context) =>

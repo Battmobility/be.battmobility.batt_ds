@@ -100,6 +100,75 @@ class ChipPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        BattSquareChip(
+                          label: "Active large",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active medium",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active medium with a long text",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label:
+                              "Active medium with a really stupendously long text that will overflow the screen",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active small expanded",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.small,
+                          expand: true,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active large expanded",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.large,
+                          expand: true,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active medium expanded",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          expand: true,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label: "Active medium with a long text expanded",
+                          onSelected: (_) => {},
+                          chipSize: BattChipSize.medium,
+                          expand: true,
+                          state: BattChipState.active,
+                        ),
+                        BattSquareChip(
+                          label:
+                              "Active medium with a really stupendously long text that will overflow the screen expanded",
+                          onSelected: (_) => {},
+                          expand: true,
+                          chipSize: BattChipSize.medium,
+                          state: BattChipState.active,
+                        ),
+                      ]),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
                   child: Text(
                     'Filter',
                     style: Theme.of(context).textTheme.headlineSmall,
