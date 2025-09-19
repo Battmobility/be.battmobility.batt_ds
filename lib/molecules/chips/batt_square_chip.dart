@@ -115,7 +115,7 @@ class BattSquareChip extends StatelessWidget {
 
   /// The focused border for the text button.
   BorderSide activeBorder(BuildContext context) =>
-      const BorderSide(color: AppColors.airFlow, width: 1);
+      BorderSide(color: primaryColor(context), width: 1);
 
   /// The hover border for the text button.
   BorderSide hoverBorder(BuildContext context) =>
