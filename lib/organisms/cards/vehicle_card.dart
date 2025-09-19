@@ -12,8 +12,11 @@ final class VehicleCard extends StatelessWidget {
   final String? walkingDistance;
 
   final Tag? tag;
-  final RichText? price;
-  final RichText? price2;
+  final String? price1Prefix;
+  final String? price1;
+  final String? price1Suffix;
+  final String? price2;
+  final String? price2Suffix;
 
   final bool showBorder;
   final bool selected;
@@ -28,8 +31,11 @@ final class VehicleCard extends StatelessWidget {
     this.range,
     this.walkingDistance,
     this.tag,
-    this.price,
+    this.price1Prefix,
+    this.price1,
+    this.price1Suffix,
     this.price2,
+    this.price2Suffix,
     this.imageUrl,
     this.showBorder = true,
     this.selected = false,
@@ -90,7 +96,7 @@ final class VehicleCard extends StatelessWidget {
                           Flexible(
                             child: Text(
                               name,
-                              style: theme.textTheme.titleSmall?.copyWith(
+                              style: theme.textTheme.labelMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                               maxLines: 1,
@@ -271,33 +277,90 @@ final class VehicleCard extends StatelessWidget {
   }
 
   Widget? priceBar(BuildContext context) {
-    if (price != null || price2 != null) {
+    if (price1 != null || price2 != null) {
       return Row(
         mainAxisSize: MainAxisSize.min,
         spacing: AppSpacings.sm,
         children: [
-          price != null
-              ? Expanded(flex: 2, child: priceTag(price!, context))
-              : null,
-          price != null && price2 != null
+          price1 != null ? Expanded(flex: 2, child: priceTag1(context)) : null,
+          price1 != null && price2 != null
               ? Icon(PhosphorIcons.plus(), size: AppSpacings.md)
               : null,
-          price2 != null
-              ? Expanded(flex: 1, child: priceTag(price2!, context))
-              : null
+          price2 != null ? Expanded(flex: 1, child: priceTag2(context)) : null
         ].nonNulls.toList(),
       );
     }
     return null;
   }
 
-  Widget priceTag(RichText price, BuildContext context) {
+  Widget priceTag1(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-        padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
-        decoration: BoxDecoration(
-          color: AppColors.offWhite,
-          borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-        ),
-        child: price);
+      padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
+      decoration: BoxDecoration(
+        color: AppColors.offWhite,
+        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (price1Prefix != null)
+            Text(
+              price1Prefix!,
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: AppColors.b2bKeyColor,
+              ),
+            ),
+          if (price1 != null)
+            Text(
+              price1!,
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: AppColors.b2bKeyColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          if (price1Suffix != null)
+            Text(
+              price1Suffix!,
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: AppColors.b2bKeyColor,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget priceTag2(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
+      decoration: BoxDecoration(
+        color: AppColors.offWhite,
+        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (price2 != null)
+            Text(
+              price2!,
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: AppColors.b2bKeyColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          if (price2Suffix != null)
+            Text(
+              price2Suffix!,
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: AppColors.b2bKeyColor,
+              ),
+            ),
+        ],
+      ),
+    );
   }
 }

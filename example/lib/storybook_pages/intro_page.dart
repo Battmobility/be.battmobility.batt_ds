@@ -67,6 +67,9 @@ class IntroPage extends StatelessWidget {
                               chargePercentage: 75,
                               tag: Tag("Eerste prijs", type: TagType.standard),
                               walkingDistance: "20",
+                              price1Prefix: "Vanaf",
+                              price1: " € 13 ",
+                              price1Suffix: "/dag",
                               imageUrl:
                                   "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
                             ),

@@ -42,43 +42,9 @@ class VehicleCardsPage extends StatelessWidget {
                             address: "Lammerstraat 13, 9000 Gent",
                             range: "500 km",
                             chargePercentage: 75,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
                             tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "20",
                             imageUrl:
@@ -88,73 +54,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             tag: Tag("Favoriet", type: TagType.warning),
                             walkingDistance: "200m.",
                             imageUrl:
@@ -164,73 +68,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -254,43 +96,9 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Polestar 2",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 75,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
                             walkingDistance: "2km.",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
@@ -299,73 +107,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             range: "50 km",
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -388,43 +134,9 @@ class VehicleCardsPage extends StatelessWidget {
                         VehicleCard(
                           name: "Polestar 2",
                           address: "Lammerstraat 13, 9000 Gent",
-                          price: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Vanaf",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                                TextSpan(
-                                  text: " € 13 ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          color: AppColors.b2bKeyColor,
-                                          fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: "/dag",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                              ],
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(color: AppColors.b2bKeyColor),
-                            ),
-                            maxLines: 2,
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                          ),
+                          price1Prefix: "Vanaf",
+                          price1: " € 13 ",
+                          price1Suffix: "/dag",
                           walkingDistance: "2km.",
                           imageUrl:
                               "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
@@ -439,43 +151,9 @@ class VehicleCardsPage extends StatelessWidget {
                           name: "Een auto met een lange naam",
                           address: "Lammerstraat 13, 9000 Gent",
                           chargePercentage: 100,
-                          price: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Vanaf",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                                TextSpan(
-                                  text: " € 13 ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          color: AppColors.b2bKeyColor,
-                                          fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: "/dag",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                              ],
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(color: AppColors.b2bKeyColor),
-                            ),
-                            maxLines: 2,
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                          ),
+                          price1Prefix: "Vanaf",
+                          price1: " € 13 ",
+                          price1Suffix: "/dag",
                           walkingDistance: "200m.",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -484,73 +162,11 @@ class VehicleCardsPage extends StatelessWidget {
                           name: "Een auto met een lange naam",
                           address: "Lammerstraat 13, 9000 Gent",
                           range: "500 km",
-                          price: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Vanaf",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                                TextSpan(
-                                  text: " € 13 ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          color: AppColors.b2bKeyColor,
-                                          fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: "/dag",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                              ],
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(color: AppColors.b2bKeyColor),
-                            ),
-                            maxLines: 2,
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                          ),
-                          price2: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: " € 0.33 ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          color: AppColors.b2bKeyColor,
-                                          fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: "/uur",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(color: AppColors.b2bKeyColor),
-                                ),
-                              ],
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(color: AppColors.b2bKeyColor),
-                            ),
-                            maxLines: 2,
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                          ),
+                          price1Prefix: "Vanaf",
+                          price1: " € 13 ",
+                          price1Suffix: "/dag",
+                          price2: " € 0.33 ",
+                          price2Suffix: "/uur",
                           tag: Tag("Geboekt", type: TagType.booking),
                           imageUrl:
                               "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
@@ -576,43 +192,9 @@ class VehicleCardsPage extends StatelessWidget {
                             address: "Lammerstraat 13, 9000 Gent",
                             range: "500 km",
                             chargePercentage: 75,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
                             tag: Tag("Tag met lange tekst",
                                 type: TagType.standard),
                             walkingDistance: "20",
@@ -625,73 +207,11 @@ class VehicleCardsPage extends StatelessWidget {
                             address:
                                 "Lammerstraat 13 bis (bij Bloch bakkerij), 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -701,73 +221,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
@@ -793,43 +251,9 @@ class VehicleCardsPage extends StatelessWidget {
                             address: "Lammerstraat 13, 9000 Gent",
                             range: "500 km",
                             chargePercentage: 75,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
                             tag: Tag("Eerste prijs", type: TagType.standard),
                             walkingDistance: "20",
                             imageUrl:
@@ -839,73 +263,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -914,73 +276,11 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
                             chargePercentage: 100,
-                            price: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Vanaf",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                  TextSpan(
-                                    text: " € 13 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/dag",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            price2: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: " € 0.33 ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                            color: AppColors.b2bKeyColor,
-                                            fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: "/uur",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(color: AppColors.b2bKeyColor),
-                                  ),
-                                ],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: AppColors.b2bKeyColor),
-                              ),
-                              maxLines: 2,
-                              softWrap: true,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            price1Prefix: "Vanaf",
+                            price1: " € 13 ",
+                            price1Suffix: "/dag",
+                            price2: " € 0.33 ",
+                            price2Suffix: "/uur",
                             walkingDistance: "200m.",
                             imageUrl:
                                 "https://tuskercars.com/app/uploads/2023/02/polestate-2-no-background.png",
