@@ -6,8 +6,13 @@ final class PropertiesBar extends StatelessWidget {
   final double? chargePercentage;
   final String? range;
   final String? walkingDistance;
+  final bool decorate;
   const PropertiesBar(
-      {this.chargePercentage, this.range, this.walkingDistance, super.key});
+      {this.chargePercentage,
+      this.range,
+      this.walkingDistance,
+      this.decorate = true,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +49,15 @@ final class PropertiesBar extends StatelessWidget {
         ));
       }
       return Padding(
-        padding: AppPaddings.medium.top,
+        padding: decorate ? AppPaddings.medium.top : AppPaddings.none.all,
         child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(
-                color: AppColors.neutralColors[50]!,
-              ),
-              borderRadius: const BorderRadius.all(CornerRadii.s)),
+          decoration: decorate
+              ? BoxDecoration(
+                  border: Border.all(
+                    color: AppColors.neutralColors[50]!,
+                  ),
+                  borderRadius: const BorderRadius.all(CornerRadii.s))
+              : null,
           child: Padding(
             padding: AppPaddings.small.all,
             child: IntrinsicHeight(
