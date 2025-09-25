@@ -37,6 +37,7 @@ class BookingCardsPage extends StatelessWidget {
                       runSpacing: AppSpacings.md,
                       children: [
                         ActiveBookingCard(
+                          accessoryLabel: "Active booking",
                           vehicleName: "Polestar 4",
                           tag: Tag(
                             "Nu actief",
@@ -50,6 +51,7 @@ class BookingCardsPage extends StatelessWidget {
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         ActiveBookingCard(
+                          accessoryLabel: "Active booking",
                           vehicleName:
                               "Polestar 4 met nog wat extra tekens achter de naam",
                           tag: Tag(
@@ -64,6 +66,8 @@ class BookingCardsPage extends StatelessWidget {
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
                         ),
                         ActiveBookingCard(
+                          accessoryLabel: "Overdue booking",
+                          accessoryColor: AppColors.warningPrimary,
                           vehicleName: "Polestar 4",
                           tag: Tag(
                             "Nu actief",

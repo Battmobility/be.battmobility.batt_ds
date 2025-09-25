@@ -28,7 +28,7 @@ final class BattCallout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onSurface,
+        color: Theme.of(context).colorScheme.onSurface.withAlpha(200),
         borderRadius: const BorderRadius.all(CornerRadii.m),
         border: border,
       ),

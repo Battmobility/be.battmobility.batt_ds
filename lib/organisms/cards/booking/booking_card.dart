@@ -27,13 +27,12 @@ final class BookingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: AppPaddings.none.all,
-      color: AppColors.white,
-      elevation: 5,
-      shadowColor: AppColors.neutralColors[100]!.withAlpha(100),
+    return Container(
+      decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surface,
+          borderRadius: const BorderRadius.all(CornerRadii.m)),
       child: Padding(
-        padding: AppPaddings.medium.all,
+        padding: AppPaddings.medium.all.add(AppPaddings.xsmall.vertical),
         child: BookingCardBody(
           vehicleName: vehicleName,
           imageUrl: imageUrl,

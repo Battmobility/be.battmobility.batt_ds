@@ -12,6 +12,7 @@ export 'loaders/animated_loader.dart';
 export 'map_markers/map_marker.dart';
 export 'properties/property_widget.dart';
 export 'properties/price_widget.dart';
+export 'properties/properties_bar.dart';
 export 'shadows/shadows.dart';
 export 'tag/tag.dart';
 export 'text/helper_text.dart';

@@ -107,6 +107,7 @@ class IntroPage extends StatelessWidget {
                                 size: LicensePlateSize.medium),
                           ),
                           ActiveBookingCard(
+                            accessoryLabel: "Active booking",
                             vehicleName: "Polestar 4",
                             fromLabel: "Van",
                             fromDate: "Ma 2 jul, 14:40",

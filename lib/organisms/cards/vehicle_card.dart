@@ -63,6 +63,7 @@ final class VehicleCard extends StatelessWidget {
           Padding(
             padding: AppPaddings.medium.all,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,62 +88,75 @@ final class VehicleCard extends StatelessWidget {
                     ),
                     const SizedBox(width: AppSpacings.lg),
                     Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: AppSpacings.sm,
                         children: [
                           Flexible(
-                            child: Text(
-                              name,
-                              style: theme.textTheme.labelMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.fade,
-                              softWrap: false,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              spacing: AppSpacings.sm,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    name,
+                                    style: theme.textTheme.titleSmall?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      PhosphorIcons.mapPin(),
+                                      color: AppColors.neutralColors[400],
+                                      size: AppSpacings.lg,
+                                    ),
+                                    const SizedBox(width: AppSpacings.xs),
+                                    Flexible(
+                                      child: Text(
+                                        address,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.fade,
+                                        softWrap: false,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall!
+                                            .copyWith(
+                                                color: AppColors
+                                                    .neutralColors[400]),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Icon(
-                                PhosphorIcons.mapPin(),
-                                color: AppColors.neutralColors[400],
-                                size: AppSpacings.lg,
+                          if (showIndicator)
+                            Padding(
+                              padding: AppPaddings.small.leading,
+                              child: Icon(
+                                PhosphorIcons.caretRight(),
+                                size: 20,
+                                color: AppColors.neutralColors[600],
                               ),
-                              const SizedBox(width: AppSpacings.xs),
-                              Flexible(
-                                child: Text(
-                                  address,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.fade,
-                                  softWrap: false,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                          color: AppColors.neutralColors[400]),
-                                ),
-                              )
-                            ],
-                          )
+                            )
                         ],
                       ),
                     ),
-                    if (showIndicator)
-                      Padding(
-                        padding: AppPaddings.small.leading,
-                        child: Icon(
-                          PhosphorIcons.caretRight(),
-                          size: 20,
-                          color: AppColors.neutralColors[600],
-                        ),
-                      )
                   ],
                 ),
-                middleBar(context),
+                PropertiesBar(
+                  chargePercentage: chargePercentage,
+                  range: range,
+                  walkingDistance: walkingDistance,
+                ),
               ],
             ),
           ),
@@ -220,74 +234,6 @@ final class VehicleCard extends StatelessWidget {
         },
       ),
     );
-  }
-
-  Widget middleBar(BuildContext context) {
-    if (chargePercentage != null || range != null || walkingDistance != null) {
-      List<Widget> children = [];
-      if (chargePercentage != null) {
-        children.add(BatteryIcon(chargePercentage: chargePercentage));
-      }
-      if (range != null) {
-        children.add(Row(
-          spacing: AppSpacings.xs,
-          children: [
-            Icon(
-              PhosphorIcons.roadHorizon(),
-              color: AppColors.neutralColors[400],
-              size: AppSpacings.lg,
-            ),
-            Text(range!, style: Theme.of(context).textTheme.bodySmall!),
-          ],
-        ));
-      }
-      if (walkingDistance != null) {
-        children.add(Row(
-          spacing: AppSpacings.xs,
-          children: [
-            Icon(
-              PhosphorIcons.footprints(),
-              color: AppColors.neutralColors[400],
-              size: AppSpacings.lg,
-            ),
-            Text(walkingDistance!,
-                style: Theme.of(context).textTheme.bodySmall!),
-          ],
-        ));
-      }
-      return Padding(
-        padding: AppPaddings.medium.top,
-        child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(
-                color: AppColors.neutralColors[50]!,
-              ),
-              borderRadius: const BorderRadius.all(CornerRadii.s)),
-          child: Padding(
-            padding: AppPaddings.small.all,
-            child: IntrinsicHeight(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: children
-                    .map((child) {
-                      return [
-                        child,
-                        if (child != children.last) ...[
-                          VerticalDivider(
-                            color: AppColors.neutralColors[100],
-                          )
-                        ]
-                      ];
-                    })
-                    .expand((widget) => widget)
-                    .toList(),
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-    return const SizedBox.shrink();
   }
 
   Widget? priceBar(BuildContext context) {
