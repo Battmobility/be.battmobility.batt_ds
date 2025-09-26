@@ -33,8 +33,7 @@ class SolidCtaButton extends StatelessWidget {
           height: height,
           decoration: BoxDecoration(
             gradient: GradientTheme.standard().ctaButtonGradient,
-            borderRadius:
-                BorderRadius.circular(height / 2), // Fully rounded corners
+            borderRadius: BorderRadius.circular(height / 2),
           ),
           child: Center(
             child: isBusy

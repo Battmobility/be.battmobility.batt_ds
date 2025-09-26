@@ -34,7 +34,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
         radius: 2.0,
       ),
       activeAppBarGradient: LinearGradient(
-        colors: [AppColors.ecoHorizon, AppColors.b2bKeyColor],
+        colors: [AppColors.futureBlue, AppColors.b2bKeyColor],
         begin: Alignment.topLeft,
         end: Alignment.bottomCenter,
         transform: GradientRotation(0.6),
@@ -44,7 +44,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter),
       inputBorderGradient: LinearGradient(
-        colors: [AppColors.futureBlue, AppColors.greenShift],
+        colors: [AppColors.futureBlue, AppColors.b2bKeyColor],
         stops: [0.6, 1.0],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
@@ -87,7 +87,7 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
           AppColors.b2bKeyColor,
           AppColors.b2bKeyColor,
           AppColors.b2bKeyColor,
-          AppColors.b2bKeyColor,
+          AppColors.futureBlue,
           AppColors.skySurge,
           AppColors.softGrove
         ],
@@ -108,13 +108,11 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       ),
       activeCardBackgroundGradient: LinearGradient(
         colors: [
+          AppColors.futureBlue,
           AppColors.b2bKeyColor,
-          AppColors.b2bKeyColor,
-          AppColors.greenShift
         ],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        transform: GradientRotation(0.9),
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
       ),
       lightBlueBackgroundGradient: LinearGradient(
         colors: [Color(0xFFE7EFF9), Color(0xFFF6F9FD)],

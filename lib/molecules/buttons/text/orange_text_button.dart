@@ -18,7 +18,7 @@ class OrangeSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.ctaSand.withAlpha(122);
+    return AppColors.warningPrimary.withAlpha(122);
   }
 
   @override
@@ -33,6 +33,6 @@ class OrangeSimpleTextButton extends BattSimpleTextButton {
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.transitSand;
+    return AppColors.warningPrimary;
   }
 }

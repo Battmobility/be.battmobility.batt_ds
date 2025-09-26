@@ -43,7 +43,7 @@ class PlainCtaButton extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                    color: AppColors.b2bKeyColor,
+                    color: AppColors.futureBlue,
                     fontSize: height * 0.3,
                     fontWeight: FontWeight.w500,
                   ),

@@ -37,7 +37,7 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.futureBlue;
+    return AppColors.b2bKeyColor;
   }
 
   @override
@@ -47,6 +47,6 @@ class DefaultOutlinedTextButton extends BattTextButton {
 
   @override
   Color textColor(BuildContext context) {
-    return AppColors.b2bKeyColor;
+    return AppColors.futureBlue;
   }
 }

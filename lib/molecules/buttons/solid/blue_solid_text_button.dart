@@ -16,7 +16,7 @@ class BlueSolidTextButton extends BattTextButton {
 
   @override
   Color backgroundColor(BuildContext context) {
-    return AppColors.b2bKeyColor;
+    return AppColors.futureBlue;
   }
 
   @override
@@ -26,12 +26,12 @@ class BlueSolidTextButton extends BattTextButton {
 
   @override
   Color focusColor(BuildContext context) {
-    return AppColors.futureBlue;
+    return AppColors.b2bKeyColor;
   }
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.futureBlue;
+    return AppColors.b2bKeyColor;
   }
 
   @override

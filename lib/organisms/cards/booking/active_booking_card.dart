@@ -41,17 +41,6 @@ final class ActiveBookingCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Center(
-              child: Padding(
-            padding: AppPaddings.small.all,
-            child: Text(
-              accessoryLabel,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: AppColors.white),
-            ),
-          )),
           Container(
             padding: AppPaddings.medium.all.add(AppPaddings.xsmall.vertical),
             decoration: BoxDecoration(
@@ -74,6 +63,17 @@ final class ActiveBookingCard extends StatelessWidget {
               arrowShadow: false,
             ),
           ),
+          Center(
+              child: Padding(
+            padding: AppPaddings.small.all,
+            child: Text(
+              accessoryLabel,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: AppColors.white),
+            ),
+          )),
         ],
       ),
     );

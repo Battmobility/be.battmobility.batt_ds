@@ -107,8 +107,8 @@ ThemeData darkTheme(BuildContext context) {
       shadowColor: theme.themeColorLight,
     ),
     checkboxTheme: const CheckboxThemeData(
-        side: BorderSide(color: AppColors.b2bKeyColor),
-        fillColor: WidgetStatePropertyAll(AppColors.b2bKeyColor),
+        side: BorderSide(color: AppColors.futureBlue),
+        fillColor: WidgetStatePropertyAll(AppColors.futureBlue),
         checkColor: WidgetStatePropertyAll(AppColors.white)),
     dividerTheme: const DividerThemeData(color: AppColors.urbanMist),
     elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -130,11 +130,11 @@ ThemeData darkTheme(BuildContext context) {
     ),
     navigationBarTheme: theme.navigationBarThemeDark,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
-      color: AppColors.b2bKeyColor,
+      color: AppColors.futureBlue,
     ),
     sliderTheme: SliderThemeData(
-      activeTrackColor: AppColors.b2bKeyColor,
-      inactiveTrackColor: AppColors.b2bKeyColor.withValues(alpha: 0.5),
+      activeTrackColor: AppColors.futureBlue,
+      inactiveTrackColor: AppColors.futureBlue.withValues(alpha: 0.5),
       thumbColor: AppColors.b2bKeyColor,
       overlayColor: AppColors.b2bKeyColor.withValues(alpha: 0.5),
     ),
