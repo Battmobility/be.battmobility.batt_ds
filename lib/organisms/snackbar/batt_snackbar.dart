@@ -97,6 +97,8 @@ class BattSnackbar {
       duration: duration ?? const Duration(seconds: 4),
       showCloseIcon: false,
       elevation: 0,
+      padding: EdgeInsets.zero,
+      margin: AppPaddings.medium.horizontal,
     );
   }
 

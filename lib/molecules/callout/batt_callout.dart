@@ -12,6 +12,7 @@ final class BattCallout extends StatelessWidget {
   final String? actionLabel;
   final Duration? duration;
   final bool showCloseIcon;
+  final bool showBorder;
 
   const BattCallout({
     super.key,
@@ -21,6 +22,7 @@ final class BattCallout extends StatelessWidget {
     this.action,
     this.duration,
     this.showCloseIcon = false,
+    this.showBorder = false,
     this.actionLabel,
   });
 
@@ -28,32 +30,33 @@ final class BattCallout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onSurface.withAlpha(200),
+        color: Theme.of(context).colorScheme.onSurface.withAlpha(225),
         borderRadius: const BorderRadius.all(CornerRadii.m),
-        border: border,
+        border: showBorder ? border : null,
       ),
       child: Padding(
         padding: AppPaddings.xsmall.leading
             .add(AppPaddings.small.all)
             .add(AppPaddings.xsmall.bottom),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Padding(
+              padding: AppPaddings.medium.trailing,
+              child: _icon,
+            ),
             Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: AppPaddings.medium.trailing,
-                    child: _icon,
-                  ),
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (title != null) ...[
+              child: Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (title != null) ...[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
                           Padding(
                             padding: message == null
                                 ? AppPaddings.xxsmall.vertical
@@ -65,41 +68,46 @@ final class BattCallout extends StatelessWidget {
                               maxLines: 2,
                             ),
                           ),
+                          if (action != null || showCloseIcon) ...[
+                            const SizedBox(width: AppSpacings.md),
+                            if (action != null && actionLabel != null)
+                              SizedBox(
+                                height: AppSpacings.lg,
+                                child: MonochromeSimpleTextButton(
+                                  label: actionLabel!,
+                                  onPressed: action!,
+                                  color: Theme.of(context).colorScheme.surface,
+                                  underline: true,
+                                ),
+                              )
+                            else if (showCloseIcon)
+                              IconButton(
+                                visualDensity: VisualDensity.compact,
+                                onPressed: () {
+                                  ScaffoldMessenger.of(
+                                    context,
+                                  ).hideCurrentSnackBar(
+                                      reason: SnackBarClosedReason.dismiss);
+                                },
+                                icon: Icon(PhosphorIcons.x(),
+                                    color: AppColors.white),
+                              ),
+                          ],
                         ],
-                        if (message != null) ...[
-                          Padding(
-                            padding: title == null
-                                ? AppPaddings.xsmall.vertical
-                                : AppPaddings.small.top,
-                            child: message,
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                    ],
+                    if (message != null) ...[
+                      Padding(
+                        padding: title == null
+                            ? AppPaddings.xsmall.vertical
+                            : AppPaddings.small.top,
+                        child: message,
+                      ),
+                    ],
+                  ],
+                ),
               ),
             ),
-            if (action != null || showCloseIcon) ...[
-              const SizedBox(width: AppSpacings.md),
-              if (action != null && actionLabel != null)
-                MonochromeSimpleTextButton(
-                  label: actionLabel!,
-                  onPressed: action!,
-                  color: Theme.of(context).colorScheme.surface,
-                  underline: true,
-                )
-              else if (showCloseIcon)
-                IconButton.outlined(
-                  visualDensity: VisualDensity.compact,
-                  onPressed: () {
-                    ScaffoldMessenger.of(
-                      context,
-                    ).hideCurrentSnackBar(reason: SnackBarClosedReason.dismiss);
-                  },
-                  icon: const Icon(Icons.close, color: AppColors.urbanMist),
-                ),
-            ],
           ],
         ),
       ),
@@ -107,37 +115,21 @@ final class BattCallout extends StatelessWidget {
   }
 
   TextStyle _titleStyle(BuildContext context) {
-    return Theme.of(context).textTheme.labelLarge!.copyWith(
+    return Theme.of(context).textTheme.titleSmall!.copyWith(
         color: Theme.of(context).colorScheme.surfaceContainer,
-        fontWeight: FontWeight.bold);
+        fontWeight: FontWeight.w600);
   }
 
-  BattIcon get _icon {
+  Icon get _icon {
     switch (type) {
       case CalloutType.info:
-        return BattIcon(
-            size: BattIconSize.small,
-            backgroundColor: AppColors.skySurge,
-            icon: PhosphorIcons.info(),
-            iconColor: AppColors.white);
+        return Icon(PhosphorIcons.info(), color: AppColors.futureBlue);
       case CalloutType.success:
-        return BattIcon(
-            size: BattIconSize.small,
-            backgroundColor: AppColors.greenShift,
-            icon: PhosphorIcons.check(),
-            iconColor: AppColors.white);
+        return Icon(PhosphorIcons.checkCircle(), color: AppColors.greenShift);
       case CalloutType.warning:
-        return BattIcon(
-            size: BattIconSize.small,
-            backgroundColor: AppColors.warningPrimary,
-            icon: PhosphorIcons.warning(),
-            iconColor: AppColors.white);
+        return Icon(PhosphorIcons.warning(), color: AppColors.warningDark);
       case CalloutType.error:
-        return BattIcon(
-            size: BattIconSize.small,
-            backgroundColor: AppColors.errorPrimary,
-            icon: PhosphorIcons.warningOctagon(),
-            iconColor: AppColors.white);
+        return Icon(PhosphorIcons.warningOctagon(), color: AppColors.errorDark);
     }
   }
 
