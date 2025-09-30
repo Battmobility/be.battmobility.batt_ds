@@ -11,6 +11,7 @@ class AppColors {
   static const Color graphiteDrive = Color(0xFF4F4F4F);
   static const Color urbanMist = Color(0xFFD8D8D8);
   static const Color futureBlue = Color(0xFF3D73F0);
+  static const Color secondaryBlue = Color(0xFFE4F3FF);
   static const Color skySurge = Color(0xFF87B7FF);
   static const Color airFlow = Color(0xFFBDE3FF);
   static const Color greenShift = Color(0xFF97D7A0);
@@ -29,11 +30,10 @@ class AppColors {
   static const Color successDark = Color(0xFF4F8459);
 
   static const Color warningPrimary = Color(0xFFFB923C);
-  static const Color warningDark = Color(0xFFA45E0E);
-  static const Color warningSecondary = Color(0xFF9A3412);
+  static const Color warningDark = Color(0xFFCE7612);
 
-  static const Color errorPrimary = Color(0xFF9F1239);
-  static const Color errorSecondary = Color(0xFFFFAEC4);
+  static const Color errorPrimary = Color(0xFFE93F4D);
+  static const Color errorDark = Color(0xFFCA1726);
 
   static const Color black = Color(0xff000004);
 

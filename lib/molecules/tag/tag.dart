@@ -20,7 +20,7 @@ final class Tag extends StatelessWidget {
                 ? AppColors.ecoHorizon
                 : type == TagType.price
                     ? AppColors.offWhite
-                    : AppColors.errorSecondary,
+                    : AppColors.errorPrimary,
         borderRadius: BorderRadius.circular(CornerRadii.xs.x),
       ),
       child: Text(
@@ -35,7 +35,7 @@ final class Tag extends StatelessWidget {
                       ? AppColors.b2cKeyColor
                       : type == TagType.price
                           ? AppColors.b2bKeyColor
-                          : AppColors.errorPrimary,
+                          : AppColors.errorDark,
             ),
       ),
     );

@@ -32,8 +32,8 @@ class SolidCtaButton extends StatelessWidget {
           width: width ?? double.infinity,
           height: height,
           decoration: BoxDecoration(
-            gradient: GradientTheme.standard().ctaButtonGradient,
-            borderRadius: BorderRadius.circular(height / 2),
+            color: AppColors.futureBlue,
+            borderRadius: BorderRadius.circular(height / 4),
           ),
           child: Center(
             child: isBusy
@@ -44,8 +44,8 @@ class SolidCtaButton extends StatelessWidget {
                 : Text(
                     label,
                     style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: height * 0.3,
+                      color: AppColors.secondaryBlue,
+                      fontSize: height * 0.35,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

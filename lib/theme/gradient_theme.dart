@@ -53,8 +53,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       warningBorderGradient: LinearGradient(
         colors: [
           AppColors.warningPrimary,
-          AppColors.warningSecondary,
-          AppColors.ctaSand
+          AppColors.warningDark,
+          AppColors.warningPrimary,
         ],
         stops: [0.6, 0.8, 1.0],
         begin: Alignment.topLeft,
@@ -63,9 +63,9 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       ),
       errorBorderGradient: LinearGradient(
         colors: [
+          AppColors.errorDark,
           AppColors.errorPrimary,
-          AppColors.errorSecondary,
-          AppColors.errorPrimary
+          AppColors.errorDark,
         ],
         stops: [0.6, 0.8, 1.0],
         begin: Alignment.topLeft,

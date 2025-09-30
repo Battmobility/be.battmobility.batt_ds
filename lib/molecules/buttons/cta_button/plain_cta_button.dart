@@ -29,7 +29,7 @@ class PlainCtaButton extends StatelessWidget {
           width: width ?? double.infinity,
           height: height,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(height / 2),
+            borderRadius: BorderRadius.circular(height / 4),
           ),
           child: Padding(
             padding: EdgeInsets.all(borderWidth),
@@ -37,7 +37,7 @@ class PlainCtaButton extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.offWhite,
                 borderRadius:
-                    BorderRadius.circular((height / 2) - borderWidth / 2),
+                    BorderRadius.circular((height / 4) - borderWidth / 2),
               ),
               child: Center(
                 child: Text(

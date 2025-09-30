@@ -29,15 +29,15 @@ class OutlinedCtaButton extends StatelessWidget {
           width: width ?? double.infinity,
           height: height,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(height / 2),
+              borderRadius: BorderRadius.circular(height / 4),
               border: Border.all(color: AppColors.futureBlue)),
           child: Padding(
             padding: EdgeInsets.all(borderWidth),
             child: Container(
               decoration: BoxDecoration(
-                color: AppColors.offWhite,
+                color: AppColors.secondaryBlue,
                 borderRadius:
-                    BorderRadius.circular((height / 2) - borderWidth / 2),
+                    BorderRadius.circular((height / 4) - borderWidth / 2),
               ),
               child: Center(
                 child: Text(

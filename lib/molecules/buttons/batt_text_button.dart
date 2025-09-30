@@ -1,6 +1,5 @@
 import 'package:batt_ds/utils/context_theme.dart';
 import 'package:flutter/material.dart';
-import '../../atoms/app_cornerradii.dart';
 import '../../atoms/app_spacings.dart';
 import '../../utils/icon_builder.dart';
 import 'batt_text_button_size.dart';
@@ -82,15 +81,20 @@ abstract class BattTextButton extends StatelessWidget {
   /// The disabled border for the text button.
   BorderSide disabledBorder(BuildContext context) => BorderSide.none;
 
-  BorderRadius get borderRadius => switch (buttonSize) {
-        BattButtonSize.xSmall => const BorderRadius.all(CornerRadii.l),
-        BattButtonSize.small => const BorderRadius.all(CornerRadii.xl),
-        BattButtonSize.medium => const BorderRadius.all(CornerRadii.xxl),
-        BattButtonSize.large ||
-        BattButtonSize.xLarge =>
-          const BorderRadius.all(CornerRadii.xxxl),
-        BattButtonSize.xxLarge => const BorderRadius.all(CornerRadii.xxxxl),
-      };
+  BorderRadius get borderRadius =>
+      BorderRadius.all(Radius.circular(buttonHeight / 4));
+
+  double get buttonHeight {
+    return switch (buttonSize) {
+      BattButtonSize.xSmall => 30,
+      BattButtonSize.small => 34,
+      BattButtonSize.medium => 42,
+      BattButtonSize.large => 48,
+      BattButtonSize.xLarge => 58,
+      BattButtonSize.xxLarge => 66,
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     final betweenSpace = switch (buttonSize) {
@@ -110,21 +114,8 @@ abstract class BattTextButton extends StatelessWidget {
       },
     );
 
-    double calculateButtonHeight(BattButtonSize buttonSize) {
-      return switch (buttonSize) {
-        BattButtonSize.xSmall => 30,
-        BattButtonSize.small => 34,
-        BattButtonSize.medium => 42,
-        BattButtonSize.large => 48,
-        BattButtonSize.xLarge => 58,
-        BattButtonSize.xxLarge => 66,
-      };
-    }
-
-    final fullHeight = calculateButtonHeight(buttonSize);
-
     return SizedBox(
-      height: fullHeight,
+      height: buttonHeight,
       child: ElevatedButton(
         focusNode: focusNode,
         style: ButtonStyle(
@@ -153,7 +144,9 @@ abstract class BattTextButton extends StatelessWidget {
           ),
           shape: WidgetStateProperty.resolveWith(
             (states) {
-              const shape = StadiumBorder();
+              final shape = RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadiusGeometry.circular(buttonHeight / 4));
 
               if (states.contains(WidgetState.disabled)) {
                 return shape.copyWith(side: disabledBorder(context));

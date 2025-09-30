@@ -26,7 +26,7 @@ class RedOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color disabledColor(BuildContext context) {
-    return AppColors.errorSecondary;
+    return AppColors.errorDark;
   }
 
   @override
@@ -36,7 +36,7 @@ class RedOutlinedTextButton extends DefaultOutlinedTextButton {
 
   @override
   Color hoverColor(BuildContext context) {
-    return AppColors.errorSecondary;
+    return AppColors.errorDark;
   }
 
   @override

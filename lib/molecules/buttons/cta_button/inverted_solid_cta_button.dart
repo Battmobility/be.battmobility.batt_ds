@@ -28,7 +28,7 @@ class InvertedSolidCtaButton extends StatelessWidget {
           height: height,
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(height / 2),
+            borderRadius: BorderRadius.circular(height / 4),
           ),
           child: Center(
             child: Padding(
