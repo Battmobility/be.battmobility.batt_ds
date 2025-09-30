@@ -53,47 +53,52 @@ final class BattCallout extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (title != null) ...[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: message == null
-                                ? AppPaddings.xxsmall.vertical
-                                : AppPaddings.none.bottom,
-                            child: Text(
-                              title!,
-                              style: _titleStyle(context),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                            ),
-                          ),
-                          if (action != null || showCloseIcon) ...[
-                            const SizedBox(width: AppSpacings.md),
-                            if (action != null && actionLabel != null)
-                              SizedBox(
-                                height: AppSpacings.lg,
-                                child: MonochromeSimpleTextButton(
-                                  label: actionLabel!,
-                                  onPressed: action!,
-                                  color: Theme.of(context).colorScheme.surface,
-                                  underline: true,
+                      Flexible(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: Padding(
+                                padding: message == null
+                                    ? AppPaddings.xxsmall.vertical
+                                    : AppPaddings.none.bottom,
+                                child: Text(
+                                  title!,
+                                  style: _titleStyle(context),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
                                 ),
-                              )
-                            else if (showCloseIcon)
-                              IconButton(
-                                visualDensity: VisualDensity.compact,
-                                onPressed: () {
-                                  ScaffoldMessenger.of(
-                                    context,
-                                  ).hideCurrentSnackBar(
-                                      reason: SnackBarClosedReason.dismiss);
-                                },
-                                icon: Icon(PhosphorIcons.x(),
-                                    color: AppColors.white),
                               ),
+                            ),
+                            if (action != null || showCloseIcon) ...[
+                              const SizedBox(width: AppSpacings.md),
+                              if (action != null && actionLabel != null)
+                                SizedBox(
+                                  height: AppSpacings.lg,
+                                  child: MonochromeSimpleTextButton(
+                                    label: actionLabel!,
+                                    onPressed: action!,
+                                    color:
+                                        Theme.of(context).colorScheme.surface,
+                                    underline: true,
+                                  ),
+                                )
+                              else if (showCloseIcon)
+                                IconButton(
+                                  visualDensity: VisualDensity.compact,
+                                  onPressed: () {
+                                    ScaffoldMessenger.of(
+                                      context,
+                                    ).hideCurrentSnackBar(
+                                        reason: SnackBarClosedReason.dismiss);
+                                  },
+                                  icon: Icon(PhosphorIcons.x(),
+                                      color: AppColors.white),
+                                ),
+                            ],
                           ],
-                        ],
+                        ),
                       ),
                     ],
                     if (message != null) ...[

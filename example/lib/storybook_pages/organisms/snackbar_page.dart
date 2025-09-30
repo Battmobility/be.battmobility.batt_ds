@@ -58,6 +58,52 @@ class SnackbarPage extends StatelessWidget {
                   children: [
                     Flexible(
                       child: Text(
+                        'Info with a very long title',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                    OrangeSolidTextButton(
+                        label: "Show",
+                        onPressed: () {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(BattSnackbar.info(
+                            title:
+                                "Snackbar long title that can overflow on narrow screens",
+                          ).build(context));
+                        })
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  spacing: AppSpacings.md,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        'Info with a very long title and long message',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                    OrangeSolidTextButton(
+                        label: "Show",
+                        onPressed: () {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(BattSnackbar.info(
+                            title:
+                                "Snackbar long title that can overflow on narrow screens",
+                            message:
+                                "The snackbar message goes here. It can be a long message or just a short one. But in this case it's pretty long",
+                          ).build(context));
+                        })
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  spacing: AppSpacings.md,
+                  children: [
+                    Flexible(
+                      child: Text(
                         'Info with only message',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
