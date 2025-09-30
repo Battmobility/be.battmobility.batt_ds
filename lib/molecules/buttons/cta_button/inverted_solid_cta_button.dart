@@ -37,7 +37,7 @@ class InvertedSolidCtaButton extends StatelessWidget {
                 label,
                 style: TextStyle(
                   color: AppColors.futureBlue,
-                  fontSize: height * 0.3,
+                  fontSize: height * 0.35,
                   fontWeight: FontWeight.w500,
                 ),
               ),

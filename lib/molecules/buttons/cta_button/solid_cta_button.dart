@@ -1,7 +1,6 @@
 import 'package:batt_ds/atoms/app_colors.dart';
 import 'package:batt_ds/atoms/app_paddings.dart';
 import 'package:batt_ds/molecules/loaders/animated_loader.dart';
-import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
 class SolidCtaButton extends StatelessWidget {

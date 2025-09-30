@@ -11,7 +11,7 @@ final class Helpertext extends StatelessWidget {
     return Container(
       padding: AppPaddings.xxsmall.all.add(AppPaddings.xsmall.horizontal),
       decoration: const BoxDecoration(
-          color: AppColors.airFlow,
+          color: AppColors.offWhite,
           borderRadius: BorderRadius.all(CornerRadii.xs)),
       child: Text(text,
           style: Theme.of(context)
