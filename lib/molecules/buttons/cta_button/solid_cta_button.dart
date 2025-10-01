@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class SolidCtaButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
+  final VoidCallback? onPressedDisabled;
   final bool isEnabled;
   final double? width;
   final double height;
@@ -15,6 +16,7 @@ class SolidCtaButton extends StatelessWidget {
     super.key,
     required this.label,
     required this.onPressed,
+    this.onPressedDisabled,
     this.isEnabled = true,
     this.width,
     this.height = 56.0,
@@ -26,12 +28,16 @@ class SolidCtaButton extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: isEnabled ? onPressed : null,
+        onTap: isEnabled
+            ? onPressed
+            : (onPressedDisabled != null)
+                ? onPressedDisabled
+                : null,
         child: Container(
           width: width ?? double.infinity,
           height: height,
           decoration: BoxDecoration(
-            color: AppColors.futureBlue,
+            color: AppColors.futureBlue.withAlpha(isEnabled ? 255 : 155),
             borderRadius: BorderRadius.circular(height / 4),
           ),
           child: Center(
@@ -43,7 +49,9 @@ class SolidCtaButton extends StatelessWidget {
                 : Text(
                     label,
                     style: TextStyle(
-                      color: AppColors.secondaryBlue,
+                      color: isEnabled
+                          ? AppColors.secondaryBlue
+                          : AppColors.neutralColors[400],
                       fontSize: height * 0.35,
                       fontWeight: FontWeight.w500,
                     ),

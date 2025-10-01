@@ -130,11 +130,13 @@ final class BattCallout extends StatelessWidget {
       case CalloutType.info:
         return Icon(PhosphorIcons.info(), color: AppColors.futureBlue);
       case CalloutType.success:
-        return Icon(PhosphorIcons.checkCircle(), color: AppColors.greenShift);
+        return Icon(PhosphorIcons.checkCircle(),
+            color: AppColors.ctaBrightGreen);
       case CalloutType.warning:
         return Icon(PhosphorIcons.warning(), color: AppColors.warningDark);
       case CalloutType.error:
-        return Icon(PhosphorIcons.warningOctagon(), color: AppColors.errorDark);
+        return Icon(PhosphorIcons.warningOctagon(),
+            color: AppColors.errorPrimary);
     }
   }
 

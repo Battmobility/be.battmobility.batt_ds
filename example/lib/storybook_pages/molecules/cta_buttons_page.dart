@@ -70,6 +70,22 @@ class CtaButtonsPage extends StatelessWidget {
                               width: 200,
                               height: 98,
                             ),
+                            SolidCtaButton(
+                              label: "Plan je rit",
+                              isBusy: true,
+                              isEnabled: false,
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                            SolidCtaButton(
+                              label: "Plan je rit",
+                              isBusy: false,
+                              isEnabled: false,
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
                           ],
                         ),
                       ]
@@ -113,6 +129,13 @@ class CtaButtonsPage extends StatelessWidget {
                               width: 200,
                               height: 98,
                             ),
+                            OutlinedCtaButton(
+                              label: "Plan je rit",
+                              isEnabled: false,
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
                           ],
                         ),
                         Padding(
@@ -143,6 +166,13 @@ class CtaButtonsPage extends StatelessWidget {
                             InvertedSolidCtaButton(
                               label: "Plan je rit",
                               onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                            InvertedSolidCtaButton(
+                              label: "Plan je rit",
+                              onPressed: () => {},
+                              isEnabled: false,
                               width: 200,
                               height: 98,
                             ),
@@ -195,6 +225,13 @@ class CtaButtonsPage extends StatelessWidget {
                             ),
                             PlainCtaButton(
                               label: "Plan je rit",
+                              onPressed: () => {},
+                              width: 200,
+                              height: 98,
+                            ),
+                            PlainCtaButton(
+                              label: "Plan je rit",
+                              isEnabled: false,
                               onPressed: () => {},
                               width: 200,
                               height: 98,
