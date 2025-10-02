@@ -15,7 +15,7 @@ import 'package:batt_ds_example/storybook_pages/organisms/rating_bar_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/result_card_page.dart';
 import 'package:batt_ds_example/storybook_pages/organisms/sort_option_card_page.dart';
 import 'storybook_pages/molecules/battery_icon_page.dart';
-import 'storybook_pages/molecules/gradients_page.dart';
+import 'storybook_pages/molecules/borders_page.dart';
 import 'storybook_pages/molecules/chip_page.dart';
 import 'storybook_pages/molecules/icon_text_button_page.dart';
 import 'storybook_pages/molecules/license_plate_page.dart';

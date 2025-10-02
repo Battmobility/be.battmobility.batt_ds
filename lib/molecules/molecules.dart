@@ -1,6 +1,7 @@
 export 'batt_text_field.dart';
 export 'battery/battery_icon.dart';
 export 'borders/gradient_box_border.dart';
+export 'borders/offwhite_bordered_decoration.dart';
 export 'buttons/buttons.dart';
 export 'callout/batt_callout.dart';
 export 'chips/chips.dart';

@@ -1,4 +1,5 @@
 import 'package:batt_ds/batt_ds.dart';
+import 'package:batt_ds/molecules/borders/offwhite_bordered_decoration.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,30 @@ class BordersPage extends StatelessWidget {
                 Padding(
                   padding: AppPaddings.small.vertical,
                   child: Text(
-                    'Gradients',
+                    'Borders/Gradients',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Text(
+                    'OffWhite',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+                Padding(
+                  padding: AppPaddings.small.vertical,
+                  child: Wrap(
+                      spacing: AppSpacings.sm,
+                      runSpacing: AppSpacings.md,
+                      children: [
+                        Container(
+                            width: 300,
+                            height: 50,
+                            decoration: OffWhiteBorderedDecoration(
+                                borderWidth: 1,
+                                borderRadius: BorderRadius.all(CornerRadii.m))),
+                      ]),
                 ),
                 Padding(
                   padding: AppPaddings.small.vertical,
