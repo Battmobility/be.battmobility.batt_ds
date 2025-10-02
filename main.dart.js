@@ -45790,7 +45790,7 @@ case 2:p=t.q.a(A.l(a).c.j(0,A.aB(t.C))).c.z.lz(k.bO(a),k.gmP()*0.3)
 break
 case 3:p=t.q.a(A.l(a).c.j(0,A.aB(t.C))).c.w.lz(k.bO(a),k.gmP()*0.3)
 break
-case 4:p=t.q.a(A.l(a).c.j(0,A.aB(t.C))).c.x.lz(k.bO(a),k.gmP()*0.5)
+case 4:p=t.q.a(A.l(a).c.j(0,A.aB(t.C))).c.x.lz(k.bO(a),k.gmP()*0.3)
 break
 case 5:p=t.q.a(A.l(a).c.j(0,A.aB(t.C))).c.y.lz(k.bO(a),k.gmP()*0.3)
 break
