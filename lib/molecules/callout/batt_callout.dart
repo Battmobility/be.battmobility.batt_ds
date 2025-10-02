@@ -47,11 +47,10 @@ final class BattCallout extends StatelessWidget {
               child: _icon,
             ),
             Expanded(
-              child: Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                     if (title != null) ...[
                       Flexible(
                         child: Row(
@@ -111,7 +110,6 @@ final class BattCallout extends StatelessWidget {
                     ],
                   ],
                 ),
-              ),
             ),
           ],
         ),

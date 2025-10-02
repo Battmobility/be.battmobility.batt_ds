@@ -240,27 +240,27 @@ abstract class BattTextButton extends StatelessWidget {
                     BattButtonSize.xSmall =>
                       context.typographyTheme.buttonXSmall.copyWith(
                           color: textColor(context),
-                          fontSize: buttonHeight * 0.35),
+                          fontSize: buttonHeight * 0.3),
                     BattButtonSize.small => context.typographyTheme.buttonSmall
                         .copyWith(
                             color: textColor(context),
-                            fontSize: buttonHeight * 0.35),
+                            fontSize: buttonHeight * 0.3),
                     BattButtonSize.medium =>
                       context.typographyTheme.buttonMedium.copyWith(
                           color: textColor(context),
-                          fontSize: buttonHeight * 0.35),
+                          fontSize: buttonHeight * 0.3),
                     BattButtonSize.large => context.typographyTheme.buttonLarge
                         .copyWith(
                             color: textColor(context),
-                            fontSize: buttonHeight * 0.35),
+                            fontSize: buttonHeight * 0.3),
                     BattButtonSize.xLarge =>
                       context.typographyTheme.buttonXLarge.copyWith(
                           color: textColor(context),
-                          fontSize: buttonHeight * 0.35),
+                          fontSize: buttonHeight * 0.5),
                     BattButtonSize.xxLarge =>
                       context.typographyTheme.button2XLarge.copyWith(
                           color: textColor(context),
-                          fontSize: buttonHeight * 0.35),
+                          fontSize: buttonHeight * 0.3),
                   },
                 ),
               ),

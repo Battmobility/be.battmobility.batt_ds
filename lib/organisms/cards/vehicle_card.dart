@@ -81,7 +81,7 @@ final class VehicleCard extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.s.x),
-                                  color: AppColors.neutralColors[100]),
+                                  color: AppColors.neutralColors[50]),
                               child: _imageWidget()),
                         ],
                       ),

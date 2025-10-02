@@ -41,7 +41,7 @@ class OutlinedCtaButton extends StatelessWidget {
                 label,
                 style: TextStyle(
                   color: AppColors.futureBlue.withAlpha(isEnabled ? 255 : 155),
-                  fontSize: height * 0.35,
+                  fontSize: height * 0.3,
                   fontWeight: FontWeight.w500,
                 ),
               ),

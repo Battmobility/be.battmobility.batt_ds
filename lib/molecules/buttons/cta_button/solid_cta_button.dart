@@ -52,7 +52,7 @@ class SolidCtaButton extends StatelessWidget {
                       color: isEnabled
                           ? AppColors.secondaryBlue
                           : AppColors.neutralColors[400],
-                      fontSize: height * 0.35,
+                      fontSize: height * 0.3,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
