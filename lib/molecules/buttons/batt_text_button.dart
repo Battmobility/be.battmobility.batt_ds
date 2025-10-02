@@ -237,22 +237,30 @@ abstract class BattTextButton extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: switch (buttonSize) {
-                    BattButtonSize.xSmall => context
-                        .typographyTheme.buttonXSmall
-                        .copyWith(color: textColor(context)),
+                    BattButtonSize.xSmall =>
+                      context.typographyTheme.buttonXSmall.copyWith(
+                          color: textColor(context),
+                          fontSize: buttonHeight * 0.35),
                     BattButtonSize.small => context.typographyTheme.buttonSmall
-                        .copyWith(color: textColor(context)),
-                    BattButtonSize.medium => context
-                        .typographyTheme.buttonMedium
-                        .copyWith(color: textColor(context)),
+                        .copyWith(
+                            color: textColor(context),
+                            fontSize: buttonHeight * 0.35),
+                    BattButtonSize.medium =>
+                      context.typographyTheme.buttonMedium.copyWith(
+                          color: textColor(context),
+                          fontSize: buttonHeight * 0.35),
                     BattButtonSize.large => context.typographyTheme.buttonLarge
-                        .copyWith(color: textColor(context)),
-                    BattButtonSize.xLarge => context
-                        .typographyTheme.buttonXLarge
-                        .copyWith(color: textColor(context)),
-                    BattButtonSize.xxLarge => context
-                        .typographyTheme.button2XLarge
-                        .copyWith(color: textColor(context)),
+                        .copyWith(
+                            color: textColor(context),
+                            fontSize: buttonHeight * 0.35),
+                    BattButtonSize.xLarge =>
+                      context.typographyTheme.buttonXLarge.copyWith(
+                          color: textColor(context),
+                          fontSize: buttonHeight * 0.35),
+                    BattButtonSize.xxLarge =>
+                      context.typographyTheme.button2XLarge.copyWith(
+                          color: textColor(context),
+                          fontSize: buttonHeight * 0.35),
                   },
                 ),
               ),
