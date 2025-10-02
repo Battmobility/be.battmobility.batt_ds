@@ -91,10 +91,7 @@ class RatingBarState extends State<RatingBar>
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.offWhite,
-        borderRadius: BorderRadius.all(CornerRadii.s),
-      ),
+      decoration: OffWhiteBorderedDecoration(),
       child: Center(
         child: Padding(
           padding: AppPaddings.large.all,

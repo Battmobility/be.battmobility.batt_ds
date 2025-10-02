@@ -25,10 +25,7 @@ final class ListButton extends StatelessWidget {
         child: Container(
           width: size,
           height: size,
-          decoration: BoxDecoration(
-              color: backgroundColor,
-              border: Border.all(color: AppColors.neutralColors[50]!, width: 1),
-              borderRadius: const BorderRadius.all(CornerRadii.s)),
+          decoration: OffWhiteBorderedDecoration(),
           child: Padding(
             padding: AppPaddings.small.all,
             child: Center(

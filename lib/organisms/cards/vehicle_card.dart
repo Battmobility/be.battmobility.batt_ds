@@ -257,10 +257,7 @@ final class VehicleCard extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
-      decoration: BoxDecoration(
-        color: AppColors.offWhite,
-        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-      ),
+      decoration: OffWhiteBorderedDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -296,10 +293,7 @@ final class VehicleCard extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
-      decoration: BoxDecoration(
-        color: AppColors.offWhite,
-        borderRadius: BorderRadius.circular(CornerRadii.xs.x),
-      ),
+      decoration: OffWhiteBorderedDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,

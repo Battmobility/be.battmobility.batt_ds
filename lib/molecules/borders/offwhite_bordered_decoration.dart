@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class OffWhiteBorderedDecoration extends BoxDecoration {
   OffWhiteBorderedDecoration({
-    required double borderWidth,
-    BorderRadius? super.borderRadius,
+    double borderWidth = 1,
+    BorderRadius? borderRadius = const BorderRadius.all(CornerRadii.s),
     super.shape,
     super.boxShadow,
   }) : super(
-          color: AppColors.offWhite,
-          border: Border.all(color: AppColors.b2bKeyColor.withAlpha(20)),
-        );
+            color: AppColors.offWhite,
+            border: Border.all(color: AppColors.b2bKeyColor.withAlpha(20)),
+            borderRadius: borderRadius);
 }
