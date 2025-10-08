@@ -30,11 +30,11 @@ final class BatteryIcon extends StatelessWidget {
 
   IconData get _iconData {
     if (chargePercentage != null) {
-      if (chargePercentage! >= 0.95) {
+      if (chargePercentage! >= 90) {
         return PhosphorIcons.batteryVerticalFull();
-      } else if (chargePercentage! >= 0.70) {
+      } else if (chargePercentage! >= 70) {
         return PhosphorIcons.batteryVerticalHigh();
-      } else if (chargePercentage! >= 0.50) {
+      } else if (chargePercentage! >= 45) {
         return PhosphorIcons.batteryVerticalMedium();
       } else if (chargePercentage! >= 0.30) {
         return PhosphorIcons.batteryVerticalLow();
@@ -52,14 +52,18 @@ final class BatteryIcon extends StatelessWidget {
     if (chargePercentage == null) {
       return AppColors.neutralColors[600]!;
     }
-    if (chargePercentage! >= 0.70) {
-      return AppColors.successDark;
-    } else if (chargePercentage! >= 0.50) {
-      return AppColors.futureBlue;
-    } else if (chargePercentage! >= 0.30) {
-      return AppColors.warningDark;
-    } else {
-      return AppColors.errorPrimary;
+    if (chargePercentage! > 80) {
+      return AppColors.ctaBrightGreen;
     }
+    if (chargePercentage! > 60) {
+      return AppColors.ctaBrightGreen;
+    }
+    if (chargePercentage! > 40) {
+      return AppColors.warningPrimary;
+    }
+    if (chargePercentage! > 20) {
+      return AppColors.warningPrimary;
+    }
+    return AppColors.errorPrimary;
   }
 }
