@@ -20,6 +20,7 @@ class _AppBarPageState extends State<AppBarPage> {
             ? buildDefaultAppBar(context, title: "Default app bar")
             : appBarType == 2
                 ? buildTransparentAppBar(context,
+                    showBackButton: false,
                     title: "Transparent app bar",
                     contentColor: Theme.of(context).colorScheme.onSurface)
                 : buildBlurryAppBar(context,

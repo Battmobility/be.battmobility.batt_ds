@@ -25,7 +25,7 @@ AppBar buildActiveAppBar(BuildContext context,
                   color: Theme.of(context).colorScheme.surfaceContainer),
               onPressed: () => Navigator.of(context).pop(),
             )
-          : null,
+          : const SizedBox.shrink(),
       title: centerTitle
           ? Text(title,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -58,7 +58,7 @@ AppBar buildDefaultAppBar(BuildContext context,
                   color: Theme.of(context).colorScheme.onSurface),
               onPressed: () => Navigator.of(context).pop(),
             )
-          : null,
+          : const SizedBox.shrink(),
       title: centerTitle
           ? Text(title,
               style: Theme.of(context)
@@ -93,7 +93,7 @@ AppBar buildTransparentAppBar(BuildContext context,
                 icon: Icon(PhosphorIcons.arrowLeft(), color: contentColor),
                 onPressed: () => Navigator.of(context).pop(),
               )
-          : null,
+          : const SizedBox.shrink(),
       title: Text(title,
           style: centerTitle
               ? Theme.of(context)
@@ -133,7 +133,7 @@ AppBar buildBlurryAppBar(BuildContext context,
               icon: Icon(PhosphorIcons.arrowLeft(), color: contentColor),
               onPressed: () => Navigator.of(context).pop(),
             )
-          : null,
+          : const SizedBox.shrink(),
       title: Text(title,
           style: centerTitle
               ? Theme.of(context)
