@@ -281,29 +281,31 @@ class AppTheme extends ThemeExtension<AppTheme> {
   );
 
   final InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
-    prefixIconColor: AppColors.urbanMist,
-    suffixIconColor: AppColors.urbanMist,
-    labelStyle:
-        AppTypographyDark().labelMedium.copyWith(color: AppColors.black),
-    hintStyle:
-        AppTypographyDark().labelSmall.copyWith(color: AppColors.graphiteDrive),
+    prefixIconColor: AppColors.neutralColors[400],
+    suffixIconColor: AppColors.neutralColors[400],
+    labelStyle: AppTypographyDark()
+        .labelMedium
+        .copyWith(color: AppColors.neutralColors[950]),
+    hintStyle: AppTypographyDark()
+        .labelSmall
+        .copyWith(color: AppColors.neutralColors[600]),
     filled: true,
     fillColor: AppColors.white,
-    border: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.urbanMist),
+    border: OutlineInputBorder(
+      borderRadius: const BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.neutralColors[200]!),
     ),
-    enabledBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(CornerRadii.s),
-      borderSide: BorderSide(color: AppColors.urbanMist),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: const BorderRadius.all(CornerRadii.s),
+      borderSide: BorderSide(color: AppColors.neutralColors[200]!),
     ),
     focusedBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().inputBorderGradient,
-      width: 2,
+      width: 1,
     ),
     errorBorder: GradientOutlineInputBorder(
       gradient: GradientTheme.standard().errorBorderGradient,
-      width: 2,
+      width: 1,
     ),
     focusedErrorBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(CornerRadii.s),

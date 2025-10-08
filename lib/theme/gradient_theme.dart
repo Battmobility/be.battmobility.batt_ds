@@ -108,7 +108,8 @@ class GradientTheme extends ThemeExtension<GradientTheme> {
       ),
       activeCardBackgroundGradient: LinearGradient(
         colors: [
-          AppColors.futureBlue,
+          Color(0xFF3C72EF),
+          Color(0xFF1742A3),
           AppColors.b2bKeyColor,
         ],
         begin: Alignment.centerLeft,
