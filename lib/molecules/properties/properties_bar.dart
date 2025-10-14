@@ -23,6 +23,7 @@ final class PropertiesBar extends StatelessWidget {
       }
       if (range != null) {
         children.add(Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           spacing: AppSpacings.xs,
           children: [
             Icon(
@@ -36,6 +37,7 @@ final class PropertiesBar extends StatelessWidget {
       }
       if (walkingDistance != null) {
         children.add(Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           spacing: AppSpacings.xs,
           children: [
             Icon(
@@ -66,10 +68,13 @@ final class PropertiesBar extends StatelessWidget {
                 children: children
                     .map((child) {
                       return [
-                        child,
+                        Expanded(child: Center(child: child)),
                         if (child != children.last) ...[
-                          VerticalDivider(
-                            color: AppColors.neutralColors[100],
+                          Padding(
+                            padding: AppPaddings.small.horizontal,
+                            child: VerticalDivider(
+                              color: AppColors.neutralColors[100],
+                            ),
                           )
                         ]
                       ];

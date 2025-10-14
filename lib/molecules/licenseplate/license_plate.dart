@@ -10,56 +10,55 @@ class LicensePlate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: AppPaddings.none.all,
-      elevation: 0,
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: AppColors.licensePlateBelgiumTextColor,
-            width: borderWidth(),
-          ),
-          borderRadius: borderRadius(),
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: AppColors.licensePlateBelgiumTextColor,
+        borderRadius: BorderRadius.all(
+          Radius.circular(height / 4),
         ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(margin),
         child: ClipRRect(
-          borderRadius: clipBorderRadius(),
-          child: Container(
-            height: height(),
-            width: width(),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                left: BorderSide(
-                    color: AppColors.licensePlateBelgiumBoxColor,
-                    width: leftBorder()),
+          borderRadius: BorderRadius.all(
+            Radius.circular(height / 8),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: 1,
+                child: Container(
+                  height: double.infinity,
+                  color: AppColors.licensePlateBelgiumBoxColor,
+                ),
               ),
-            ),
-            child: Container(
-              margin: subtractedPadding(),
-              child: Text(
-                licenseplateNumber,
-                style: textStyle(context),
-                textAlign: TextAlign.center,
-              ),
-            ),
+              Flexible(
+                flex: 4,
+                child: Container(
+                  color: AppColors.white,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: topInset),
+                      child: Text(
+                        licenseplateNumber,
+                        style: textStyle(context),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       ),
     );
   }
 
-  BorderRadius borderRadius() {
-    switch (size) {
-      case LicensePlateSize.small:
-        return const BorderRadius.all(CornerRadii.xs);
-      case LicensePlateSize.medium:
-        return const BorderRadius.all(CornerRadii.s);
-      case LicensePlateSize.large:
-        return const BorderRadius.all(CornerRadii.m);
-    }
-  }
-
-  BorderRadius clipBorderRadius() {
+  BorderRadius get clipBorderRadius {
     switch (size) {
       case LicensePlateSize.small:
         return const BorderRadius.all(CornerRadii.xs);
@@ -67,31 +66,6 @@ class LicensePlate extends StatelessWidget {
         return const BorderRadius.all(CornerRadii.xs);
       case LicensePlateSize.large:
         return const BorderRadius.all(CornerRadii.s);
-    }
-  }
-
-  EdgeInsetsGeometry subtractedPadding() {
-    switch (size) {
-      case LicensePlateSize.small:
-        return EdgeInsets.all(margin());
-      case LicensePlateSize.medium:
-        return EdgeInsets.all(margin()).subtract(const EdgeInsets.only(top: 2));
-      case LicensePlateSize.large:
-        return EdgeInsets.all(margin()).subtract(const EdgeInsets.only(top: 2));
-    }
-  }
-
-  BorderSide border() {
-    switch (size) {
-      case LicensePlateSize.small:
-        return const BorderSide(
-            color: AppColors.licensePlateBelgiumTextColor, width: 4);
-      case LicensePlateSize.medium:
-        return const BorderSide(
-            color: AppColors.licensePlateBelgiumTextColor, width: 8);
-      case LicensePlateSize.large:
-        return const BorderSide(
-            color: AppColors.licensePlateBelgiumTextColor, width: 12);
     }
   }
 
@@ -106,10 +80,10 @@ class LicensePlate extends StatelessWidget {
     }
   }
 
-  double width() {
+  double get width {
     switch (size) {
       case LicensePlateSize.small:
-        return 80;
+        return 90;
       case LicensePlateSize.medium:
         return 120;
       case LicensePlateSize.large:
@@ -117,47 +91,47 @@ class LicensePlate extends StatelessWidget {
     }
   }
 
-  double height() {
+  double get height {
     switch (size) {
       case LicensePlateSize.small:
-        return 20;
+        return 22;
       case LicensePlateSize.medium:
-        return 26;
+        return 28;
       case LicensePlateSize.large:
         return 38;
     }
   }
 
-  double leftBorder() {
-    switch (size) {
-      case LicensePlateSize.small:
-        return 12;
-      case LicensePlateSize.medium:
-        return 20;
-      case LicensePlateSize.large:
-        return 30;
-    }
-  }
-
-  double margin() {
+  double get margin {
     switch (size) {
       case LicensePlateSize.small:
         return 2;
       case LicensePlateSize.medium:
-        return 4;
+        return 3;
       case LicensePlateSize.large:
-        return 6;
+        return 4;
     }
   }
 
-  double borderWidth() {
+  double get topInset {
+    // to correct license plate font baseline
+    switch (size) {
+      case LicensePlateSize.small:
+        return 0;
+      case LicensePlateSize.medium:
+      case LicensePlateSize.large:
+        return 1;
+    }
+  }
+
+  double get borderWidth {
     switch (size) {
       case LicensePlateSize.small:
         return 1;
       case LicensePlateSize.medium:
         return 2;
       case LicensePlateSize.large:
-        return 4;
+        return 3;
     }
   }
 }

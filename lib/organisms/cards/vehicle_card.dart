@@ -21,26 +21,28 @@ final class VehicleCard extends StatelessWidget {
   final bool showBorder;
   final bool selected;
 
-  final bool showIndicator;
+  final bool showInfoButton;
 
-  const VehicleCard({
-    super.key,
-    required this.name,
-    required this.address,
-    this.chargePercentage,
-    this.range,
-    this.walkingDistance,
-    this.tag,
-    this.price1Prefix,
-    this.price1,
-    this.price1Suffix,
-    this.price2,
-    this.price2Suffix,
-    this.imageUrl,
-    this.showBorder = true,
-    this.selected = false,
-    this.showIndicator = true,
-  });
+  final Function()? onInfoTap;
+
+  const VehicleCard(
+      {super.key,
+      required this.name,
+      required this.address,
+      this.chargePercentage,
+      this.range,
+      this.walkingDistance,
+      this.tag,
+      this.price1Prefix,
+      this.price1,
+      this.price1Suffix,
+      this.price2,
+      this.price2Suffix,
+      this.imageUrl,
+      this.showBorder = true,
+      this.selected = false,
+      this.showInfoButton = true,
+      this.onInfoTap});
 
   @override
   Widget build(BuildContext context) {
@@ -90,14 +92,14 @@ final class VehicleCard extends StatelessWidget {
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Flexible(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
-                              spacing: AppSpacings.sm,
+                              spacing: AppSpacings.xs,
                               children: [
                                 Flexible(
                                   child: Text(
@@ -113,12 +115,6 @@ final class VehicleCard extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(
-                                      PhosphorIcons.mapPin(),
-                                      color: AppColors.neutralColors[400],
-                                      size: AppSpacings.lg,
-                                    ),
-                                    const SizedBox(width: AppSpacings.xs),
                                     Flexible(
                                       child: Text(
                                         address,
@@ -138,13 +134,16 @@ final class VehicleCard extends StatelessWidget {
                               ],
                             ),
                           ),
-                          if (showIndicator)
-                            Padding(
-                              padding: AppPaddings.small.leading,
-                              child: Icon(
-                                PhosphorIcons.caretRight(),
-                                size: 20,
-                                color: AppColors.neutralColors[600],
+                          if (showInfoButton)
+                            GestureDetector(
+                              onTap: onInfoTap,
+                              child: Padding(
+                                padding: AppPaddings.small.leading,
+                                child: Icon(
+                                  PhosphorIcons.info(),
+                                  size: AppSpacings.xxl,
+                                  color: AppColors.b2bKeyColor.withAlpha(155),
+                                ),
                               ),
                             )
                         ],
