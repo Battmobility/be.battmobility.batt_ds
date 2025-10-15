@@ -511,7 +511,7 @@ class AppTypographyDark extends AppTypographyTheme {
         fontFamily: "Inter",
         package: "batt_ds"),
     super.titleLarge = const TextStyle(
-        fontSize: 18,
+        fontSize: 20,
         height: 32 / 24,
         fontWeight: FontWeight.w600,
         color: AppColors.offWhite,

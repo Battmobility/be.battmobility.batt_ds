@@ -104,7 +104,8 @@ final class VehicleCard extends StatelessWidget {
                                 Flexible(
                                   child: Text(
                                     name,
-                                    style: theme.textTheme.titleSmall?.copyWith(
+                                    style:
+                                        theme.textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.w600,
                                     ),
                                     maxLines: 2,

@@ -117,8 +117,8 @@ class LicensePlate extends StatelessWidget {
     // to correct license plate font baseline
     switch (size) {
       case LicensePlateSize.small:
-        return 0;
       case LicensePlateSize.medium:
+        return 0;
       case LicensePlateSize.large:
         return 1;
     }
