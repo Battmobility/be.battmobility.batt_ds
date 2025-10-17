@@ -125,7 +125,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     backgroundColor: AppColors.white,
     elevation: 0,
     selectedItemColor: AppColors.b2bKeyColor,
-    unselectedItemColor: AppColors.neutralColors[500],
+    unselectedItemColor: AppColors.neutralColors[600],
     selectedLabelStyle: const TextStyle(
       fontSize: 12,
       height: 1.2,

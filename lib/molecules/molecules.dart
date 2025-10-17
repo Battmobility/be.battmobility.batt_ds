@@ -12,6 +12,7 @@ export 'licenseplate/license_plate.dart';
 export 'licenseplate/license_plate_size.dart';
 export 'loaders/animated_loader.dart';
 export 'map_markers/map_marker.dart';
+export 'period/booking_period_widget.dart';
 export 'properties/property_widget.dart';
 export 'properties/price_widget.dart';
 export 'properties/properties_bar.dart';

@@ -9,6 +9,8 @@ class OffWhiteBorderedDecoration extends BoxDecoration {
     super.boxShadow,
   }) : super(
             color: AppColors.offWhite,
-            border: Border.all(color: AppColors.b2bKeyColor.withAlpha(20)),
+            border: Border.all(
+              color: AppColors.offWhite,
+            ),
             borderRadius: borderRadius);
 }

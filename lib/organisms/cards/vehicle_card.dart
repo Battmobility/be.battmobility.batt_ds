@@ -22,27 +22,30 @@ final class VehicleCard extends StatelessWidget {
   final bool selected;
 
   final bool showInfoButton;
+  final bool favorite;
 
   final Function()? onInfoTap;
 
-  const VehicleCard(
-      {super.key,
-      required this.name,
-      required this.address,
-      this.chargePercentage,
-      this.range,
-      this.walkingDistance,
-      this.tag,
-      this.price1Prefix,
-      this.price1,
-      this.price1Suffix,
-      this.price2,
-      this.price2Suffix,
-      this.imageUrl,
-      this.showBorder = true,
-      this.selected = false,
-      this.showInfoButton = true,
-      this.onInfoTap});
+  const VehicleCard({
+    super.key,
+    required this.name,
+    required this.address,
+    this.chargePercentage,
+    this.range,
+    this.walkingDistance,
+    this.tag,
+    this.price1Prefix,
+    this.price1,
+    this.price1Suffix,
+    this.price2,
+    this.price2Suffix,
+    this.imageUrl,
+    this.showBorder = true,
+    this.selected = false,
+    this.showInfoButton = true,
+    this.onInfoTap,
+    this.favorite = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +84,31 @@ final class VehicleCard extends StatelessWidget {
                               style: Theme.of(context).textTheme.labelSmall),
                           Container(
                               decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: AppColors.neutralColors[50]!),
                                   borderRadius:
                                       BorderRadius.circular(CornerRadii.s.x),
-                                  color: AppColors.neutralColors[50]),
+                                  color: AppColors.white),
                               child: _imageWidget()),
+                          if (favorite) ...[
+                            Positioned(
+                                bottom: AppSpacings.xxs,
+                                right: AppSpacings.xxs,
+                                child: Container(
+                                  width: AppSpacings.xl,
+                                  height: AppSpacings.xl,
+                                  decoration: const BoxDecoration(
+                                      color: AppColors.white,
+                                      borderRadius:
+                                          BorderRadius.all(CornerRadii.s)),
+                                  child: Icon(
+                                    PhosphorIcons.heart(
+                                        PhosphorIconsStyle.fill),
+                                    color: AppColors.futureBlue,
+                                    size: AppSpacings.md,
+                                  ),
+                                ))
+                          ]
                         ],
                       ),
                     ),
@@ -139,11 +163,12 @@ final class VehicleCard extends StatelessWidget {
                             GestureDetector(
                               onTap: onInfoTap,
                               child: Padding(
-                                padding: AppPaddings.small.leading,
+                                padding: AppPaddings.large.all
+                                    .subtract(AppPaddings.small.trailing),
                                 child: Icon(
                                   PhosphorIcons.info(),
-                                  size: AppSpacings.xxl,
-                                  color: AppColors.b2bKeyColor.withAlpha(155),
+                                  size: AppSpacings.xl,
+                                  color: AppColors.neutralColors[400],
                                 ),
                               ),
                             )
@@ -165,7 +190,7 @@ final class VehicleCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Divider(
-                  color: AppColors.neutralColors[50],
+                  color: AppColors.neutralColors[100],
                   height: 2,
                 ),
                 Padding(
@@ -256,7 +281,7 @@ final class VehicleCard extends StatelessWidget {
   Widget priceTag1(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
+      padding: AppPaddings.small.all.add(AppPaddings.xxsmall.horizontal),
       decoration: OffWhiteBorderedDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -292,7 +317,7 @@ final class VehicleCard extends StatelessWidget {
   Widget priceTag2(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
+      padding: AppPaddings.small.all.add(AppPaddings.xxsmall.horizontal),
       decoration: OffWhiteBorderedDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,

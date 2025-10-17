@@ -56,7 +56,7 @@ final class PropertiesBar extends StatelessWidget {
           decoration: decorate
               ? BoxDecoration(
                   border: Border.all(
-                    color: AppColors.neutralColors[50]!,
+                    color: AppColors.neutralColors[100]!,
                   ),
                   borderRadius: const BorderRadius.all(CornerRadii.s))
               : null,

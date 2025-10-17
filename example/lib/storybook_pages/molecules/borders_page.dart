@@ -1,5 +1,4 @@
 import 'package:batt_ds/batt_ds.dart';
-import 'package:batt_ds/molecules/borders/offwhite_bordered_decoration.dart';
 import 'package:batt_ds/theme/gradient_theme.dart';
 import 'package:flutter/material.dart';
 

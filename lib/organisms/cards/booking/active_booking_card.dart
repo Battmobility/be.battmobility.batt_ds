@@ -58,9 +58,10 @@ final class ActiveBookingCard extends StatelessWidget {
               textColor: Theme.of(context).colorScheme.onSurface,
               lightTextColor:
                   Theme.of(context).colorScheme.onSurface.withAlpha(163),
-              arrowColor: AppColors.white,
-              arrowBackgroundColor: AppColors.futureBlue,
+              arrowColor: AppColors.futureBlue,
+              arrowBackgroundColor: AppColors.offWhite,
               arrowShadow: false,
+              boldPeriodText: true,
             ),
           ),
           Center(

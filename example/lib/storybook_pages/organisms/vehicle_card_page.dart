@@ -53,6 +53,7 @@ class VehicleCardsPage extends StatelessWidget {
                           VehicleCard(
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
+                            favorite: true,
                             chargePercentage: 100,
                             price1Prefix: "Vanaf",
                             price1: " € 13 ",
@@ -107,6 +108,7 @@ class VehicleCardsPage extends StatelessWidget {
                           VehicleCard(
                             name: "Een auto met een lange naam",
                             address: "Lammerstraat 13, 9000 Gent",
+                            favorite: true,
                             range: "50 km",
                             price1Prefix: "Vanaf",
                             price1: " € 13 ",
@@ -144,6 +146,7 @@ class VehicleCardsPage extends StatelessWidget {
                         ),
                         VehicleCard(
                           name: "Polestar 2",
+                          favorite: true,
                           address: "Lammerstraat 13, 9000 Gent",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
@@ -192,6 +195,7 @@ class VehicleCardsPage extends StatelessWidget {
                             name: "Polestar 2",
                             address: "Lammerstraat 13, 9000 Gent",
                             range: "500 km",
+                            favorite: true,
                             chargePercentage: 75,
                             price1Prefix: "Vanaf",
                             price1: " € 13 ",
@@ -250,6 +254,7 @@ class VehicleCardsPage extends StatelessWidget {
                           VehicleCard(
                             name: "Polestar 2",
                             address: "Lammerstraat 13, 9000 Gent",
+                            favorite: true,
                             range: "500 km",
                             chargePercentage: 75,
                             price1Prefix: "Vanaf",

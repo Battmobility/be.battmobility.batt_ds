@@ -16,6 +16,7 @@ final class BookingCardBody extends StatelessWidget {
   final Color arrowColor;
   final Color arrowBackgroundColor;
   final bool arrowShadow;
+  final bool boldPeriodText;
 
   const BookingCardBody({
     super.key,
@@ -28,6 +29,7 @@ final class BookingCardBody extends StatelessWidget {
     required this.lightTextColor,
     required this.arrowColor,
     required this.arrowBackgroundColor,
+    required this.boldPeriodText,
     this.arrowShadow = false,
     this.tag,
     this.imageUrl,
@@ -137,7 +139,7 @@ final class BookingCardBody extends StatelessWidget {
                               spreadRadius: 2)
                         ]
                       : []),
-              child: Icon(PhosphorIcons.caretRight(),
+              child: Icon(PhosphorIcons.arrowRight(),
                   size: AppSpacings.lg, color: arrowColor),
             )
           ],
@@ -148,77 +150,12 @@ final class BookingCardBody extends StatelessWidget {
           color: AppColors.neutralColors[100]!,
         ),
         const SizedBox(height: AppSpacings.md),
-        LayoutBuilder(builder: (context, constraints) {
-          return Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: SizedBox(
-                  width: constraints.maxWidth / 2,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        fromLabel,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall!
-                            .copyWith(color: lightTextColor),
-                      ),
-                      const SizedBox(width: AppSpacings.xs),
-                      Text(
-                        fromDate,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall!
-                            .copyWith(color: textColor),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Flexible(
-                child: SizedBox(
-                  width: constraints.maxWidth / 2,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Icon(PhosphorIcons.caretRight(),
-                          color: textColor, size: AppSpacings.lg),
-                      const SizedBox(width: AppSpacings.md),
-                      Flexible(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              toLabel,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .copyWith(color: lightTextColor),
-                            ),
-                            const SizedBox(width: AppSpacings.xs),
-                            Text(
-                              toDate,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .copyWith(color: textColor),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          );
-        }),
+        BookingPeriodWidget(
+            startTitle: fromLabel,
+            start: fromDate,
+            endTitle: toLabel,
+            end: toDate,
+            boldText: boldPeriodText),
         if (accessory != null) ...[
           Padding(
             padding: AppPaddings.medium.top,
