@@ -60,7 +60,7 @@ class IntroPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 360,
-                            height: 190,
+                            height: 200,
                             child: VehicleCard(
                               name: "Polestar 2",
                               address: "Lammerstraat 13, 9000 Gent",

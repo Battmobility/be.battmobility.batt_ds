@@ -8,6 +8,7 @@ export 'cards/non_availability_card.dart';
 export 'cards/notification_card.dart';
 export 'cards/result_card.dart';
 export 'cards/vehicle_card.dart';
+export 'cards/vehicle_card_skeleton.dart';
 export 'cards/plan_card.dart';
 export 'cards/sort_option_card.dart';
 export 'gradients/hero_radial_gradient_container.dart';
