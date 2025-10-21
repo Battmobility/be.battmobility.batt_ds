@@ -7,21 +7,26 @@ final class BookingPeriodWidget extends StatelessWidget {
   final String endTitle;
   final String end;
   final bool boldText;
+  final bool showBorder;
 
-  const BookingPeriodWidget(
-      {super.key,
-      required this.startTitle,
-      required this.start,
-      required this.endTitle,
-      required this.end,
-      required this.boldText});
+  const BookingPeriodWidget({
+    super.key,
+    required this.startTitle,
+    required this.start,
+    required this.endTitle,
+    required this.end,
+    required this.boldText,
+    this.showBorder = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(CornerRadii.m),
-          border: Border.all(color: AppColors.neutralColors[100]!)),
+          border: showBorder
+              ? Border.all(color: AppColors.neutralColors[100]!)
+              : null),
       child: Padding(
         padding: AppPaddings.medium.all,
         child: Row(
