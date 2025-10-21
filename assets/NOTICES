@@ -5219,17 +5219,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 flutter_lints
 go_router
 path_provider
-path_provider_foundation
 path_provider_linux
 path_provider_platform_interface
 path_provider_windows
 plugin_platform_interface
 pointer_interceptor
-pointer_interceptor_ios
 pointer_interceptor_platform_interface
 pointer_interceptor_web
 shared_preferences
-shared_preferences_foundation
 shared_preferences_linux
 shared_preferences_platform_interface
 shared_preferences_web
@@ -29682,7 +29679,10 @@ SOFTWARE.
 
 --------------------------------------------------------------------------------
 path_provider_android
+path_provider_foundation
+pointer_interceptor_ios
 shared_preferences_android
+shared_preferences_foundation
 
 Copyright 2013 The Flutter Authors
 
