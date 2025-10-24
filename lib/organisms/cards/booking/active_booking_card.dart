@@ -14,6 +14,7 @@ final class ActiveBookingCard extends StatelessWidget {
   final String? imageUrl;
   final Widget? accessory;
   final Tag? tag;
+  final String? subTitle;
 
   const ActiveBookingCard({
     super.key,
@@ -25,6 +26,7 @@ final class ActiveBookingCard extends StatelessWidget {
     required this.accessoryLabel,
     this.accessoryColor,
     this.tag,
+    this.subTitle,
     this.imageUrl,
     this.accessory,
   });
@@ -55,6 +57,7 @@ final class ActiveBookingCard extends StatelessWidget {
               toDate: toDate,
               accessory: accessory,
               tag: tag,
+              subTitle: subTitle,
               textColor: Theme.of(context).colorScheme.onSurface,
               lightTextColor:
                   Theme.of(context).colorScheme.onSurface.withAlpha(163),

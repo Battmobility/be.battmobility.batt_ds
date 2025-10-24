@@ -12,6 +12,8 @@ final class BookingCard extends StatelessWidget {
   final String? imageUrl;
   final Widget? accessory;
   final Tag? tag;
+  final String? subTitle;
+
   final bool boldPeriodText;
 
   const BookingCard({
@@ -23,6 +25,7 @@ final class BookingCard extends StatelessWidget {
     required this.toDate,
     this.boldPeriodText = false,
     this.tag,
+    this.subTitle,
     this.imageUrl,
     this.accessory,
   });
@@ -44,6 +47,7 @@ final class BookingCard extends StatelessWidget {
           toDate: toDate,
           accessory: accessory,
           tag: tag,
+          subTitle: subTitle,
           textColor: Theme.of(context).colorScheme.onSurface,
           lightTextColor:
               Theme.of(context).colorScheme.onSurface.withAlpha(163),
