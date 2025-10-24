@@ -13,6 +13,7 @@ class AppColors {
   static const Color futureBlue = Color(0xFF3D73F0);
   static const Color secondaryBlue = Color(0xFFE4F3FF);
   static const Color skySurge = Color(0xFF87B7FF);
+  static const Color informativeLight = Color(0xFFF1F7FE);
   static const Color airFlow = Color(0xFFBDE3FF);
   static const Color greenShift = Color(0xFF97D7A0);
   static const Color ecoHorizon = Color(0xFFD1E8D1);
@@ -31,6 +32,8 @@ class AppColors {
 
   static const Color warningPrimary = Color(0xFFFB923C);
   static const Color warningDark = Color(0xFFCE7612);
+
+  static const Color dangerLight = Color(0xFFFDECEE);
 
   static const Color errorPrimary = Color(0xFFE93F4D);
   static const Color errorDark = Color(0xFFCA1726);

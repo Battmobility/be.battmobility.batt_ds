@@ -1,7 +1,7 @@
 import 'package:batt_ds/atoms/atoms.dart';
 import 'package:flutter/material.dart';
 
-enum TagType { standard, warning, booking, price }
+enum TagType { standard, warning, booking, price, stoppedBooking }
 
 final class Tag extends StatelessWidget {
   final String text;
@@ -14,13 +14,7 @@ final class Tag extends StatelessWidget {
     return Container(
       padding: AppPaddings.xsmall.all.add(AppPaddings.small.horizontal),
       decoration: BoxDecoration(
-        color: type == TagType.standard
-            ? AppColors.airFlow
-            : type == TagType.booking
-                ? AppColors.ecoHorizon
-                : type == TagType.price
-                    ? AppColors.offWhite
-                    : AppColors.errorPrimary,
+        color: _getBackgroundColor(),
         borderRadius: BorderRadius.circular(CornerRadii.xs.x),
       ),
       child: Text(
@@ -29,15 +23,29 @@ final class Tag extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontWeight: FontWeight.bold,
-              color: type == TagType.standard
-                  ? AppColors.b2bKeyColor
-                  : type == TagType.booking
-                      ? AppColors.b2cKeyColor
-                      : type == TagType.price
-                          ? AppColors.b2bKeyColor
-                          : AppColors.errorDark,
+              color: _getTextColor(),
             ),
       ),
     );
+  }
+
+  Color _getBackgroundColor() {
+    return switch (type) {
+      TagType.standard => AppColors.informativeLight,
+      TagType.booking => AppColors.ecoHorizon,
+      TagType.price => AppColors.offWhite,
+      TagType.warning => AppColors.dangerLight,
+      TagType.stoppedBooking => AppColors.neutralColors[50]!,
+    };
+  }
+
+  Color _getTextColor() {
+    return switch (type) {
+      TagType.standard => AppColors.b2bKeyColor,
+      TagType.booking => AppColors.b2cKeyColor,
+      TagType.price => AppColors.b2bKeyColor,
+      TagType.warning => AppColors.errorDark,
+      TagType.stoppedBooking => AppColors.neutralColors[950]!,
+    };
   }
 }
