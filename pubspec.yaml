@@ -1,6 +1,6 @@
 name: batt_ds
 description: "The BattMobility design system"
-version: 0.1.40
+version: 0.1.41
 
 environment:
   sdk: ^3.5.4
