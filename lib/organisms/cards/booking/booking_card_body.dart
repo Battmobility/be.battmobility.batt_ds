@@ -11,6 +11,7 @@ final class BookingCardBody extends StatelessWidget {
   final String? imageUrl;
   final Widget? accessory;
   final Tag? tag;
+  final String? subTitle;
   final Color textColor;
   final Color lightTextColor;
   final Color arrowColor;
@@ -32,6 +33,7 @@ final class BookingCardBody extends StatelessWidget {
     required this.boldPeriodText,
     this.arrowShadow = false,
     this.tag,
+    this.subTitle,
     this.imageUrl,
     this.accessory,
   });
@@ -103,7 +105,7 @@ final class BookingCardBody extends StatelessWidget {
                   Flexible(
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: tag == null
+                        mainAxisAlignment: (tag == null && subTitle == null)
                             ? MainAxisAlignment.start
                             : MainAxisAlignment.spaceBetween,
                         mainAxisSize: MainAxisSize.min,
@@ -114,11 +116,26 @@ final class BookingCardBody extends StatelessWidget {
                             style: theme.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold, color: textColor),
                             overflow: TextOverflow.fade,
-                            maxLines: tag == null ? 2 : 1,
-                            softWrap: tag == null ? true : false,
+                            maxLines: (tag == null && subTitle == null) ? 2 : 1,
+                            softWrap: (tag == null && subTitle == null)
+                                ? true
+                                : false,
                             textAlign: TextAlign.start,
                           ),
-                          tag ?? const SizedBox.shrink()
+                          tag ??
+                              ((subTitle != null)
+                                  ? Flexible(
+                                      child: Text(
+                                      subTitle!,
+                                      overflow: TextOverflow.fade,
+                                      maxLines: 1,
+                                      softWrap: false,
+                                      style: theme.textTheme.bodySmall!
+                                          .copyWith(
+                                              color:
+                                                  AppColors.neutralColors[400]),
+                                    ))
+                                  : const SizedBox.shrink())
                         ]),
                   ),
                 ],

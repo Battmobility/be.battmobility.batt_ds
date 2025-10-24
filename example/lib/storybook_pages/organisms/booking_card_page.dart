@@ -49,6 +49,14 @@ class BookingCardsPage extends StatelessWidget {
                           toDate: "Ma 2 jul, 18:40",
                           imageUrl:
                               "https://res.cloudinary.com/directlease/image/fetch/t_transp,f_png,dpr_auto/https://images.directlease.be/jato_be/Photo400/POLESTAR/4/2025/5OD-4_315.JPG",
+                          accessory: Text(
+                            "Je boeking start binnen 19 minuten",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(color: AppColors.neutralColors[600]),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         ActiveBookingCard(
                           accessoryLabel: "Active booking",

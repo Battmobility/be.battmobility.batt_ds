@@ -6,11 +6,13 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 final class ProfileHeader extends StatelessWidget {
   final String name;
   final String? imageUrl;
+  final String? email;
   final Color? contentColor;
 
   const ProfileHeader({
     required this.name,
     required this.imageUrl,
+    this.email,
     this.contentColor,
     super.key,
   });
@@ -63,7 +65,18 @@ final class ProfileHeader extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: contentColor ??
-                            Theme.of(context).colorScheme.onSurface))
+                            Theme.of(context).colorScheme.onSurface)),
+                const SizedBox(height: AppSpacings.sm),
+                if (email != null) ...[
+                  Text(email!,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: contentColor ??
+                              Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withAlpha(200)))
+                ]
               ],
             ),
           )),
